@@ -6,7 +6,6 @@ using System;
 using OpenTK;
 using OpenTK.Input;
 using System.Drawing;
-using GameFramework;
 
 namespace GameApplication {
     class Window {
