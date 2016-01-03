@@ -1,8 +1,9 @@
+#Callbacks
+
 ## Initialize
 
 ## Update
 
-#Callbacks
 ## Render
 
 ## Shutdown
