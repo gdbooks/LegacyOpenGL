@@ -37,4 +37,4 @@ Visual studios intellisense will tell you that the argument is of type ```Render
 # Other improvements
 OpenTK is filled with other similar improvements that make writing OpenGL programs in C# much faster and less error prone than writing them in C. The OpenTK framework is available in Visual Studio's package manager NuGet.
 
-Take some time and check out the [official website](http://www.opentk.com/) which has some cool guides and nifty code samples.
+Take some time and check out the [official website](http://www.opentk.com/) which has some cool guides and nifty code samples.Definateley take a peek at [the OpenTK docs](http://www.opentk.com/doc) which are written in a book-like fashion.
