@@ -3,4 +3,5 @@
 * [Introduction](Chapter1/Introduction.md)
   * [OpenGL](Chapter1/OpenGL.md)
   * [OpenTK](Chapter1/OpenTK.md)
-* [Setting up a window](Chapter2/Introduction.md)
+* [Getting a window](Chapter2/Introduction.md)
+  * [Setting up the window](Chapter2/Setup.md)
