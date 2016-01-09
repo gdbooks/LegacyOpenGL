@@ -13,7 +13,7 @@ using OpenTK.Input;
 using System.Drawing;
 
 namespace GameApplication {
-    class Window {
+    class MainGameWindow {
         //reference to OpenTK window
         public static OpenTK.GameWindow Window = null; 
 
@@ -52,7 +52,7 @@ You can get the delta time of the update loop trough the ```FrameEventArgs``` ar
 // ...
 
 namespace GameApplication {
-    class Window {
+    class MainGameWindow {
         // ...
         
         public static void Update(object sender, FrameEventArgs e) {
@@ -92,13 +92,18 @@ Inside this function we need to do the following
 // ...
 
 namespace GameApplication {
-    class Window {
+    class MainGameWindow {
+        public static OpenTK.GameWindow Window = null; 
+        
         // ...
         
         public static void Render(object sender, FrameEventArgs e) {
-            GL.ClearColor(clearColor);
-            }
+            GL.ClearColor(Color.CadetBlue);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            
+            // TODO: Render your game here
+            
+            Window.SwapBuffers();
         }
         
         // ..
@@ -134,12 +139,12 @@ using OpenTK.Input;
 using System.Drawing;
 
 namespace GameApplication {
-    class Window {
+    class MainGameWindow {
         //reference to OpenTK window
         public static OpenTK.GameWindow Window = null; 
 
         public static void Initialize(object sender, EventArgs e) {
-
+        
         }
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
