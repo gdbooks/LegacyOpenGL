@@ -130,7 +130,14 @@ namespace GameApplication {
 ```
 
 ##Resize
-The resize callback is a bit special. Not in the good way. This callback is the whole reason that our ```MainGameWindow``` class has to extend
+The resize callback is a bit special. Not in the good way. This callback is the whole reason that our ```MainGameWindow``` class has to extend the ```OpenTK.GameWindow``` class. 
+
+Resize does not have a callback event, instead the ```OpenTK.GameWindow``` class implements it as a virtual function that we must override. This function will take a ```EventArgs``` event for an argument and return void.
+
+```
+
+
+```
 ## Shutdown
 The shutdown callback is similar to the initialize callback. The function takes a sender ```object``` and a ```EventArgs``` event, it returns void. You hook shutdown up the the windows ```Unload``` callback
 
@@ -181,9 +188,11 @@ namespace GameApplication {
         public static void Initialize(object sender, EventArgs e) {
         
         }
+        
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
         }
+        
         public static void Render(object sender, FrameEventArgs e) {
             GL.ClearColor(Color.CadetBlue);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
@@ -192,9 +201,15 @@ namespace GameApplication {
             
             Window.SwapBuffers();
         }
+        
+        protected override void OnResize(EventArgs e) {
+        
+        }
+        
         public static void Shutdown(object sender, EventArgs e) {
 
         }
+        
         [STAThread]
         public static void Main() {
             //create static(global) window instance
