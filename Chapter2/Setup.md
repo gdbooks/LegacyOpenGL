@@ -17,7 +17,7 @@ namespace GameApplication {
         [STAThread]
         public static void Main() {
             //create static (global) window instance
-            Window = new OpenTK.GameWindow();
+            Window = new MainGameWindow();
 
             //run game at 60fps. will not return until window is closed
             Window.Run(60.0f);
