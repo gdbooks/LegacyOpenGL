@@ -203,7 +203,11 @@ namespace GameApplication {
         }
         
         protected override void OnResize(EventArgs e) {
-        
+            // You must call this!
+            base.OnResize(e);
+            
+            // ClientRectangle is inherited from OpenTK.GameWindow
+            Rectangle drawingArea = ClientRectangle;
         }
         
         public static void Shutdown(object sender, EventArgs e) {
