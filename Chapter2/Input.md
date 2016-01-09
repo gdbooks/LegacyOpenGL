@@ -144,10 +144,8 @@ namespace GameApplication {
 
             for (int i = 0; i < numKeys; ++i) {
                 KeyboardBack[i] = KeyboardFront[i];
-                KeyboardFront[i] = game.Keyboard[(Key)i];
             }
             for (int i = 0; i < numKeys; ++i) {
-                KeyboardBack[i] = KeyboardFront[i];
                 KeyboardFront[i] = game.Keyboard[(Key)i];
             }
         }
