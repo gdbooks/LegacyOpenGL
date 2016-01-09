@@ -6,8 +6,8 @@ The ```OpenTK``` namespace contains the ```GameWindow``` class. OpenTK can eithe
 ```cs
 using System;
 using OpenTK;
-using OpenTK.Input;
 using System.Drawing;
+using OpenTK.Graphics.OpenGL;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
