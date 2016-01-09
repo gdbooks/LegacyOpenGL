@@ -128,7 +128,15 @@ namespace GameApplication {
         private static bool[] KeyboardBack = null;
         
         public static void Initialize(object sender, EventArgs e) {
-        KeyboardFront = new bool
+            int numKeys = (int)OpenTK.Input.Key.LastKey;
+
+            KeyboardFront = new bool[numKeys];
+            KeyboardBack = new bool[numKeys];
+            
+            for (int i = 0; i < numKeys) {
+                KeyboardFront[i] = false;
+                KeyboardBack[i] = false;
+            }
         }
         
         void UpdateInput() {
