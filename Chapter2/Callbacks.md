@@ -76,6 +76,47 @@ namespace GameApplication {
 ```
 
 ## Render
+The Render function is similar to the Update function. The function gets hooked up to the windows ```RenderFrame``` callback. Just like Update the Render function takes a sender ```object``` and a ```FrameEventArgs``` event, it returns void.
+
+Because the second argument is a ```FrameEventArgs``` event you can access delta time the same way you did for Update if you need it, tough generally in a Render function you wont.
+
+Inside this function we need to do the following
+* Tell OpenGL what color to clear the screen to
+* Clear the screen
+* Render our game
+* Swap the back and front display buffers
+  * These are managed by OpenTK.
+  * OpenTK is by default double buffered.
+
+```cs
+// ...
+
+namespace GameApplication {
+    class Window {
+        // ...
+        
+        public static void Render(object sender, FrameEventArgs e) {
+
+        }
+        
+        // ..
+        
+        [STAThread]
+        public static void Main() {
+            // ...
+            
+            Window.RenderFrame += new EventHandler<FrameEventArgs>(Render);
+            
+            // ...
+            
+            //run game at 60fps. will not return until window is closed
+            Window.Run(60.0f);
+
+            Window.Dispose();
+        }
+    }
+}
+```
 
 ## Shutdown
 
@@ -132,5 +173,4 @@ namespace GameApplication {
         }
     }
 }
-
 ```
