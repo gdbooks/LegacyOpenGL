@@ -9,8 +9,8 @@ The function takes a sender ```object``` and a ```EventArgs``` event, it returns
 ```cs
 using System;
 using OpenTK;
-using OpenTK.Input;
 using System.Drawing;
+using OpenTK.Graphics.OpenGL;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
