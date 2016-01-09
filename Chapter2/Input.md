@@ -130,4 +130,12 @@ namespace GameApplication {
         void UpdateInput() {
         
         }
+        
+        public static void Initialize(object sender, EventArgs e) {
+        
+        }
+        
+        public static void Update(object sender, FrameEventArgs e) {
+            float deltaTime = (float)e.Time;
+        }
 ```
