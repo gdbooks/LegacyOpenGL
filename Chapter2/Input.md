@@ -173,7 +173,9 @@ namespace GameApplication {
             UpdateInput();
             bool altDown = KeyDown(OpenTK.Input.Key.AltLeft) || KeyDown(OpenTK.Input.Key.AltRight);
             
-            if (altDown && 
+            if (altDown && KeyPressed(OpenTK.Input.Key.Enter)) {
+            
+            }
         }
         
         // ... Rest of the MainGameWindow class
