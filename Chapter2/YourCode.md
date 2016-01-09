@@ -71,7 +71,7 @@ namespace GameApplication {
         [STAThread]
         public static void Main() {
             //create static (global) window instance
-            Window = new OpenTK.GameWindow();
+            Window = new MainGameWindow();
         
             // create static (global) game instance
             TheGame = new Game();
