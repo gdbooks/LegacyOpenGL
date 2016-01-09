@@ -77,4 +77,31 @@ namespace GameApplication {
 ```
 
 ## 3) Singleton
-This method should be familiar by now, it's the one we used for both Mario and the DungeonCrawler project.
+This method should be familiar by now, it's the one we used for both Mario and the DungeonCrawler project. It's very similar to approach #2, except instead of storing a static reference to the ```Game```class in the ```MainGameWindow``` class you store a reference to it in the ```Game``` class trough a singleton.
+
+A singleton is just a static way to access a SINGLE instance of a class. We ensure a class can only have a single instance by making it's constructor private.
+
+```cs
+class Game() {
+    // Private constructor. 
+    // Only the Game class can make a new Game instance.
+    priate Game() {
+    
+    }
+    
+    // Global reference to the single instance of this calss
+    private static Game instance = null;
+    
+    // Public access (read only) to the game instance
+    public static Game Instance {
+        get {
+            // Lazy initialization
+            if (instance == null) {
+                // Remember, only this class can make a new instance ;)
+                instance = new Game();
+            }
+            
+            return instance;
+        }
+    }
+```
