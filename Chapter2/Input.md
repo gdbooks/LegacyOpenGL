@@ -147,7 +147,7 @@ namespace GameApplication {
             }
             for (int i = 0; i < numKeys; ++i) {
                 OpenTK.Input.Key iAsKey = (OpenTK.Input.Key)i;
-                KeyboardFront[i] = Window.Keyboard[(Key)i];
+                KeyboardFront[i] = Window.Keyboard[iAsKey];
             }
         }
         
