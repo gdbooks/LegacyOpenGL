@@ -146,7 +146,7 @@ namespace GameApplication {
                 KeyboardBack[i] = KeyboardFront[i];
             }
             for (int i = 0; i < numKeys; ++i) {
-                KeyboardFront[i] = game.Keyboard[(Key)i];
+                KeyboardFront[i] = Window.Keyboard[(Key)i];
             }
         }
         
