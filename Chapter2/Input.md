@@ -151,19 +151,19 @@ namespace GameApplication {
             }
         }
         
-        private static void KeyDown(OpenTK.Input.Key key) {
+        private static bool KeyDown(OpenTK.Input.Key key) {
             return KeyboardFront[i];
         }
         
-        private static void KeyUp(OpenTK.Input.Key key) {
-            return 
+        private static bool KeyUp(OpenTK.Input.Key key) {
+            return !KeyboardFront[i];
         }
         
-        private static void KeyPressed(OpenTK.Input.Key key) {
+        private static bool KeyPressed(OpenTK.Input.Key key) {
         
         }
         
-        private static void KeyReleased(OpenTK.Input.Key key) {
+        private static bool KeyReleased(OpenTK.Input.Key key) {
         
         }
         
