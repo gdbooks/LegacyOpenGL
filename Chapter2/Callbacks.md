@@ -99,7 +99,7 @@ namespace GameApplication {
 
         }
         public static void Update(object sender, FrameEventArgs e) {
-
+            float deltaTime = (float)e.Time;
         }
         public static void Render(object sender, FrameEventArgs e) {
 
