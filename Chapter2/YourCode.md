@@ -37,8 +37,8 @@ You simply make a static reference variable to the Game class inside the ```Main
 ```cs
 using System;
 using OpenTK;
-using OpenTK.Input;
 using System.Drawing;
+using OpenTK.Graphics.OpenGL;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
