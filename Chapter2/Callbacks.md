@@ -55,7 +55,7 @@ You can get the delta time of the update loop trough the ```FrameEventArgs``` ar
 // ...
 
 namespace GameApplication {
-    class MainGameWindow {
+    class MainGameWindow : OpenTK.GameWindow {
         // ...
         
         public static void Update(object sender, FrameEventArgs e) {
