@@ -92,6 +92,7 @@ Mouse input is similar to the keyboard input. Just like with the keyboard there 
 ```cs
 // Call somewhere in the update loop
 void CheckInput() {
+    MouseState mouse = MainGameWindow.Window.Mouse;
 
 }
 
