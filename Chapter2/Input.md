@@ -180,3 +180,5 @@ namespace GameApplication {
         
         // ... Rest of the MainGameWindow class
 ```
+
+That's all it takes to implement buffered input. In this example, we use the keyboard ```Alt+Enter``` to toggle in and out of full screen. If course in general you don't want to clutter up your window with this kind of code, unless it makes sense to you. 
