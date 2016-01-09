@@ -77,3 +77,4 @@ namespace GameApplication {
 ```
 
 ## 3) Singleton
+This method should be familiar by now, it's the one we used for both Mario and the DungeonCrawler project.
