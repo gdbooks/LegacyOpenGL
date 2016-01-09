@@ -27,5 +27,58 @@ However this functionality is deprecated. It might get compleatly removed from f
 
 Luckly with our windowing code:
 ```cs
+using System;
+using OpenTK;
+using System.Drawing;
+using OpenTK.Graphics.OpenGL;
+using GameFramework;
 
+namespace GameApplication {
+    class MainGameWindow : OpenTK.GameWindow {
+        // reference to OpenTK window
+        public static OpenTK.GameWindow Window = null;
+```
+
+The static variable ```MainGameWindow.Window```is accessable from anywhere. So, get a reference to the ```KeyboardState``` structure using the ```Keyboard``` getter of the ```OpenTK.GameWindow``` class. Like so:
+
+```cs
+// Call somewhere in the update loop
+void CheckInput() {
+    KeyboardState keboard = MainGameWindow.Window.Keyboard;
+}
+```
+
+There is only one property of ```KeyboardState``` that we care about, and that is the fact that the ```[]``` accessor is implemented to return a ```bool```. This override takes a ```OpenTK.Input.Key``` enum value as an argument and returns true if the button is being held down, false if it is up.
+
+This is how you could check if the button A is down
+
+```cs
+// Call somewhere in the update loop
+void CheckInput() {
+    KeyboardState keboard = MainGameWindow.Window.Keyboard;
+    
+    if (keyboard[OpenTK.Input.Key.A]) {
+        Console.WriteLine("A is down");
+    }
+}
+```
+
+We can take advantage of the fact that each enum entry is essentially an integer and print out any key that is down:
+
+```cs
+// Call somewhere in the update loop
+void CheckInput() {
+    KeyboardState keboard = MainGameWindow.Window.Keyboard;
+    
+    // LastKey is the number of keys on the keyboard + 1
+    int numKeys = (int)OpenTK.Input.Key.LastKey;
+    
+    for (int i = 0; i < numKeys; ++i) {
+        OpenTK.Input.Key iAsKey = (OpenTK.Input.Key)i;
+        
+        if (keyboard[iAsKey]) {
+            Console.WriteLine(iAsKey.ToString() + " is down");
+        }
+    }
+}
 ```
