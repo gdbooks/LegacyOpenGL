@@ -127,11 +127,11 @@ namespace GameApplication {
         private static bool[] KeyboardFront = null;
         private static bool[] KeyboardBack = null;
         
-        void UpdateInput() {
-        
+        public static void Initialize(object sender, EventArgs e) {
+        KeyboardFront = new bool
         }
         
-        public static void Initialize(object sender, EventArgs e) {
+        void UpdateInput() {
         
         }
         
