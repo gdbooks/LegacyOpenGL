@@ -130,6 +130,7 @@ namespace GameApplication {
 ```
 
 ## Shutdown
+The shutdown callback is similar to the initialize callback.
 
 # All together
 The code below puts all of the above callbacks in place. IT also sets the window Title and Size, trough public getters and setters exposed to the ```GameWindow``` class. This should be everything we need for the main window.
