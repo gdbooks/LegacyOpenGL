@@ -143,12 +143,12 @@ namespace GameApplication {
             int numKeys = (int)OpenTK.Input.Key.LastKey;
 
             for (int i = 0; i < numKeys; ++i) {
-                KeyboardBack[i] = curKeysDown[i];
-                curKeysDown[i] = game.Keyboard[(Key)i];
+                KeyboardBack[i] = KeyboardFront[i];
+                KeyboardFront[i] = game.Keyboard[(Key)i];
             }
             for (int i = 0; i < numKeys; ++i) {
-                KeyboardBack[i] = curKeysDown[i];
-                curKeysDown[i] = game.Keyboard[(Key)i];
+                KeyboardBack[i] = KeyboardFront[i];
+                KeyboardFront[i] = game.Keyboard[(Key)i];
             }
         }
         
