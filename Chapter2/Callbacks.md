@@ -88,6 +88,8 @@ Inside this function we need to do the following
   * These are managed by OpenTK.
   * OpenTK is by default double buffered.
 
+This code contains the first two lines of OpenGL we are going to write. Don't worry about what they mean yet, for now just copy them in.
+
 ```cs
 // ...
 
@@ -98,7 +100,9 @@ namespace GameApplication {
         // ...
         
         public static void Render(object sender, FrameEventArgs e) {
+            // Tell OpenGL what color to clear the screen to
             GL.ClearColor(Color.CadetBlue);
+            // Tell OpenGL to clear the screen.
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             
             // TODO: Render your game here
@@ -150,7 +154,12 @@ namespace GameApplication {
             float deltaTime = (float)e.Time;
         }
         public static void Render(object sender, FrameEventArgs e) {
-
+            GL.ClearColor(Color.CadetBlue);
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            
+            // TODO: Render your game here
+            
+            Window.SwapBuffers();
         }
         public static void Shutdown(object sender, EventArgs e) {
 
