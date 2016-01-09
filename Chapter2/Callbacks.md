@@ -204,8 +204,8 @@ If you're curious, a complete list of the callbacks and properties of the ```Gam
 ```cs
 using System;
 using OpenTK;
-using OpenTK.Input;
 using System.Drawing;
+using OpenTK.Graphics.OpenGL;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
