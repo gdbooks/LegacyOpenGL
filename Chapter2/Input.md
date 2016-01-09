@@ -138,4 +138,6 @@ namespace GameApplication {
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
         }
+        
+        // ... Rest of the MainGameWindow class
 ```
