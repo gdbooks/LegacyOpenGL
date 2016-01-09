@@ -130,7 +130,7 @@ namespace GameApplication {
 ```
 
 ##Resize
-
+The resize callback is a bit special. Not in the good way. This callback is the whole reason that our ```MainGameWindow``` class has to extend
 ## Shutdown
 The shutdown callback is similar to the initialize callback. The function takes a sender ```object``` and a ```EventArgs``` event, it returns void. You hook shutdown up the the windows ```Unload``` callback
 
