@@ -7,9 +7,12 @@ After reading this, go ahead and browse trough the ```InputManager``` class to g
 All input related function reside within the ```OpenTK.Input``` namespace. This namespace has several enumerations and classes we care about:
 
 * OpenTK.Input.Key
-  * Enumeration of key values
-* KeyboardState
+  * Enumeration of keyboard keys
+* OpenTK.Input.MouseButton
+  * Enumeration of mouse buttons
+* OpenTK.Input.KeyboardState
   * Structure containing keyboard information 
+ 
 
 For a compleate overview of the namespace, check out [the doxygen](http://www.opentk.com/files/doc/namespace_open_t_k_1_1_input.html) pages for OpenTK.
 
