@@ -1,4 +1,6 @@
 # Getting a window
+Most of this is going to look familiar. We  used OpenTK to manage windows in the OpenTK2DFramework project. This chapter just provides more detailed information about what is happening.
+
 The ```OpenTK``` namespace contains the ```GameWindow``` class. OpenTK can either manage the game window for you, or be embedded in a windows forms application. For the sake of speed, we will let OpenTK create and manage the main window for us. This is the minimum code to get a window up and running:
 
 ```cs
