@@ -174,7 +174,7 @@ using OpenTK.Input;
 using System.Drawing;
 
 namespace GameApplication {
-    class MainGameWindow : OpenTK.GameWindow{
+    class MainGameWindow : OpenTK.GameWindow {
         //reference to OpenTK window
         public static OpenTK.GameWindow Window = null; 
 
