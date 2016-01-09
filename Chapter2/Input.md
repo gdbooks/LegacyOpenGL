@@ -83,6 +83,7 @@ void CheckInput() {
 ```
 
 ## Mouse Input
+Mouse input is similar to the keyboard input,
 
 ## Gamepad Input
 Gamepad support in OpenTK is in a very sad state. It's super duper broken. I'm not even going to cover it here. If you are interested, you can check out the ```InputManager``` code behind joystick support, but it's a verbose ugly hack!
