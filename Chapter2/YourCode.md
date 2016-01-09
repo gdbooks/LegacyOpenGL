@@ -44,26 +44,34 @@ namespace GameApplication {
         public static OpenTK.GameWindow Window = null;
         
         // reference to game
-        public static Game = null;
+        public static Game TheGame = null;
         
         public static void Initialize(object sender, EventArgs e) {
-        
+            TheGame.Initialize();
         }
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
+            TheGame.Update(deltaTime);
         }
         public static void Render(object sender, FrameEventArgs e) {
             GL.ClearColor(Color.CadetBlue);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            
-            // TODO: Render your game here
-            
+            TheGame.Render();
             Window.SwapBuffers();
         }
         public static void Shutdown(object sender, EventArgs e) {
-
+            TheGame.Shutdown();
         }
+        
         [STAThread]
+        public static void Main() {
+            //create static (global) window instance
+            Window = new OpenTK.GameWindow();
+        
+            // create static (global) game instance
+            TheGame = new Game();
+            
+            // ...
 ```
 
 ## 3) Singleton
