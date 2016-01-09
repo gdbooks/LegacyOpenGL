@@ -151,7 +151,7 @@ namespace GameApplication {
             }
         }
         
-        
+        private static void KeyDown(
         
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
