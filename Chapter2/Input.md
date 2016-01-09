@@ -122,8 +122,8 @@ using OpenTK.Graphics.OpenGL;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
-        // reference to OpenTK window
         public static OpenTK.GameWindow Window = null;
+        
         private static bool[] KeyboardFront = null;
         private static bool[] KeyboardBack = null;
         
@@ -152,15 +152,15 @@ namespace GameApplication {
         }
         
         private static bool KeyDown(OpenTK.Input.Key key) {
-            return KeyboardFront[i];
+            return KeyboardFront[key];
         }
         
         private static bool KeyUp(OpenTK.Input.Key key) {
-            return !KeyboardFront[i];
+            return !KeyboardFront[key];
         }
         
         private static bool KeyPressed(OpenTK.Input.Key key) {
-            return KeyboardFront[i] && !
+            return KeyboardFront[key] && !KeyboardBack[key];
         }
         
         private static bool KeyReleased(OpenTK.Input.Key key) {
