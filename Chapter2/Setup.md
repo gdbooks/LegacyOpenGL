@@ -10,7 +10,7 @@ using OpenTK.Input;
 using System.Drawing;
 
 namespace GameApplication {
-    class Window : OpenTK.GameWindow {
+    class MainGameWindow : OpenTK.GameWindow {
         // global reference
         public static OpenTK.GameWindow Window = null; 
 
@@ -36,7 +36,9 @@ We created a static variable called ```Window``` of type ```OpenTK.GameWindow```
 
 The ```Main``` function has to be marked as ```STAThread``` as with other non-form C# applications. 
 
-The first line of ```Main```,  ```Window = new OpenTK.GameWindow();``` creates a new window object. When created, the window object allocates memory for the new window and intializes everything the window needs.
+The first line of ```Main```,  ```Window = new MainGameWindow();``` creates a new window object. When created, the window object allocates memory for the new window and intializes everything the window needs.
+
+Why do we create a ```MainGameWindow``` object instead of a raw ```OpenTK.GameWindow``` object?
 
 The next line ```Window.Run(60.0f);``` actually shows the window. After the window is shown this method will enter the update loop. The window will try to run at 60FPS if it can. The actual update speed is up to you.
 
