@@ -2,7 +2,9 @@
 In OpenTK you don't have access to the windows message loop. Instead OpenTK provides a number of very useful callbacks that you can use to do things during the lifecycle of the window. Set all of the callbacks before calling the ```Run``` method of the window.
 
 ## Initialize
-The initialize function gets called right after the window is created, before the windows first update / render cycle. This is how you can hook up the ```Initialize``` callback:
+The initialize function gets called right after the window is created, before the windows first update / render cycle. 
+
+The function takes a sender ```object``` and a ```EventArgs``` event, it returns void. This is how you can hook up the ```Initialize``` callback:
 
 ```cs
 using System;
@@ -42,7 +44,9 @@ namespace GameApplication {
 
 ## Update
 
-The Update function gets called 1 time every frame. The function signature is the same as that of initialize. You need to hook up to the ```UpdateFrame``` method of the OpenTK window.
+The Update function gets called 1 time every frame. The function takes a sender ```object``` and a ```FrameEventArgs``` event, it returns void. You need to hook up to the ```UpdateFrame``` method of the OpenTK window.
+
+You can get the delta time of the update loop trough the ```FrameEventArgs``` argument of the function.
 
 ```cs
 // ...
@@ -52,7 +56,7 @@ namespace GameApplication {
         // ...
         
         public static void Update(object sender, FrameEventArgs e) {
-
+            float deltaTime = (float)e.Time;
         }
         
         [STAThread]
