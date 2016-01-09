@@ -49,16 +49,19 @@ namespace GameApplication {
         public static void Initialize(object sender, EventArgs e) {
             TheGame.Initialize();
         }
+        
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
             TheGame.Update(deltaTime);
         }
+        
         public static void Render(object sender, FrameEventArgs e) {
             GL.ClearColor(Color.CadetBlue);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             TheGame.Render();
             Window.SwapBuffers();
         }
+        
         public static void Shutdown(object sender, EventArgs e) {
             TheGame.Shutdown();
         }
