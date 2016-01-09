@@ -10,7 +10,7 @@ using OpenTK.Input;
 using System.Drawing;
 
 namespace GameApplication {
-    class Window : OpenTK.GameWindow{
+    class Window : OpenTK.GameWindow {
         // global reference
         public static OpenTK.GameWindow Window = null; 
 
