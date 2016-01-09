@@ -93,8 +93,8 @@ Mouse input is similar to the keyboard input. Just like with the keyboard there 
 // Call somewhere in the update loop
 void CheckInput() {
     MouseState mouse = MainGameWindow.Window.Mouse;
-
 }
+```
 
 Again, the first thing you need is an instance of the ```OpenTK.Input.MouseState``` class. You can get this trough the ```Mouse``` getter of the ```OpenTK.GameWindow``` class.
 
