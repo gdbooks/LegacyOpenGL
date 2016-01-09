@@ -160,7 +160,7 @@ namespace GameApplication {
         }
         
         private static bool KeyPressed(OpenTK.Input.Key key) {
-        
+            return KeyboardFront[i] && !
         }
         
         private static bool KeyReleased(OpenTK.Input.Key key) {
