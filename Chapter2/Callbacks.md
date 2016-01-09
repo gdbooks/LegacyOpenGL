@@ -35,7 +35,6 @@ namespace GameApplication {
 
             //run game at 60fps. will not return until window is closed
             Window.Run(60.0f);
-
             Window.Dispose();
         }
     }
@@ -68,7 +67,6 @@ namespace GameApplication {
             // ...
             
             Window.Run(60.0f);
-
             Window.Dispose();
         }
     }
@@ -120,9 +118,7 @@ namespace GameApplication {
             
             // ...
             
-            //run game at 60fps. will not return until window is closed
             Window.Run(60.0f);
-
             Window.Dispose();
         }
     }
@@ -131,6 +127,34 @@ namespace GameApplication {
 
 ## Shutdown
 The shutdown callback is similar to the initialize callback. The function takes a sender ```object``` and a ```EventArgs``` event, it returns void. You hook shutdown up the the windows ```Unload``` callback
+
+```cs
+// ...
+
+namespace GameApplication {
+    class MainGameWindow {
+        
+        // ...
+        
+        public static void Shutdown(object sender, EventArgs e) {
+
+        }
+        
+        [STAThread]
+        public static void Main() {
+            
+            // ...
+            
+            Window.Unload += new EventHandler<EventArgs>(Shutdown);
+
+            // ...
+            
+            Window.Run(60.0f);
+            Window.Dispose();
+        }
+    }
+}
+```
 
 # All together
 The code below puts all of the above callbacks in place. IT also sets the window Title and Size, trough public getters and setters exposed to the ```GameWindow``` class. This should be everything we need for the main window.
