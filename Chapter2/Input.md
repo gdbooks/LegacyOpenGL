@@ -140,11 +140,13 @@ namespace GameApplication {
         }
         
         void UpdateInput() {
-            for (int i = 0; i < curKeysDown.Length; ++i) {
+            int numKeys = (int)OpenTK.Input.Key.LastKey;
+
+            for (int i = 0; i < numKeys; ++i) {
                 prevKeysDown[i] = curKeysDown[i];
                 curKeysDown[i] = game.Keyboard[(Key)i];
             }
-            for (int i = 0; i < curKeysDown.Length; ++i) {
+            for (int i = 0; i < numKeys; ++i) {
                 prevKeysDown[i] = curKeysDown[i];
                 curKeysDown[i] = game.Keyboard[(Key)i];
             }
