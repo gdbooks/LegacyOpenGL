@@ -32,7 +32,6 @@ class Game {
 You simply make a static reference variable to the Game class inside the ```MainWindow``` class, just like you have a ```Window``` variable referencing an OpenTK window.
 
 ```cs
-```cs
 using System;
 using OpenTK;
 using OpenTK.Input;
