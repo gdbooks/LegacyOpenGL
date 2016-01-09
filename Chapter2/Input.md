@@ -164,7 +164,7 @@ namespace GameApplication {
         }
         
         private static bool KeyReleased(OpenTK.Input.Key key) {
-        
+            return !KeyboardFront[key] && KeyboardBack[key];
         }
         
         public static void Update(object sender, FrameEventArgs e) {
