@@ -89,6 +89,8 @@ void CheckInput() {
 ## Mouse Input
 Mouse input is similar to the keyboard input. Just like with the keyboard there are some [outdated docs](http://www.opentk.com/doc/input) on the OpenTK site about working with a mouse.
 
+Again, the first thing you need is an instance of the ```OpenTK.Input.MouseState``` class. You can get this trough the ```Mouse``` getter of the ```OpenTK.GameWindow``` class.
+
 ```cs
 // Call somewhere in the update loop
 void CheckInput() {
@@ -96,7 +98,37 @@ void CheckInput() {
 }
 ```
 
-Again, the first thing you need is an instance of the ```OpenTK.Input.MouseState``` class. You can get this trough the ```Mouse``` getter of the ```OpenTK.GameWindow``` class.
+Just like the ```KeyboardState```, ```MouseState``` alos overrides the ```[]``` accessor. It takes a ```OpenTK.Input.MouseButton``` enum value as an argument. It returns true if the mouse button is down, false it it is up. You can check for a click like this:
+
+```cs
+// Call somewhere in the update loop
+void CheckInput() {
+    MouseState mouse = MainGameWindow.Window.Mouse;
+    
+    if (mouse[OpenTK.Input.MouseButton.Left]) {
+        Console.WriteLine("Left Mouse Button Is Down!");
+    }
+}
+```
+
+Getting the X and Y positions of the mouse is stupid simple. The ```MouseState``` has public ```X``` and ```Y``` accessors. They are both of type int. You can use them like this:
+
+```cs
+// Call somewhere in the update loop
+void CheckInput() {
+    MouseState mouse = MainGameWindow.Window.Mouse;
+    int x = mouse.X;
+    int y = mouse.Y;
+    
+    if (mouse[OpenTK.Input.MouseButton.Left]) {
+        Console.WriteLine("Left Mouse Button Is Down!");
+    }
+    
+    if (x > 20 && x < 50 && y > 20 && y < 50) {
+        Console.WriteLine("Mouse is inside Rectangle(20, 20, 50, 50)");
+    }
+}
+```
 
 ## Gamepad Input
 Gamepad support in OpenTK is in a very sad state. It's super duper broken. I'm not even going to cover it here. If you are interested, you can check out the ```InputManager``` code behind joystick support, but it's a verbose ugly hack!
