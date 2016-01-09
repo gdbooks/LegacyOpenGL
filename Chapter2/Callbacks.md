@@ -134,9 +134,36 @@ The resize callback is a bit special. Not in the good way. This callback is the 
 
 Resize does not have a callback event, instead the ```OpenTK.GameWindow``` class implements it as a virtual function that we must override. This function will take a ```EventArgs``` event for an argument and return void.
 
-```
+Getting the width and height of the window on resize is also a bit dumb. That information is not passed in with the event argument (practicaly nothing is!). Instead you must check a variable called ```ClientRectangle``` that is inherited from ```OpenTK.Window```. ```ClientRectangle``` is a [System.Drawing.Rectangle](https://goo.gl/UMT4U8) object.
 
+```cs
+// ...
 
+namespace GameApplication {
+    class MainGameWindow : OpenTK.GameWindow {
+        
+        // ...
+        
+        protected override void OnResize(EventArgs e) {
+            // You must call this!
+            base.OnResize(e);
+            
+            // ClientRectangle is inherited from OpenTK.GameWindow
+            Rectangle drawingArea = ClientRectangle;
+            
+            // Do resize window stuff here
+        }
+        
+        // ...
+        
+        [STAThread]
+        public static void Main() {
+            
+            // ...
+            
+        }
+    }
+}
 ```
 ## Shutdown
 The shutdown callback is similar to the initialize callback. The function takes a sender ```object``` and a ```EventArgs``` event, it returns void. You hook shutdown up the the windows ```Unload``` callback
