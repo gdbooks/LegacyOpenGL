@@ -3,4 +3,44 @@ Most games have the ability to switch between full screen mode and windowed mode
 
 How you want to implement your fullscreen toggle logic is up to you, i'm just going to show you how to actually toggle. If you end up accidentally going into fullscreen mode press ```Alt+Tab``` to bring up the program selection toolbox. Navigate to Visual studio (Keep alt pressed down while tapping the tab button to move between programs) and use the red square to terminate the application.
 
+## API
+
 ## Implementation
+The first thing we need to do is add a new boolean to the ```MainGameWindow``` class to keep track of the current window mode (windowed or full screen).
+
+```cs
+using System;
+using OpenTK;
+using System.Drawing;
+using OpenTK.Graphics.OpenGL;
+using GameFramework;
+
+namespace GameApplication {
+    class MainGameWindow : OpenTK.GameWindow {
+        // reference to OpenTK window
+        public static OpenTK.GameWindow Window = null;
+        
+        // keep track of window mode
+        public static bool IsFullscreen = false;
+```
+
+Next we implement the actual toggle function
+
+```cs
+public static void ToggleFullscreen() {
+    if (IsFullscreen) {
+        Window.WindowBorder = WindowBorder.Resizable;
+        Window.WindowState = WindowState.Normal;
+        Window.ClientSize = new Size(800, 600);
+    }
+    else {
+        Window.WindowBorder = WindowBorder.Hidden;
+        Window.WindowState = WindowState.Fullscreen;
+    }
+    IsFullscreen = !IsFullscreen;
+}
+```
+
+Keep in mind, when exiting fullscreen mode you MUST reset the window to its original size, otherwise the behaviour is undefined. 
+
+That's it. You can now call the ```ToggleFullscreen``` function from a menu, or hook it up to ```Alt+Enter``` your call.
