@@ -151,7 +151,21 @@ namespace GameApplication {
             }
         }
         
-        private static void KeyDown(
+        private static void KeyDown(OpenTK.Input.Key key) {
+            return KeyboardFront[i];
+        }
+        
+        private static void KeyUp(OpenTK.Input.Key key) {
+            return 
+        }
+        
+        private static void KeyPressed(OpenTK.Input.Key key) {
+        
+        }
+        
+        private static void KeyReleased(OpenTK.Input.Key key) {
+        
+        }
         
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
