@@ -1,8 +1,75 @@
 #Callbacks
+In OpenTK you don't have access to the windows message loop. Instead OpenTK provides a number of very useful callbacks that you can use to do things during the lifecycle of the window. Set all of the callbacks before calling the ```Run``` method of the window.
 
 ## Initialize
+The initialize function gets called right after the window is created, before the windows first update / render cycle. This is how you can hook up the ```Initialize``` callback:
+
+```cs
+using System;
+using OpenTK;
+using OpenTK.Input;
+using System.Drawing;
+
+namespace GameApplication {
+    class Window {
+        //reference to OpenTK window
+        public static OpenTK.GameWindow Window = null; 
+
+        public static void Initialize(object sender, EventArgs e) {
+            // Do initialization code here
+        }
+        
+        [STAThread]
+        public static void Main() {
+            //create static(global) window instance
+            Window = new OpenTK.GameWindow();
+
+            //hook up the initialize callback
+            Window.Load += new EventHandler<EventArgs>(Initialize);
+            
+            //set window title and size
+            Window.Title = "Game Name";
+            Window.ClientSize = new Size(800, 600);
+
+            //run game at 60fps. will not return until window is closed
+            Window.Run(60.0f);
+
+            Window.Dispose();
+        }
+    }
+}
+```
 
 ## Update
+
+The Update function gets called 1 time every frame. The function signature is the same as that of initialize. You need to hook up to the ```UpdateFrame``` method of the OpenTK window.
+
+```cs
+// ...
+
+namespace GameApplication {
+    class Window {
+        // ...
+        
+        public static void Update(object sender, FrameEventArgs e) {
+
+        }
+        
+        [STAThread]
+        public static void Main() {
+            // ...
+            
+            Window.UpdateFrame += new EventHandler<FrameEventArgs>(Update);
+            
+            // ...
+            
+            Window.Run(60.0f);
+
+            Window.Dispose();
+        }
+    }
+}
+```
 
 ## Render
 
