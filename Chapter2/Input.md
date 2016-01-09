@@ -139,7 +139,7 @@ namespace GameApplication {
             }
         }
         
-        void UpdateInput() {
+        private static void UpdateInput() {
             int numKeys = (int)OpenTK.Input.Key.LastKey;
 
             for (int i = 0; i < numKeys; ++i) {
@@ -150,6 +150,8 @@ namespace GameApplication {
                 KeyboardFront[i] = Window.Keyboard[iAsKey];
             }
         }
+        
+        
         
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
