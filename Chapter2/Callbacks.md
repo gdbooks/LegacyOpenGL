@@ -138,7 +138,7 @@ The shutdown callback is similar to the initialize callback. The function takes 
 // ...
 
 namespace GameApplication {
-    class MainGameWindow : OpenTK.GameWindow{
+    class MainGameWindow : OpenTK.GameWindow {
         
         // ...
         
