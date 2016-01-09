@@ -82,3 +82,36 @@ void CheckInput() {
     }
 }
 ```
+
+## Mouse Input
+
+## Gamepad Input
+Gamepad support in OpenTK is in a very sad state. It's super duper broken. I'm not even going to cover it here. If you are interested, you can check out the ```InputManager``` code behind joystick support, but it's a verbose ugly hack!
+
+## Buffered Input
+Using the ```InputManager``` we can check more states of buttons. For example we don't just have access to a bool indicating if a key is down or up, we can also check if the key was pressed this frame, or released this frame. That's called buffered input, and it's the main high level concept that the ```InputManager``` provides.
+
+If you want to implement your own buffered input, it's not difficult. The same principles that apply to double buffered rendering apply to buffered input:
+
+* Make a front-buffer.
+  * Array of bool, size is the number of available keys
+  * Will hold the key states of this frame
+* Make a back buffer 
+  * Array of bool, size is the number of available keys
+  * Will hold the key states of the last frame
+* In update
+  * Copy the contents of the front-buffer INTO the back-buffer
+  * Copy the current keyboard state INTO the fron-buffer
+* In update, after the input buffers have been updated
+  * A key is down if:
+    * it is true in the front buffer 
+  * A key is up if:
+    * it is false in the front buffer 
+  * A key was pressed this frame if:
+     * it is true in the front-buffer
+     * it is false in the back-buffer
+  * A key was released this frame if:
+    * it is false in the front-buffer
+    * it is true in the back-buffer
+
+The code for this might look something like this:
