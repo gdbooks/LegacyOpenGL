@@ -172,6 +172,8 @@ namespace GameApplication {
             float deltaTime = (float)e.Time;
             UpdateInput();
             bool altDown = KeyDown(OpenTK.Input.Key.AltLeft) || KeyDown(OpenTK.Input.Key.AltRight);
+            
+            if (altDown && 
         }
         
         // ... Rest of the MainGameWindow class
