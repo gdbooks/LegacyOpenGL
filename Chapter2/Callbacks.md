@@ -32,7 +32,11 @@ namespace GameApplication {
             //set window title and size
             Window.Title = "Game Name";
             Window.ClientSize = new Size(800, 600);
-
+            
+            // turn on vsynch, prevents screen tearing when swapping buffers
+            // This is on by default, but take no changes!
+            Window.VSync = VSyncMode.On;
+            
             //run game at 60fps. will not return until window is closed
             Window.Run(60.0f);
             Window.Dispose();
@@ -125,6 +129,8 @@ namespace GameApplication {
 }
 ```
 
+##Resize
+
 ## Shutdown
 The shutdown callback is similar to the initialize callback. The function takes a sender ```object``` and a ```EventArgs``` event, it returns void. You hook shutdown up the the windows ```Unload``` callback
 
@@ -207,6 +213,10 @@ namespace GameApplication {
             Window.Title = "Game Name";
             Window.ClientSize = new Size(800, 600);
             
+            // turn on vsynch, prevents screen tearing when swapping buffers
+            // This is on by default, but take no changes!
+            Window.VSync = VSyncMode.On;
+
             //run game at 60fps. will not return until window is closed
             Window.Run(60.0f);
 
