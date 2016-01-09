@@ -38,7 +38,7 @@ The ```Main``` function has to be marked as ```STAThread``` as with other non-fo
 
 The first line of ```Main```,  ```Window = new MainGameWindow();``` creates a new window object. When created, the window object allocates memory for the new window and intializes everything the window needs.
 
-Why do we create a ```MainGameWindow``` object instead of a raw ```OpenTK.GameWindow``` object?
+Why do we create a ```MainGameWindow``` object instead of a raw ```OpenTK.GameWindow``` object? Because the ```MainGameWindow``` extends the ```OpenTK.GameWindow``` class this will work. For now you could replace that with a ``` new OpenTK.GameWindow()```  call and everything would still work. But later we will need to override methods in the ```OpenTK.GameWindow``` class.
 
 The next line ```Window.Run(60.0f);``` actually shows the window. After the window is shown this method will enter the update loop. The window will try to run at 60FPS if it can. The actual update speed is up to you.
 
