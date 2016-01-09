@@ -124,4 +124,10 @@ namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
         // reference to OpenTK window
         public static OpenTK.GameWindow Window = null;
+        private static bool[] KeyboardFront = null;
+        private static bool[] KeyboardBack = null;
+        
+        void UpdateInput() {
+        
+        }
 ```
