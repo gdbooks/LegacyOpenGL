@@ -146,6 +146,7 @@ namespace GameApplication {
                 KeyboardBack[i] = KeyboardFront[i];
             }
             for (int i = 0; i < numKeys; ++i) {
+                OpenTK.Input.Key iAsKey = (OpenTK.Input.Key)i;
                 KeyboardFront[i] = Window.Keyboard[(Key)i];
             }
         }
