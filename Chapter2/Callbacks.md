@@ -96,7 +96,7 @@ This code contains the first two lines of OpenGL we are going to write. Don't wo
 // ...
 
 namespace GameApplication {
-    class MainGameWindow {
+    class MainGameWindow : OpenTK.GameWindow {
         public static OpenTK.GameWindow Window = null; 
         
         // ...
