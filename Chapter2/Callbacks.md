@@ -24,7 +24,7 @@ namespace GameApplication {
         [STAThread]
         public static void Main() {
             //create static(global) window instance
-            Window = new OpenTK.GameWindow();
+            Window = new MainGameWindow();
 
             //hook up the initialize callback
             Window.Load += new EventHandler<EventArgs>(Initialize);
