@@ -31,7 +31,6 @@ using System;
 using OpenTK;
 using System.Drawing;
 using OpenTK.Graphics.OpenGL;
-using GameFramework;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
@@ -115,3 +114,14 @@ If you want to implement your own buffered input, it's not difficult. The same p
     * it is true in the back-buffer
 
 The code for this might look something like this:
+```cs
+using System;
+using OpenTK;
+using System.Drawing;
+using OpenTK.Graphics.OpenGL;
+
+namespace GameApplication {
+    class MainGameWindow : OpenTK.GameWindow {
+        // reference to OpenTK window
+        public static OpenTK.GameWindow Window = null;
+```
