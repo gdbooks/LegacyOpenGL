@@ -140,7 +140,14 @@ namespace GameApplication {
         }
         
         void UpdateInput() {
-        
+            for (int i = 0; i < curKeysDown.Length; ++i) {
+                prevKeysDown[i] = curKeysDown[i];
+                curKeysDown[i] = game.Keyboard[(Key)i];
+            }
+            for (int i = 0; i < curKeysDown.Length; ++i) {
+                prevKeysDown[i] = curKeysDown[i];
+                curKeysDown[i] = game.Keyboard[(Key)i];
+            }
         }
         
         public static void Update(object sender, FrameEventArgs e) {
