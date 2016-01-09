@@ -96,7 +96,9 @@ namespace GameApplication {
         // ...
         
         public static void Render(object sender, FrameEventArgs e) {
-
+            GL.ClearColor(clearColor);
+            }
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
         }
         
         // ..
