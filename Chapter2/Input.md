@@ -153,6 +153,8 @@ namespace GameApplication {
         
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
+            UpdateInput();
+            if (
         }
         
         // ... Rest of the MainGameWindow class
