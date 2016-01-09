@@ -29,6 +29,41 @@ class Game {
 }
 ```
 
-You simly make a static reference variable to the Game class inside the 
+You simply make a static reference variable to the Game class inside the ```MainWindow``` class, just like you have a ```Window``` variable referencing an OpenTK window.
+
+```cs
+```cs
+using System;
+using OpenTK;
+using OpenTK.Input;
+using System.Drawing;
+
+namespace GameApplication {
+    class MainGameWindow {
+        //reference to OpenTK window
+        public static OpenTK.GameWindow Window = null;
+        
+        // reference to game
+        public static Game = null;
+        
+        public static void Initialize(object sender, EventArgs e) {
+        
+        }
+        public static void Update(object sender, FrameEventArgs e) {
+            float deltaTime = (float)e.Time;
+        }
+        public static void Render(object sender, FrameEventArgs e) {
+            GL.ClearColor(Color.CadetBlue);
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            
+            // TODO: Render your game here
+            
+            Window.SwapBuffers();
+        }
+        public static void Shutdown(object sender, EventArgs e) {
+
+        }
+        [STAThread]
+```
 
 ## 3) Singleton
