@@ -119,6 +119,7 @@ using System;
 using OpenTK;
 using System.Drawing;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Input;
 
 namespace GameApplication {
     class MainGameWindow : OpenTK.GameWindow {
@@ -170,7 +171,7 @@ namespace GameApplication {
         public static void Update(object sender, FrameEventArgs e) {
             float deltaTime = (float)e.Time;
             UpdateInput();
-            if (
+            bool altDown = KeyDown(OpenTK.Input.Key.AltLeft) || KeyDown(OpenTK.Input.Key.AltRight);
         }
         
         // ... Rest of the MainGameWindow class
