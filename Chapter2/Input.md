@@ -12,7 +12,8 @@ All input related function reside within the ```OpenTK.Input``` namespace. This 
   * Enumeration of mouse buttons
 * OpenTK.Input.KeyboardState
   * Structure containing keyboard information 
- 
+* OpenTK.Input.MouseState
+  * Structure containing mouse  information 
 
 For a compleate overview of the namespace, check out [the doxygen](http://www.opentk.com/files/doc/namespace_open_t_k_1_1_input.html) pages for OpenTK.
 
@@ -86,7 +87,15 @@ void CheckInput() {
 ```
 
 ## Mouse Input
-Mouse input is similar to the keyboard input,
+Mouse input is similar to the keyboard input. Just like with the keyboard there are some [outdated docs](http://www.opentk.com/doc/input) on the OpenTK site about working with a mouse.
+
+```cs
+// Call somewhere in the update loop
+void CheckInput() {
+
+}
+
+Again, the first thing you need is an instance of the ```OpenTK.Input.MouseState``` class. You can get this trough the ```Mouse``` getter of the ```OpenTK.GameWindow``` class.
 
 ## Gamepad Input
 Gamepad support in OpenTK is in a very sad state. It's super duper broken. I'm not even going to cover it here. If you are interested, you can check out the ```InputManager``` code behind joystick support, but it's a verbose ugly hack!
