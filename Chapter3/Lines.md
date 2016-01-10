@@ -58,3 +58,6 @@ You can determine the currently selected stipple pattern with:
 int factor = GL.GetInteger(LineStippleRepeat);
 short pattern =  (short)GL.GetInteger(GetPName.LineStipplePattern)
 ```
+
+##Example
+Follow along with this example
