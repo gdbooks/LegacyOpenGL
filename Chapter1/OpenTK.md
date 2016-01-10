@@ -23,16 +23,16 @@ As you can imagine intellisense is of no help either. The second you type GL\_ a
 To solve this problem OpenTK defines it's own enumerations. Many of them, that map to the huge list of C enumerations. For Instance, in OpenTK havs the following enum:
 
 ```
-enum RenderPrimitives { GL_TRIANGLE, GL_QUAD, GL_FAN };
+enum PrimitiveType { GL_TRIANGLE, GL_QUAD, GL_FAN };
 ```
 
 Now when you look at this function
 
 ```
-void glBegin(RenderPrimitives primitiveState);
+void glBegin(PrimitiveType primitiveState);
 ```
 
-Visual studios intellisense will tell you that the argument is of type ```RenderPrimitives``` and when you type in ```RenderPrimitives.``` intellisense will pop up only the relevant items in the correct enumeration
+Visual studios intellisense will tell you that the argument is of type ```PrimitiveType``` and when you type in ```PrimitiveType.``` intellisense will pop up only the relevant items in the correct enumeration
 
 # Other improvements
 OpenTK is filled with other similar improvements that make writing OpenGL programs in C# much faster and less error prone than writing them in C. The OpenTK framework is available in Visual Studio's package manager NuGet.
