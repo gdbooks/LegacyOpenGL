@@ -1,5 +1,6 @@
 # Drawing a Point with OpenGL
 
+##Rendering a point
 It doesn't get any more primitive then a point, so that's what we should look at first. Drawing a point on screen is actually a really powerful tool, if you can draw a single pixel on screen you can draw anything! With that said, you can draw a point on screen by putting this code in your render function: 
 
 ```
@@ -39,3 +40,14 @@ GL.Begin(PrimitiveType.Points);
     GL.Vertex3(0.0f, 1.0f, 0.0f);
 GL.End();
 ```
+
+##Modifying Point Size
+OpenGL gives you a great deal of control when rendering trough it's state machine. There are many aspects of a single point you can change. Let's take a look at size. To modify the size of a point you use
+
+```
+void GL.PointSize(float size);
+```
+
+This results in a square whose width and height are both represented by the size argument. The default size is 1.0 If point antialiasing is disabled (which it is by default) the point size will be rounded to the nearest integer (with a minimum of 1). 
+
+If you want to get the current point size, you can do so with ```GL.GetFloat``` by passing ```GetPName.PointSize``` as it's argument
