@@ -1,4 +1,3 @@
-
 ## State functions 
 OpenGL provides a number of multipurpose functions that allow you to query the OpenGL state machine. Most of these functions begin with ```GL.Get...```. The most generic of these functions will be covered here, the rest will be covered as we use them in later chapters.
 
