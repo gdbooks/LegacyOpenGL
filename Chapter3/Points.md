@@ -4,7 +4,7 @@ It doesn't get any more primitive then a point, so that's what we should look at
 
 ```
 GL.Begin(PrimitiveType.Points);
-GL.Vertex3(0.0f, 0.0f, 0.0f);
+    GL.Vertex3(0.0f, 0.0f, 0.0f);
 GL.End();
 ```
 
@@ -12,3 +12,30 @@ Run this code (Seriously, when i say run this code i mean type it in and try it 
 
 The first line tells OpenGL that we are about to draw points, by passing the Points primitive type to ```GL.Begin```. The next line tells OpenGL to draw a point at the origin (0, 0, 0). The last line tells OpenGL that we are done drawing.
 
+Note, the indentation on the second line is optional. I indent my code that sits betwel Begin / End calls to make it easyer to read.
+
+What if you want to draw a second point at (0, 1 0)? Well you could type out:
+
+```
+GL.Begin(PrimitiveType.Points);
+    GL.Vertex3(0.0f, 0.0f, 0.0f);
+GL.End();
+GL.Begin(PrimitiveType.Points);
+    GL.Vertex3(0.0f, 1.0f, 0.0f);
+GL.End();
+```
+
+However this is very inefficient! Every time you see a Begin / End block that is 1 draw call. The above code uses two draw calls to render two points.
+
+A draw call is when the CPU has to upload data to the GPU. It is an expensive operation, you should aim to have as few draw calls as possible.
+
+Take note that the primitive type passed to Begin is Points, plural. This suggests that between a single begin / end call you can render multiple points, and that is exactly the case.
+
+In the real world, you would render two points like so:
+
+```
+GL.Begin(PrimitiveType.Points);
+    GL.Vertex3(0.0f, 0.0f, 0.0f);
+    GL.Vertex3(0.0f, 1.0f, 0.0f);
+GL.End();
+```
