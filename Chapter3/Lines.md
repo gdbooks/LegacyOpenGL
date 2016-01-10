@@ -26,4 +26,17 @@ Anti Aliasing points works almost the same as it does for lines. You can toggle 
 
 Again, as with points, when using anti-aliasing OpenGL implementations are only required to support it for line widths of 1.0f.
 
-##Stripple pattern
+##Stipple pattern
+You can specify a stipple pattern with which to draw lines. The stipple pattern specifies a mask that will determine which portions of the line get drawn, therefore it can be used to create dahsed lines. Before specifying a pattern, you must enable stipple-ing with ```EnableCaps.LineStipple```. The you set the stipple with the following function:
+
+```
+void GL.Stipple(int factor, short pattern);
+```
+
+The factor paramater defaults to 1. It is capped to be between 1 and 256. It's used to specify how many times each bit in the pattern is repeated before moving on to the next bit. 
+
+The pattern paramater is used to specify a 16-bit pattern. Any bits that are set will result in the coresponding pixels getting drawn. If a bit is not set, it's pixel is not drawn. Something to be aware of, these bits are applied in reverse, so the low-order bit effects the left most pixel.
+
+Here is an example of a bitmask, and how it corelates to rendering:
+
+![BitPattern](bits.png)
