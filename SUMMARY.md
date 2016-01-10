@@ -9,3 +9,5 @@
   * [Going fullscreen](Chapter2/FullScreen.md)
   * [Your code](Chapter2/YourCode.md)
   * [Input](Chapter2/Input.md)
+* [OpenGL States and Primitives](Chapter3/Introduction.md)
+  * [State functions](Chapter3/StateFunctions.md) 
