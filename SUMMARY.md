@@ -14,3 +14,4 @@
   * [Errors and Hints](Chapter3/ErrorsAndHints.md)
   * [Handling Primitives](Chapter3/HandlingPrimitives.md)
   * [Vertex](Chapter3/Vertex.md)
+  * [Points](Chapter3/Points.md)
