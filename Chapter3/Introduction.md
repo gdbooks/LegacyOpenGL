@@ -7,5 +7,5 @@ The OpenGL state machine consists of hundreds of settings that affect various as
 Within OpenTK, there is a class called GL. All OpenGL functions are implemented as static function of the GL class. For example, to begin a primitive you would:
 
 ```
-GL.Begin(BeginMode.Points);
+GL.Begin(PrimitiveType.Points);
 ```
