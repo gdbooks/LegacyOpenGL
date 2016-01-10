@@ -15,3 +15,11 @@ Just like with points, you can draw multiple lines within the Begin / End calls.
 As with points, OpenGL allows you to change several parameters of the state machine that affect how your line is drawn. In addition to setting the line width and setting anti-aliasing you can also specify a stipple pattern.
 
 ##Line Width
+The default line width is 1.0. To find out the currently selected line with pass ```GetPName.LineWidth``` to ```GL.GetFloat```. To change the line width, call the ```GL.LineWidth``` function:
+
+```
+void GL.LineWidth(float);
+```
+
+## Anti aliasing lines
+Anti Aliasing points works almost the same as it does for lines. 
