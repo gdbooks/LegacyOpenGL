@@ -25,4 +25,4 @@ You specify the primitive type with the ```BeginMode``` enum. It's values are:
 * __BeginMode.QuadStrip__ A series of connected quadralatirals
 * __BeginMode.Polygon__ A convex polygon with an arbitrary number of vertices.
 
-Here is an example of what each primitive could draw like:
+Here is an example of what each primitive would draw like:
