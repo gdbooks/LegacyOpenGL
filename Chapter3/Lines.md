@@ -45,7 +45,10 @@ The following code enables linte stippling and then specifies a pattern of alter
 
 ```
 GL.Enable(EnableCaps.LineStipple);
-short pattern = 0xFAFA; // 1111 1010 1111 1010
+short pattern = Convert.ToInt16("FAFA", 16);
+// Convert.ToInt16 converts a hex string into a short. 
+// We are using the below hex:
+// 0xFAFA OR 1111 1010 1111 1010
 
 // Draw the pattern as 0101 1111 0101 1111
 // because remember, it's reversed, low bit first.
@@ -61,3 +64,42 @@ short pattern =  (short)GL.GetInteger(GetPName.LineStipplePattern)
 
 ##Example
 Follow along with this example
+
+```
+// Draw a series of lines that increase in width
+float lineWidth = 0.5f;
+for (float lineY = 1.0f; lineY > -1.0f; lineY -= 0.25f) {
+    GL.LineWidth(lineWidth);
+
+    GL.Begin(PrimitiveType.Lines);
+        GL.Vertex3(-0.9f,  lineY, 0.0f);
+        GL.Vertex3(-0.1f,  lineY, 0.0f);
+    GL.End();
+
+    lineWidth += 1.0f;
+}
+
+// Deaw a series of lines with stippline
+lineWidth = 0.5f;
+GL.Enable(EnableCap.LineStipple);
+short pattern = Convert.ToInt16("AAAA", 16);
+GL.LineStipple(2, pattern);
+
+for (float lineY = 1.0f; lineY > -1.0f; lineY -= 0.25f) {
+    GL.LineWidth(lineWidth);
+
+    GL.Begin(PrimitiveType.Lines);
+    GL.Vertex3(0.1f, lineY, 0.0f);
+    GL.Vertex3(0.9f, lineY, 0.0f);
+    GL.End();
+
+    lineWidth += 1.0f;
+}
+
+// Try taking this out, see what happens!
+GL.Disable(EnableCap.LineStipple);
+```
+
+In the end, what happens if you take out that GL.Disable? The short of it is, nothing automatically resets the OpenGL state machine at the end of the frame. __If you enable something, it will stay enabled__ (across frames & draw calls) __until YOU disbale it__!
+
+The bolded sentance above is very important. More often than not when you have a bug it's because you set the state machine into some state, and didn't set it back to default afterwards
