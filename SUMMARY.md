@@ -15,3 +15,4 @@
   * [Handling Primitives](Chapter3/HandlingPrimitives.md)
   * [Vertex](Chapter3/Vertex.md)
   * [Points](Chapter3/Points.md)
+  * [Lines](Chapter3/Lines.md)
