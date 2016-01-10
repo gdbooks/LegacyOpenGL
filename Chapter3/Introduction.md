@@ -33,4 +33,4 @@ void GL.Enable(EnableCap enableCap);
 void GL.Disable(EnableCap enableCap);
 ```
 
-The cap parameter represents the OpenGL capibility you want to turn on or off. ```GL.Enable``` turns it on, conversly ```GL.Disable``` turns it off.
+The cap parameter represents the OpenGL capibility you want to turn on or off. ```GL.Enable``` turns it on, conversly ```GL.Disable``` turns it off. Some of the more common caps are ```EnableCap.Blend``` (for texture blending), ```EnableCap.Texture2D``` (for texturing) and ```EnableCap.Lighting``` for lighting.
