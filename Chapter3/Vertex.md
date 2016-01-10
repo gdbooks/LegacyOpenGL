@@ -8,7 +8,7 @@ The version of this function you will use most often is ```GL.Vertex3``` which t
 Lets see an example:
 ```
 // Tell OpenGL we want to draw a line
-GL.Begin(BeginMode.Lines);
+GL.Begin(PrimitiveType.Lines);
 
 // Tell OpenGL where the first point of the line is
 GL.Vertex3(2.0f, 1.0f, 3.0f);
