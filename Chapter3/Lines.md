@@ -40,3 +40,21 @@ The pattern paramater is used to specify a 16-bit pattern. Any bits that are set
 Here is an example of a bitmask, and how it corelates to rendering:
 
 ![BitPattern](bits.png)
+
+The following code enables linte stippling and then specifies a pattern of alternating dashes and dots:
+
+```
+GL.Enable(EnableCaps.LineStipple);
+short pattern = 0xFAFA; // 1111 1010 1111 1010
+
+// Draw the pattern as 0101 1111 0101 1111
+// because remember, it's reversed, low bit first.
+GL.LineStipple(2, pattern);
+```
+
+You can determine the currently selected stipple pattern with:
+
+```
+int factor = GL.GetInteger(LineStippleRepeat);
+short pattern =  (short)GL.GetInteger(GetPName.LineStipplePattern)
+```
