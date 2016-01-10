@@ -50,4 +50,73 @@ void GL.PointSize(float size);
 
 This results in a square whose width and height are both represented by the size argument. The default size is 1.0 If point antialiasing is disabled (which it is by default) the point size will be rounded to the nearest integer (with a minimum of 1). 
 
-If you want to get the current point size, you can do so with ```GL.GetFloat``` by passing ```GetPName.PointSize``` as it's argument
+If you want to get the current point size, you can do so with ```GL.GetFloat``` by passing ```GetPName.PointSize``` as it's argument.
+
+Here is an example of how this could be used:
+```
+float oldSize = GL.GetFloat(GetPName.PointSize);
+// if a point was small, make it big. Otherwise make it 1!
+if (oldSize < 1.0f) {
+    GL.PointSize(5.0f);
+}
+else {
+    GL.PointSize(1.0f);
+}
+```
+
+##Antialiasing points
+Altough you can specify primitives with almost infinite precision, there are a finite number of pixels on screen. This causes the edges of those primitives to look jagged. Anti-Aliasing is a method to smooth those edges, giving the polygon a more natural look.
+
+You can enable anti-aliasing by passing ```EnableCap.PointSmooth``` to ```GL.Enable```. You can disable it by passing the same paramater to ```GL.Disable```. If you are unsure if point smoothing is currently enabled in the state machine, use ```GL.IsEnabled``` with the same argument.
+
+```
+// If anti-aliasing is disabled, enable it
+if (!GL.IsEnabled(EnableCap.PointSmooth)) {
+    GL.Enable(EnableCap.PointSmooth);
+}
+```
+
+When anti-aliasing is enabled, not all pixel sizes may benefit. The specs say only a point size of 1.0 is guaranteed to get anti-aliased. Other sizes depend on your graphics card and OpenGL driver.
+
+When anti aliasing is on, the current point size is used as the diameter of a circle, centered around the vertex.
+
+##Effect of distance
+Normally points always occupy the same amount of space onscreen, regardless of how far away they are from the viewer. For some applications (particles, stars) points need to be larger if they are closer, and smaller if they are farther. You can do this with the GL.PointParamater function. The signature looks like this
+
+```
+void GL.PointParameter(PointParameterName param, int value);
+void GL.PointParameter(PointParameterName param, int[] value);
+void GL.PointParameter(PointParameterName param, float value);
+void GL.PointParameter(PointParameterName param, float[] value);
+```
+
+The following are valid arguments:
+* __PointSizeMin__ Sets the lower bounds OpenGL will scale a point to, second argument is a float.
+* __PointSizeMax__ Sets the upper bounds OpenGL will scale a point to, second argument is a float.
+* __PointDistanceAttenuation__ Taes an Array of 3 floats that corespond to a, b, c of the attenuation algorithm ```1 / (a + b * d + c * (d * d))```
+* __PointFadeThreshold__ Takes a single float, points smaller than this will start to fade out
+
+## Example
+Follow along with this example, see what the results look like on your screen when you add this code to your render block:
+
+```
+float pointSize = 0.5f;
+for (float pointPosition = -1.0f; pointPosition < 1.0f; pointPosition += 0.25f) {
+    GL.PointSize(pointSize);
+
+    GL.Begin(PrimitiveType.Points);
+        GL.Vertex3(pointPosition, 0.0f, 0.0f);
+    GL.End();
+
+    pointSize += 1.0f;
+}
+```
+
+## Space
+__This is very important__
+
+Take note of where the points on screen are rendered. In the middle. This is because we start X at -1.
+
+In OpenGL, __Point(0, 0)__ is the middle of the screen. The left size is __X: -1__ the right side is __X: 1__. Similarly the top is __Y: 1__ and the bottom is __Y: -1__. Z also ranges from -1 to 1. 
+
+Another way to think about this, OpenGL draws inside of a cube. The far left corner of the cube is at (-1, -1, -1), the far right corner is at (1, 1, 1). These coordinates are called __Normalized Device Coordinate__s or __NDC__ for short.
