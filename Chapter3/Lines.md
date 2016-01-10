@@ -22,4 +22,8 @@ void GL.LineWidth(float);
 ```
 
 ## Anti aliasing lines
-Anti Aliasing points works almost the same as it does for lines. 
+Anti Aliasing points works almost the same as it does for lines. You can toggle it by passing ```EnableCap.LineSmooth``` to ```GL.Enable``` and ```GL.Disable```. You can check if it's turned on by passing the same enum value to ```GL.IsEnabled```
+
+Again, as with points, when using anti-aliasing OpenGL implementations are only required to support it for line widths of 1.0f.
+
+##Stripple pattern
