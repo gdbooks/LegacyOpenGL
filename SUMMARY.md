@@ -17,3 +17,4 @@
   * [Points](Chapter3/Points.md)
   * [Lines](Chapter3/Lines.md)
   * [Polygons](Chapter3/Polygons.md)
+  * [Triangles](Chapter3/Triangles.md)
