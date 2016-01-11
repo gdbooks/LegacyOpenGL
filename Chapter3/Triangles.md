@@ -25,3 +25,25 @@ Gl.Begin(PrimitiveType.Triangles);
     GL.Vertex3(0, 1, 0);
 GL.End();
 ```
+
+Just like with points and lines, you can draw multiple triangles at one time. OpenGL treats every vertex tripple as a seperate triangle. If the number of vertices isn't a multiple of 3, the extra vertices are discarded.
+
+##Degenerates
+A triangle with an area of 0 is essentially a point or a line, for example:
+
+```
+(1, 0, 0)
+(1, 0, 0)
+(0, 1, 0)
+```
+
+The above tirangle is a line, it has no height! This __WILL NOT RENDER__ as a line. Degenerate triangles are rejected and never rendered. (This behaviour is often exploited when rendering large terrains or mountains)
+
+## Triangle Variations
+OpenGL also supports a couple of primitives related to triangles that might save you some keystrokes. In the olden days they used to save performance too, but on modern cards (Graphics cards created after 2003) there is no performance difference.
+
+Lets assume you use two triangles to render a distorted quad:
+
+![TRIANGULATED](tri-quad.png)
+
+Here you have two connected triangles with vertices __A__ and __C__ in common. If you render them with ```PrimitiveType.Triangles``` you will need to define a total of 6 vertices. This means you will send vertices __A__ and __C__ trough the rendering pipeline twice! 
