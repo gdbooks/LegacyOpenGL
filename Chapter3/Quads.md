@@ -6,6 +6,13 @@ OpenGL provides Quad strips as a means of improving the rendering of multiple la
 
 When rendering a quad strip, the first 4 vertices specify the first quad, after that every two vertices will be used with the previous two vertices to create new quads.
 
+This is the order you should define a quad in:
+
+![QUAD](quad.png)
+
 ##Polygons
 As discussed earlyer OpenGL also supports rendering polygons with an arbitrary number of sides. In such cases, onyl one polygon can be drawn inside a ```GL.Beign``` / ```GL.End``` block. To render a polygon pass ```PrimitiveType.Polygon``` (Note, it's singular) to ```GL.Begin```.  Once ```GL.End``` is reached, the last vertex is connected to the first. If less than 3 vertices are provided, the polygon is considered degenerate and nothing will render. Here is an example of what an arbitrary polygon can look like:
 
+![POLY](poly.png)
+
+##Sample
