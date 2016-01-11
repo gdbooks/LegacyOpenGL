@@ -104,7 +104,7 @@ void GL.FrontFace(FrontFaceDirection);
 Try it! Define a polygon with 3 points in a counter-clockwise fashion. This will produce a triangle. Run your program and it will show up on screen. Now add this line of code before running your program:
 
 ```
- GL.FrontFace(FrontFaceDirection.Cw);
+GL.FrontFace(FrontFaceDirection.Cw);
 ```
 
 By default culling is disabled. In games this is a bad thing as rendering gets expensive. One of the first things most games do in ```Initialize``` is to enable culling and set it to cull out back faces.
