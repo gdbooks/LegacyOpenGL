@@ -47,3 +47,17 @@ Lets assume you use two triangles to render a distorted quad:
 ![TRIANGULATED](tri-quad.png)
 
 Here you have two connected triangles with vertices __A__ and __C__ in common. If you render them with ```PrimitiveType.Triangles``` you will need to define a total of 6 vertices. This means you will send vertices __A__ and __C__ trough the rendering pipeline twice! 
+
+One way to aoid this is to use a __triangle strip__. When calling ```GL.Begin``` pass ```PrimitiveType.TriangleStrip``` for it's argument. OpenGL will __draw the first 3 vertices as a triangle__, after that it will take __every vertex specified and combine it with the previous two vertices__ to form another triangle. This means that after the first triangle, every additional triangle will only need one vertex for it's data.
+
+Here is a visual example of a triangle strip:
+
+![STRIP](strip.png)
+
+Another variation on triangles is the __triangle fan__. You can visualize them as a series of triangles around a central vertex. You draw fans by passing ```PrimitiveType.TriangleFan``` to ```GL.Begin```. The first vertex specified is the center vertex. Every following two vertices make a triangle with the center vertex. Here is what that looks like:
+
+![FAN](fan.png)
+
+Fans don't offer as much savins as strips, but they still offer some savings.
+
+## A history lesson
