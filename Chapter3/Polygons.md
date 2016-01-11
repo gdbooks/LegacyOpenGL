@@ -110,3 +110,12 @@ GL.FrontFace(FrontFaceDirection.Cw);
 And the triangle disapears! This is because you now set front facing polygons to be CW, and back facing ones to be CCW, the opposite of the default behaviour.
 
 By default culling is disabled. In games this is a bad thing as rendering gets expensive. One of the first things most games do in ```Initialize``` is to enable culling and set it to cull out back faces. While the default CCW front face is great, we often also explicitly set it to CCW so that future programmers know how the system works by reading the code.
+
+##Anti-Aliasing polygons
+As with points and lines you can choose to anti-alias polygons. You control polygon antialiasing by passing ```EnableCap.PolygonSmooth``` to ```GL.Enable``` or ```GL.Disable```. You can check if anti aliasing is enabled by passing ```EnableCap.PolygonSmooth``` to ```GL.IsEnabled```. As you might expect it is disabled by default. Here is an example of how to enable it:
+
+```
+if (!GL.Isenabled(EnableCap.PolygonSmooth)) {
+    GL.Enable(EnableCap.PolygonSmooth);
+}
+```
