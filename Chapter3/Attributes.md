@@ -32,7 +32,7 @@ void RenderModel() {
     }
     
     DoTexturing();
-    GL.Begin(GL.Triangles();
+    GL.Begin(GL.Triangles);
     foreach(Traignle t in triangles) {
     
     }
