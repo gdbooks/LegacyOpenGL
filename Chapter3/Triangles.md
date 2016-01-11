@@ -61,3 +61,12 @@ Another variation on triangles is the __triangle fan__. You can visualize them a
 Fans don't offer as much savins as strips, but they still offer some savings.
 
 ## A history lesson
+From about 2000 to 2006 triangle strips provided a LOT of savings in BOTH memory and performance. We simply didn't have enough ram and horsepower on the GPU to support large models made up of too many triangles.
+
+Many programmers capitalized on this, and wrote software that would take a triangulated model and create a model of triangle strips from it. These software where collectivley called strippers, because they made strips.
+
+As you can imagine strippers where not very efficient with large complex models. As graphics cards grew more powerful, these software became more and more outdated.
+
+On a fairly new graphcis card (2006+) it is faster to draw a million regular triangles than it is to draw the same number of triangles using a strip. This is because graphics cards manufacturers caught on that rendering triangles fast is important, so they built special circuitry to handle the situation.
+
+And just like that modern games grew up. We have stopped stripping and are instead just rendering large sets of triangles.
