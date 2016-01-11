@@ -18,3 +18,4 @@
   * [Lines](Chapter3/Lines.md)
   * [Polygons](Chapter3/Polygons.md)
   * [Triangles](Chapter3/Triangles.md)
+  * [Quadrilaterals](Chapter3/Quads.md)
