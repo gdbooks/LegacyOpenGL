@@ -25,17 +25,27 @@ It's common to set a default state for everything in your initialize function. T
 
 ```
 void RenderModel() {
+    // Push bits as we might go into wireframe mode, or into untextured mode. 
+    // We don't know for sure, it's configured with a variable.
+    // Some models might be wireframe, others might not!
     GL.PushAttrib(AttribMask.PolygonBit | AttribMask.TextureBit);
     
     if (renderWireframe) {
         GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
     }
     
+    // This function might change texturing paramaters!
     DoTexturing();
+    
     GL.Begin(PrimitiveType.Triangles);
     foreach(Traignle t in triangles) {
-    
+        GL.Vertex3(t.v1.x, t.v1.y, t.v1.z);
+        GL.Vertex3(t.v2.x, t.v2.y, t.v2.z);
+        GL.Vertex3(t.v3.x, t.v3.y, t.v3.z);
     }
     GL.End();
+    
+    // Restore polygon and texture render modes to default!
+    GL.PopAttrib();
 }
 ```
