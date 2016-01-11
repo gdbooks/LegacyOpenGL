@@ -101,7 +101,7 @@ By default OpenGL treats polygons with counter-clockwise (CCW) ordering as front
 void GL.FrontFace(FrontFaceDirection);
 ```
 
-Try it! Define a polygon with 3 points in a counter-clockwise fashion. This will produce a triangle. Run your program and it will show up on screen. Now add this line of code before running your program:
+Try it! Define a polygon with 3 points in a counter-clockwise fashion. Enable culling. This will produce a triangle. Run your program and it will show up on screen. Now add this line of code before running your program:
 
 ```
 GL.FrontFace(FrontFaceDirection.Cw);
