@@ -107,4 +107,6 @@ Try it! Define a polygon with 3 points in a counter-clockwise fashion. Enable cu
 GL.FrontFace(FrontFaceDirection.Cw);
 ```
 
-By default culling is disabled. In games this is a bad thing as rendering gets expensive. One of the first things most games do in ```Initialize``` is to enable culling and set it to cull out back faces.
+And the triangle disapears! This is because you now set front facing polygons to be CW, and back facing ones to be CCW, the opposite of the default behaviour.
+
+By default culling is disabled. In games this is a bad thing as rendering gets expensive. One of the first things most games do in ```Initialize``` is to enable culling and set it to cull out back faces. While the default CCW front face is great, we often also explicitly set it to CCW so that future programmers know how the system works by reading the code.
