@@ -19,3 +19,4 @@
   * [Polygons](Chapter3/Polygons.md)
   * [Triangles](Chapter3/Triangles.md)
   * [Quadrilaterals and Polygons](Chapter3/Quads.md)
+  * [Attributes](Chapter3/Attributes.md)
