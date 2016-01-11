@@ -16,3 +16,4 @@
   * [Vertex](Chapter3/Vertex.md)
   * [Points](Chapter3/Points.md)
   * [Lines](Chapter3/Lines.md)
+  * [Polygons](Chapter3/Polygons.md)
