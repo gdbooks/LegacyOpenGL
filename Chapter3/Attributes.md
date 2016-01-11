@@ -28,7 +28,8 @@ void RenderModel() {
     GL.PushAttrib(AttribMask.PolygonBit | AttribMask.TextureBit);
     
     if (renderWireframe) {
-        GL.
+        GL.PolygonMode(MaterialFace.Front, PolygonMode.Line);
+
     }
     
     DoTexturing();
