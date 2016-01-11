@@ -26,3 +26,19 @@ GL.PolygonMode(MaterialFace.Back, PolygonMode.Fill);
 
 If you have not changed the polygon mode for back facing poly's, the second line is redundant. This is because the default fill mode is ```Fill```. But better safe than sorry.
 
+## On your own
+Try to draw 5 squares (NOT CUBES) on screen. To draw a square, call ```GL.Begin``` with ```PrimitiveType.Polygon``` as it's argument. The put 4 vertices down. 
+
+Remember, the view goes from -1 to +1. Your vertices all have to be within that range. Keep their Z coordinates at 0.
+
+Once all 5 are rendering, set the following polygon modes (each square will have a different mode)
+
+* ```GL.PolygonMode(MaterialFace.Front, PolygonMode.Line);```
+* ```GL.PolygonMode(MaterialFace.Back, PolygonMode.Point);```
+* ```GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);```
+* ```GL.PolygonMode(MaterialFace.Back, PolygonMode.Line);```
+* ```GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);```
+
+See how the rendering changed.
+
+## Culling
