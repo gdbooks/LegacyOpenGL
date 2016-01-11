@@ -119,3 +119,12 @@ if (!GL.Isenabled(EnableCap.PolygonSmooth)) {
     GL.Enable(EnableCap.PolygonSmooth);
 }
 ```
+
+## On Your Own
+On your own try to:
+* Disable polygon anti-aliasing
+* Draw a triangle on the left side of the screen
+* Enable polygon anti-aliasing
+* Draw a triangle on the right side of the screen
+
+Send me a screenshot of the resulting window on skype (don't upload it anywhere, i don't want compression artifacts in this). I want to see what the difference looks like on your computer. 
