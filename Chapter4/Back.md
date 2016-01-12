@@ -31,3 +31,5 @@ The modeling transformation allows you to position and orient a model by moving,
 ![TRANSFORMS](three_transform.png)
 
 The order in which you specify modeling transformations is very important to the final rendering of your scene. (remember, order of matrix multiplication matters)
+
+![ORDER](order.gif)
