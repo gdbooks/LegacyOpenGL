@@ -10,24 +10,40 @@ So, add the following code to the render function, before the demo game renders:
 
 ```cs
 // Draw grid
-            // Set render color to gray
-            GL.Color3(0.5f, 0.5f, 0.5f);
-            // Draw a 40x40 grid at 0.5 intervals
-            // The grid will go from -10 to +10
-            GL.Begin(PrimitiveType.Lines);
-            // Draw horizontal lines
-            for (int x = 0; x < 40; ++x) {
-                float xPos = (float)x * 0.5f - 10.0f;
-                GL.Vertex3(xPos, 0, -10);
-                GL.Vertex3(xPos, 0,  10);
-            }
-            // Draw vertical lines
-            for (int z = 0; z < 40; ++z) {
-                float zPos = (float)z * 0.5f - 10.0f;
-                GL.Vertex3(-10, 0, zPos);
-                GL.Vertex3( 10, 0, zPos);
-            }
-            GL.End();
+// Set render color to gray
+GL.Color3(0.5f, 0.5f, 0.5f);
+// Draw a 40x40 grid at 0.5 intervals
+// The grid will go from -10 to +10
+GL.Begin(PrimitiveType.Lines);
+// Draw horizontal lines
+for (int x = 0; x < 40; ++x) {
+    float xPos = (float)x * 0.5f - 10.0f;
+    GL.Vertex3(xPos, 0, -10);
+    GL.Vertex3(xPos, 0,  10);
+}
+// Draw vertical lines
+for (int z = 0; z < 40; ++z) {
+    float zPos = (float)z * 0.5f - 10.0f;
+    GL.Vertex3(-10, 0, zPos);
+    GL.Vertex3( 10, 0, zPos);
+}
+GL.End();
+
+// Draw basis vectors
+GL.Begin(PrimitiveType.Lines);
+// Set the color to R & draw X axis
+GL.Color3(1.0f, 0.0f, 0.0f);
+GL.Vertex3(0.0f, 0.0f, 0.0f);
+GL.Vertex3(1.0f, 0.0f, 0.0f);
+// Set the color to G & draw the Y axis
+GL.Color3(0.0f, 1.0f, 0.0f);
+GL.Vertex3(0.0f, 0.0f, 0.0f);
+GL.Vertex3(0.0f, 1.0f, 0.0f);
+// Set the color to B & draw the Z axis
+GL.Color3(0.0f, 0.0f, 1.0f);
+GL.Vertex3(0.0f, 0.0f, 0.0f);
+GL.Vertex3(0.0f, 0.0f, 1.0f);
+GL.End();
 ```
 
 Once we are able to position the camera and add perspective you will see that what we did really looks like this:
