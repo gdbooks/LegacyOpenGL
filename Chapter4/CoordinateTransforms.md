@@ -19,3 +19,12 @@ While these four transformations are standard in 3D graphics, OpenGL combines th
 If yo look at the above diagram, there are only two matrices in the pipeline. These are the matrices that the state machine let's you specify, the __ModelView__ matrix and the __Projection__ matrix.
 
 ## A closer look at the pipeline
+
+![PIPE](pipe.jpg)
+
+This is the entire pipeline in a bit easyer to follow fashion. Let's take a closer look at what each section foes.
+
+### Object Coordinates
+Applications specify vertices in object coordinates. The definition of object coordinates is entireley up to the application. Some applications render scenes that are composed of many models, each created and specified in it's own individual coordinate system.
+
+What this means is that each model is centered around it's own origin. When you export a 3D model from blender, that model was created around (0, 0, 0) and is said to be in model space.
