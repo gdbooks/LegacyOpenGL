@@ -93,3 +93,10 @@ Here is an example of looking at two objects from the exact same position with t
 This is how the respective cameras see the world:
 
 ![CAMWORLD](camera_sees.png)
+
+### Clip Coordinates
+OpenGL clips primitives that lie outside the view volume in clip coordinate space. A clip coordinate vertex is within the viw volume if it's x, y and z values are all within the  -w to w space.
+
+Wow that makes no sense! Don't worry, this is one of those things OpenGL does automatically for you! You will never have to concern yourself with the implementation of this step. 
+
+You will configure clip coordinates using the ```GL.Ortho``` and ```GL.Frustum``` methods.
