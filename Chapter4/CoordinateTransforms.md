@@ -69,4 +69,4 @@ Think of eye coordinates as "what the camera sees"
 ### The Projection Transformation
 OpenGL multiplies eye coordinates by the projection matrix to produce clip coordinates. The projection matrix defines the size and shape of the view volume, and therefore determines the portion of eye coordinates that will be visible or invisible. 
 
-Typically 
+Typically applications create a __perspecive projection__ or a parallel projection. The proper name a parallel projection is __orthographic projection__
