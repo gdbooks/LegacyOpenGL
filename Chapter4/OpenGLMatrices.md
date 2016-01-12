@@ -48,6 +48,8 @@ GL.End();
 
 Running your application, your screen should look like this:
 
+![FOR_NOW](fornow.png)
+
 Once we are able to position the camera and add perspective you will see that what we did really looks like this:
 
 ![REAL](reality.png)
