@@ -11,3 +11,5 @@ Transformations work the same way. They allow you to move, rotate and manipulate
 * __Viewing Tranasform__ The viewing transformation specifies the location of the camera and moves objects from world coordinates into _eye coordinates_ (camera coordinates)
 * __Projection Transform__ The projection transformation defines the viewing volume and clipping planes, it maps objects from eye coordinates to clip coordinates (-1 to +1 on all axis, clip coordinates are also called NDC)
 * __Viewport transform__ The viewport transformation maps the clip coordinates (NDC) into the two-dimensional view port (the window on your screen)
+
+while these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. We will discuss this soon.
