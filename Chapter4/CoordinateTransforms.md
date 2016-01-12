@@ -1,11 +1,9 @@
 # Understanding Coordinate Transformations
-Look around for a moment, imagine that you have a camera in your hands and you are taking photographs of your surroundings. You probably have a desk, a computer, maybe some books around you. Each of these objects has a shape in a __local coordinate system__ which is unique for every object, is centered on the object and doesn't depend on any other objects. They also have some position and orientation is world space. You have a position and orientation in world space as well. The relationship between the positions of these objects around you and your position and orientation determines weather or not objects are in front of you or behind you.
+The OpenGL transformation pipeline transforms application vertices into window coordinates, where they can be rasterized. Like all 3D graphics systems, OpenGL uses linear algebra; it treats vertices as vectors and transforms them by using vector-matrix multiplication. The transformation process is called a __pipeline__ because geometry passes trough several coordinate systems on the way to window space. Each coordinate system serves a purpose for one or more OpenGL features.
 
-If you are taking pictures of these objects, the lense of the camera also has some effects on the final outcome of the pictures. A zoom lense might make objects appear closer to your position. You am, click and the picture is "rendered" onto the camera film. Your camera also has a size and resolution which define how the final picture is rendered. 
+For each stage of the transformation pipeline, this section describes the characteristics of that coordinate system, what OpenGL operations are performed there, and how to construct and control transformations to the next coordinate system in the pipeline.
 
-The final image you see in a picture is a product of how each objects position, your position, your camera lenses position and its settings interact to map your surrounding objects three-dimensional features onto a two-dimensional picutre.
-
-Transformations work the same way. They allow you to move, rotate and manipulate objects in a 3D world, while also allowing you to project 3D coordinates onto a 2D screen. Altough transformations seem to modify an object directly, in reality, they are merely transforming the objects local coordinate system into another coordinate system. When rendering 3D scenes, vertices pass trough 4 types of transformations before they are rendered onto the screen:
+ When rendering 3D scenes, vertices pass trough 4 types of transformations before they are rendered onto the screen:
 
 * __Modeling Transform__ The modeling transformation moves objects around the scene and moves objects from local coordinates into world coordinates
 * __Viewing Tranasform__ The viewing transformation specifies the location of the camera and moves objects from world coordinates into _eye coordinates_ (camera coordinates)
@@ -16,6 +14,6 @@ A summary of the transformation pipeline:
 
 ![TRANSFORM](transform.png)
 
-while these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. The viewport transform (also known as w divide) is done automatrically by OpenGL.
+While these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. The viewport transform (also known as w divide) is done automatrically by OpenGL.
 
-At the end of the day, with all the house keeping OpenGL does you will only have to worry about two matrices. The __ModelView__ matrix and the __Projection__ matrix.
+If yo look at the above diagram, there are only two matrices in the pipeline. These are the matrices that the state machine let's you specify, the __ModelView__ matrix and the __Projection__ matrix.
