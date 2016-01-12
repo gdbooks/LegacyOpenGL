@@ -36,3 +36,6 @@ The order in which you specify modeling transformations is very important to the
 
 Rotating an object first, then translating it will give a very different result than translating an object and then rotating it. So, what's the proper order to transform your primitives? Well that depends on the result you want to get. But in general, multiplication order is accepted as:
 
+* First Scale
+* Second Rotate
+* Lastly Translate
