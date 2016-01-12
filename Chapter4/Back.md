@@ -33,3 +33,6 @@ The modeling transformation allows you to position and orient a model by moving,
 The order in which you specify modeling transformations is very important to the final rendering of your scene. (remember, order of matrix multiplication matters)
 
 ![ORDER](order.gif)
+
+Rotating an object first, then translating it will give a very different result than translating an object and then rotating it. So, what's the proper order to transform your primitives? Well that depends on the result you want to get. But in general, multiplication order is accepted as:
+
