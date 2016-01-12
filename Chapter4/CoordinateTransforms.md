@@ -70,3 +70,11 @@ Think of eye coordinates as "what the camera sees"
 OpenGL multiplies eye coordinates by the projection matrix to produce clip coordinates. The projection matrix defines the size and shape of the view volume, and therefore determines the portion of eye coordinates that will be visible or invisible. 
 
 Typically applications create a __perspecive projection__ or a parallel projection. The proper name a parallel projection is __orthographic projection__
+
+Here is an example of looking at two objects from the exact same position with the exact same orientation. The only difference is one is looking with perspective, the other is looking orthographic:
+
+![PVO](pvo.gif)
+
+This is how the respective cameras see the world:
+
+![CAMWORLD](camera_sees.png)
