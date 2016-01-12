@@ -100,3 +100,14 @@ OpenGL clips primitives that lie outside the view volume in clip coordinate spac
 Wow that makes no sense! Don't worry, this is one of those things OpenGL does automatically for you! You will never have to concern yourself with the implementation of this step. 
 
 You will configure clip coordinates using the ```GL.Ortho``` and ```GL.Frustum``` methods.
+
+Basically, OpenGL ignores any geometry outside the view volume, (se the green sphere in the above picture)
+
+### Perspective Division
+OpenGL divides clip coordinate (x, y and z) values by the clip-coordinate w value to produce noramlized device coordinates (__NDC__). As with clipping, OpenGL will do this automatically for you (provided you have a projection matrix in place). If you have an orthographics projection matrix, nothing really happens here.
+
+For perspective projections, the perspective division step effectivley shrinks distant geometry and expands near geometry.
+
+Remember, __NDC__ space goes from -1 to +1 on all axis.
+
+### Normalized Device Coordinates
