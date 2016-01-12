@@ -13,4 +13,4 @@ In this chapter you will learn about
 
 If you need a refresher on the matrix math implementation details, [this](https://www.youtube.com/watch?v=V6sJpjYzfaQ) video appears to be useful.
 
-I tired to follow the book, but it was AWEFUL, it confused even me. So this chapter is a take from another book, "OpenGL Distilled" along with articles videos and my insights.
+I tired to follow the book, but it was AWFUL, it confused even me. So this chapter is a take from another book, "OpenGL Distilled" along with articles videos and my insights.
