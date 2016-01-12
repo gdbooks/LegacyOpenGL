@@ -64,7 +64,9 @@ For geometry to be visible in a standard perspecive projection it must lie somew
 
 When you multiply an object bythe __ModelView__ matrix it ends up in eye coordinates, which meets all 4 of the above requirements. This is why we don't move the camera, rather the world around the camera.
 
-Think of eye coordinates as "what the camera sees"
+Think of eye coordinates as "what the camera sees". This is what the eye coordinate space looks like, it is the camera multiplied by the view matrix.
+
+![CAM](cam.png)
 
 ### The Projection Transformation
 OpenGL multiplies eye coordinates by the projection matrix to produce clip coordinates. The projection matrix defines the size and shape of the view volume, and therefore determines the portion of eye coordinates that will be visible or invisible. 
