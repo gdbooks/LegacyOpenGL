@@ -38,6 +38,19 @@ The model transformation transforms geometry from object to world coordinates. A
 
 Once you apply the model transform, the object is now in world space. That is, X, Y, Z is (potentially) no longer located at the origin of the world.
 
+The modeling transformation allows you to position and orient a model by moving, rotating and scaling it You can perform these operations one at a time or as a combination of events. 
+![TRANSFORMS](three_transform.png)
+
+The order in which you specify modeling transformations is very important to the final rendering of your scene. (remember, order of matrix multiplication matters)
+
+![ORDER](order.gif)
+
+Rotating an object first, then translating it will give a very different result than translating an object and then rotating it. So, what's the proper order to transform your primitives? Well that depends on the result you want to get. But in general, multiplication order is accepted as:
+
+* First Scale
+* Second Rotate
+* Lastly Translate
+
 ### World Coordinates
 The world-coordinate system is an application construct that exists between the object and eye coordinate systems.  If we split the __ModelView__ matrix into two matrices, multiplying object space coordinates by the __Model__ matrix would get them to world space.
 
