@@ -111,3 +111,14 @@ For perspective projections, the perspective division step effectivley shrinks d
 Remember, __NDC__ space goes from -1 to +1 on all axis.
 
 ### Normalized Device Coordinates
+In normalized device coordinate space all vertex values lie withing the -1 to +1 range. In previous coordinate systems, they could have been anywhere!
+
+OpenGL performs no calulations in NDC space, it's simply a coordinate system that exists between the perspective division and the viewport transformation to window coordinates.
+
+### The Viewport Transform
+The viewport transformation is the final stage of the __transformation pipeline__. It's a scale and translation that maps the -1 to +1 NDC cube into X / Y window coordinates. Technically this stage also modifies the Z value to be within an acceptable range of the Z-Buffer, which we will talk about later.
+
+Again, this happens automatically, you have some control using the ```GL.Viewport``` function, which we will discuss later.
+
+### Window Coordinates
+Window coordinates have their _x, y origin_
