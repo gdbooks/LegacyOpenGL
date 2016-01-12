@@ -10,3 +10,5 @@ In this chapter you will learn about
 * OpenGL matrices and matrix stacks
 * Projections
 * Using your own matrices with OpenGL
+
+If you need a refresher on the matrix math implementation details, [this](https://www.youtube.com/watch?v=V6sJpjYzfaQ) video appears to be useful.
