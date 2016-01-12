@@ -13,6 +13,4 @@ In this chapter you will learn about
 
 If you need a refresher on the matrix math implementation details, [this](https://www.youtube.com/watch?v=V6sJpjYzfaQ) video appears to be useful.
 
-I tired to follow the book with this chapter but a LOT of the explanations of the book are just aweful! That's why in the middle of coordinate transforms i'm pointing you to a site.
-
-Also, the matrix order explanation is just bad. If this chapter confuses you too much let me know and i'll re-write it from scratch.
+I tired to follow the book, but it was AWEFUL, it confused even me. So this chapter is a take from another book, "OpenGL Distilled" along with articles videos and my insights.
