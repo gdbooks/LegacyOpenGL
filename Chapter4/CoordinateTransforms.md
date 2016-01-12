@@ -16,4 +16,6 @@ A summary of the transformation pipeline:
 
 ![TRANSFORM](transform.png)
 
-while these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. OpenGL also combines the Projection Transformation and Viewport transportation into a single transformation it calls __projection__.
+while these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. The viewport transform (also known as w divide) is done automatrically by OpenGL.
+
+At the end of the day, with all the house keeping OpenGL does you will only have to worry about two matrices. The __ModelView__ matrix and the __Projection__ matrix.
