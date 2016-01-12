@@ -22,3 +22,4 @@
   * [Attributes](Chapter3/Attributes.md)
 * [Transformations And Matrices](Chapter4/Introduction.md) 
   * [Understanding Coordinate Transformations](Chapter4/CoordinateTransforms.md) 
+  * [Transformation Deep Dive](Chapter4/DeepDive.md)
