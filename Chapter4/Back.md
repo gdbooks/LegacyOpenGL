@@ -39,3 +39,19 @@ Rotating an object first, then translating it will give a very different result 
 * First Scale
 * Second Rotate
 * Lastly Translate
+
+## Projection transformations
+The projection transformation defines the viewing volume and clipping planes. It's performed after the model and view transformations. You can think of the projection transformation as determening what belongs in the view volume.
+
+OpenGL performs two types of projections:
+
+* __perspective projection__ This type of projection shows 3D worlds exactly as you see things in real life. With perspective projection, objects that are farther away appear smaller than objects that are closer to the camera. 
+* __orthographic projection__ This type of projection shows objects on screen in their true size, regardless of distance from camera. This projectionction is used for HUD's, 2D games and isometric games.
+
+Here is an example of looking at two objects from the exact same position with the exact same orientation. The only difference is one is looking with perspective, the other is looking orthographic:
+
+![PVO](pvo.gif)
+
+This is how the respective cameras see the world:
+
+![CAMWORLD](camera_sees.png)
