@@ -46,6 +46,8 @@ GL.Vertex3(0.0f, 0.0f, 1.0f);
 GL.End();
 ```
 
+Running your application, your screen should look like this:
+
 Once we are able to position the camera and add perspective you will see that what we did really looks like this:
 
 ![REAL](reality.png)
