@@ -17,3 +17,5 @@ A summary of the transformation pipeline:
 While these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. The viewport transform (also known as w divide) is done automatrically by OpenGL.
 
 If yo look at the above diagram, there are only two matrices in the pipeline. These are the matrices that the state machine let's you specify, the __ModelView__ matrix and the __Projection__ matrix.
+
+## A closer look at the pipeline
