@@ -13,3 +13,5 @@ Transformations work the same way. They allow you to move, rotate and manipulate
 * __Viewport transform__ The viewport transformation maps the clip coordinates (NDC) into the two-dimensional view port (the window on your screen)
 
 while these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. We will discuss this soon.
+
+A summary of the transformation pipeline:
