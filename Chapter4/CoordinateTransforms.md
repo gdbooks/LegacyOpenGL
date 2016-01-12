@@ -15,3 +15,5 @@ Transformations work the same way. They allow you to move, rotate and manipulate
 while these four transformations are standard in 3D graphics, OpenGL combines the model and view transforms into a single __modelview__ transformation. We will discuss this soon.
 
 A summary of the transformation pipeline:
+
+![TRANSFORM](transform.png)
