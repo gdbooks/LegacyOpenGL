@@ -55,3 +55,6 @@ Here is an example of looking at two objects from the exact same position with t
 This is how the respective cameras see the world:
 
 ![CAMWORLD](camera_sees.png)
+
+## Viewport Transformations
+The last transformation is the _viewport transformaton_ This transformation maps clip coordinates created by the perspective transformation onto your windows rendering surface. You can think of the viewport transormation as determening where on screen the final pixels will go
