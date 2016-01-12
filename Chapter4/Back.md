@@ -23,3 +23,5 @@ We know that the view matrix is the inverse of the cameras world transformation.
 
 * By using a function such as ```LookAt```, this will specify a position and a direction to look and return the inverse of a matrix created from that.
 * By treating the camera as any other object and giving it a model matrix. This model matrix can then be inverted to get the view matrix.
+
+Both of these methods actually use the same math, so it's going to be pretty easy to work with them. We will walk trough how to construct a ```LookAt``` function later.
