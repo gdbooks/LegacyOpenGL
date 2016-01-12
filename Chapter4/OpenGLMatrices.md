@@ -46,7 +46,7 @@ GL.Vertex3(0.0f, 0.0f, 1.0f);
 GL.End();
 ```
 
-Running your application, your screen should look like this:
+Keep in mind, right now we're strictly looking at the center of NDC space. The above code will not look too impressive. Running your application, your screen should look like this:
 
 ![FOR_NOW](fornow.png)
 
