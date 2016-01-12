@@ -121,4 +121,8 @@ The viewport transformation is the final stage of the __transformation pipeline_
 Again, this happens automatically, you have some control using the ```GL.Viewport``` function, which we will discuss later.
 
 ### Window Coordinates
-Window coordinates have their _x, y origin_
+Window coordinates have their _x, y origin_ in the bottom-left corner of the window. Window _z_ values extend the Z-Buffer.
+
+Programmers often make the mistake of assuming that window coordinates are integers (because hey, a window is rendered as pixels). This is not the case. OpenGL window coordinates are actualy floating point values, vertices can exist in sub-pixel locations. This is essential for correct rastirezation and effective anti-aliasing.
+
+This is the part of the pipeline where a picture is finally rendered to your window, we are now done with the pipeline.
