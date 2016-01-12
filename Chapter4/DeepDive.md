@@ -8,6 +8,8 @@ To kind of sum up what the above article is saying, this is what's going on:
 
 ![PIPELINE](trans_pipe.png)
 
+Image was taken from [this article](http://learnopengl.com/#!Getting-started/Coordinate-Systems), you don't have to read it, but it's there if you are curious
+
 * Local coordinates are the coordinates of your object relative to its local origin; they're the coordinates your object begins in.
 * The next step is to transform the local coordinates to world-space coordinates which are coordinates in respect of a larger world. These coordinates are relative to a global origin of the world, together with many other objects also placed relative to the world's origin.
 * Next we transform the world coordinates to view-space coordinates in such a way that each coordinate is as seen from the camera or viewer's point of view.
