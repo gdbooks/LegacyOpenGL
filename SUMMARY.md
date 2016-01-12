@@ -21,3 +21,4 @@
   * [Quadrilaterals and Polygons](Chapter3/Quads.md)
   * [Attributes](Chapter3/Attributes.md)
 * [Transformations And Matrices](Chapter4/Introduction.md) 
+  * [Understanding Coordinate Transformations](Chapter4/CoordinateTransforms.md) 
