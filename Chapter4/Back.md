@@ -27,3 +27,7 @@ We know that the view matrix is the inverse of the cameras world transformation.
 Both of these methods actually use the same math, so it's going to be pretty easy to work with them. We will walk trough how to construct a ```LookAt``` function later.
 
 ## Modeling transformation
+The modeling transformation allows you to position and orient a model by moving, rotating and scaling it You can perform these operations one at a time or as a combination of events. 
+![TRANSFORMS](three_transform.png)
+
+The order in which you specify modeling transformations is very important to the final rendering of your scene. (remember, order of matrix multiplication matters)
