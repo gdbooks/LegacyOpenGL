@@ -17,7 +17,7 @@ If you add that code BEFORE the render code we did above, the screen will look l
 
 ![TRANS](glTranslate.png)
 
-Because matrix multiplication is accumulative you can even chain these together!
+Because matrix multiplication is assosiative you can even chain these together!
 
 Try this code:
 ```
