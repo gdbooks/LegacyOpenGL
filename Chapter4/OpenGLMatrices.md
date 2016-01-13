@@ -54,5 +54,27 @@ Once we are able to position the camera and add perspective you will see that wh
 
 ![REAL](reality.png)
 
-# TODO
-CH4 is not done, this is as far as i managed to get
+## The ModelView Matrix
+The __modelView__ matrix defines the coordinate system that is used to place and orient objects.
+This 4x4 matrix can either transform vertices, or it can be transformed its-self by other matrices. 
+
+Before you can do anything, you must specify if you are going to be working with the __modelView__ or __projection__ matrix. You can do this with the ```GL.MatrixMode``` function. This is the signature:
+
+```
+GL.MatrixMode(MatrixMode);
+```
+
+The ```MatrixMode``` enum has two values we use, but the enum its-self has 5 values
+* MatrixMode.Modelview
+* MatrixMode.Projection
+* MatrixMode.Color - we don't use this
+* MatrixMode.Texture - we don't use this
+* MatrixMode.Modelview0Ext
+
+Usually (99% of the time) you want to set your modelView matrix to identity. So that you start around origin. you can achieve this by calling the ```GL.LoadIdentity``` function. This function loads the identity matrix into the OpenGL state machines active matrix. (You specified the active matrix with ```GL.MatrixMode```)
+
+This snippet resets the modelview matrix:
+```
+GL.MatrixMode(MatrixMode.Modelview);
+GL.LoadIdentity();
+```
