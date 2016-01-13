@@ -12,9 +12,9 @@ Remember, OpenGL is column major, so vectors are column matrices (1 x 4). Becaus
 
 ```
 In theory
-translated vector = vector * model * view * projection
+translated vertex = vertex * model * view * projection
 How OpenGL really does it
-renderVector = vector * modelView * projection
+renderVertex = vertex * modelView * projection
 ```
 
 We want to first transform into model space, then view space, then projection space. Column major matrices have a slight gotcha to them, the matrices take effect from left to right, not right to left. 
@@ -24,13 +24,13 @@ This means that the above code, would first move into projection space, then vie
 This is confusing, but in order to do this:
 
 ```
-translated vector = vector -> model -> view -> projection
+translated vertex = vertex -> model -> view -> projection
 ```
 
 You have to multiply in reverse order, like so:
 
 ```
-translated vector = projection * view * model * vector
+translated vertex = projection * view * model * vertex
 ```
 
 This is not the case for row major matrices! Only column major ones.
@@ -38,5 +38,42 @@ This is not the case for row major matrices! Only column major ones.
 ## Scaling, Translating and Rotating
 The other order we need to worry about is scale-translate-rotate order. 
 
+What order should you scale/translate/rotate in?
+
+* Scale First
+* Rotate second
+* Translate last
+
+So the transformation pipe looks like this:
+
+```
+transformed = vertex -> scale -> rotate -> translate
+```
+
+Remember, multiply right to leftThis means your multiplication order will look like this:
+
+```
+Result = Translate * Rotate * Scale * Vertex
+```
+Fun times.
+
 ## OpenGL functions
-Hopefully that all made sense, so how does that apply to OpenGL functions?
+Hopefully that all made sense, so how does that apply to OpenGL functions? Well if you recall, openGL functions just multiply matrices, so we have to call them in the right order, like so
+
+```cs
+void Render() {
+    // Pipeline: translated vertex = vertex -> model -> view -> projection
+    // Model matrix: transformed = vertex -> scale -> rotate -> translate
+    // Remember, read right to left when implementing multiplication!
+    
+    // TODO: Set up projection here
+    // Multiply projection
+    
+    // Set the modelView matrix to identity
+    GL.MatrixMode(MatrixMode.ModelView);
+    GL.LoadIdentity();
+    
+    // Multiply view
+    
+}
+```
