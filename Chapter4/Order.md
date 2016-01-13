@@ -74,6 +74,20 @@ void Render() {
     GL.LoadIdentity();
     
     // Multiply view
+    LookAt(0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+    // Draw an object
+    // Multiply model (scale, rotate, translate)
+    // Multiply translate
+    GL.Translate(-3.0f, 0.0f, 1.0f);
+    // Multiply rotate
+    GL.Rotate(90.0f, 1.0f, 0.0f, 0.0f);
+    // Multiply scale
+    GL.Scale(1.0f, 1.0f, 1.0f); // No scale
     
+    // The actual model has the input vertices
+    DrawCube();
 }
 ```
+
+If this doesn't make sense right now, go ahead and give me a call on skype. I know it's a bit of a confusing topic.
