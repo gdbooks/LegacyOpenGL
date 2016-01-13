@@ -26,3 +26,4 @@
   * [OpenGL and Matrices](Chapter4/OpenGLMatrices.md)
   * [ModelView](ModelView.md)
   * [Translation](Translation.md)
+  * [Rotation](Rotation.md)
