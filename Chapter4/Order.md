@@ -34,3 +34,9 @@ translated vector = projection * view * model * vector
 ```
 
 This is not the case for row major matrices! Only column major ones.
+
+## Scaling, Translating and Rotating
+The other order we need to worry about is scale-translate-rotate order. 
+
+## OpenGL functions
+Hopefully that all made sense, so how does that apply to OpenGL functions?
