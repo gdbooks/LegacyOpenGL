@@ -61,7 +61,7 @@ This 4x4 matrix can either transform vertices, or it can be transformed its-self
 Before you can do anything, you must specify if you are going to be working with the __modelView__ or __projection__ matrix. You can do this with the ```GL.MatrixMode``` function. This is the signature:
 
 ```
-GL.MatrixMode(MatrixMode);
+void GL.MatrixMode(MatrixMode);
 ```
 
 The ```MatrixMode``` enum has two values we use, but the enum its-self has 5 values
@@ -129,5 +129,21 @@ void Render(ref Matrix4 modelView, ref Matrix4 projection) {
 }
 ```
 
+OpenGL just wraps all the math up for you. But the following function create and multiply matrices for you!
+
 ## Translation
-Translation allows you to move an object from one position in the world to another position in the world. The OpenGL function ```GL.Translate
+Translation allows you to move an object from one position in the world to another position in the world. The OpenGL function ```GL.Translate``` performs this functionality, it is defined as follows:
+
+```
+void GL.Translate(float x, float y, float z);
+```
+
+Suppose you want to move an object from origin to position (0.25, 0.1, 0.4) you would run this bit of code:
+
+```
+GL.MatrixMode(MatrixMode.Modelview);
+GL.LoadIdentity(); // Reset modelview matrix
+GL.Translate(0.25f, 0.1f, 0.4f);
+```
+
+If you add that code BEFORE the render code we did above, the screen will look like this:
