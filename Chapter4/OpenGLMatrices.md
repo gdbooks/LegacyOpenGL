@@ -6,7 +6,7 @@ Let's start with a simple scene. We're going to draw a small grid on the X-Z pla
 
 You may want to add this render code to the ```MainGameWindow``` class, before the scene is rendered. This is going to be a visual baseline so we can see what is going on, and it should appear under every sample we will make in this chapter.
 
-So, add the following code to the render function, before the demo game renders:
+Make a new class, lets call it ```Grid```. In it, have a ```Render``` function. This should be the contents of that function:
 
 ```cs
 // Draw grid
