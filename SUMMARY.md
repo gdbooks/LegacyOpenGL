@@ -29,3 +29,6 @@
     * [Rotation](Chapter4/Rotation.md)
     * [Scale](Chapter4/Scale.md)
     * [View](Chapter4/View.md)
+  * [Matrix Stacks](Chapter4/stacks.md) 
+  * [Mr.Roboto](Chapter4/roboto.md)
+  * [Projections](Chapter4/projections.md)
