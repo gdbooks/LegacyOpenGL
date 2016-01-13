@@ -26,4 +26,6 @@ GL.Rotate(7.0f, 0.0f, 1.0f, 0.0f);
 ```
 
 ## On your own
-Try to rotate your world by 90 degrees on the X axis and then 180 degrees on the Z axis
+Try to rotate your world by 90 degrees on the X axis and then 180 degrees on the Z axis. The resulting window will look like this:
+
+![ROTATE](glRotate.png)
