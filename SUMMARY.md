@@ -29,7 +29,7 @@
     * [Rotation](Chapter4/Rotation.md)
     * [Scale](Chapter4/Scale.md)
     * [View](Chapter4/View.md)
-  * [Function Order](Order.md)
+  * [Function Order](Chapter4/Order.md)
   * [Projections](Chapter4/projections.md)
   * [Viewport](Chapter4/Viewport.md)
   * [Matrix Stacks](Chapter4/stacks.md) 
