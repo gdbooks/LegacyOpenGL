@@ -76,5 +76,6 @@ Usually (99% of the time) you want to set your modelView matrix to identity. So 
 This snippet resets the modelview matrix:
 ```
 GL.MatrixMode(MatrixMode.Modelview);
-GL.LoadIdentity();
+GL.LoadIdentity(); // Reset modelview matrix
+// Do other transformation
 ```
