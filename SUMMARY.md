@@ -33,4 +33,5 @@
   * [Mr.Roboto](Chapter4/roboto.md)
   * [Projections](Chapter4/projections.md)
   * [Viewport](Chapter4/Viewport.md)
+  * [Solar System](Chapter4/Solar.md)
   * [CustomMatrices](Chapter4/cmat.md)
