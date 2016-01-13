@@ -16,7 +16,7 @@ GL.Rotate(90.0f, 1.0f, 0.0f, 0.0f);
 
 If you want to rotate clock-wise pass in a negative angle.
 
-Let's say you want to rotate 45 degrees on the X axis and 7 degrees on the Y axis. Figuring out the arbitrary axis to rotate around and the new rotation angle would require a LOT of math. Luckily matrix multiplication is cummulative, so we can take advantage of that!
+Let's say you want to rotate 45 degrees on the X axis and 7 degrees on the Y axis. Figuring out the arbitrary axis to rotate around and the new rotation angle would require a LOT of math. Luckily matrix multiplication is assosiative, so we can take advantage of that!
 
 ```
 // First, rotate 45 degrees on X axis
