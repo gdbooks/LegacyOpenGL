@@ -29,3 +29,31 @@ GL.Translate(-0.5f, -0.5f, -0.5f); // At(-5, -5, -5)
 ```
 
 ## Demo
+
+```
+using OpenTK.Graphics.OpenGL;
+
+namespace GameApplication {
+    class TranslateSample : Game {
+        Grid grid = null;
+
+        public override void Initialize() {
+            grid = new Grid();
+        }
+        public override void Update(float dTime) {
+
+        }
+        public override void Render() {
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity(); // Reset modelview matrix
+            GL.Translate(0.5f, 0.5f, 0.5f);
+
+            grid.Render();
+        }
+        public override void Shutdown() {
+
+        }
+    }
+}
+
+```
