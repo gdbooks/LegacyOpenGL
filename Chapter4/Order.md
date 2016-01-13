@@ -17,4 +17,20 @@ How OpenGL really does it
 renderVector = vector * modelView * projection
 ```
 
-We want to first transform into model space, then view space, then projection space. Column major matrices have a slight gotcha to them,
+We want to first transform into model space, then view space, then projection space. Column major matrices have a slight gotcha to them, the matrices take effect from left to right, not right to left. 
+
+This means that the above code, would first move into projection space, then view space then model space. The exact Opposite of what we want!
+
+This is confusing, but in order to do this:
+
+```
+translated vector = vector -> model -> view -> projection
+```
+
+You have to multiply in reverse order, like so:
+
+```
+translated vector = projection * view * model * vector
+```
+
+This is not the case for row major matrices! Only column major ones.
