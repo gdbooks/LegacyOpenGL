@@ -79,3 +79,55 @@ GL.MatrixMode(MatrixMode.Modelview);
 GL.LoadIdentity(); // Reset modelview matrix
 // Do other transformation
 ```
+
+## Multiplying OpenGL matrices
+We're about to talk about 3 functions:
+
+* ```GL.Translate```
+* ```GL.Rotate```
+* ```GL.Scale```
+
+Before we discuss how these functions work, i want you to be aware of what they actually do. When you call ```GL.MatrixMode``` with ```MatrixMode.Modelview``` as an argument, you select the __modelView__ matrix of the OpenGL state machine as the active matrix.
+
+Once you have a matrix set as the active matrix, all further matrix operations will be performed to that matrix. ```GL.LoadIdentity``` is one such operation. It takes the current matrix and sets it to identity.
+
+The three functions above will generate an appropriate matrix and multiply the current matrix! ```GL.Rotate``` for instance will make a rotation matrix and multiply the current matrix by it.
+
+The following OpenGL snippet
+
+```
+// Set the currently active matrix
+GL.MatrixMode(MatrixMode.Modelview);
+
+// Reset modelview matrix
+GL.LoadIdentity();
+
+// Create a rotation matrix
+// then multiply the active matrix by it
+GL.Rotate(90.0f, 0.0f, 0.0f, 1.0f);
+```
+
+Is the equivalent of:
+
+```
+void Render(ref Matrix4 modelView, ref Matrix4 projection) {
+    // Set the currently active matrix
+    Matrix4 currentMatrix = modelView;
+    
+    // Reset modelview matrix
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            currentMatrix[i, j] = (i == j)? 1.0f : 0.0f;
+        }
+    }
+    
+    // Create a rotation matrix
+    Matrix4 rotation = Matrix4.AngleAxis(90.0f, 0.0f, 0.0f, 1.0f);
+    
+    // then multiply the active matrix by it
+    currentMatrix = rotation * currentMatrix;
+}
+```
+
+## Translation
+Translation allows you to move an object from one position in the world to another position in the world. The OpenGL function ```GL.Translate
