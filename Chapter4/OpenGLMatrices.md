@@ -143,7 +143,20 @@ Suppose you want to move an object from origin to position (0.25, 0.1, 0.4) you 
 ```
 GL.MatrixMode(MatrixMode.Modelview);
 GL.LoadIdentity(); // Reset modelview matrix
-GL.Translate(0.25f, 0.1f, 0.4f);
+GL.Translate(0.5f, 0.5f, 0.5f);
 ```
 
 If you add that code BEFORE the render code we did above, the screen will look like this:
+
+![TRANS](glTranslate.png)
+
+Because matrix multiplication is accumulative you can even chain these together!
+
+Try this code:
+```
+GL.MatrixMode(MatrixMode.Modelview);
+GL.LoadIdentity(); // Reset modelview matrix
+GL.Translate(0.5f, 0.5f, 0.5f); // At (5, 5, 5)
+GL.Translate(-0.5f, -0.5f, -0.5f); // At (0, 0, 0)
+GL.Translate(-0.5f, -0.5f, -0.5f); // At(-5, -5, -5)
+```
