@@ -95,4 +95,4 @@ Running the example produces this screen:
 
 ![LOOKIE](lookAt.png)
 
-Cool, we can now see the grid with some perspective! Why are we so close? Well, we didn't set a projection matrix yet (we don't really know how to), so anything further than 1 will simply not render as our world projection is still in NDC. But hey, at least we got something!
+Cool, we can now see the grid with some perspective! Why are we so close? Well, we didn't set a projection matrix yet (we don't really know how to), so anything further than 1 will simply not render as our world projection is still in NDC. But hey, at least we can look at things with angles now!
