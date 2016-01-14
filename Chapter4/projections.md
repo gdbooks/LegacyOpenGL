@@ -116,3 +116,9 @@ The projection matrix is actually a matrix that maps the Frustum into a cube tha
 When the projection matrix maps the frustum into a NDC cube, obejcts closer become smaller and object further become larger.
 
 ![MAP](mapping.png)
+
+There are a couple of ways to set up a view frustum. The canonical way OpenGL provides is the ```GL.Frustum``` function.
+
+```
+void GL.Frustum(float left, float right, float bottom, float top, float near, float far);
+```
