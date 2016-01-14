@@ -66,22 +66,26 @@ Now, the projection is the last step in the transform pipeline, because of that,
 
 ```
 public override void Render() {
-    GL.MatrixMode(MatrixMode.Modelview);
-    GL.LoadIdentity();
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.Ortho(-5, 5, -5, 5, -5, 5);
 
-    LookAt(
-        0.5f, 0.5f, 0.5f, 
-        0.0f, 0.0f, 0.0f,
-        0.0f, 1.0f, 0.0f
-    );
-    grid.Render();
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
 
-    GL.Translate(0.20f, 0.0f, -0.25f);
-    GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
-    GL.Rotate(73.0f, 0.0f, 1.0f, 0.0f);
-    GL.Scale(0.05f, 0.05f, 0.05f);
+            LookAt(
+                0.5f, 0.5f, 0.5f,
+                0.0f, 0.0f, 0.0f,
+                0.0f, 1.0f, 0.0f
+            );
+            grid.Render();
 
-    GL.Color3(1.0f, 0.0f, 0.0f);
-    DrawCube();
-}
+            GL.Translate(0.20f, 0.0f, -0.25f);
+            GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
+            GL.Rotate(73.0f, 0.0f, 1.0f, 0.0f);
+            GL.Scale(0.05f, 0.05f, 0.05f);
+
+            GL.Color3(1.0f, 0.0f, 0.0f);
+            DrawCube();
+        }
 ```
