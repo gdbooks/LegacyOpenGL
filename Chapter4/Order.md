@@ -161,4 +161,6 @@ Go ahead and add the above function to your class. In render, after drawing the 
 }
 ```
 
-When you run the game one of two things is going to happen. Either the entire
+When you run the game one of two things is going to happen. Either the entire screen is going to be red, or you will see the scene as before, with no changes. This is because the size of the cube is -1 to +1. The same size as NDC. The cube will either fill NDC and render the whole screen red, or get clipped and not render at all.Depends on your graphics card's default Z-Test setting.
+
+## On your own
