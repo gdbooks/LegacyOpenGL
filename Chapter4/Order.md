@@ -103,8 +103,8 @@ namespace GameApplication {
     class LookAtSample : Game {
         Grid grid = null;
 
-        // Add Look at function from
-        // 
+        // Add Look at function, it's in this gist
+        // https://gist.github.com/gszauer/91038dbb010755d719de
 
         public override void Initialize() {
             grid = new Grid();
