@@ -164,3 +164,44 @@ Go ahead and add the above function to your class. In render, after drawing the 
 When you run the game one of two things is going to happen. Either the entire screen is going to be red, or you will see the scene as before, with no changes. This is because the size of the cube is -1 to +1. The same size as NDC. The cube will either fill NDC and render the whole screen red, or get clipped and not render at all.Depends on your graphics card's default Z-Test setting.
 
 ## On your own
+We now have a rudimentary 3D scene! I want you to apply the following transformation to the 3D cube on your own:
+
+* Scale to 0.05f on all axis
+* Rotate 73 degrees on the Y axis
+* Rotate 45 degrees on the X axis
+* Translate to 0.25f on the X axis 
+* Translate to -0.25f on the Z axis
+
+Keep in mind, if your pipeline is
+
+```
+scale -> rotate -> translate
+```
+
+Then the multiplication order is 
+
+```
+translate * scale * rotate
+```
+
+I'll give you a bit of a hint as to where to do this. The full transform pipeline is this:
+
+```
+render vertex = projection -> model -> view -> scale -> rotate -> translate -> original vertex
+```
+
+We don't have projection yet. No action there
+
+So you want to set the modelview matrix with the lookAt function (this was already done in the previous step, it does not change)
+
+Next you want to render the grid at origin. We don't want to apply any transformations to the grid. You could say, the grid is only transformed by the view matrix, it has no model matrix.
+
+Next you want to do your Scaling, Rotating and Translating. This is going to be the "model" part of the _modelView_ matrix. It will position the square in the scene.
+
+Last, you simply set the color to red (already there from previous section) and render by calling DrawCube (already there from previous section).
+
+The resulting screen will look kind of like this:
+
+![SPACE](c_space.png)
+
+If you get stuck, this page has a subsection with the solution. If i'm on skype, message me before you look at the solution, we can work trough the problem.
