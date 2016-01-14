@@ -89,3 +89,5 @@ public override void Render() {
     DrawCube();
 }
 ```
+
+Run that code, all of a sudden you can see a lot more of the scene! Play around with the numbers, try 10, maybe even 15. See what a larger orthographic projection does.
