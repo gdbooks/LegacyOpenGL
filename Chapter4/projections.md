@@ -7,3 +7,8 @@ The second purpose of the viewing volume is to determine how objects are draw. T
 
 ![PVO](pvo.gif)
 
+Before specifying any king of projection transformation you need to make sure that the projection matrix is the selected matrix stack. As with the modelView matrix, this is done trough the ```GL.MatrixMode``` function:
+
+```
+GL.MatrixMode(MatrixMode.Projection);
+```
