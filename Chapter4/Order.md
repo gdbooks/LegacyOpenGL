@@ -126,8 +126,6 @@ namespace GameApplication {
     
             // Render grid at the origin of the world
             grid.Render();
-
-            
         }
         
         public override void Shutdown() {
