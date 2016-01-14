@@ -130,3 +130,5 @@ namespace GameApplication {
     }
 }
 ```
+
+This puts us exactly where we left off in the last section. With the grid being visible 
