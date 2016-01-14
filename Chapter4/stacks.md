@@ -70,3 +70,59 @@ You might be thinking to yourself, i see that applying the inverse of cube 1's m
 That logic is sound. Doing that would work, and you'd make your program a bit more readable. But that's not a maintainable solution! As soon as you have nested objects that approach breaks.
 
 We can't stay with the first approach either! It's verbose, it's messy and it has the potential to introduce a lot of floating point error.
+
+## The stack
+OpenGL fixes this issue of matrix-crazyness with matrix stacks! A matrix stack is exactly what it sounds like, a stack of matrices. There are two functions that you can use to control this stack:
+
+```
+void GL.PushMatrix();
+void GL.PopMatrix();
+```
+
+* __GL.PushMatrix__ will add a new matrix to the stack. This matrix is a copy of whatever the current top of the stack is
+* __GL.PopMatrix__ will take one matrix off of the stack
+
+All matrix functions (LoadIdentity, LookAt, Translate, Rotate, Scale, etc...) only effect the top of the stack! This matrix stack acts as a history of matrices, allowing you to undo actions.
+
+For example:
+
+```
+// Stack height: 1
+GL.MatrixMode(MatrixMode.Modelview);
+GL.LoadIdentity();
+// The top of the stack is now identity
+
+GL.PushMatrix(); // Stack height: 2
+// The top of the stack is still identity
+
+LookAt(
+    0.5f, 0.5f, 0.5f, 
+    0.0f, 0.0f, 0.0f,
+    0.0f, 1.0f, 0.0f
+);
+// The top of the stack is now whatever the camera sees
+
+GL.PushMatrix(); // Stack height 3
+// The top of the stack is still whatever the camera sees
+
+GL.Translate(3.0f, 0.0f, 0.0f);
+// The top of the stack is now translated to 3.0f world space & multiplied by the view matrix
+
+DrawModel();
+
+GL.PopMatrix(); // Stack height 2
+// The top of the stack is still whatever the camera sees
+
+GL.PushMatrix(); // Stack height 3
+// The top of the stack is still whatever the camera sees
+
+GL.Rotate(45.0f, 1.0f, 0.0f);
+// The top of the stack is now rotated at origin & multiplied by the view matrix
+DrawModel();
+
+GL.PopMatrix(); // Stack Height 2
+// The top of the stack is still whatever the camera sees
+
+GL.PopMatrix(); // Stack Height 1
+// The top of the stack is now identity
+```
