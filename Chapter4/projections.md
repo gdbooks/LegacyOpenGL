@@ -176,3 +176,5 @@ public override void Render() {
 Take note, i actually moved my camera to 10,10,10 to give a better look at the scene. Again, play around in here! Try moving the camera. Play with the arguments of Perspective, see how this works!
 
 If you're feeling brave you can even try adding a second cube ;)
+
+One question you may have is why 0.1 and 100 for the near and far planes. Well, i figured that's a pretty large visible area. There is really no easy formula to figure these values out, it's just whatever looks good for your game. I tend to start out with 0.01 and 1000.0, and adjust from there.
