@@ -93,3 +93,5 @@ public override void Render() {
 Run that code, all of a sudden you can see a lot more of the scene! Play around with the numbers, try 10, maybe even 15. See what a larger orthographic projection does. 
 
 As your projection matrix gets bigger, you can move your camera to positions other than 0.5f, as they will still hold the scene in View! Experiment a bit, see if you can predict what things will look like. Othro projection can be a bit of a trip!
+
+##Perspective
