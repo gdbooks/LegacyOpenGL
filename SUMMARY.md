@@ -30,6 +30,7 @@
     * [Scale](Chapter4/Scale.md)
     * [View](Chapter4/View.md)
   * [Function Order](Chapter4/Order.md)
+    * [Solution](Chapter4/solution.md) 
   * [Projections](Chapter4/projections.md)
   * [Matrix Stacks](Chapter4/stacks.md) 
   * [Viewport](Chapter4/Viewport.md)
