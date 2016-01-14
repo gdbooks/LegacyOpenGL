@@ -134,3 +134,8 @@ GL.PopMatrix(); // Stack Height 2
 GL.PopMatrix(); // Stack Height 1
 // The top of the stack is now identity
 ```
+
+##On your own
+Make a new demo. Render 3 cubes, one red one blue and one green. Use Push and Pop to save and restore matrix states between rendering them. Render all 3 at different locations on screen. When you are done, update git and let me know so i can review the code.
+
+Hint: Keep the scale small, 0.05f or smaller. And don't translate mode than 1.0 units. I'd try to keep under 0.5f. Remember, everything has to fit into NDC space!
