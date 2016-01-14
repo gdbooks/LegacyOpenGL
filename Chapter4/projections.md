@@ -122,3 +122,5 @@ There are a couple of ways to set up a view frustum. The canonical way OpenGL pr
 ```
 void GL.Frustum(float left, float right, float bottom, float top, float near, float far);
 ```
+
+In the above function ```left``` ,```right``` and ```bottom``` specify the X and Y coordinates of the near clipping plane. ```near``` and ```far``` specify the distance from the viewer to the near and far clipping planes.
