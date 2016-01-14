@@ -19,4 +19,4 @@ Unlike the __modelView__ matrix, it's not likeley that the projection matrix wil
 
 Lets take a look at how to set the actual matrix
 
-## Orthographics
+## Orthographic
