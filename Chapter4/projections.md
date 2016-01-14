@@ -114,3 +114,5 @@ The viewing volume of a perspective projection is called a __frustum__ (that ter
 The projection matrix is actually a matrix that maps the Frustum into a cube that occupies NDC space! So, if you have a cube which ranges from -1 to +1 and multiply it by the inverse of the projection matrix you will get a visual for the frustum!
 
 When the projection matrix maps the frustum into a NDC cube, obejcts closer become smaller and object further become larger.
+
+![MAP](mapping.png)
