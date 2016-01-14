@@ -126,3 +126,9 @@ void GL.Frustum(float left, float right, float bottom, float top, float near, fl
 In the above function ```left``` ,```right``` and ```bottom``` specify the X and Y coordinates of the near clipping plane. ```near``` and ```far``` specify the distance from the viewer to the near and far clipping planes. 
 
 This means that the top left corner of the near plane is at (left, top, -near) and the bottom right corner is at (right, bottom, -near). The corners of the far plane are determined by casting a ray from the viewer passing trough the near corners by a length for the far value.
+
+Using ```GL.Frustum``` will allow you to set asymetrical frustums, which can be cool but are not very useful. At all. In fact, i never use ```GL.Frustum``` in my code, because it is a VERY hard way to picture a view frustum. Instead i use this helper function (add it to your code!)
+
+```
+
+```
