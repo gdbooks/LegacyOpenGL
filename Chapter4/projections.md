@@ -143,3 +143,36 @@ We will discuss the math behind this function later, in the custom matrices sect
 ![PERSP](gluPersp.png)
 
 This is again such a common function, almost every game programmer will recognize it's signature!
+
+Let's try to use it in our scene:
+
+```
+public override void Render() {
+    GL.MatrixMode(MatrixMode.Projection);
+    GL.LoadIdentity();
+    float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height;
+    Perspective(60.0f, aspect, 0.1f, 100.0f);
+
+    GL.MatrixMode(MatrixMode.Modelview);
+    GL.LoadIdentity();
+    LookAt(
+        10.0f, 10.0f, 10.0f,
+        0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f
+    );
+
+    grid.Render();
+
+    GL.Translate(0.20f, 0.0f, -0.25f);
+    GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
+    GL.Rotate(73.0f, 0.0f, 1.0f, 0.0f);
+    GL.Scale(0.05f, 0.05f, 0.05f);
+
+    GL.Color3(1.0f, 0.0f, 0.0f);
+    DrawCube();
+}
+```
+
+Take note, i actually moved my camera to 10,10,10 to give a better look at the scene. Again, play around in here! Try moving the camera. Play with the arguments of Perspective, see how this works!
+
+If you're feeling brave you can even try adding a second cube ;)
