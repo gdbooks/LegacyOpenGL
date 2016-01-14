@@ -16,6 +16,7 @@ Let's take the scene we rendered in the Projections section, and manually specif
 
 ```
 public override void Render() {
+    // THIS IS THE ONLY NEW LINE!
     GL.Viewport(0, 0, MainGameWindow.Window.Width, MainGameWindow.Window.Height);
 
     GL.MatrixMode(MatrixMode.Projection);
@@ -42,3 +43,35 @@ public override void Render() {
     DrawCube();
 }
 ```
+
+Now your screen should look exactly like mine:
+
+![VIEW](viewport.png)
+
+## Split-Screen
+Ever wonder how split-screen games are done? 
+
+* Specify viewport to be half of the screen
+  * ```GL.Viewport(0, 0, screen.Width / 2, screen.Height)```
+* Render the game from player 1's camera. 
+  * The aspect ratio will be the aspect ratio of the viewport, not the window
+* Specify viewport to be second half of screen
+  * ```GL.Viewport(screen.Width / 2, 0, screen.Width / 2, screen.Height)```
+* Render game from player2's camera
+
+## Pixel perfect
+If you are ever doing any 2D rendering and want it to be pixel perfect, set your viewport to whatever the screen size is
+
+```
+GL.Viewport(0, 0, ScreenWidth, ScreenHeight);
+```
+
+Then set your orthographic matrix to be that exact size
+
+```
+GL.Ortho(0, ScreenWidth, ScreenHeight, 0, -1, 1);
+```
+
+Take note how we map the left side of ortho to 0 and the right side to width.
+
+You now have a pixel perfect render context. So, if you want to draw a line from pixels 4 to 7 you just draw from 4 to 7. This is how our 2D framework used to work.
