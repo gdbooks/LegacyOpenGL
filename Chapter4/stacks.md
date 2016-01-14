@@ -64,3 +64,9 @@ public override void Render() {
 ```
 
 Study the code, if you run it you will see two cubes, one red and one green. This code does work!
+
+You might be thinking to yourself, i see that applying the inverse of cube 1's model matrix just sets the _modelview_ matrix back to the view. Instead of those 4 lines, why don't i just call LoadIdentity and LookAt again?
+
+That logic is sound. Doing that would work, and you'd make your program a bit more readable. But that's not a maintainable solution! As soon as you have nested objects that approach breaks.
+
+We can't stay with the first approach either! It's verbose, it's messy and it has the potential to introduce a lot of floating point error.
