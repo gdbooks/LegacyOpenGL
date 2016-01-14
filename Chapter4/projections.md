@@ -94,4 +94,13 @@ Run that code, all of a sudden you can see a lot more of the scene! Play around 
 
 As your projection matrix gets bigger, you can move your camera to positions other than 0.5f, as they will still hold the scene in View! Experiment a bit, see if you can predict what things will look like. Othro projection can be a bit of a trip!
 
+Before we leave off, i just want to metnion, ortho projections don't have to be cubes. The following is perfectly valid:
+
+```
+GL.Ortho(-1, 1, -1, 1, -100, 100);
+```
+
+Fun fact, the graphics manager for our 2D framework uses orthographic projection to render the sprites. Maybe take a peek at what it does ;)
+
 ##Perspective
+Altough orthographic projections can be interesting (not always in a good way) you need to create perspective projections to make realistic looking images.
