@@ -93,7 +93,9 @@ void Render() {
 If this doesn't make sense right now, go ahead and give me a call on skype. I know it's a bit of a confusing topic.
 
 # Box Demo
-Make a new demo scene and follow along
+Let's make a demo that draws a cube in the scene. This cube will have some rotation, scale and translation for you to play around with.
+
+First, make a new demo scene and follow along
 
 ```
 using System;
@@ -131,4 +133,30 @@ namespace GameApplication {
 }
 ```
 
-This puts us exactly where we left off in the last section. With the grid being visible 
+This puts us exactly where we left off in the last section. With the grid being visible at an angle. Remember, your machine will not look 100% like mine. We should have the same image, but yours might be culled out on the side.
+
+Next, let's add a function that draws a cube. How do you draw a cube? A lot of triangles. I went ahead and drew one on paper, then counted all the verts out into CCW triangles. The result is [this static function](https://gist.github.com/gszauer/9cee93bbe25b7fd9f5da). 
+
+Go ahead and add the above function to your class. In render, after drawing the grid set the render color to red, and draw the cube. Like so:
+
+```
+ public override void Render() {
+    GL.MatrixMode(MatrixMode.Modelview);
+    GL.LoadIdentity(); // Reset modelview matrix
+    LookAt(
+        0.5f, 0.5f, 0.5f, // Position
+        0.0f, 0.0f, 0.0f, // Target
+        0.0f, 1.0f, 0.0f  // Up
+    );
+
+    // Render grid at the origin of the world
+    grid.Render();
+
+    // Set render color
+    GL.Color3(1.0f, 0.0f, 0.0f);
+    // Draw cube
+    DrawCube();
+}
+```
+
+When you run the game one of two things is going to happen. Either the entire
