@@ -5,7 +5,7 @@ Translation allows you to move an object from one position in the world to anoth
 void GL.Translate(float x, float y, float z);
 ```
 
-Suppose you want to move an object from origin to position (0.25, 0.1, 0.4) you would run this bit of code:
+Suppose you want to move an object from origin to position (0.5, 0.5, 0.5) you would run this bit of code:
 
 ```
 GL.MatrixMode(MatrixMode.Modelview);
