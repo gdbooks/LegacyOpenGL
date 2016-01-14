@@ -130,5 +130,12 @@ This means that the top left corner of the near plane is at (left, top, -near) a
 Using ```GL.Frustum``` will allow you to set asymetrical frustums, which can be cool but are not very useful. At all. In fact, i never use ```GL.Frustum``` in my code, because it is a VERY hard way to picture a view frustum. Instead i use this helper function (add it to your code!)
 
 ```
+public static void Perspective(float fov, float aspectRatio, float znear, float zfar) {
+    float ymax = znear * (float)Math.Tan(fov * Math.PI / 360.0f);
+    float xmax = ymax * aspectRatio;
 
+    GL.Frustum(-xmax, xmax, -ymax, ymax, znear, zfar);
+}
 ```
+
+We will discuss the math behind this function later, in the custom matrices section. The arguments are much simpler, what is the field of view of the player. Human vision is about 90 degrees FOV, most games use a FOV of 60 because it looks good. The aspect ratio is simply the windows width divided by it's height. Don't forget to cast these to floats! And the near and far plane are just the length of the frustum.
