@@ -139,3 +139,7 @@ public static void Perspective(float fov, float aspectRatio, float znear, float 
 ```
 
 We will discuss the math behind this function later, in the custom matrices section. The arguments are much simpler, what is the field of view of the player. Human vision is about 90 degrees FOV, most games use a FOV of 60 because it looks good. The aspect ratio is simply the windows width divided by it's height. Don't forget to cast these to floats! And the near and far plane are just the length of the frustum.
+
+![PERSP](gluPersp.png)
+
+This is again such a common function, almost every game programmer will recognize it's signature!
