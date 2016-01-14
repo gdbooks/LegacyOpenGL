@@ -84,6 +84,14 @@ void GL.PopMatrix();
 
 All matrix functions (LoadIdentity, LookAt, Translate, Rotate, Scale, etc...) only effect the top of the stack! This matrix stack acts as a history of matrices, allowing you to undo actions.
 
+There is always at least one matrix on the stack, by default. This is what the state machine starts working on. For every PushMatrix call you make you MUST provide a matching PopMatrix.
+
+The __modelView__ matrix stack is guaranteed to be at least 32 elements deep. the __projetion__ stack is only guaranteed to be 2 elements deep. Better graphics cards _might_ provide deeper stacks.
+
+Visually, here is an example of the matrix stacks:
+
+![OPERATION](stack_operation.png)
+
 For example:
 
 ```
