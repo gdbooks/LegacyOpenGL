@@ -108,3 +108,5 @@ Altough orthographic projections can be interesting (not always in a good way) y
 In a perspective projection, the further an object gets from the screen the smaller it becomes. Just like in the real world. This is commonly reffered to as __foreshortening__ (that term will probably never come up again)
 
 The viewing volume of a perspective projection is called a __frustum__ (that term will come up all the time), which looks like a pyramid with the top cut off.
+
+![FRUSTUM](frustum.png)
