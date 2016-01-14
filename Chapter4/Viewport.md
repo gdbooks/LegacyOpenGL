@@ -42,4 +42,3 @@ public override void Render() {
     DrawCube();
 }
 ```
-```
