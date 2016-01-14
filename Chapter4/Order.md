@@ -100,7 +100,7 @@ using System;
 using OpenTK.Graphics.OpenGL;
 
 namespace GameApplication {
-    class LookAtSample : Game {
+    class BoxDemo : Game {
         Grid grid = null;
 
         // Add Look at function, it's in this gist
