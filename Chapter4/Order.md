@@ -118,8 +118,12 @@ namespace GameApplication {
         public override void Render() {
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity(); // Reset modelview matrix
-            LookAt(0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-
+            LookAt(
+                0.5f, 0.5f, 0.5f, // Position
+                0.0f, 0.0f, 0.0f, // Target
+                0.0f, 1.0f, 0.0f  // Up
+            );
+    
             // Render grid at the origin of the world
             grid.Render();
 
