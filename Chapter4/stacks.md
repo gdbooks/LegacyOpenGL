@@ -88,6 +88,21 @@ There is always at least one matrix on the stack, by default. This is what the s
 
 The __modelView__ matrix stack is guaranteed to be at least 32 elements deep. the __projetion__ stack is only guaranteed to be 2 elements deep. Better graphics cards _might_ provide deeper stacks.
 
+The same list of steps we took at the top of this  page to render two cubes becomes this simple:
+
+* Select modelview matrix
+* Load itentity
+* Apply view matrix (LookAt)
+* Draw grid
+* __Push Matrix (save modelView)__
+* Apply cube 1 model matrix
+* Draw cube 1
+* __Pop Matrix (restore modelView)__
+* __Push Matrix (save modelView)__
+* Apply cube 2 model matrix
+* draw cube 2
+* __PopMatrix(restore modelView)__
+
 Visually, here is an example of the matrix stacks:
 
 ![OPERATION](stack_operation.png)
