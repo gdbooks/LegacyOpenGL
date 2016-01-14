@@ -15,4 +15,31 @@ The reson our windows didn't look the same up until this point is because we hav
 Let's take the scene we rendered in the Projections section, and manually specify a viewport for it
 
 ```
+public override void Render() {
+    GL.Viewport(0, 0, MainGameWindow.Window.Width, MainGameWindow.Window.Height);
+
+    GL.MatrixMode(MatrixMode.Projection);
+    GL.LoadIdentity();
+    float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height;
+    Perspective(60.0f, aspect, 0.1f, 100.0f);
+
+    GL.MatrixMode(MatrixMode.Modelview);
+    GL.LoadIdentity();
+    LookAt(
+        10.0f, 10.0f, 10.0f,
+        0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f
+    );
+
+    grid.Render();
+
+    GL.Translate(0.20f, 0.0f, -0.25f);
+    GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
+    GL.Rotate(73.0f, 0.0f, 1.0f, 0.0f);
+    GL.Scale(0.05f, 0.05f, 0.05f);
+
+    GL.Color3(1.0f, 0.0f, 0.0f);
+    DrawCube();
+}
+```
 ```
