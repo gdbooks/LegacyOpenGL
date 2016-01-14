@@ -20,3 +20,22 @@ Unlike the __modelView__ matrix, it's not likeley that the projection matrix wil
 Lets take a look at how to set the actual matrix
 
 ## Orthographic
+Orthographics projections are those that involve no perspective correction. In other words, no adjustment is made for the distance of the camera. Objects appear the same size on screen weather they are close up or far away.
+
+OpenGL provides the ```GL.Ortho``` function to set an orthographic projection:
+
+```
+void GL.Ortho(float left, float right, float bottom, float top, float near, float far);
+```
+
+Left and right specify the X-coordinate clipping planes. Bottom and top specify the Y, and near and far specify the Z. This function essentially builds a box to render things in.
+
+The default values of the orthographic projection are NDC space, or:
+
+```
+GL.Ortho(-1, 1, 1, -1, -1, 1);
+```
+
+This is cool, but it gives us a few issues. For one, all our geometry has to fit into the -1 +1 range! 
+
+Follow along in a new sample project. Let's use our scene that draws one cube as a starting point
