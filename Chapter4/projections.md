@@ -12,3 +12,11 @@ Before specifying any king of projection transformation you need to make sure th
 ```
 GL.MatrixMode(MatrixMode.Projection);
 ```
+
+In most cases you want to follow this up with a call to ```GL.LoadIdentity``` to clear out anything that might be stored in this matrix. Then you set the actual matrix. 
+
+Unlike the __modelView__ matrix, it's not likeley that the projection matrix will change much. Usually the only time this changes is when you resize the window.
+
+Lets take a look at how to set the actual matrix
+
+## Orthographics
