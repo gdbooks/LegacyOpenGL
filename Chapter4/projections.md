@@ -33,7 +33,7 @@ Left and right specify the X-coordinate clipping planes. Bottom and top specify 
 The default values of the orthographic projection are NDC space, or:
 
 ```
-GL.Ortho(-1, 1, 1, -1, -1, 1);
+GL.Ortho(-1, 1, -1, 1, -1, 1);
 ```
 
 This is cool, but it gives us a few issues. For one, all our geometry has to fit into the -1 +1 range! 
@@ -66,26 +66,26 @@ Now, the projection is the last step in the transform pipeline, because of that,
 
 ```
 public override void Render() {
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.Ortho(-5, 5, -5, 5, -5, 5);
+    GL.MatrixMode(MatrixMode.Projection);
+    GL.LoadIdentity();
+    GL.Ortho(-5, 5, -5, 5, -5, 5);
 
-            GL.MatrixMode(MatrixMode.Modelview);
-            GL.LoadIdentity();
+    GL.MatrixMode(MatrixMode.Modelview);
+    GL.LoadIdentity();
 
-            LookAt(
-                0.5f, 0.5f, 0.5f,
-                0.0f, 0.0f, 0.0f,
-                0.0f, 1.0f, 0.0f
-            );
-            grid.Render();
+    LookAt(
+        0.5f, 0.5f, 0.5f,
+        0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f
+    );
+    grid.Render();
 
-            GL.Translate(0.20f, 0.0f, -0.25f);
-            GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
-            GL.Rotate(73.0f, 0.0f, 1.0f, 0.0f);
-            GL.Scale(0.05f, 0.05f, 0.05f);
+    GL.Translate(0.20f, 0.0f, -0.25f);
+    GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
+    GL.Rotate(73.0f, 0.0f, 1.0f, 0.0f);
+    GL.Scale(0.05f, 0.05f, 0.05f);
 
-            GL.Color3(1.0f, 0.0f, 0.0f);
-            DrawCube();
-        }
+    GL.Color3(1.0f, 0.0f, 0.0f);
+    DrawCube();
+}
 ```
