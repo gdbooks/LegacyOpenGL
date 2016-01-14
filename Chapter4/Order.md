@@ -92,5 +92,41 @@ void Render() {
 
 If this doesn't make sense right now, go ahead and give me a call on skype. I know it's a bit of a confusing topic.
 
-# TODO: Box demo
-We're not done here, but it's 2AM and i need to sleep.
+# Box Demo
+Make a new demo scene and follow along
+
+```
+using System;
+using OpenTK.Graphics.OpenGL;
+
+namespace GameApplication {
+    class LookAtSample : Game {
+        Grid grid = null;
+
+        // Add Look at function from
+        // 
+
+        public override void Initialize() {
+            grid = new Grid();
+        }
+
+        public override void Update(float dTime) {
+
+        }
+        public override void Render() {
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity(); // Reset modelview matrix
+            LookAt(0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+            // Render grid at the origin of the world
+            grid.Render();
+
+            
+        }
+        
+        public override void Shutdown() {
+
+        }
+    }
+}
+```
