@@ -103,6 +103,7 @@ The same list of steps we took at the top of this  page to render two cubes beco
 * draw cube 2
 * __PopMatrix(restore modelView)__
 
+Basically you push before making changes to the matrix, then pop to undo those changes. 
 Visually, here is an example of the matrix stacks:
 
 ![OPERATION](stack_operation.png)
