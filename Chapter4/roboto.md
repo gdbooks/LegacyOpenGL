@@ -3,7 +3,7 @@ Now that we can set the perspetive, model-view matrix and can position different
 
 The final project will look something like this:
 
-# TODO: IMAGE
+![Robot](origato.png)
 
 So, lets get started! Make a new demo scene that extends the ```Game``` class. Add the DrawCube, LookAt and Perspective helper functions to this class. Also, add a grid.
 
@@ -101,6 +101,34 @@ public override void Update(float dTime) {
 ```
 
 ##Render
+Let's start out by simply rendering our grid, up to this point, the render function should look rather familiar. I'm also going to include a function called ```RenderRobot```, i want to write the render code for the robot in it's own function, to make it re-usable and to keep the render loop clean.
+
+```
+public override void Render() {
+    GL.Viewport(0, 0, MainGameWindow.Window.Width, MainGameWindow.Window.Height);
+
+    GL.MatrixMode(MatrixMode.Projection);
+    GL.LoadIdentity();
+    Perspective(60.0f, (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height, 0.01f, 1000.0f);
+
+    GL.MatrixMode(MatrixMode.Modelview);
+    GL.LoadIdentity();
+    LookAt(
+        10.0f, 5.0f, 15.0f,
+        0.0f, 0.0f, 0.0f, 
+        0.0f, 1.0f, 0.0f
+    );
+
+    grid.Render();
+
+    DrawRobot(-1.0f, 1.0f, 0.0f);
+}
+```
+
+The draw robot function takes 3 arguments, world x, world y and world z. The cameras positon is 10, 5, 15 and it is looking at point 0, 0, 0. The near and far plane are almost 1000 units apart, so we can see just about anything in the scene.
+
+## Draw Robot
+
 
 ##Animate
 
