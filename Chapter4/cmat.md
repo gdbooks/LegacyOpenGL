@@ -171,3 +171,41 @@ First thing's first, import your math implementation code into the project. Keep
 <img src="cleaned.png" width=247 height=306 />
 
 Make sure to use the namespace these where implemented under ```using Math_Implementation;```. The namespace ```OpenGK``` also contains a Matrix4 class, so make sure you are not using the namespace directly. Meaning this is ok: ```using OpenTK.Graphics.OpenGL;``` but don't do this: ```using OpenTK;```.
+
+## Replacing the OpenGL matrices.
+
+Let's look at the render funtion with your custom matrices in place:
+
+```
+public override void Render() {
+    GL.Viewport(0, 0, MainGameWindow.Window.Width, MainGameWindow.Window.Height);
+
+    GL.MatrixMode(MatrixMode.Projection);
+    GL.LoadIdentity();
+    Perspective(60.0f, (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height, 0.01f, 1000.0f);
+    
+    GL.MatrixMode(MatrixMode.Modelview);
+    GL.LoadIdentity();
+    LookAt(
+        10.0f, 4.0f, 0,
+        0.0f, 0.0f, 0.0f, 
+        0.0f, 1.0f, 0.0f
+    );
+
+    grid.Render();
+
+    GL.Color3(1.0f, 0.0f, 0.0f);
+    {
+        Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
+        Matrix4 rotation = Matrix4.AngleAxis(45.0f, 1.0f, 0.0f, 0.0f);
+        Matrix4 translation = Matrix4.Translate(new Vector3(-2, 1, 3));
+
+        // SRT: scale first, rotate second, translate last!
+        Matrix4 model = translation * rotation *scale;
+        // Remember to transpose your matrix!
+        GL.MultMatrix(Matrix4.Transpose(model).Matrix);
+
+        DrawCube();
+    }
+}
+```
