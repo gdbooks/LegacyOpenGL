@@ -118,6 +118,8 @@ float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window
 GL.Ortho(-10f * aspect, 10f * aspect, -10f, 10f, -100f, 100f);
 ```
 
+Test this by drawing a cube and resizing the window to be much wider than it is tall. Try it both with accounting for aspect ratio and without. See the difference between how the two look.
+
 ##Perspective
 Altough orthographic projections can be interesting (not always in a good way) you need to create perspective projections to make realistic looking images.
 
