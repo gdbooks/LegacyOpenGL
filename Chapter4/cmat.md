@@ -38,4 +38,27 @@ Given that a matrix is stored as an array of floats (size 16) you would expect i
  Xx  Yx  Zx  Tx  Xy  Yy  Zy  Ty  Xz  Yz  Zz   Tz   0    0    0    1
 ```
 
-Which makes sense, the matrix is stored 1 row at a time in a linear array.
+Which makes sense, the matrix is stored 1 row at a time in a linear array. The X basis vector occupies elements 0, 4, 8 and 12. This is how your matrix works, and to be honest; this is how any sane persons matrix would be written.
+
+In the above example, the matrix is stored linearly one row at a time.
+
+##### Not OpenGL
+In OpenGL the following (still column major) matrix:
+
+```
+Xx  Yx  Zx  Tx
+Xy  Yy  Zy  Ty
+Xz  Yz  Zz  Tz
+0   0   0   1
+```
+
+Is stored in memory like this:
+
+```
+[0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+ Xx  Xy  Xz  0   Yx  Yy  Yz  0   Zx  Zy  Zz   0    Tx   Ty   Tz    1
+```
+
+That is, the matrix is stored one column at a time. Instead of storing each row in memory one after another, OpenGL stores each column in memory, one after another. 
+
+This is actually a very un-intuitive way to store a matrix. So, why does OpenGL do it this way? When the standard for the OpenGL Matrix was defined in _1992_ the hardware of the time could run three times faster with this memory layout. Today it's a neusance, a major source of confusion and annoyment. But we have to keep doing things this way for historical reasons.
