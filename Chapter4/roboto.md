@@ -63,4 +63,38 @@ namespace GameApplication {
 
 The only thing to note in the above code is the ```GL.Enable(EnableCap.DepthTest)``` call. We have not discussed what that does yet, we will in a later chapter. For now, just turn it on, it's needed for the game to run.
 
-Next up, lets animate those rotation variables!
+Next up, lets animate those rotation variables! In the update we're going to animate the rotation of each limb by 50 degrees / second. If a limb's rotation is > +20 or < -20 we will reverse it's direction
+
+```
+public override void Update(float dTime) {
+    // Update rotations
+    leftArmRot += 50.0f * dTime * leftArmDir;
+    rightArmRot += 50.0f * dTime * rightArmDir;
+    leftLegRot += 50.0f * dTime * leftLegDir;
+    rightLegRot += 50.0f * dTime * rightLegDir;
+
+    // Clamp & change direction at edge
+    if (leftArmRot > 20.0f || leftArmRot < -20.0f) {
+        // Clamp to -15 or +15, depending on if the number
+        // is negative or positive
+        leftArmRot = (leftArmRot < 0.0f) ? -20.0f : 20.0f;
+        // Change direction
+        leftArmDir *= -1.0f;
+    }
+    
+    if (rightArmRot > 20.0f || rightArmRot < -20.0f) {
+        rightArmRot = (rightArmRot < 0.0f) ? -20.0f : 20.0f;
+        rightArmDir *= -1.0f;
+    }
+
+    if (leftLegRot > 20.0f || leftLegRot < -20.0f) {
+        leftLegRot = (leftLegRot < 0.0f) ? -20.0f : 20.0f;
+        leftLegDir *= -1.0f;
+    }
+
+    if (rightLegRot > 20.0f || rightLegRot < -20.0f) {
+        rightLegRot = (rightLegRot < 0.0f) ? -20.0f : 20.0f;
+        rightLegDir *= -1.0f;
+    }
+}
+```
