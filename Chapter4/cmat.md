@@ -195,17 +195,69 @@ public override void Render() {
     grid.Render();
 
     GL.Color3(1.0f, 0.0f, 0.0f);
+    GL.PushMatrix();
     {
         Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
         Matrix4 rotation = Matrix4.AngleAxis(45.0f, 1.0f, 0.0f, 0.0f);
         Matrix4 translation = Matrix4.Translate(new Vector3(-2, 1, 3));
 
         // SRT: scale first, rotate second, translate last!
-        Matrix4 model = translation * rotation *scale;
+        Matrix4 model = translation * rotation * scale;
         // Remember to transpose your matrix!
         GL.MultMatrix(Matrix4.Transpose(model).Matrix);
 
         DrawCube();
     }
+    GL.PopMatrix();
 }
 ```
+
+As you can see we create 3 matrices: scale, rotation and translation. We make the model matrix for the cube by combining the 3 transformation matrices we created. Because we're in column major (post multiplcation) we multiply right to left.
+
+As discussed, we can't apply the matrix directly, because we're storing it in a different manner than OpenGL expects. So, we transpose the matrix before giving it to OpenGL. 
+
+We use ```GL.MulMatrix```. When that call is reached the only thing on the stack is the view matrix. GL.MulMatrix will multiply our matrix into the view matrix to create a modelView matrix.
+
+We still need to push and pop matrices. We do this to restore the top of the matrix stack to the view matrix, in case anything else needs to be rendered.
+
+One thing you may have noticed is i put a ```{ }``` block inside GL.PushMatrix and GL.PopMatrix. Why did i do this?
+
+Well, we made 4 local matrices: scale, rotation, translation and model. Instead of those matrices being scoped to the function, they are now scoped to those brackets. So, if we have two cubes, we can re-use the matrix names as the ones up there fall out of scope when the } is hit.
+
+Like this:
+
+```
+public override void Render() {
+    // Omitted to save space, everything up to grid.Render is here
+
+    GL.Color3(1.0f, 0.0f, 0.0f);
+    GL.PushMatrix();
+    {
+        Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
+        Matrix4 rotation = Matrix4.AngleAxis(45.0f, 1.0f, 0.0f, 0.0f);
+        Matrix4 translation = Matrix4.Translate(new Vector3(-2, 1, 3));
+
+        Matrix4 model = translation * rotation * scale;
+        GL.MultMatrix(Matrix4.Transpose(model).Matrix);
+
+        DrawCube();
+    }
+    GL.PopMatrix();
+    
+    GL.Color3(0.0f, 1.0f, 0.0f);
+    GL.PushMatrix();
+    {
+        Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
+        Matrix4 rotation = Matrix4.AngleAxis(45.0f, 0.0f, 1.0f, 0.0f);
+        Matrix4 translation = Matrix4.Translate(new Vector3(5, 3, -4));
+
+        Matrix4 model = translation * rotation * scale;
+        GL.MultMatrix(Matrix4.Transpose(model).Matrix);
+
+        DrawCube();
+    }
+    GL.PopMatrix();
+}
+```
+
+As you can see i can create matrices by the same name, because they are scoped to local code blocks denoted by ```{ } ``` pairs.
