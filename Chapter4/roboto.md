@@ -210,6 +210,14 @@ void DrawRobot(float x, float y, float z) {
 }
 ```
 
+The comments in the code above outline what is happening, but lets discuss it real quick anyway. The robot is made up of 8 cubes. We first scale the cube into the shape of a certain body part. Once the body part has the right shape, we translate it into position.
+
+The most interesting bit here are the feet on the legs. Because each foot is rendered inside the push / pop block of the leg it belongs to, when we rotate the leg we will also rotate the foot. 
+
+How did we come up with the scale (1.0f, 0.25f, 2.0f) for the feet? Well, if we don't translate or scale in there, just draw a cube it will draw the leg cube. We want the foot cube to be just as wide as the leg, so the X-scale stays 1. Relative to the leg, we want to foot to be 1/4 the height of the leg. So y scale becomes 0.25. We want the foot to be deeper than the leg, so it can jot out. Relative to the leg we want the foot twice as long, so we scale Z by 2.
+
+This is an important concept. Each time we transform something, we are transforming it relative to the space it's in. The leg is relative to view space, the foot is relative to the legs model space. If we had toes they would be relative to the foots model space.
+
 With the above render code in place, your robot should render like so:
 
 ![ROBO1](robot1.png)
