@@ -148,3 +148,9 @@ namespace GameApplication {
 Here is what this screen looks like:
 
 ![Matrix](mat2.png)
+
+Let's see if we can replace the __model__ matrix of the rendered cube with our own custom matrix. 
+
+First thing's first, import your math implementation code into the project. Keep things clean, put those files under a folder in visual studios solution view. I'd also like you to put your demo scenes in their own folder, like this:
+
+![CLEAN](cleaned.png)
