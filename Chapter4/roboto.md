@@ -225,6 +225,25 @@ With the above render code in place, your robot should render like so:
 ![ROBO1](robot1.png)
 
 ##Animate
-Awesome! Now we have a robot!But it's not doing anything.... Lame. 
+Awesome! Now we have a robot!But it's not doing anything.... Lame. Let's animate some movement!
+
+To add animation, all we have to do is account for rotation for all major joints. Left and right arms both rotate. Left and right legs both rotate. The left and right feed don't rotate independently, they rotate with the legs.
+
+Here is how you would rotate the left arm:
+
+```
+// Draw left arm
+GL.Color3(0.0f, 0.0f, 1.0f); // blue
+GL.PushMatrix();
+    GL.Translate(0.0f, 2.25f, 0.0f);
+    GL.Rotate(leftArmRot, 1.0f, 0.0f, 0.0f);
+    GL.Scale(0.25f, 1.0f, 0.25f);
+DrawCube();
+GL.PopMatrix();
+```
+
+The only thing new is we added Rotate to the transfomration matrix of the arm. Try to rotate the otehr limbs yourself.
+
+Once you have all of this, you should see the limbs swinging. Only one problem, the arms are not rotating at the shoulder, they are rotating at the elbow! Same for the legs... 
 
 ##Pivot
