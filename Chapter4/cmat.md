@@ -78,4 +78,71 @@ The takeaway from the above section is actually rather simple, while you use the
 This just means that before you load your own custom matrix into OpenGL, you must transpose it.
 
 ## Loading a matrix
-Now with all that theory out of the way, how do you actually load a matrix into OpenGL?
+Now with all that theory out of the way, how do you actually load a matrix into OpenGL? With the ```GL.LoadMatrix``` function. This function takes an array of float's as an argument:
+
+```
+void GL.LoadMatrix(float[] matrix);
+```
+
+Let's see how to use it. Make a new demo scene that extends the ```Game``` class. We will need the LookAt, Perspective and DrawCube functions. Also include a grid.
+
+Draw a cube at 1, 0, 0; rotated 45 degrees on the x axis; with a scale of 0.5f. 
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OpenTK.Graphics.OpenGL;
+
+namespace GameApplication {
+    class MatrixDemo1 : Game {
+        Grid grid = null;
+
+        public override void Initialize() {
+            grid = new Grid();
+        }
+
+        protected static void LookAt(float eyeX, float eyeY, float eyeZ, float targetX, float targetY, float targetZ, float upX, float upY, float upZ) {
+            // Copy / paste
+        }
+
+        public static void Perspective(float fov, float aspectRatio, float znear, float zfar) {
+            // Copy / paste
+        }
+
+        public static void DrawCube() {
+            // Copy / paste
+        }
+
+        public override void Render() {
+            GL.Viewport(0, 0, MainGameWindow.Window.Width, MainGameWindow.Window.Height);
+
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            Perspective(60.0f, (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height, 0.01f, 1000.0f);
+            
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+            LookAt(
+                10.0f, 4.0f, 0,
+                0.0f, 0.0f, 0.0f, 
+                0.0f, 1.0f, 0.0f
+            );
+
+            grid.Render();
+
+            GL.PushMatrix();
+                GL.Color3(1.0f, 0.0f, 0.0f);
+                GL.Translate(-2, 1, 3);
+                GL.Rotate(45.0f, 1.0f, 0.0f, 0.0f);
+                GL.Scale(0.5f, 0.5f, 0.5f);
+                DrawCube();
+            GL.PopMatrix();
+        }
+    }
+}
+```
+
+Here is what this screen looks like:
