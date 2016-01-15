@@ -76,3 +76,6 @@ M N O P
 The takeaway from the above section is actually rather simple, while you use the same theoretical memory layout as OpenGL (column major, post multiplication) you actually store your data in memory transposed of how OpenGL store it's data in memory.
 
 This just means that before you load your own custom matrix into OpenGL, you must transpose it.
+
+## Loading a matrix
+Now with all that theory out of the way, how do you actually load a matrix into OpenGL?
