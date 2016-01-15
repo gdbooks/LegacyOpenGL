@@ -129,7 +129,98 @@ public override void Render() {
 The draw robot function takes 3 arguments, world x, world y and world z. The cameras positon is 10, 5, 15 and it is looking at point 0, 0, 0. The near and far plane are almost 1000 units apart, so we can see just about anything in the scene.
 
 ## Draw Robot
+This is going to be the basic function to draw our (un-animated) robot:
 
+```
+void DrawRobot(float x, float y, float z) {
+            // Save the matrix state we enter this function with
+            GL.PushMatrix();
+
+            // Translate the robot to the desired coordinates
+            // because all body parts will be based off of this position
+            // we don't need to push a matrix here
+            GL.Translate(x, y, z);
+
+            // Draw the head, becuase it multiplies a position we have to push matrix
+            GL.Color3(1.0f, 0.0f, 0.0f); // Red
+            GL.PushMatrix();
+                GL.Translate(1.0f, 4.0f, 0.0f);
+                GL.Scale(0.5f, 0.5f, 0.5f);
+                DrawCube();
+            GL.PopMatrix(); // finish head
+
+            // Draw the body
+            GL.Color3(0.0f, 1.0f, 0.0f); // green
+            GL.PushMatrix();
+                GL.Translate(1.0f, 2.5f, 0.0f);
+                GL.Scale(0.75f, 1.0f, 0.5f);
+                DrawCube();
+            GL.PopMatrix(); // finish body
+
+            // Draw left arm
+            GL.Color3(0.0f, 0.0f, 1.0f); // blue
+            GL.PushMatrix();
+                GL.Translate(0.0f, 2.25f, 0.0f);
+                GL.Translate(0.0f, 1.0f, 0.0f); // UnPivot
+                GL.Rotate(leftArmRot, 1.0f, 0.0f, 0.0f);
+                GL.Translate(0.0f, -1.0f, 0.0f); // Pivot
+                GL.Scale(0.25f, 1.0f, 0.25f);
+            DrawCube();
+            GL.PopMatrix();
+
+            // Draw right arm
+            GL.Color3(1.0f, 0.0f, 1.0f); // magenta
+            GL.PushMatrix();
+                GL.Translate(2.0f, 2.25f, 0.0f);
+                GL.Translate(0.0f, 1.0f, 0.0f); // UnPivot
+                GL.Rotate(rightArmRot, 1.0f, 0.0f, 0.0f);
+                GL.Translate(0.0f, -1.0f, 0.0f); // Pivot
+                GL.Scale(0.25f, 1.0f, 0.25f);
+                DrawCube();
+            GL.PopMatrix();
+
+            // Draw left leg
+            GL.Color3(1.0f, 1.0f, 0.0f); // yellow
+            GL.PushMatrix();
+                GL.Translate(0.5f, 0.5f, 0.0f);
+                GL.Translate(0.0f, 1.0f, 0.0f); // UnPivot
+                GL.Rotate(leftLegRot, 1.0f, 0.0f, 0.0f);
+                GL.Translate(0.0f, -1.0f, 0.0f); // Pivot
+                GL.Scale(0.25f, 1.0f, 0.25f);
+                DrawCube();
+                // Draw left foot. Since nothing else uses the modellview matrix beofore
+                // the next pop, we don't have to technically include this push call.
+                // But i think including it makes it obvious that the foot is being
+                // drawn relative to the leg!
+                GL.PushMatrix();
+                    GL.Translate(0.0f, -1.0f, 1.0f);
+                    GL.Scale(1.0f, 0.25f, 2.0f);
+                    DrawCube();
+                GL.PopMatrix();
+            GL.PopMatrix();
+
+            // Draw right leg
+            GL.Color3(0.0f, 1.0f, 1.0f); // baby blue
+            GL.PushMatrix();
+                GL.Translate(1.5f, 0.5f, 0.0f);
+                GL.Translate(0.0f, 1.0f, 0.0f); // UnPivot
+                GL.Rotate(rightLegRot, 1.0f, 0.0f, 0.0f);
+                GL.Translate(0.0f, -1.0f, 0.0f); // Pivot
+                GL.Scale(0.25f, 1.0f, 0.25f);
+                DrawCube();
+                // Draw right foot.
+                GL.PushMatrix();
+                    GL.Translate(0.0f, -1.0f, 1.0f);
+                    GL.Scale(1.0f, 0.25f, 2.0f);
+                    DrawCube();
+                GL.PopMatrix();
+            GL.PopMatrix();
+
+            // Restore original matrix state, like if this function
+            // never did anything to matrices ;)
+            GL.PopMatrix();
+        }
+```
 
 ##Animate
 
