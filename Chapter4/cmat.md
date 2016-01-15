@@ -1,5 +1,3 @@
-# Don't read this yet, it's a WIP and has many errors!
-
 # Custom Matrices
 Using OpenGL matrix functions is pretty easy. And the stack makes working with matrices even easyer. But you already have a Matrix class built. Which already offers everything OpenGL matrices offer, and more! 
 
