@@ -5,6 +5,7 @@ The final project will look something like this:
 
 ![Robot](origato.png)
 
+## New project
 So, lets get started! Make a new demo scene that extends the ```Game``` class. Add the DrawCube, LookAt and Perspective helper functions to this class. Also, add a grid.
 
 We're ging to add 8 floats to this class. The first 4 are the angles for the arms and legs of the robot. The last 4 are the direction in which the arms / legs are moving!
