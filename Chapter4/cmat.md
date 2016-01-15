@@ -156,7 +156,7 @@ Here is what this screen looks like:
 
 Let's see if we can replace the __model__ matrix of the rendered cube with our own custom matrix. 
 
-Check __Math Implementation__ on github, i opened a new ticket. Fix it before moving on!
+Check __Math Implementation__ on github, i opened a new ticket. Fix it before moving on! When you're using custom matrices and things don't render correctly (but they did with OpenGL matrices) the problem is always with your implementation. Even if it passed a few unit tests, the real word scenario sometimes breaks down.
 
 First thing's first, import your math implementation code into the project. Keep things clean, put those files under a folder in visual studios solution view. I'd also like you to put your demo scenes in their own folder, like this:
 
