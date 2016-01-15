@@ -257,3 +257,34 @@ The reason our rotations look messed up is because of how they pivot! To underst
 ![STEPS](steps.png)
 
 Where things break is step 3. The rotate function rotates the object around the center of the objects coordinate system, and thats why we don't pivot around the shoulder.
+
+How can we fix this? Well, we know that all rotations happen around the origin of the objects model matrix. We can translate the model matrix so that the point we want to pivot is at it's origin, then do the rotation and then translate the model matrix back to how it was. This would give us control over where the pivot point goes.
+
+If that sounds confusing, maybe this will clear it up:
+
+![PIVOT](pivot.jpg)
+
+So how would we do this pivoting for the left arm?
+
+```
+// Draw left arm
+GL.Color3(0.0f, 0.0f, 1.0f); // blue
+GL.PushMatrix();
+    GL.Translate(0.0f, 2.25f, 0.0f);
+    GL.Translate(0.0f, 1.0f, 0.0f); // UnPivot
+    GL.Rotate(leftArmRot, 1.0f, 0.0f, 0.0f);
+    GL.Translate(0.0f, -1.0f, 0.0f); // Pivot
+    GL.Scale(0.25f, 1.0f, 0.25f);
+    DrawCube();
+GL.PopMatrix();
+```
+
+If you run with that code, the left arm will pivot around the shoulder joing. So, the question is, why do we move this joint by -1 on the y? 
+
+To answer that question, we still want to rotate around the center of the arm on the X and Z axis, we just want to rotate at the tip of the Y axis (on the top of the arm).
+
+If you look at the cube being drawn, the Y scale is 1. Remember, the height of the cube is 2, because it goes from -1 to +1. Default rotation is around 0, 0. So to rotate around the tip of the arm we have to subtract 1, our pivot point is 0, -1.
+
+Why -1, wouldn't +1 make more sense? Remember, in OpenGL positive Y goes down, negative Y goes up. If we pivoted to 0, 1 the arm would pivot around the fingers. Kind of the opposite of what we want.
+
+Go ahead and try to add pivots to the rest of the robot to complete it's walk-cycle.
