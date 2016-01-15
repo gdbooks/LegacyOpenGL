@@ -218,10 +218,13 @@ How did we come up with the scale (1.0f, 0.25f, 2.0f) for the feet? Well, if we 
 
 This is an important concept. Each time we transform something, we are transforming it relative to the space it's in. The leg is relative to view space, the foot is relative to the legs model space. If we had toes they would be relative to the foots model space.
 
+The concept of relative spaces is very important. If you don't understand it talk to me on skype!
+
 With the above render code in place, your robot should render like so:
 
 ![ROBO1](robot1.png)
 
 ##Animate
+Awesome! Now we have a robot!But it's not doing anything.... Lame. 
 
 ##Pivot
