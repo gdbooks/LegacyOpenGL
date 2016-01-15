@@ -247,3 +247,13 @@ The only thing new is we added Rotate to the transfomration matrix of the arm. T
 Once you have all of this, you should see the limbs swinging. Only one problem, the arms are not rotating at the shoulder, they are rotating at the elbow! Same for the legs... 
 
 ##Pivot
+The reason our rotations look messed up is because of how they pivot! To understand what's going on, lets discect what happens when you draw just one part of the robot, the left arm:
+
+1. We start off with a unit cube, this is just some cube
+2. We scale the cube, this gives it the correct porportion
+3. We apply a rotation to the cube, this rotates the cube around it's own ceter
+4. We position the rotated cube into it's final place
+
+![STEPS](steps.png)
+
+Where things break is step 3. The rotate function rotates the object around the center of the objects coordinate system, and thats why we don't pivot around the shoulder.
