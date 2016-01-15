@@ -62,3 +62,17 @@ Is stored in memory like this:
 That is, the matrix is stored one column at a time. Instead of storing each row in memory one after another, OpenGL stores each column in memory, one after another. 
 
 This is actually a very un-intuitive way to store a matrix. So, why does OpenGL do it this way? When the standard for the OpenGL Matrix was defined in _1992_ the hardware of the time could run three times faster with this memory layout. Today it's a neusance, a major source of confusion and annoyment. But we have to keep doing things this way for historical reasons.
+
+Take a few minutes, let that sink in. See if you can figure out how the following matrix would be stored in OpenGL's memory and in your matrices memory. Keep in mind, the matrix is stored in a 1 dimensional float array that has 16 elements. Let me know on skype before moving on to the next section:
+
+```
+A B C D
+E F G H
+I G K L
+M N O P
+```
+
+## Transpose
+The takeaway from the above section is actually rather simple, while you use the same theoretical memory layout as OpenGL (column major, post multiplication) you actually store your data in memory transposed of how OpenGL store it's data in memory.
+
+This just means that before you load your own custom matrix into OpenGL, you must transpose it.
