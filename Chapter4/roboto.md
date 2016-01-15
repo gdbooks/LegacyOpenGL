@@ -99,3 +99,9 @@ public override void Update(float dTime) {
     }
 }
 ```
+
+#Render
+
+#Animate
+
+#Pivot
