@@ -100,7 +100,23 @@ Before we leave off, i just want to metnion, ortho projections don't have to be 
 GL.Ortho(-1, 1, -1, 1, -100, 100);
 ```
 
-Fun fact, the graphics manager for our 2D framework uses orthographic projection to render the sprites. Maybe take a peek at what it does ;)
+Fun fact, the graphics manager for our 2D framework uses orthographic projection to render the sprites. Maybe take a peek at what it does.
+
+###Shape
+When you set your orthographic projection to be a sqare and resize your window to not be a square you will notice that the actual image on screen stretches or squashes. This is because we do not take aspect ratio into consideration!
+
+Aspect ration effects the WIDTH of your projection, with respect to it's height. Therefore the aspect is width / height. Let's say you have the following projection:
+
+```
+GL.Ortho(-10f, 10f, -10f, 10f, -100f, 100f);
+```
+
+But you want the rendered image to look the same no matter what size the window. All you have to do is find the aspect ratio of the window, and multiply the left and right arguments by it. Like so:
+
+```
+float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height;
+GL.Ortho(-10f * aspect, 10f * aspect, -10f, 10f, -100f, 100f);
+```
 
 ##Perspective
 Altough orthographic projections can be interesting (not always in a good way) you need to create perspective projections to make realistic looking images.
