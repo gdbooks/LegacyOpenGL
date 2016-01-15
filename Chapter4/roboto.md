@@ -210,6 +210,10 @@ void DrawRobot(float x, float y, float z) {
 }
 ```
 
+With the above render code in place, your robot should render like so:
+
+![ROBO1](robot1.png)
+
 ##Animate
 
 ##Pivot
