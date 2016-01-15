@@ -78,12 +78,15 @@ The takeaway from the above section is actually rather simple, while you use the
 This just means that before you load your own custom matrix into OpenGL, you must transpose it.
 
 ## Loading a matrix
-Now with all that theory out of the way, how do you actually load a matrix into OpenGL? With the ```GL.LoadMatrix``` function. This function takes an array of float's as an argument:
+Now with all that theory out of the way, how do you actually load a matrix into OpenGL? There are two functions, the first one is```GL.LoadMatrix```. This function takes an array of float's as an argument:
 
 ```
 void GL.LoadMatrix(float[] matrix);
 ```
 
+This function will take the matrix passed into it, and __REPLACE__ whatever is on the top of the stack with the matrix. It's useful for loading the view matrix, but after that you can't really use it for much else without ruining the view matrix.
+
+## Sample
 Let's see how to use it. Make a new demo scene that extends the ```Game``` class. We will need the LookAt, Perspective and DrawCube functions. Also include a grid.
 
 Draw a cube at 1, 0, 0; rotated 45 degrees on the x axis; with a scale of 0.5f. 
@@ -151,8 +154,10 @@ Here is what this screen looks like:
 
 Let's see if we can replace the __model__ matrix of the rendered cube with our own custom matrix. 
 
+Check __Math Implementation__ on github, i opened a new ticket. Fix it before moving on!
+
 First thing's first, import your math implementation code into the project. Keep things clean, put those files under a folder in visual studios solution view. I'd also like you to put your demo scenes in their own folder, like this:
 
 <img src="cleaned.png" width=247 height=306 />
 
-Make sure to use the namespace these where implemented under
+Make sure to use the namespace these where implemented under ```using Math_Implementation;```. The namespace ```OpenGK``` also contains a Matrix4 class, so make sure you are not using the namespace directly. Meaning this is ok: ```using OpenTK.Graphics.OpenGL;``` but don't do this: ```using OpenTK;```.
