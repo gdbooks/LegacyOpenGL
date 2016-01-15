@@ -260,4 +260,4 @@ public override void Render() {
 }
 ```
 
-As you can see i can create matrices by the same name, because they are scoped to local code blocks denoted by ```{ } ``` pairs.
+As you can see i can create matrices by the same name, without reusing the old ones because they are scoped to local code blocks denoted by ```{ } ``` pairs.
