@@ -153,4 +153,6 @@ Let's see if we can replace the __model__ matrix of the rendered cube with our o
 
 First thing's first, import your math implementation code into the project. Keep things clean, put those files under a folder in visual studios solution view. I'd also like you to put your demo scenes in their own folder, like this:
 
-![CLEAN](cleaned.png)
+<img src="cleaned.png" width=247 height=306 />
+
+Make sure to use the namespace these where implemented under
