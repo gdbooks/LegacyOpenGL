@@ -88,6 +88,14 @@ void GL.LoadMatrix(float[] matrix);
 
 This function will take the matrix passed into it, and __REPLACE__ whatever is on the top of the stack with the matrix. It's useful for loading the view matrix, but after that you can't really use it for much else without ruining the view matrix.
 
+The second method is ```GL.MulMatrix```, like LoadMatrix it takes an array of 16 floats:
+
+```
+void GL.MulMatrix(float[] matrix);
+```
+
+Unlike LoadMatrix, MulMatrix respects the top of the stack. It's going to take whatever argument you give it and multiply the top of the matrix stack by that argument. This is the function you wan to use to load custom matrices onto an existing stack
+
 ## Sample
 Let's see how to use it. Make a new demo scene that extends the ```Game``` class. We will need the LookAt, Perspective and DrawCube functions. Also include a grid.
 
