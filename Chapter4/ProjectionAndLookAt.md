@@ -5,7 +5,24 @@ Make these changes in the __Math Implementation__ repository, once they are work
 
 All three of these functions are going to be static!
 
+Deriving matrices is hard. I honestly have no idea how to derive an Orthographic projection matrix. What i will preset below is the formulas i've memorized and the things that work for me. If you want to be mathematically accurate, [this 3 page tutorial](http://www.codeguru.com/cpp/misc/misc/graphics/article.php/c10123/Deriving-Projection-Matrices.htm) is a decent walktrough of how to derive the matrices. It's not a skill you will ever need, i've never used it once.
+
 ## Ortho
+
+You can test this by changing the projection fo Mr.Roboto from the perspective projection to:
+
+```
+float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height;
+GL.Ortho(-25.0f * aspect, 25.0f * aspect, -25.0f, 25.0f, -25.0f, 25.0f);
+```
+
+Take not of what it looks like, then replace the ```GL.Ortho``` call with your own matrix:
+
+```
+float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height;
+Matrix4 ortho = Matrix4.Ortho(-25.0f * aspect, 25.0f * aspect, -25.0f, 25.0f, -25.0f, 25.0f);
+GL.LoadMatrix(Matrix4.Transpose(ortho).Matrix);
+```
 
 ## Frustum
 
