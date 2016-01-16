@@ -3,7 +3,7 @@ One of the nice things about being able to use your own matrices in OpenGL is ha
 
 Make these changes in the __Math Implementation__ repository, once they are working, copy the Matrix4.cs file into your __OpenGL1X__ repository, replacing the old file.
 
-All three of these functions are going to be static!
+All three of these functions are going to be static! They don't modify any existing matrix, just return a new matrix specifying some sort of transformtaion!
 
 Deriving matrices is hard. I honestly have no idea how to derive an Orthographic projection matrix. What i will preset below is the formulas i've memorized and the things that work for me. If you want to be mathematically accurate, [this 3 page tutorial](http://www.codeguru.com/cpp/misc/misc/graphics/article.php/c10123/Deriving-Projection-Matrices.htm) is a decent walktrough of how to derive the matrices. It's not a skill you will ever need, i've never used it once.
 
@@ -23,6 +23,8 @@ float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window
 Matrix4 ortho = Matrix4.Ortho(-25.0f * aspect, 25.0f * aspect, -25.0f, 25.0f, -25.0f, 25.0f);
 GL.LoadMatrix(Matrix4.Transpose(ortho).Matrix);
 ```
+
+The two screens should look the same.
 
 ## Frustum
 
