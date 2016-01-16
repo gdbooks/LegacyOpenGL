@@ -30,5 +30,9 @@ class MatrixStack {
         // Multiply the top of the stack with whatever was pased in
     }
     
-    float[] OpenGL
+    public float[] OpenGL {
+        get {
+            // Return the OpenGL getter of the top matrix on the stack
+        }
+    }
 ```
