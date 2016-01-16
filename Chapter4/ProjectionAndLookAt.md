@@ -31,6 +31,16 @@ The two screens should look the same.
 
 ## Frustum
 
+Re-implementing OpenGL's Frustum function is not too difficult either, as the math behind it is toroughly documented. This matrix is one of the few matrices who's element [3,3] is not 1.
+
+![FRUSTUM](frustum_mat.gif)
+
+The formula is available as text on [the OpenGL man page](http://www.manpagez.com/man/3/glFrustum/). I know D is a bit hard to read it's ```D = -((2 * far * near) / (far - near))```
+
+You can test if your function is correct, by changing the Mr.Roboto sample back to using it's original projection matrix. Then replace the ```Perspective``` function with one that uses your frustum instead of the built in one:
+
+
+
 ## Look At
 
 http://www.songho.ca/opengl/gl_projectionmatrix.html
