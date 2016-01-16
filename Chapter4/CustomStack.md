@@ -58,17 +58,46 @@ void Render(float width, float height) {
     // Render cube 1
     stack.Push();
     {
-        Matrix4 tran
+        Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
+        Matrix4 rotation = Matrix4.AngleAxis(45.0f, 1.0f, 0.0f, 0.0f);
+        Matrix4 translation = Matrix4.Translate(new Vector3(-2, 1, 3));
+
+        Matrix4 model = translation * rotation * scale;
+        stack.Mul(model);
+        GL.LoadMatrix(stack.OpenGL);
+        DrawCube();
     }
     // Restore stack
     stack.Pop();
     
     
     
-    // RenderCube2
+    // Render cube 2
     stack.Push();
+    {
+        Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
+        Matrix4 rotation = Matrix4.AngleAxis(45.0f, 1.0f, 0.0f, 0.0f);
+        Matrix4 translation = Matrix4.Translate(new Vector3(-2, 1, 3));
+
+        Matrix4 model = translation * rotation * scale;
+        stack.Mul(model);
+        GL.LoadMatrix(stack.OpenGL);
+        DrawCube();
+        
+        // Render sub-cube
+        stack.Push();
+        {
+            Matrix4 scale = Matrix4.Scale(new Vector3(0.5f, 0.5f, 0.5f));
+            Matrix4 rotation = Matrix4.AngleAxis(45.0f, 1.0f, 0.0f, 0.0f);
+            Matrix4 translation = Matrix4.Translate(new Vector3(-2, 1, 3));
     
-    // Restore stack
-    // stack.Pop();
+            Matrix4 model = translation * rotation * scale;
+            stack.Mul(model);
+            GL.LoadMatrix(stack.OpenGL);
+        DrawCube();
+        }
+        stack.Pop();
+    }
+    stack.Pop();
 }
 ```
