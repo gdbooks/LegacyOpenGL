@@ -35,3 +35,6 @@ The two screens should look the same.
 
 http://www.songho.ca/opengl/gl_projectionmatrix.html
 
+## Bonus:
+
+![Proj](proj_matrix.png)
