@@ -8,6 +8,9 @@ All three of these functions are going to be static! They don't modify any exist
 Deriving matrices is hard. I honestly have no idea how to derive an Orthographic projection matrix. What i will preset below is the formulas i've memorized and the things that work for me. If you want to be mathematically accurate, [this 3 page tutorial](http://www.codeguru.com/cpp/misc/misc/graphics/article.php/c10123/Deriving-Projection-Matrices.htm) is a decent walktrough of how to derive the matrices. It's not a skill you will ever need, i've never used it once.
 
 ## Ortho
+How OpenGL makes an orthographic matrix is not a secret. It's actually outlined in the OpenGL specification. Use the following image to create your own ```Matrix4.Ortho``` function:
+
+![ORTHO](ortho_matrix.png)
 
 You can test this by changing the projection fo Mr.Roboto from the perspective projection to:
 
