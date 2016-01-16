@@ -39,7 +39,16 @@ The formula is available as text on [the OpenGL man page](http://www.manpagez.co
 
 You can test if your function is correct, by changing the Mr.Roboto sample back to using it's original projection matrix. Then replace the ```Perspective``` function with one that uses your frustum instead of the built in one:
 
-
+```
+public static void Perspective(float fov, float aspectRatio, float zNear, float zFar) {
+    float yMax = zNear * (float)Math.Tan(fov * (Math.PI / 360.0f));
+    float xMax = yMax * aspectRatio;
+    
+    //GL.Frustum(-xMax, xMax, -yMax, yMax, zNear, zFar);
+    Matrix4 frustum = Matrix4.Frusum(-xMax, xMax, -yMax, yMax, zNear, zFar);
+    GL.MultMatrix(Matrix4.Transpose(frustum).Matrix);
+}
+```
 
 ## Look At
 
