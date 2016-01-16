@@ -94,7 +94,7 @@ void Render(float width, float height) {
             Matrix4 model = translation * rotation * scale;
             stack.Mul(model);
             GL.LoadMatrix(stack.OpenGL);
-        DrawCube();
+            DrawCube();
         }
         stack.Pop();
     }
