@@ -1,0 +1,2 @@
+# Your own stack
+At this point in our look at the transformation libary, we are no longer dependant on the built in OpenGL matrices! Go us! But we're still using the OpenGL stack. Which as we know has a set size. And we don't really know what it's doing under the hood.
