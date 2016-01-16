@@ -36,3 +36,39 @@ class MatrixStack {
         }
     }
 ```
+
+That's all there is to it! The matrix stack could not be any more simple! Let's render two cubes using this stack, see how we would use it.
+
+```
+void Render(float width, float height) {
+    GL.MatrixMode(MatrixMode.Projection);
+    Matrix4 projection = Matrix4.Projection(60.0f, width / height, 0.01f, 1000.0f;
+    GL.LoadMatrix(projection.OpenGL);
+    
+    GL.MatrixMode(MatrixMode.ModelView);
+    MatrixStack stack = new MatrixStack();
+    
+    Matrix4 view = Matrix4.LookAt(
+        new Vector3(-5, 5, -2),
+        new Vector3(0, 0, 0),
+        new Vector3(0, 1, 0)
+    );
+    stack.Load(view);
+    
+    // Render cube 1
+    stack.Push();
+    {
+        Matrix4 tran
+    }
+    // Restore stack
+    stack.Pop();
+    
+    
+    
+    // RenderCube2
+    stack.Push();
+    
+    // Restore stack
+    // stack.Pop();
+}
+```
