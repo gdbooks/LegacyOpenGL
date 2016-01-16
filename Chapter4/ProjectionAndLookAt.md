@@ -53,9 +53,50 @@ public static void Perspective(float fov, float aspectRatio, float zNear, float 
 ## Look At
 LookAt is an interesting beast, as it is not a part of the OpenGL specification. It's not really a part of OpenGL. The LookAt function was made popular by a library called GLU (GL Utilities).
 
-http://www.songho.ca/opengl/gl_projectionmatrix.html
+I'm going to walk you trough creating the LookAt function step by step both the theory and the code. 
 
-# Conveniance getter
+We start with the funtion signature. We've already discussed what these arguments do, i won't discuss them here.
+
+```
+ public static Matrix4 LookAt(Vector3 position, Vector3 target, Vector3 worldUp) {
+ ```
+ 
+We can create a vector from the camera to the target by subtracting target from position. If we normalize this vector to have a magnitude of 1 it becomes the forward basis (z) vector for the cameras coordinate system.
+ 
+```
+    Vector3 cameraForward = Vector3.Normalize(position - target);
+```
+
+Remember when you cross two vectors the result is a vector that's perpendicular to both. We can cross the cameras forward vector and the world up vector to get a vector to the right side of the camera. If we normalize this vector, the result will be our right basis (x) vector.
+
+```
+    Vector3 cameraRight = Vector3.Normalize(Vector3.Cross(worldUp, cameraForward));
+```
+
+Now that we know the up and the right vector of the camera's coordinate system we need to figure out it's up vector. The up is going to be perpendicular to forward and right, so we simply take their cross products. Because both matrices are normalized, we don't need to normalize this.
+
+```
+    Vector3 cameraUp = Vector3.Cross(cameraForward, cameraRight);
+```
+
+    Matrix4 rot = new Matrix4(
+        cameraRight.X, cameraUp.X, cameraForward.X, 0.0f,
+        cameraRight.Y, cameraUp.Y, cameraForward.Y, 0.0f,
+        cameraRight.Z, cameraUp.Z, cameraForward.Z, 0.0f,
+        0.0f, 0.0f, 0.0f, 1.0f);
+
+    Matrix4 trans = Matrix4.Translate(position);
+    return Matrix4.Inverse(rot) * Matrix3.Inverse(trans);
+}
+
+```
+
+
+## Faster LookAT
+
+
+
+## Conveniance getter
 Having to type out 
 
 ```
