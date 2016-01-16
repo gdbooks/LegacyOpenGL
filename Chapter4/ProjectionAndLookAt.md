@@ -191,6 +191,6 @@ GL.MultMatrix(frustum.OpenGL);
 ## Conveniance perspective:
 We now have a Frustum function in our Matrix class. But to set a Perspective projection we still call the ```Projection``` helper function. Now that we know how a frusum matrix is made, and we know the math of Projection, why don't we just make a function in Matrix4 that returns a straight up projection and makes it so we don't have to mess with any helper functions?
 
-Let's go ahead and do that. Here is how you might go about setting up that function:
+Let's go ahead and do that. All you really have to do is to move the Perspective helper into the matrix class, and return the final matrix. 
 
-![Proj](proj_matrix.png)
+You know the drill, test it out by replacing the old function.
