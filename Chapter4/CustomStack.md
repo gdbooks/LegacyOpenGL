@@ -101,3 +101,15 @@ void Render(float width, float height) {
     stack.Pop();
 }
 ```
+
+It's not exactly as convenient as the built in push pop, but it gets the job done. The biggest difference between what OpenGL does and what we do is that OpenGL no longer knows when you multiplied matrices together. Therefore it becomes important for us to tell OpenGL to use the matrix on the top of the stack for rendering, every time we draw simething. Hene this bit of code:
+
+```
+Matrix4 model = translation * rotation * scale;
+stack.Mul(model);
+GL.LoadMatrix(stack.OpenGL);
+DrawCube();
+```
+
+## On your own
+Try to replace the MatrixStack in the Mr.Roboto project with your own matrix stack.
