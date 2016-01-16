@@ -79,17 +79,41 @@ Now that we know the up and the right vector of the camera's coordinate system w
     Vector3 cameraUp = Vector3.Cross(cameraForward, cameraRight);
 ```
 
+Now that we have all 3 basis vectors that make up the cameras coordinate system, let's combine them into a matrix!
+
 ```
     Matrix4 rot = new Matrix4(
         cameraRight.X, cameraUp.X, cameraForward.X, 0.0f,
         cameraRight.Y, cameraUp.Y, cameraForward.Y, 0.0f,
         cameraRight.Z, cameraUp.Z, cameraForward.Z, 0.0f,
         0.0f, 0.0f, 0.0f, 1.0f);
+```
 
+That takes care of the rotation, but the camera has a position in the world too! Let's create a translation matrix for it:
+
+```
     Matrix4 trans = Matrix4.Translate(position);
+```
+
+Now it goes to reason the camera matrix will be ```rot * trans```. But remember, the __view matrix__ is the __inverse__ of the __camera matrix__. So we must invert these matrices before returning them:
+
+```
     return Matrix4.Inverse(rot) * Matrix3.Inverse(trans);
 }
+```
 
+And thats it! You now have a working LookAt function! Make sure it works by replacing the existing LookAt in MR.Roboto with yours, like so:
+
+```
+GL.MatrixMode(MatrixMode.Modelview);
+GL.LoadIdentity();
+//LookAt(10.0f, 5.0f, 15.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+Matrix4 lookAt = Matrix4.LookAt(
+    new Vector3(10.0f, 5.0f, 15.0f),
+    new Vector3(0.0f, 0.0f, 0.0f),
+    new Vector3(0.0f, 1.0f, 0.0f)
+);
+GL.MultMatrix(Matrix4.Transpose(lookAt).Matrix);
 ```
 
 
@@ -125,6 +149,18 @@ Matrix4 trans = Matrix4.Translate(position * -1.0f);
 return Matrix4.Inverse(rot) * trans;
 ```
 
+Hey that's awesome! If we run the game with this look at function everything looks the same. Now, the big question is, can we somehow get rid of that other Inverse? Surprisingly the answer is yes.
+
+The ```rot``` matrix we have above is VERY special. It's what we call an ortho-normal matrix. An ortho normal matrix is a matrix who's basis vectors are perpendicular to each other, and are all of unit length. Our ```rot``` matrix meets this criteria.
+
+Now for the special part. If an ortho-normal matrix has NO TRANSLATION (which the ```rot``` matrix does not), it's inverse is the same as it's transpose! Crazy! This is super special case and works in only a few specific instance. This is one of those instances. This means we can rewrite the last two lines as:
+
+```
+Matrix4 trans = Matrix4.Translate(position * -1.0f);
+return Matrix4.Transpose(rot) * trans;
+```
+
+And now we have no Inverse functions in the LookAt function at all!
 
 
 
@@ -152,6 +188,9 @@ Matrix4 frustum = Matrix4.Frusum(-xMax, xMax, -yMax, yMax, zNear, zFar);
 GL.MultMatrix(frustum.OpenGL);
 ```
 
-## Bonus:
+## Conveniance perspective:
+We now have a Frustum function in our Matrix class. But to set a Perspective projection we still call the ```Projection``` helper function. Now that we know how a frusum matrix is made, and we know the math of Projection, why don't we just make a function in Matrix4 that returns a straight up projection and makes it so we don't have to mess with any helper functions?
+
+Let's go ahead and do that. Here is how you might go about setting up that function:
 
 ![Proj](proj_matrix.png)
