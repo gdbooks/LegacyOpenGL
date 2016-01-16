@@ -55,6 +55,30 @@ LookAt is an interesting beast, as it is not a part of the OpenGL specification.
 
 http://www.songho.ca/opengl/gl_projectionmatrix.html
 
+# Conveniance getter
+Having to type out 
+
+```
+Matrix4.Transpose(frustum).Matrix
+```
+
+every time we want to use one of our custom matrices with OpenGL is very time consuming. We can save a LOT of time by adding a simple getter to the matrix class that returns the matrix as a transposed array of floating point numbers. How OpenGL is expecting it:
+
+```
+public float OpenGL {
+    get {
+        return Transpose(this).Matrix;
+    }
+}
+```
+
+There, much nicer. Now if i want to load my own matrix, i just have to:
+
+```
+Matrix4 frustum = Matrix4.Frusum(-xMax, xMax, -yMax, yMax, zNear, zFar);
+GL.MultMatrix(frustum.OpenGL);
+```
+
 ## Bonus:
 
 ![Proj](proj_matrix.png)
