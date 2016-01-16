@@ -79,6 +79,7 @@ Now that we know the up and the right vector of the camera's coordinate system w
     Vector3 cameraUp = Vector3.Cross(cameraForward, cameraRight);
 ```
 
+```
     Matrix4 rot = new Matrix4(
         cameraRight.X, cameraUp.X, cameraForward.X, 0.0f,
         cameraRight.Y, cameraUp.Y, cameraForward.Y, 0.0f,
@@ -93,6 +94,37 @@ Now that we know the up and the right vector of the camera's coordinate system w
 
 
 ## Faster LookAT
+By far the most improtant part of our LookAT function is this line:
+
+```
+return Matrix4.Inverse(rot) * Matrix3.Inverse(trans);
+```
+
+Doing one matrix inverse is pretty expensive. Doing two is worse!  We know that a translation matrix looks like this:
+
+```
+1, 0, 0, Tx
+0, 1, 0, Ty
+0, 0, 1, Tz
+0, 0, 0, 1
+```
+
+We also know that it's inverse simply looks like this:
+
+```
+1, 0, 0, -Tx
+0, 1, 0, -Ty
+0, 0, 1, -Tz
+0, 0, 0, 1
+```
+
+So it stands to reason that we can speed this up, if instead of inverting the translation matrix we build it using the inverse of the position vector:
+
+```
+Matrix4 trans = Matrix4.Translate(position * -1.0f);
+return Matrix4.Inverse(rot) * trans;
+```
+
 
 
 
