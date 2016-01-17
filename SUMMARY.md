@@ -40,3 +40,4 @@
     * [Projection & LookAt](Chapter4/ProjectionAndLookAt.md)
     * [Make your own stack](Chapter4/CustomStack.md)
   * [Solar System](Chapter4/Solar.md)
+  * [What goes where](Chapter4/where.md)
