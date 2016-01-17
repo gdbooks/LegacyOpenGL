@@ -31,3 +31,7 @@ The argument ```ndiv``` is how many times the sphere should be sub-divided. The 
 
 ## Rotate around things
 Rotating around things is a matter of matrix multiplication order. The standard order we use __SRT__ rotates an object around it's own origin, not around other objects. You can rotate around a point by adding a rotation AFTER we do our translation.
+
+The left of this image is SRT, the right is STR. You want the right.
+
+![ORDER](order.gif)
