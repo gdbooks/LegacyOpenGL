@@ -1,7 +1,5 @@
 #OpenGL History
 
-OpenGL was originally developed by Silicon Graphics, Inc. (SGI) as a multi-purpose platform-independent graphics API. Since 1992, the developent of OpenGL has been overseen by the OpenGL Architecture Review Board (ARB), which is made up of graphics vendors and other industry leaders such as ATI, Dell, HP, IBM, Intel, Microsoft, NVIDIA, etc... The role of the ARB is to establish and maintain the OpenGL specification which dictate which features must be included when one is developing an OpenGL distribution.
-
 The current OpenGL version is 4.5. OpenGL 4.5 will continue to be developed but the API is branching off into a more modern API called Vulkan. The two will both be maintained for some time, until the old OpenGL api is phased out.
 
 We are going to cover OpenGL 1.5. It is an older version of the API, but it's the perfect introduction into 3D graphics. It's easy to use and understand. We will delve into more modern versions of the API later.
