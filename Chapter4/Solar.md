@@ -28,3 +28,6 @@ GLGeometry.DrawSphere(int ndiv);
 The argument ```ndiv``` is how many times the sphere should be sub-divided. The more sub-divisions the worse the performance, but the better your scene looks. In my scene i subdivided the sun 3 times, the planets 1 time. Here is the difference between subdiv levels:
 
 ![SUBDIV](subdivs.png)
+
+## Rotate around things
+Rotating around things is a matter of matrix multiplication order. The standard order we use __SRT__ rotates an object around it's own origin, not around other objects. You can rotate around a point by adding a rotation AFTER we do our translation.
