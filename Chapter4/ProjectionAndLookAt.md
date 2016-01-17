@@ -79,14 +79,13 @@ Now that we know the up and the right vector of the camera's coordinate system w
     Vector3 cameraUp = Vector3.Cross(cameraRight, cameraForward);
 ```
 
-Now that we have all 3 basis vectors that make up the cameras coordinate system, let's combine them into a matrix!
+Now that we have all 3 basis vectors that make up the cameras coordinate system, let's combine them into a matrix! Remember, in OpenGL -z is forward, so we have to negate our foward vector.
 
 ```
-    Matrix4 rot = new Matrix4(
-        cameraRight.X, cameraUp.X, cameraForward.X, 0.0f,
-        cameraRight.Y, cameraUp.Y, cameraForward.Y, 0.0f,
-        cameraRight.Z, cameraUp.Z, cameraForward.Z, 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f);
+    Matrix4 rot = new Matrix4(cameraRight.X, cameraUp.X, -cameraForward.X, 0.0f,
+                                cameraRight.Y, cameraUp.Y, -cameraForward.Y, 0.0f,
+                                cameraRight.Z, cameraUp.Z, -cameraForward.Z, 0.0f,
+                                0.0f, 0.0f, 0.0f, 1.0f);
 ```
 
 That takes care of the rotation, but the camera has a position in the world too! Let's create a translation matrix for it:
