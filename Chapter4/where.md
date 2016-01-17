@@ -69,3 +69,39 @@ public static void Main(string[] args) {
     Window.Dispose();
 }
 ```
+
+And that's all the infrastructure support we need. From now on, when you make a new demo scene, structure it like this:
+
+```
+using OpenTK.Graphics.OpenGL;
+
+namespace GameApplication {
+    class SimpleScene : Game {
+        public override void Resize(int width, int height) {
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.Viewport(0, 0, width, height);
+            // TODO: Set projection matrix
+            GL.MatrixMode(MatrixMode.Modelview);
+        }
+
+        public override void Initialize() {
+
+        }
+
+        public override void Update(float dTime) {
+
+        }
+
+        public override void Render() {
+            // TODO: Set view matrix
+            GL.PushMatrix();
+            // TODO: Render Scene
+            GL.PopMatrix();
+        }
+
+        public override void Shutdown() {
+
+        }
+    }
+}
+```
