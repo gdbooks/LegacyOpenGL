@@ -83,9 +83,9 @@ Now that we have all 3 basis vectors that make up the cameras coordinate system,
 
 ```
     Matrix4 rot = new Matrix4(cameraRight.X, cameraUp.X, -cameraForward.X, 0.0f,
-                                cameraRight.Y, cameraUp.Y, -cameraForward.Y, 0.0f,
-                                cameraRight.Z, cameraUp.Z, -cameraForward.Z, 0.0f,
-                                0.0f, 0.0f, 0.0f, 1.0f);
+                              cameraRight.Y, cameraUp.Y, -cameraForward.Y, 0.0f,
+                              cameraRight.Z, cameraUp.Z, -cameraForward.Z, 0.0f,
+                              0.0f, 0.0f, 0.0f, 1.0f);
 ```
 
 That takes care of the rotation, but the camera has a position in the world too! Let's create a translation matrix for it:
