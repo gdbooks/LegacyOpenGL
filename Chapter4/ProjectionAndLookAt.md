@@ -157,7 +157,7 @@ Now for the special part. If an ortho-normal matrix has NO TRANSLATION (which th
 
 ```
 Matrix4 trans = Matrix4.Translate(position * -1.0f);
-return Matrix4.Transpose(rot) * trans;
+return trans * Matrix4.Transpose(rot);
 ```
 
 And now we have no Inverse functions in the LookAt function at all!
