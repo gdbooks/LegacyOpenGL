@@ -22,7 +22,9 @@ This is no exception to that rule. I've ported the code from the red-book to C# 
 There is only one static function you need to use:
 
 ```
-GLGeometry.DrawSphere(int ndiv, float radius);
+GLGeometry.DrawSphere(int ndiv);
 ```
 
-The first argument ```ndiv``` is how many times the sphere should be sub-divided. The more sub-divisions the worse the performance, but the better your scene looks. In my scene i subdivided the sun 3 times, the planets only one time. Here is the difference between subdiv levels:
+The argument ```ndiv``` is how many times the sphere should be sub-divided. The more sub-divisions the worse the performance, but the better your scene looks. In my scene i subdivided the sun 3 times, the planets 1 time. Here is the difference between subdiv levels:
+
+![SUBDIV](subdivs.png)
