@@ -49,9 +49,11 @@ public static void Main(string[] args) {
     Window = new MainGameWindow();
     Axiis = new Grid();
     TheGame = new MrRoboto();
+    // ----------------------------------------
     // v This is new
     TheGame.Resize(Window.Width, Window.Height);
     // ^ This is new
+    // ----------------------------------------
     Window.Load += new EventHandler<EventArgs>(Initialize);
     Window.UpdateFrame += new EventHandler<FrameEventArgs>(Update);
     Window.RenderFrame += new EventHandler<FrameEventArgs>(Render);
