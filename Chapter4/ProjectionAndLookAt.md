@@ -61,16 +61,16 @@ We start with the funtion signature. We've already discussed what these argument
  public static Matrix4 LookAt(Vector3 position, Vector3 target, Vector3 worldUp) {
  ```
  
-We can create a vector from the camera to the target by subtracting target from position. If we normalize this vector to have a magnitude of 1 it becomes the forward basis (z) vector for the cameras coordinate system.
+We can create a vector from the camera to the target by subtracting position from target (to get a vector pointing from position to target. If we normalize this vector to have a magnitude of 1 it becomes the forward basis (z) vector for the cameras coordinate system.
  
 ```
-    Vector3 cameraForward = Vector3.Normalize(position - target);
+    Vector3 cameraForward = Vector3.Normalize(target - position);
 ```
 
-Remember when you cross two vectors the result is a vector that's perpendicular to both. We can cross the cameras forward vector and the world up vector to get a vector to the right side of the camera. If we normalize this vector, the result will be our right basis (x) vector.
+Remember when you cross two vectors the result is a vector that's perpendicular to both. We can cross the world up vector with the cameras forward to get a vector to the right side of the camera. If we normalize this vector, the result will be our right basis (x) vector.
 
 ```
-    Vector3 cameraRight = Vector3.Normalize(Vector3.Cross(worldUp, cameraForward));
+    Vector3 cameraRight = Vector3.Normalize(Vector3.Cross(cameraForward, worldUp));
 ```
 
 Now that we know the up and the right vector of the camera's coordinate system we need to figure out it's up vector. The up is going to be perpendicular to forward and right, so we simply take their cross products. Because both matrices are normalized, we don't need to normalize this.
