@@ -76,7 +76,7 @@ Remember when you cross two vectors the result is a vector that's perpendicular 
 Now that we know the up and the right vector of the camera's coordinate system we need to figure out it's up vector. The up is going to be perpendicular to forward and right, so we simply take their cross products. Because both matrices are normalized, we don't need to normalize this.
 
 ```
-    Vector3 cameraUp = Vector3.Cross(cameraForward, cameraRight);
+    Vector3 cameraUp = Vector3.Cross(cameraRight, cameraForward);
 ```
 
 Now that we have all 3 basis vectors that make up the cameras coordinate system, let's combine them into a matrix!
