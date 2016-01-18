@@ -9,4 +9,10 @@ In RGBA mode, you specify colors by indicating the intensity of the RGBA compone
 
 The color components are usually expressed as a floating point number from 0 to 1, 0 being minimum, 1 being maximum. That means black is (0, 0, 0, 0) and white is (1, 1, 1, 1).
 
-To specify the primary color in OpenGL
+To specify the primary color in OpenGL you will use one of the many variations of:
+
+```
+void GL.Color3(...);
+```
+
+The one we've been using takes 3 floats as an argument, i suggest you keep using that one. But the function does have many overrides.
