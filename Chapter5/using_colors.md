@@ -6,3 +6,7 @@ In RGBA mode, (this is the only mode we are going to be using), OpenGL keeps tra
 
 ## Setting the Color
 In RGBA mode, you specify colors by indicating the intensity of the RGBA components. Just because you specify an alpha component doesn't mean OpenGL will draw the shape you are drawing transparent. You need to enable blending for that; something we will discuss later in this chapter.
+
+The color components are usually expressed as a floating point number from 0 to 1, 0 being minimum, 1 being maximum. That means black is (0, 0, 0, 0) and white is (1, 1, 1, 1).
+
+To specify the primary color in OpenGL
