@@ -13,3 +13,7 @@ GL.Begin(PrimitiveType.Triangles);
     GL.Vertex3(0.5f, 0.0f, 0.0f);
 GL.End();
 ```
+
+To find out lets simplify the problem. Imagine a line with two different colors. 
+
+#TODO, left off
