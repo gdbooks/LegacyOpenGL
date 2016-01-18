@@ -41,3 +41,5 @@
     * [Make your own stack](Chapter4/CustomStack.md)
   * [Solar System](Chapter4/Solar.md)
   * [What goes where](Chapter4/where.md)
+* [Colors and Lights](Chater5/Intro.md)
+  * [Using Colors](Chapter5/using_colors.md) 
