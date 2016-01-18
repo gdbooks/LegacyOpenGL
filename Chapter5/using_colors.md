@@ -17,3 +17,18 @@ void GL.Color4(...);
 ```
 
 The one we've been using takes 3 floats as an argument, i suggest you keep using that one. But the function does have many overrides. When using Color3, the alpha value is automatically set to 1. When using Color4, you must specify the alpha value.
+
+## Secondary color
+In OpenGL 1.4 the concept of a secondary color was introduced. This secondary color was added for a lighting effect known as specular highlights. It never gained much traction, you will probably never use it. But we discuss it for the sake of completeness.
+
+To use the secondary color, you must enable it first
+
+```
+GL.Enable(EnableCaps.ColorSum)
+```
+
+After it's been enabled, you can set it with 
+
+```
+GL.SecondaryColor3(...)
+```
