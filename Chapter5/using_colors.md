@@ -13,6 +13,7 @@ To specify the primary color in OpenGL you will use one of the many variations o
 
 ```
 void GL.Color3(...);
+void GL.Color4(...);
 ```
 
-The one we've been using takes 3 floats as an argument, i suggest you keep using that one. But the function does have many overrides.
+The one we've been using takes 3 floats as an argument, i suggest you keep using that one. But the function does have many overrides. When using Color3, the alpha value is automatically set to 1. When using Color4, you must specify the alpha value.
