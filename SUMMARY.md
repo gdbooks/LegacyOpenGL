@@ -43,3 +43,4 @@
   * [What goes where](Chapter4/where.md)
 * [Colors and Lights](Chapter5/Intro.md)
   * [Using Colors](Chapter5/using_colors.md) 
+  * [Shading](Chapter5/shading.md)
