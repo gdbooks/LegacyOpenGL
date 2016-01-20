@@ -6,7 +6,7 @@ public override void Resize(int width, int height) {
     GL.Viewport(0, 0, width, height);
     //set projection matrix
     GL.MatrixMode(MatrixMode.Projection);
-    float aspect = (float)MainGameWindow.Window.Width / (float)MainGameWindow.Window.Height;
+    float aspect = (float)width / (float)height;
     Matrix4 perspective = Matrix4.Perspective(60, aspect, 0.01f, 1000.0f);
     GL.LoadMatrix(Matrix4.Transpose(perspective).Matrix);
     //switch to view matrix
