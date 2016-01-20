@@ -27,3 +27,8 @@ Smooth shading on the other hand is based on the __Gouraud Shading Model__. This
 The line with smooth shading would look like this:
 
 ![INTERP](interp_line.png)
+
+Smooth shading on a polygon works the same way as it does for a line. For example, here is a triangle:
+
+![LERP](lerp.jpg)
+
