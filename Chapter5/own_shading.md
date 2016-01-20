@@ -40,4 +40,8 @@ public override void Render() {
 }
 ```
 
+And this is what it should look like
+
+![TRI](smooth_tri.png)
+
 ## Example 2
