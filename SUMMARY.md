@@ -45,4 +45,4 @@
   * [Using Colors](Chapter5/using_colors.md) 
   * [Shading](Chapter5/shading.md)
     * [On Your Own](Chapter5/own_shading.md) 
-* [Lighting](Chapter5/lighting.md)
+  * [Lighting](Chapter5/lighting.md)
