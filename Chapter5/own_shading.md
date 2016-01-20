@@ -1,5 +1,5 @@
-# Examples
-All examples below assume the following projection matrix:
+# Example
+The example  below assume the following projection matrix:
 
 ```
 public override void Resize(int width, int height) {
@@ -15,9 +15,8 @@ public override void Resize(int width, int height) {
 }
 ```
 
-## Example 1
 
-This is a smooth shaded triangle
+This is bit of code should render a smooth shaded triangle
 
 ```
 public override void Render() {
@@ -44,4 +43,4 @@ And this is what it should look like
 
 ![TRI](smooth_tri.png)
 
-## Example 2
+Try changing the shading model of the triangle from 
