@@ -43,4 +43,4 @@ And this is what it should look like
 
 ![TRI](smooth_tri.png)
 
-Try changing the shading model of the triangle from 
+Try changing the shading model of the triangle from smooth to flat. Try playing around with the colors. 
