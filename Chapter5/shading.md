@@ -32,3 +32,4 @@ Smooth shading on a polygon works the same way as it does for a line. For exampl
 
 ![LERP](lerp.jpg)
 
+Now that you what how these shading models are, how do you use them? The ```GL.ShadeModel``` funciton lets you specify the shading model to use. You have to call this before the ```GL.Begin``` of your geometry.
