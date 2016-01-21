@@ -22,4 +22,6 @@ GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.25f);
 Attenuation factor affects only positional light sources, it makes no sense in terms of a directional light as the direcitonal light is infinitaley far away. 
 
 ### Not intuitive
-OpenGL chose this attenuation model because it is pretty close to how nature actually looks / works. The problem is they lost all intuition with this formula.
+OpenGL chose this attenuation model because it is pretty close to how nature actually looks / works. The problem is they lost all intuition with this formula. When setting a point light i expect to be able to say "I want a light with a radious of 5, attenuation should start 2 units away from the center". 
+
+There is no intuitive way to set the attenuation of a point light. You have to play around with it until it looks the way you want it to. It's actually so bad, i built an application that renders a sphere on a plane with an attenuated spot light and has sliders for all factors. I play with the sliders until it looks good and copy the values into my code
