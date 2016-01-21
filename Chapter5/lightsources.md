@@ -73,4 +73,6 @@ float[] lightDir = { 2.5f, 3.5f, 7.0f, 1.0f};
 GL.Light(LightName.Light0, LightParamater.Position, lightDir);
 ```
 
-The default position for all lights is (0, 0, 1, 0)
+The default position for all lights is (0, 0, 1, 0), it is directional, pointing down the negtive Z axis.
+
+__IMPORTANT:__ Whenever you make a call to ```GL.Light``` with ```LightParamater.Position``` the vector you specify is transformed by the current __modelview__ matrix, just as vertices are, and stored in eye coordinates. We will discuss this in more detail later.
