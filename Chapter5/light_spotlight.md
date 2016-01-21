@@ -41,3 +41,5 @@ You can use ```LightParameter.SpotExponent```  to control this. A higher exponen
 ```
 GL.Light(LightName.Light0, LightParameter.SpotExponent, 10.0f);
 ```
+
+The spot exponent can range from 0 to 128. A value of 0, which is the default results in no attenuation, so the spot light is evenly distrubuted
