@@ -1,5 +1,3 @@
-Thats it, this is as far as i got for now.
+# Exercises
 
-Make sure you understand the previous section, if you have any questions ask me. Tommorow we will do some lighting related programming exercises
-
-TEST 123, 123
+The last section covered a LOT of ground about lighting, what it is and how it works. But i don't feel like it demonstrated clearly how to actually use lights. That's what this chapter is all about. We're going to 
