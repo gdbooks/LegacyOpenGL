@@ -47,6 +47,7 @@
     * [On Your Own](Chapter5/own_shading.md) 
   * [Lighting](Chapter5/lighting.md)
   * [Light Sources](Chapter5/lightsources.md)
+    * [Position and direction](Chapter5/pad.md) 
   * [Programming Exercises](Chapter5/base.md)
     * [Point Light](Chapter5/point.md)
     * [Directional Light](Chapter5/direction.md)
