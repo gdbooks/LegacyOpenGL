@@ -4,3 +4,4 @@ The last section covered a LOT of ground about lighting, what it is and how it w
 
 ## Project setup
 Before we get started, there are a few things we need to change within our code to get well lit objects. First, in order to actually view lighting, it helps to have a solid ground plane. Let's modify the grid class to optionally draw a solid plane.
+
