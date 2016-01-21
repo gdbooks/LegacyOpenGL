@@ -8,3 +8,5 @@ This effect is modelled by OpenGL using an attenuation factor, which can reduce 
 ![FAC1](atten_fac.png)
 
 ![FAC2](atten_fac2.png)
+
+Each factor has a default of (1, 0, 0) which results in no attenuation by default. You can change the factors by passing 
