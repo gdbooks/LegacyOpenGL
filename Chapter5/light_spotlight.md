@@ -45,4 +45,5 @@ GL.Light(LightName.Light0, LightParameter.SpotExponent, 10.0f);
 The spot exponent can range from 0 to 128. A value of 0, which is the default results in no attenuation, so the spot light is evenly distrubuted
 
 ## Usage
+
 How often are spot lights used? Not that much. Even modern games, like Assasins Creed tend to use point lights for things like street lamps. The point light is cheaper calculation wise (not by much) and easyer for artists to configure.
