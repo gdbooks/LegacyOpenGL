@@ -17,3 +17,5 @@ This is the code you would use to create a spotlight with a 30 degree cone
 ```
 GL.Light(LightName.Light0, LightParameter.SpotCutoff, 15.0f);
 ```
+
+The next paramater to specify is the direction that the spotlight is facing. This is done with the 
