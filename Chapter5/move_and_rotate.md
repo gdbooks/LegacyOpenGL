@@ -57,7 +57,7 @@ GL.PushMatrix(); // Push Torso
             // All other factors can be set elsewhere, but these two
             // rely on world position data, we MUST set them here!
             GL.Light(LightName.Light0, LightParamater.Position, lightPosition);
-            GL.Light(LightName.Light0, LightParamater.Position, lightPosition);
+            GL.Light(LightName.Light0, LightParamater.SpotDirection, spotDirection);
             
         GL.PopMatrix(); // Pop Flashlight
         
