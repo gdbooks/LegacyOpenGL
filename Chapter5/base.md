@@ -55,5 +55,16 @@ Thats all the changes we need to make to the grid. If you run one of the existin
 ![GRID](solid_grid.png)
 
 ## Additional Geometry
+You added the ```DrawCube``` function to every program that uses it. And you added the function ```DrawSphere``` to a calss called ```Circle```. There is nothing wrong with this, its a solid approach. The circle code is better than the cube code for the sake that it is more portable.
+
+However, neither solution is robust. Ideally you will have many different primitives to render, so we need a class that is a convenient holder for them. I would call this class either ```Primitives``` or ```Geometry```. Go ahead and create this class in your project.
+
+Add the code found [at this gist](TODO) to the class. Don't copy any of the existing code in your project, the gist is special in that it adds normal information (we will cover this later) for each primitive. The following static functions are exposed for you:
+
+```
+Geometry.Cube();
+Geometry.Sphere(int nDiv);
+Geometry.TAURUS
+```
 
 ## The test scene
