@@ -14,5 +14,5 @@ Each factor has a default of (1, 0, 0) which results in no attenuation by defaul
 This sample code sets all attenuation factors
 
 ```
-GL.Light(
+            GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.0f);
 ```
