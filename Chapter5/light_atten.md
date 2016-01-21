@@ -18,3 +18,6 @@ GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 4.0f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 1.0f);
 GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.25f);
 ```
+
+Attenuation factor affects only positional light sources, it makes no sense in terms of a directional light as the direcitonal light is infinitaley far away. 
+
