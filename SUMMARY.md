@@ -49,6 +49,7 @@
   * [Light Sources](Chapter5/lightsources.md)
     * [Position and direction](Chapter5/pad.md) 
     * [Light Color](Chapter5/light_color.md)
+    * [Attenuation](Chapter5/light_atten.md)
   * [Programming Exercises](Chapter5/base.md)
     * [Point Light](Chapter5/point.md)
     * [Directional Light](Chapter5/direction.md)
