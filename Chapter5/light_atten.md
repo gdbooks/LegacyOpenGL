@@ -15,5 +15,6 @@ This sample code sets all attenuation factors
 
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 4.0f);
+GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 1.0f);
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 4.0f);
 ```
