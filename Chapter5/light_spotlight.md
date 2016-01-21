@@ -32,4 +32,6 @@ GL.Light(LightName.Light0, LightParameter.SpotDirection, direction);
 ```
 ###Exponent
 
-And finally you can specify the focus of the spotlight, which can be defined as the concentration of the 
+And finally you can specify the focus of the spotlight, which can be defined as the concentration of the spotlight in the center of the light cone. As you move away from the center of the cone the light is attenuated until there is no more light at the edge of the cone.
+
+![FULL](full_spot.jpg)
