@@ -33,5 +33,30 @@ GL.LoadIdentity();
 Matrix4 lookAt = Matrix4.LookAt(eyePosition, lookTarget, new Vector3(0.0f, 1.0f, 0.0f));
 GL.MulMatrix(lookAt.OpenGL);
 
-
+// Render character
+GL.PushMatrix(); // Push Torso
+    GL.Translate(10, 0, 0);
+    GL.Rotate(10, 0, 1, 0);
+    GL.Scale(1, 1, 1);
+    DrawTorso();
+    GL.PushMatrix(); // Push Arm
+        GL.Translate(0, 5, 0);
+        GL.Rotate(2, 1, 0, 0);
+        GL.Scale(1, 2, 1);
+        DrawArm(); 
+        
+        // The arm is drawn, we need to nest the flashlight here. 
+        // But we want to draw it at the bottom of the arm
+        // so we need to translate down a bit
+        GL.PushMatrix(); // Push Flashlight
+            GL.Translate(0, 2, 0);
+            // No need to rotate for this example
+            GL.Scale(1, 0.5, 1);
+            
+        GL.PopMatrix(); // Pop Flashlight
+        
+        
+    GL.PopMatrix(); // Pop Arm
+    // ... Render rest of character
+GL.PopMatrix(); // Pop Torso
 ```
