@@ -52,7 +52,7 @@ GL.PushMatrix(); // Push Torso
             GL.Translate(0, 2, 0);
             // No need to rotate for this example
             GL.Scale(1, 0.5, 1);
-            GL.Light(LightName.Light0, LightParamater.Position, pos);
+            GL.Light(LightName.Light0, LightParamater.Position, lightPosition);
         GL.PopMatrix(); // Pop Flashlight
         
         
