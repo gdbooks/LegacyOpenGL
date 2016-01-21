@@ -36,3 +36,8 @@ And finally you can specify the focus of the spotlight, which can be defined as 
 
 ![FULL](full_spot.jpg)
 
+You can use ```LightParameter.SpotExponent```  to control this. A higher exponent results in a more focused light, that drops off quickly. Here is an example of setting the exponent to 10:
+
+```
+GL.Light(LightName.Light0, LightParameter.SpotExponent, 10.0f);
+```
