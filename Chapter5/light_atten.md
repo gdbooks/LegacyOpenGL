@@ -10,3 +10,9 @@ This effect is modelled by OpenGL using an attenuation factor, which can reduce 
 ![FAC2](atten_fac2.png)
 
 Each factor has a default of (1, 0, 0) which results in no attenuation by default. You can change the factors by passing ```LightParamater.ConstantAttenuation```, ```LightParamater.LinearAttenuation``` and ```LightParamater.QuadraticAttenuation``` to the ```GL.Light``` function. Each of these attenuation factors takes a single floating point number as an argument.
+
+This sample code sets all attenuation factors
+
+```
+GL.Light(
+```
