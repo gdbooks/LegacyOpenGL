@@ -66,3 +66,11 @@ GL.Light(LightName.Light0, LightParamater.Position, lightDir);
 ```
 
 If i wanted to set up a positional or point light
+
+```
+float[] lightDir = { 2.5f, 3.5f, 7.0f, 1.0f};
+// We pass in a position vector, this is going to be a point light
+GL.Light(LightName.Light0, LightParamater.Position, lightDir);
+```
+
+The default position for all lights is (0, 0, 1, 0)
