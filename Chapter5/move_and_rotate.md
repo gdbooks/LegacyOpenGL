@@ -30,13 +30,8 @@ But what if you had a moving object, like a flash-light. It would need to be a c
 GL.MatrixMode(MatrixMode.ModelView);
 GL.LoadIdentity();
 
-// Position the cars lights at origin, this can be anywhere,
-// it doesn't have to be at origin. In the real world it would
-// be up a few units on the z axis, and down a few on the y axis
-float[] pos = {0,0,0,1}
-GL.Light(LightName.Light0, LightParamater.Position, pos);
-
-// Continue rendering as normal
 Matrix4 lookAt = Matrix4.LookAt(eyePosition, lookTarget, new Vector3(0.0f, 1.0f, 0.0f));
 GL.MulMatrix(lookAt.OpenGL);
+
+
 ```
