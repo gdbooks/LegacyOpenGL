@@ -21,3 +21,33 @@ namespace GameApplication {
             RenderSolid = solid;
         }
 ```
+
+Now, let's modify the render function to actually render the solid grid. Remember, our grid is 20 units wide, and centered around the 0 point. So the far left is -10, the far right is 10. We're going to draw one large quad to cover this area. The quad is going to be a dark gray. 
+
+We're going to draw the quad at -0.01f on th Y axis. We do this because i still want the grid to render, this way the quad renders just underneath the grid and will look pretty good. 
+
+Lets add this to the begenning of the render function:
+
+```
+public void Render() {
+    // Only render this bit if solid is enabled
+    if (RenderSolid) {
+        // Set the color to a dark gray
+        GL.Color3(0.4f, 0.4f, 0.4f);
+        // Draw one large rectangular primitive
+        // this large rectangle is 2 triangles ;)
+        GL.Begin(PrimitiveType.Triangles);
+            // Triangle 1
+            GL.Vertex3(10.0f, -0.01f, 10.0f);
+            GL.Vertex3(10.0f, -0.01f, -10.0f);
+            GL.Vertex3(-10.0f, -0.01f, -10.0f);
+            // Triangle 2
+            GL.Vertex3(10.0f, -0.01f, 10.0f);
+            GL.Vertex3(-10.0f, -0.01f, -10.0f);
+            GL.Vertex3(-10.0f, -0.01f, 10.0f);
+        GL.End();
+    }
+    // ... The rest of the render function stays the same
+```
+
+Thats all the changes we need to make to the grid. If you run one of the existing samples, and turn on ```RenderSolid``` on, your scene should look something like this:
