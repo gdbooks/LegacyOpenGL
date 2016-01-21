@@ -8,5 +8,16 @@ Before we get started, there are a few things we need to change within our code 
 First, let's add a public boolean that is going to control the render mode. By default drawing a filled in grid is going to be off (So that we don't break any of the example scenes we've already written)
 
 ```
+namespace GameApplication {
+    class Grid {
 
+        public bool RenderSolid = false;
+
+        public Grid() {
+            RenderSolid = false;
+        }
+
+        public Grid(bool solid) {
+            RenderSolid = solid;
+        }
 ```
