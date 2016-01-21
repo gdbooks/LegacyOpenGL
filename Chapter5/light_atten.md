@@ -21,3 +21,5 @@ GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.25f);
 
 Attenuation factor affects only positional light sources, it makes no sense in terms of a directional light as the direcitonal light is infinitaley far away. 
 
+### Not intuitive
+OpenGL chose this attenuation model because it is pretty close to how nature actually looks / works. The problem is they lost all intuition with this formula.
