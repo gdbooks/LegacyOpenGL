@@ -53,3 +53,7 @@ public void Render() {
 Thats all the changes we need to make to the grid. If you run one of the existing samples, and turn on ```RenderSolid``` on, your scene should look something like this:
 
 ![GRID](solid_grid.png)
+
+## Additional Geometry
+
+## The test scene
