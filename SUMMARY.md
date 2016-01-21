@@ -47,7 +47,7 @@
     * [On Your Own](Chapter5/own_shading.md) 
   * [Lighting](Chapter5/lighting.md)
   * [Light Sources](Chapter5/lightsources.md)
-    * [Example base] 
+    * [Example base](Chapter5/base.md)
     * [Point Light](Chapter5/point.md)
     * [Directional Light](Chapter5/direction.md)
     * [Spot Light](Chapter5/spot.md)
