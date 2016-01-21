@@ -15,5 +15,5 @@ A cutoff value of 10 for example results with a spotlight whose cone spreads out
 
 This is the code you would use to create a spotlight with a 30 degree cone
 ```
-GL.Light(LightName.Light0, LightParameter.SpotCutoff, 0.0f);
+GL.Light(LightName.Light0, LightParameter.SpotCutoff, 15.0f);
 ```
