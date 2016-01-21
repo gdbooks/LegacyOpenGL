@@ -32,4 +32,4 @@ GL.Light(LightName.Light0, LightParameter.SpotDirection, direction);
 ```
 ###Exponent
 
-The final value
+And finally you can specify the focus of the spotlight, which can be defined as the concentration of the 
