@@ -10,7 +10,7 @@ First, let's add a public boolean that is going to control the render mode. By d
 ```
 namespace GameApplication {
     class Grid {
-
+        // Control if the grid is rendered solid or not
         public bool RenderSolid = false;
 
         public Grid() {
