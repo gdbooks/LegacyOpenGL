@@ -46,3 +46,4 @@
   * [Shading](Chapter5/shading.md)
     * [On Your Own](Chapter5/own_shading.md) 
   * [Lighting](Chapter5/lighting.md)
+  * [Light Sources](Chapter5/lightsources.md)
