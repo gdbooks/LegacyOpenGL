@@ -7,7 +7,9 @@ Lets think about what a spotlight looks like for a moment. If you where looking 
 
 ![LIGHTS](lights.png)
 
-With OpenGL, you can define how wide this cone of light should be by specifying the angle between the edge of teh cone and its axis by passing ```LightParameter.SpotCutoff``` to ```GL.Light```. 
+With OpenGL, you can define how wide this cone of light should be by specifying the angle between the edge of teh cone and its axis by passing ```LightParameter.SpotCutoff``` to ```GL.Light```.
+
+![CUTOFF](spot_cutoff.gif)
 
 
 
