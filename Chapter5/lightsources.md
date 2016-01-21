@@ -40,12 +40,14 @@ The second argument is an enumerationof type ```LightParameter``` which tells op
 * __Diffuse__ Diffuse intensity of the light
 * __Specular__ Specular intensity of the light
 * __Position__ Position of the light as a vector4 (x, y, z, w)
-* __SpotDireciton__ Direciton of the light as a vector3 (x, y, z)
+* __SpotDireciton__ Direciton of the spot light as a vector3 (x, y, z)
 * __SpotExponent__ Spotlight exponent
 * __SpotCutoff__ Spotlight cutoff
 * __ConstantAttenuation__ Constant attenuation
 * __LienarAttenuation__ Linear atenuation
 * __QuadraticAttenuation__ Quadratic attenuation
+
+Lets discuss each of these settings briefly before actually using them in code.
 
 ## Position and Direction
 Each light can have either a position or a direction. Lights with a position are often called __positional lights__ or __point lights__. __directional lights__ on the other hand are infinitley far away, they have no position. There are no true direcitonal lights in nature, since nothing is infinitley far away. But some light sources are so far away they can be treated as directional lights (like the sun).
@@ -62,3 +64,5 @@ float[] lightDir = { 0.5f, 0.5f, 0.0f, 0.0f};
 // We pass in a direciton vector, this is going to be a directional light
 GL.Light(LightName.Light0, LightParamater.Position, lightDir);
 ```
+
+If i wanted to set up a positional or point light
