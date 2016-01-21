@@ -5,3 +5,6 @@ In the real world, the farther an object is away from a light, the less effect t
 
 This effect is modelled by OpenGL using an attenuation factor, which can reduce the effect of a lights contribution to the color of an oject based on the distance to the object. The attenuation factor is calulated as follows:
 
+![FAC1](atten_fac.png)
+
+![FAC2](atten_fac2.png)
