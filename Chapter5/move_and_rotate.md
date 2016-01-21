@@ -1,6 +1,6 @@
 #Light Color
 
-Light sources are composed of three of the lighting terms we discussed earlyer: ambient, diffuse and specular. These 3 terms combined make up the final lighting of the geometry
+Light sources are composed of three of the lighting terms we discussed earlyer: ambient, diffuse and specular. These 3 terms combined make up the final lighting of the geometry. Illustrated in this image:
 
 ![PHONG](phong.png)
 
