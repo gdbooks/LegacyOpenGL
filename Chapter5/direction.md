@@ -1,7 +1,7 @@
 # Directional lights
 Directional lights are perhaps the easyest to program. They are simply a direction that the light comes from, like sunlight. Let's give it a go.
 
-Follow along, make a new scene for each sub-section here.
+Follow along, make a new scene for each sub-section here. For this (Directional Light) section alone you should have 5 test scenes.
 
 ## Adding one light
 
