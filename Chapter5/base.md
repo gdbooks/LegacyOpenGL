@@ -146,3 +146,26 @@ This is a pretty standard resize method. Nothing to really talk about here. And 
 Again, nothing to brag about here. We set up a pretty standard view matrix, then render the grid, and then translate and render each primitive using their default values. The torus renders green, the sphere red and the cube blue. Your screen should look like this:
 
 ![STATIC](static.png)
+
+Now, let's rotate the camera! To orbit the camera around the scene, let's first add 3 variables to our program: angleX, angleY and distance:
+
+```
+namespace GameApplication {
+    class LightingScene : Game{
+        Grid grid = null;
+
+        float cameraAngleX = 0.0f;
+        float cameraAngleY = -25;
+        float cameraDistance = 10.0f;
+
+        public override void Initialize() {
+            // ... rest of code unchanged
+```
+
+The cameras distance from what it's looking at isn't going to change, neither is the height at which the camera is looking from (cameraAngleY). But we're going to rotate the camera around the Y axis. For this, override the update method:
+
+```
+public override void Update(float dTime) {
+    cameraAngleX += 30f * dTime;
+}
+```
