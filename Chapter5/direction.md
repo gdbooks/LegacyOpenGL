@@ -1,7 +1,7 @@
 # Directional lights
 Directional lights are perhaps the easyest to program. They are simply a direction that the light comes from, like sunlight. Let's give it a go.
 
-Follow along, make a new scene for each sub-section here. For this (Directional Light) section alone you should have 5 test scenes.
+Follow along, make a new scene for each sub-section here. For this (Directional Light) section alone you should have 6 test scenes.
 
 ## Adding one light
 
@@ -66,7 +66,34 @@ So, actually using a light us pretty easy. OpenGL supports up to 8 lights! Let's
 
 First things first, in the Initialize function we have to enable and configure light 1:
 
+```
+public override void Initialize() {
+    grid = new Grid(true);
+    GL.Enable(EnableCap.DepthTest);
+    GL.Enable(EnableCap.CullFace);
+    Resize(MainGameWindow.Window.Width, MainGameWindow.Window.Height);
 
+    GL.Enable(EnableCap.Lighting);
+    GL.Enable(EnableCap.Light0);
+    GL.Enable(EnableCap.Light1);
+
+    float[] white = new float[] { 0f, 0f, 0f, 1f };
+    float[] blue = new float[] { 0f, 0f, 1f, 1f };
+    float[] red = new float[] { 1f, 0f, 0f, 1f };
+
+    // Config light 0
+    GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.0f, 0.5f, 0.5f, 0.0f } );
+    GL.Light(LightName.Light0, LightParameter.Ambient, blue );
+    GL.Light(LightName.Light0, LightParameter.Diffuse, blue );
+    GL.Light(LightName.Light0, LightParameter.Specular, white );
+
+    // Config light 1
+    GL.Light(LightName.Light1, LightParameter.Position, new float[] { 0.0f, -0.5f, 0.5f, 0.0f });
+    GL.Light(LightName.Light1, LightParameter.Ambient, red);
+    GL.Light(LightName.Light1, LightParameter.Diffuse, red);
+    GL.Light(LightName.Light1, LightParameter.Specular, white);
+}
+```
 
 ## Dynamic lights
 
