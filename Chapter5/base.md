@@ -63,7 +63,7 @@ Add the code found [at this gist](TODO) to the class. Don't copy any of the exis
 
 ```
 Geometry.Cube();
-Geometry.Sphere(int nDiv);
+Geometry.Sphere(int nDiv = 1);
 Geometry.TAURUS TODO
 ```
 
