@@ -277,6 +277,6 @@ Primitives.DrawSphere(1);
 GL.PopMatrix();
 ```
 
-The cube and the rest of the scene are only a little bit more complicated as we need to actually update the color of the light.
+The cube and the rest of the scene are only a little bit more complicated as we need to actually update the color and of the red light to essentially become a new purple light.
 
 One thing to note, even tough we have independently lit objects in this scene, we don't actually have local lights. This is because all of the lights are static to the scene, none of the lights move with objects in the scene. Local lights don't make much sense with a directional light. We will implement them when doing point lights.
