@@ -230,3 +230,13 @@ In games (ang movies) it's common to have "local lights". A local light is a lig
 
 Movies take this one step further, and have lights only affect certain parts of a character. In [Tangled](http://www.imdb.com/title/tt0398286/), [Flynn](http://disney.wikia.com/wiki/Flynn_Rider) had 8 lights attached to him that only affected his hair! Highlights where added to the hair using local lights.
 
+We need independently lit objects to do local lighting. The process for doing local lights and the process for light culling (having the bedroom light not affect objects in the kitchen) is the same. We simply disable lights that don't effect the object, and configure the lights that do affect it appropriateley.
+
+We're going to make a new scene using the final Dynamic Lights scene as a base. This is what we are about to render
+
+* he tarus only be lit by the green light
+* * The sphere lit only by the red light
+* The cube will be lit by the blue light and a purple light.   
+  * Instead of adding a 4th light (Light3) to the scene, we're going to recycle the red light and turn it purple
+  * the purple light will be static. 
+* The floor will be lit only by the blue light.
