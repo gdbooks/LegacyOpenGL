@@ -104,7 +104,7 @@ The top of any object is shaded blue. The bottom is shaded red. Colors in the mi
 ## On your own
 Using the last example, add a third light (Light2). Configure this light to point straight left (1, 0, 0, 0), and be green. The final scene should look like this:
 
-
+![DIR6](directional6.png)
 
 ## Dynamic lights
 
