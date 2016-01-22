@@ -277,6 +277,32 @@ Primitives.DrawSphere(1);
 GL.PopMatrix();
 ```
 
-The cube and the rest of the scene are only a little bit more complicated as we need to actually update the color and of the red light to essentially become a new purple light.
+Run the game, see what it looks like. The cube and the rest of the scene are only a little bit more complicated as we need to actually update the color and of the red light to essentially become a new purple light. Lets update the render function to reflect these changes:
+
+```
+ // Disable the green light
+GL.Disable(EnableCap.Light2);
+// Enable the red light
+GL.Enable(EnableCap.Light1);
+// Enable the blue light
+GL.Enable(EnableCap.Light0);
+
+// Change the color of light 1 from red to purple
+float[] purple = new float[] { 1f, 0f, 1f, 1f };
+GL.Light(LightName.Light1, LightParameter.Diffuse, purple);
+GL.Light(LightName.Light1, LightParameter.Ambient, purple);
+// Specular component can stay white
+// Update the position of light 1 so it's static (purple will just have a static direction)
+GL.Light(LightName.Light1, LightParameter.Position, new float[] { 0.0f, -0.5f, -0.5f, 0.0f });
+
+// Draw cube
+GL.PushMatrix();
+GL.Color3(0f, 0f, 1f);
+GL.Translate(-1f, 0.5f, 0.5f);
+Primitives.Cube();
+GL.PopMatrix();
+```
+
+
 
 One thing to note, even tough we have independently lit objects in this scene, we don't actually have local lights. This is because all of the lights are static to the scene, none of the lights move with objects in the scene. Local lights don't make much sense with a directional light. We will implement them when doing point lights.
