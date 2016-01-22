@@ -63,6 +63,7 @@ In the real world, the floor would stop light from reaching the objects. In Open
 
 ## Two Lights
 
+## Dynamic lights
+
 ## Independently lit objects
 
-## Dynamic lights
