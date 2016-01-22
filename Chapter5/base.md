@@ -77,4 +77,4 @@ The last two arguments are the number of segments to subdivide. The first one de
 
 ## The test scene
 
-With that we now have all the elements we are going to be using for our lighting test scene.
+With that we now have all the elements we are going to be using for our lighting test scene. For every lighting demo from here on, copy this scene, rename it and implement the light. For the scene, we're going to render a cube a spehere and a torus on top of a grid. And the camera is going to be slowly orbiting the scene to give us a 360 degree view of the lighting.
