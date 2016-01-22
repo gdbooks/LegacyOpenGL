@@ -40,3 +40,7 @@ public override void Initialize() {
     GL.Light(LightName.Light0, LightParameter.Specular, white );
 }
 ```
+
+That's all there is to it. If you run your code, it should look like this:
+
+![DIR1](directional1.png)
