@@ -267,7 +267,7 @@ GL.Disable(EnableCap.Light1);
 // The green light is still disabled, enable it
 GL.Enable(EnableCap.Light2);
 // We don't need to disable light 0, it's still disabled from last call
-// Render tarus
+// Render sphere
 GL.PushMatrix();
 GL.Color3(1f, 0f, 0f);
 GL.Translate(2.5f, 1.0, -0.5f);
