@@ -62,3 +62,7 @@ As you can see the shading on the primitives has changed, the floor is the most 
 In the real world, the floor would stop light from reaching the objects. In OpenGL each object is shaded and lit indevidually, like if no other object was in the scene. It is possible to add code to support shadows, but it's a complicated process that we will talk about later.
 
 ## Two Lights
+
+## Independently lit objects
+
+## Dynamic lights
