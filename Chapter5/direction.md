@@ -117,5 +117,7 @@ We now have a scene lit by 3 static lights. But lighting in OpenGL can be so muc
 
 We're going to make the green light orbit the scene horizontally, the red light orbit the scene vertically, and we're going to make the camera stay static.
 
+First, let's add some variables to the scene. We're going to use the same orbit logic we used for the camera, so these variables will be simialr.
+
 ## Independently lit objects
 
