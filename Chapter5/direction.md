@@ -113,6 +113,9 @@ But every time we added a light, the floor became a different shade of blue! If 
 The lighting models diffuse component is direct lighting, the ambient component is indrect lighting and the specular component is shininess! So, can we turn off the ambient light? Yes. Set the ambient component of any light that you don't want an ambient contribution from to __black__. Because black is RGB(0, 0, 0), it is absent of color, therefore it has no contribution to lighting.
 
 ## Dynamic lights
+We now have a scene lit by 3 static lights. But lighting in OpenGL can be so much more than just static lights. It can be dynamic! Lights can move with objects! Using the previous scene as a base, let's animate the lights! 
+
+We're going to make the green light orbit the scene horizontally, the red light orbit the scene vertically, and we're going to make the camera stay static.
 
 ## Independently lit objects
 
