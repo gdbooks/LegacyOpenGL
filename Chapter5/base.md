@@ -67,6 +67,12 @@ public static void Geometry.Sphere(int nDiv = 2);
 public static void Torus(float ringRadius = 0.2f, float tubeRadius = 0.8f, int numc = 24, int numt = 12)
 ```
 
-Cube and Sphere work like they always have. I've added some sensible defaults. Torus is new, this is what a torus looks like:
+Cube and Sphere work like they always have. I've added some sensible defaults. Torus is new, what is a torus? It's essentially a doughnut. This is what a torus looks like:
+
+![TORUS](torus.gif)
+
+When calling the function, the first argument is the radius of the ring, that is the radius of the actual tube which makes up the ring. The second argument is the radius of the tube. Imaging, that the ring is stretched around a tube, this is the radius we define here. So, first argument is how thick the geometry is, second argument is how large the hole in the center is. 
+
+The last two arguments are the number of segments to subdivide. The first one decides how many slices to give, the second one how many columns. Like with the sphere, the larger these numbers, the more detail the torus will have.
 
 ## The test scene
