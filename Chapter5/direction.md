@@ -226,3 +226,7 @@ This is a really good example of rendering a lit scene with some unlit objects. 
 
 ## Independently lit objects
 
+In games (ang movies) it's common to have "local lights". A local light is a light that an artists places in a scene, and is attached to a model (using the matrix stack, the same way a foot is attached to a leg). The light moves with a specific character and effects only the character. So a character is lit by the scene lighting, and then some extra character specific lighting to really make it pop.
+
+Movies take this one step further, and have lights only affect certain parts of a character. In [Tangled](http://www.imdb.com/title/tt0398286/), [Flynn](http://disney.wikia.com/wiki/Flynn_Rider) had 8 lights attached to him that only affected his hair! Highlights where added to the hair using local lights.
+
