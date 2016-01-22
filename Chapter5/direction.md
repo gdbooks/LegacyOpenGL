@@ -151,5 +151,72 @@ public override void Update(float dTime) {
 
 Now that the actual rotation logic is in place, all that's left to do is actually rotate the lights. We do this by changing the ```LightParameter.Position``` parameter of light 1 (red) and light 2 (green) every time a frame is rendered. 
 
+```
+public override void Render() {
+    Vector3 eyePos = new Vector3();
+    eyePos.X =  cameraDistance * -(float)Math.Sin(cameraAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(cameraAngleY * (float)(Math.PI / 180.0));
+    eyePos.Y =  cameraDistance * -(float)Math.Sin(cameraAngleY * (float)(Math.PI / 180.0));
+    eyePos.Z = -cameraDistance * (float)Math.Cos(cameraAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(cameraAngleY * (float)(Math.PI / 180.0));
+    
+    Matrix4 lookAt = Matrix4.LookAt(eyePos, new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+    GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
+    grid.Render();
+
+    // Compute position of red light
+    Vector3 redPosition = new Vector3();
+    redPosition.X = 1.0f * -(float)Math.Sin(redAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(redAngleY * (float)(Math.PI / 180.0));
+    redPosition.Y = 1.0f * -(float)Math.Sin(redAngleY * (float)(Math.PI / 180.0));
+    redPosition.Z = -1.0f * (float)Math.Cos(redAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(redAngleY * (float)(Math.PI / 180.0));
+
+    // Compute position of green light
+    Vector3 greenPosition = new Vector3();
+    greenPosition.X = 1.0f * -(float)Math.Sin(greenAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(greenAngleY * (float)(Math.PI / 180.0));
+    greenPosition.Y = 1.0f * -(float)Math.Sin(greenAngleY * (float)(Math.PI / 180.0));
+    greenPosition.Z = -1.0f * (float)Math.Cos(greenAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(greenAngleY * (float)(Math.PI / 180.0));
+
+    // Update light positions every frame
+    GL.Light(LightName.Light1, LightParameter.Position, new float[] { redPosition.X, redPosition.Y, redPosition.Z, 0.0f });
+    GL.Light(LightName.Light2, LightParameter.Position, new float[] { greenPosition.X, greenPosition.Y, greenPosition.Z, 0.0f });
+    
+    // ... rest of code unchanged
+```
+
+Running your scene now, you can see that the lights are changing in real time. But it's pretty hard to get a firm grasp of what is happening. We can kind of see where the lights are coming from, but not really. Lets add some debug code to actually visualize the lights.
+
+We're going to render two lines, one for the red light, one for the green light. They are going to have a local origin somewhere in space, and will point in the direction that the lights are pointing in. Both of the lines will be of unit length to make debugging easyer. 
+
+The only catch is, because we are rendering the lines in a lit scene, we can't really define a set color for them; becuase the lighting equasion ignores ```GL.Color3```. So to cope with this we're going to disable lighting in the middle of our draw function, draw the indicators and re-enable the lights after.
+
+```
+// Update light positions every frame
+GL.Light(LightName.Light1, LightParameter.Position, new float[] { redPosition.X, redPosition.Y, redPosition.Z, 0.0f });
+GL.Light(LightName.Light2, LightParameter.Position, new float[] { greenPosition.X, greenPosition.Y, greenPosition.Z, 0.0f });
+
+// Add some debug visualization so we can see the direction of the lights
+// Disable lights, so the color of the lines comes from GL.Color, not lighting
+GL.Disable(EnableCap.Lighting);
+GL.PushMatrix();
+GL.Translate(4f, 4f, 0f);
+GL.Begin(PrimitiveType.Lines);
+// Draw red ray
+GL.Color3(1f, 0f, 0f);
+GL.Vertex3(0f, 0f, 0f);
+redPosition.Normalize(); // We want to render a unit vector
+redPosition *= -1.0f; // Invert so we see the light direction
+GL.Vertex3(redPosition.X, redPosition.Y, redPosition.Z);
+// Draw green ray
+GL.Color3(0f, 1f, 0f);
+GL.Vertex3(0f, 0f, 0f);
+greenPosition.Normalize();
+greenPosition *= -1.0f;
+GL.Vertex3(greenPosition.X, greenPosition.Y, greenPosition.Z);
+GL.End();
+GL.PopMatrix();
+// Re-enable lights, we want the rest of the scene lit
+GL.Enable(EnableCap.Lighting);
+
+// ... rest of code unchanged
+```
+
 ## Independently lit objects
 
