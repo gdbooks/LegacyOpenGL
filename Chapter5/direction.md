@@ -106,6 +106,12 @@ Using the last example, add a third light (Light2). Configure this light to poin
 
 ![DIR6](directional6.png)
 
+The torus and cube are especially interesting as we look at this scene. The floor is also noteworthy too. It's compleatly blue! That's because the floor gets blue light from the top. It's facing away from the red light on the bottom, and is paralell to the green light. So the red and green lights don't directly effect it.
+
+But every time we added a light, the floor became a different shade of blue! If the lights don't directly effect floor, why is it's color changing? Ambient light. Each light adds a bit of ambient light to the scene. Remember, ambient lighting is light that has scattered so much it has no direction, so it uniformly effects everything in the scene!
+
+The lighting models diffuse component is direct lighting, the ambient component is indrect lighting and the specular component is shininess! So, can we turn off the ambient light? Yes. Set the ambient component of any light that you don't want an ambient contribution from to __black__. Because black is RGB(0, 0, 0), it is absent of color, therefore it has no contribution to lighting.
+
 ## Dynamic lights
 
 ## Independently lit objects
