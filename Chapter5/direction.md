@@ -241,7 +241,7 @@ We're going to make a new scene using the final Dynamic Lights scene as a base. 
   * The purple light will be static. 
 * The floor will be lit only by the blue light.
 
-The torus and sphere are simple, we just need to enable / disable lights befor drawing each of them. Update your render code to reflect this:
+The torus and sphere are simple, we just need to enable / disable lights before drawing each of them. Update your render code to reflect this:
 
 ```
 // We want to set the state of all 3 lights here
