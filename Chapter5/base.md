@@ -125,13 +125,13 @@ This is a pretty standard resize method. Nothing to really talk about here. And 
     GL.Color3(0f, 1f, 0f);
     GL.PushMatrix();
         GL.Translate(0.0f, 2.5f,-2f);
-        Primitives.Torus(0.2f, 0.8f, 6,12);
+        Primitives.Torus();
     GL.PopMatrix();
 
     GL.Color3(1f, 0f, 0f);
     GL.PushMatrix();
         GL.Translate(2.5f, 1.0, -0.5f);
-        Primitives.DrawSphere(1);
+        Primitives.DrawSphere();
     GL.PopMatrix();
 
     GL.Color3(0f, 0f, 1f);
@@ -142,3 +142,5 @@ This is a pretty standard resize method. Nothing to really talk about here. And 
 
 }
 ```
+
+Again, nothing to brag about here. We set up a pretty standard view matrix, then render the grid, and then translate and render each primitive.
