@@ -63,8 +63,8 @@ Add the code found [at this gist](TODO) to the class. Don't copy any of the exis
 
 ```
 public static void Geometry.Cube();
-public static void Geometry.Sphere(int nDiv = 1);
-public static void Torus(float ringRadius = 0.2f, float tubeRadius = 0.8f, int numc = 16, int numt = 8)
+public static void Geometry.Sphere(int nDiv = 2);
+public static void Torus(float ringRadius = 0.2f, float tubeRadius = 0.8f, int numc = 24, int numt = 12)
 ```
 
 Cube and Sphere work like they always have. I've added some sensible defaults.
