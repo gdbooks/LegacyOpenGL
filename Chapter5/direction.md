@@ -138,5 +138,7 @@ namespace GameApplication {
             // ... rest of code unchanged
 ```
 
+We have an X and a Y angle for both lights, we don't have a distance, to keep the vectors of unit length, we will use 1.0f for the distance. Next lets change the Update function to stop rotating the camera, and start rotating the lights!
+
 ## Independently lit objects
 
