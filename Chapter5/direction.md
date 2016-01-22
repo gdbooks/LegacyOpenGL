@@ -323,5 +323,6 @@ GL.Light(LightName.Light1, LightParameter.Ambient, red);
 
 A bit off topic, but the reason the ground is using the same lighting as the cube is becuase it renders with whatever configuration the state machine was left in at the end of last frame. In this situation, this is what we want, sometimes it may not be. But this does imply an interesting artifact. It's not visible, because the timing is so short, but the first frame that the appliction runs the ground is actually colored wrong. Because the render has not executed before, so the state machine is not in the state we expected it to be. However this error is only for 1 frame, so we can ignore it. Your app at this point should look like this:
 
+![DIR9](directional9.png)
 
 One thing to note, even tough we have independently lit objects in this scene, we don't actually have local lights. This is because all of the lights are static to the scene, none of the lights move with objects in the scene. Local lights don't make much sense with a directional light. We will implement them when doing point lights.
