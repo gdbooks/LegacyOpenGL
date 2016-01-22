@@ -59,7 +59,7 @@ You added the ```DrawCube``` function to every program that uses it. And you add
 
 However, neither solution is robust. Ideally you will have many different primitives to render, so we need a class that is a convenient holder for them. I would call this class either ```Primitives``` or ```Geometry```. Go ahead and create this class in your project.
 
-Add the code found [at this gist](TODO) to the class. Don't copy any of the existing code in your project, the gist is special in that it adds normal information (we will cover this later) for each primitive. The following static functions are exposed for you:
+Add the code found [at this gist](https://gist.github.com/gszauer/110a0a80251a755ef2c9) to the class. Don't copy any of the existing code in your project, the gist is special in that it adds normal information (we will cover this later) for each primitive. The following static functions are exposed for you:
 
 ```
 public static void Geometry.Cube();
@@ -78,3 +78,5 @@ The last two arguments are the number of segments to subdivide. The first one de
 ## The test scene
 
 With that we now have all the elements we are going to be using for our lighting test scene. For every lighting demo from here on, copy this scene, rename it and implement the light. For the scene, we're going to render a cube a spehere and a torus on top of a grid. And the camera is going to be slowly orbiting the scene to give us a 360 degree view of the lighting.
+
+## Warning
