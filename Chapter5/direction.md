@@ -307,5 +307,21 @@ Run the game to see what it looks like. The sphere is rendered green like we wan
 
 ![DIR8](directional8.png)
 
+The answer is simple, nothing is reset for you. Ever! At the end of the frame we set light 1 to be purple, which means that at the start of the next frame it will still be purple! This is an easy fix. We want the ground to render blue / purple still, but the next object, the torus to render in red. 
+
+We know that the tarus renders with light 1, so let's change the color of light1 to red after drawing the ground. Lets update the render code to reflect this:
+
+```
+grid.Render();
+
+float[] red = new float[] { 1f, 0f, 0f, 1f };
+GL.Light(LightName.Light1, LightParameter.Diffuse, red);
+GL.Light(LightName.Light1, LightParameter.Ambient, red);
+
+// ... rest of code unchanged
+```
+
+A bit off topic, but the reason the ground is using the same lighting as the cube is becuase it renders with whatever configuration the state machine was left in at the end of last frame. In this situation, this is what we want, sometimes it may not be. But this does imply an interesting artifact. It's not visible, because the timing is so short, but the first frame that the appliction runs the ground is actually colored wrong. Because the render has not executed before, so the state machine is not in the state we expected it to be. However this error is only for 1 frame, so we can ignore it. Your app at this point should look like this:
+
 
 One thing to note, even tough we have independently lit objects in this scene, we don't actually have local lights. This is because all of the lights are static to the scene, none of the lights move with objects in the scene. Local lights don't make much sense with a directional light. We will implement them when doing point lights.
