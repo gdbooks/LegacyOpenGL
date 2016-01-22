@@ -240,3 +240,37 @@ We're going to make a new scene using the final Dynamic Lights scene as a base. 
   * Instead of adding a 4th light (Light3) to the scene, we're going to recycle the red light and turn it purple
   * The purple light will be static. 
 * The floor will be lit only by the blue light.
+
+The torus and sphere are simple, we just need to enable / disable lights befor drawing each of them. Update your render code to reflect this:
+
+```
+// We want to set the state of all 3 lights here
+// because this is the first lit object that is drawn
+// The enable / disbale states carry over from last frame
+// so setting all states here acts as a kind of reset
+
+// Disable blue light
+GL.Disable(EnableCap.Light0);
+// Disable green light
+GL.Disable(EnableCap.Light2);
+// Enable the red light
+GL.Enable(EnableCap.Light1);
+// Draw tarus
+GL.PushMatrix();
+GL.Color3(0f, 1f, 0f);
+GL.Translate(0.0f, 2.5f,-2f);
+Primitives.Torus(0.2f, 0.8f, 6,12);
+GL.PopMatrix();
+
+// Right now, only the red light is enabled, disable it
+GL.Disable(EnableCap.Light1);
+// The green light is still disabled, enable it
+GL.Enable(EnableCap.Light2);
+// We don't need to disable light 0, it's still disabled from last call
+// Render tarus
+GL.PushMatrix();
+GL.Color3(1f, 0f, 0f);
+GL.Translate(2.5f, 1.0, -0.5f);
+Primitives.DrawSphere(1);
+GL.PopMatrix();
+```
