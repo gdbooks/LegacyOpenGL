@@ -95,6 +95,9 @@ public override void Initialize() {
 }
 ```
 
+Lets see what that looks like:
+
+
 ## Dynamic lights
 
 ## Independently lit objects
