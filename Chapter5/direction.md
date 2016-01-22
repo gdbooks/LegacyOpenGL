@@ -149,7 +149,7 @@ public override void Update(float dTime) {
 }
 ```
 
-Now that the actual rotation logic is in place, all that's left to do is actually rotate the lights. We do this by changing the ```LightParameter.Position``` paramater of light 1 (red) and light 2 (green) every time a frame is rendered. 
+Now that the actual rotation logic is in place, all that's left to do is actually rotate the lights. We do this by changing the ```LightParameter.Position``` parameter of light 1 (red) and light 2 (green) every time a frame is rendered. 
 
 ## Independently lit objects
 
