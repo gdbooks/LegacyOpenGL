@@ -119,5 +119,24 @@ We're going to make the green light orbit the scene horizontally, the red light 
 
 First, let's add some variables to the scene. We're going to use the same orbit logic we used for the camera, so these variables will be simialr.
 
+```
+namespace GameApplication {
+    class LightingScene : Game{
+        Grid grid = null;
+
+        float cameraAngleX = 0.0f;
+        float cameraAngleY = -25;
+        float cameraDistance = 10.0f;
+
+        float redAngleX = 0.0f;
+        float redAngleY = 0.0f;
+
+        float greenAngleX = 0.0f;
+        float greenAngleY = 0.0f;
+
+        public override void Initialize() {
+            // ... rest of code unchanged
+```
+
 ## Independently lit objects
 
