@@ -102,7 +102,7 @@ Lets see what that looks like:
 The top of any object is shaded blue. The bottom is shaded red. Colors in the middle interpolate between the two lights, based on the direction of the surface normal.
 
 ## On your own
-Using the last example, add a third light (Light2). Configure this light to point straight left (0, 0, 1, 0), and be green. The final scene should look like this:
+Using the last example, add a third light (Light2). Configure this light to point straight left (1, 0, 0, 0), and be green. The final scene should look like this:
 
 
 
