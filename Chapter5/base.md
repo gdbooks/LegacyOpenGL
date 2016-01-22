@@ -94,4 +94,51 @@ namespace GameApplication {
         }
 ```
 
-The first thing we do here is make a new solid grid object. We enable DepthTest, because we want the 3D objects to sort properly.
+The first thing we do here is make a new solid grid object. We enable DepthTest, because we want the 3D objects to sort properly. We enable CullFace to save some performance by not rendering back-facing triangles. Finally, we call the Resize method, to set up our projection and viewprots. Let's take a look at said resize method next:
+
+```
+public override void Resize(int width, int height) {
+    GL.Viewport(0, 0, width, height);
+    float aspect = (float)width / height;
+
+    GL.MatrixMode(MatrixMode.Projection);
+    Matrix4 perspective = Matrix4.Perspective(60.0f, aspect, 0.01f, 1000.0f);
+    GL.LoadMatrix(perspective.OpenGL);
+    GL.MatrixMode(MatrixMode.Modelview);
+}
+```
+
+This is a pretty standard resize method. Nothing to really talk about here. And finally lets take a look at how we are going to be rendering the scene:
+
+```
+ public override void Render() {
+    Vector3 eyePos = new Vector3();
+    eyePos.X = 0.0f;
+    eyePos.Y = 5.0f;
+    eyePos.Z = 10.0f;
+    
+    Matrix4 lookAt = Matrix4.LookAt(eyePos, new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+    GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
+    
+    grid.Render();
+
+    GL.Color3(0f, 1f, 0f);
+    GL.PushMatrix();
+        GL.Translate(0.0f, 2.5f,-2f);
+        Primitives.Torus(0.2f, 0.8f, 6,12);
+    GL.PopMatrix();
+
+    GL.Color3(1f, 0f, 0f);
+    GL.PushMatrix();
+        GL.Translate(2.5f, 1.0, -0.5f);
+        Primitives.DrawSphere(1);
+    GL.PopMatrix();
+
+    GL.PushMatrix();
+    GL.Color3(0f, 0f, 1f);
+    GL.Translate(-1f, 0.5f, 0.5f);
+    Primitives.Cube();
+    GL.PopMatrix();
+
+}
+```
