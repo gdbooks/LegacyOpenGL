@@ -234,9 +234,9 @@ We need independently lit objects to do local lighting. The process for doing lo
 
 We're going to make a new scene using the final Dynamic Lights scene as a base. This is what we are about to render
 
-* he tarus only be lit by the green light
-* * The sphere lit only by the red light
+* The tarus only be lit by the green light
+* The sphere lit only by the red light
 * The cube will be lit by the blue light and a purple light.   
   * Instead of adding a 4th light (Light3) to the scene, we're going to recycle the red light and turn it purple
-  * the purple light will be static. 
+  * The purple light will be static. 
 * The floor will be lit only by the blue light.
