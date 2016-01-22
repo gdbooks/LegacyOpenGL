@@ -134,10 +134,10 @@ This is a pretty standard resize method. Nothing to really talk about here. And 
         Primitives.DrawSphere(1);
     GL.PopMatrix();
 
-    GL.PushMatrix();
     GL.Color3(0f, 0f, 1f);
-    GL.Translate(-1f, 0.5f, 0.5f);
-    Primitives.Cube();
+    GL.PushMatrix();
+        GL.Translate(-1f, 0.5f, 0.5f);
+        Primitives.Cube();
     GL.PopMatrix();
 
 }
