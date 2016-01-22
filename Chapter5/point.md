@@ -1,0 +1,3 @@
+Although a light source delivers a single distribution of frequencies, the ambient, diffuse, and specular components might be different. For example, if you have a white light in a room with red walls, the scattered light tends to be red, although the light directly striking objects is white. OpenGL allows you to set the red, green, and blue values for each component of light independently.
+
+from: http://www.glprogramming.com/red/chapter05.html
