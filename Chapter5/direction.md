@@ -62,6 +62,11 @@ As you can see the shading on the primitives has changed, the floor is the most 
 In the real world, the floor would stop light from reaching the objects. In OpenGL each object is shaded and lit indevidually, like if no other object was in the scene. It is possible to add code to support shadows, but it's a complicated process that we will talk about later.
 
 ## Two Lights
+So, actually using a light us pretty easy. OpenGL supports up to 8 lights! Let's try to add one more and see what happens. We're going to add a second light, this one is going to be red. It's going to come from the Opposite direction of the blue light from the original example.
+
+First things first, in the Initialize function we have to enable and configure light 1:
+
+
 
 ## Dynamic lights
 
