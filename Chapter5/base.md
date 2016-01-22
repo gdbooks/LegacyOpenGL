@@ -37,6 +37,7 @@ public void Render() {
         // Draw one large rectangular primitive
         // this large rectangle is 2 triangles ;)
         GL.Begin(PrimitiveType.Triangles);
+            GL.Normal3(0.0f, 1.0f, 0.0f);
             // Triangle 1
             GL.Vertex3(10.0f, -0.01f, 10.0f);
             GL.Vertex3(10.0f, -0.01f, -10.0f);
@@ -49,6 +50,15 @@ public void Render() {
     }
     // ... The rest of the render function stays the same
 ```
+
+The only thing that's kind of unfamiliar in there is this bit:
+
+```
+GL.Normal3(0.0f, 1.0f, 0.0f);
+```
+
+The normal of a surface is used in lighting calculations. It tells OpenGL which way an object is facing. A normal is just a unit vector that points in the direction that the primitive faces. We will talk in depth abut normals soon.
+
 
 Thats all the changes we need to make to the grid. If you run one of the existing samples, and turn on ```RenderSolid``` on, your scene should look something like this:
 
