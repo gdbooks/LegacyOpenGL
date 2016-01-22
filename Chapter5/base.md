@@ -62,9 +62,9 @@ However, neither solution is robust. Ideally you will have many different primit
 Add the code found [at this gist](TODO) to the class. Don't copy any of the existing code in your project, the gist is special in that it adds normal information (we will cover this later) for each primitive. The following static functions are exposed for you:
 
 ```
-Geometry.Cube();
-Geometry.Sphere(int nDiv = 1);
-Geometry.TAURUS TODO
+public static void Geometry.Cube();
+public static void Geometry.Sphere(int nDiv = 1);
+public static void Torus(float ringRadius = 0.2f, float tubeRadius = 0.8f, int numc = 16, int numt = 8)
 ```
 
 ## The test scene
