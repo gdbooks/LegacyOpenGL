@@ -76,3 +76,5 @@ When calling the function, the first argument is the radius of the ring, that is
 The last two arguments are the number of segments to subdivide. The first one decides how many slices to give, the second one how many columns. Like with the sphere, the larger these numbers, the more detail the torus will have.
 
 ## The test scene
+
+With that we now have all the elements we are going to be using for our lighting test scene.
