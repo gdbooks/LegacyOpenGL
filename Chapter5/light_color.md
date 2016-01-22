@@ -7,8 +7,8 @@ Light sources are composed of three of the lighting terms we discussed earlyer: 
 To set up each of these terms you call ```GL.Light``` with a parameter name of ```LightParameter.Ambient```, ```LightParameter.Diffuse``` or ```LightParameter.Specular```. Each of these takes a four component float array. The values passed in represent the RGBA color of the specified term. The following code demonstrates:
 
 ```
-float[] white = {1, 1, 1, 1};
-float[] blue  = {0, 0, 1, 1};
+float[] white = new float[]{1, 1, 1, 1};
+float[] blue  = new float[]{0, 0, 1, 1};
 
 // Set ambient term blue
 GL.Light(LightName.Light0, LightParameter.Ambient, blue);
