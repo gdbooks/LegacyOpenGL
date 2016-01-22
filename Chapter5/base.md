@@ -67,6 +67,6 @@ public static void Geometry.Sphere(int nDiv = 2);
 public static void Torus(float ringRadius = 0.2f, float tubeRadius = 0.8f, int numc = 24, int numt = 12)
 ```
 
-Cube and Sphere work like they always have. I've added some sensible defaults.
+Cube and Sphere work like they always have. I've added some sensible defaults. Torus is new, this is what a torus looks like:
 
 ## The test scene
