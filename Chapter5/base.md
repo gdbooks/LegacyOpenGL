@@ -67,7 +67,7 @@ public static void Geometry.Sphere(int nDiv = 2);
 public static void Torus(float ringRadius = 0.2f, float tubeRadius = 0.8f, int numc = 6, int numt = 12)
 ```
 
-Cube and Sphere work like they always have. I've added some sensible defaults. Torus is new, what is a torus? It's essentially a doughnut. This is what a torus looks like:
+As you can see, every argument has a default value, so you can call these functions without arguments. Cube and Sphere work like they always have. I've added some sensible defaults. Torus is new, what is a torus? It's essentially a doughnut. This is what a torus looks like:
 
 ![TORUS](torus.gif)
 
