@@ -218,5 +218,11 @@ GL.Enable(EnableCap.Lighting);
 // ... rest of code unchanged
 ```
 
+Running your game now, you should have a nice indicator as to which way your lights point, the scene looks like this:
+
+![DIR7](directional7.png)
+
+This is a really good example of rendering a lit scene with some unlit objects. At any point during your objects execution you can enable / disable lighting as a whole, you can enable / disable specific lights; OR you can change indevidual properties of specific lights. This is how we are able to do so much with just 8 lights, they can be 8 different lights for every object!
+
 ## Independently lit objects
 
