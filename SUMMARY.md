@@ -53,7 +53,7 @@
     * [Spotlights](Chapter5/light_spotlight.md)
     * [Moving and Rotating](Chapter5/move_and_rotate.md)
   * [Programming Exercises](Chapter5/base.md)
-    * [Point Light](Chapter5/point.md)
     * [Directional Light](Chapter5/direction.md)
+    * [Point Light](Chapter5/point.md)
     * [Spot Light](Chapter5/spot.md)
     * [Dynamic Lights](Chapter5/dynamic_lights.md)
