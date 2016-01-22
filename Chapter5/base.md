@@ -169,3 +169,20 @@ public override void Update(float dTime) {
     cameraAngleX += 30f * dTime;
 }
 ```
+
+Now that the angle is updating properly, lets modify the render code to respect these values. The following code should look familiar, it's standard rotation code that you've derived before.
+
+```
+public override void Render() {
+    Vector3 eyePos = new Vector3();
+    eyePos.X =  cameraDistance * -(float)Math.Sin(cameraAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(cameraAngleY * (float)(Math.PI / 180.0));
+    eyePos.Y =  cameraDistance * -(float)Math.Sin(cameraAngleY * (float)(Math.PI / 180.0));
+    eyePos.Z = -cameraDistance * (float)Math.Cos(cameraAngleX * (float)(Math.PI / 180.0)) * (float)Math.Cos(cameraAngleY * (float)(Math.PI / 180.0));
+    
+    Matrix4 lookAt = Matrix4.LookAt(eyePos, new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
+    // ... rest of code unchanged
+```
+
+The only thing new here is that we are multiplying the rotated angle by cameraDistnace. That's because our angle rotation returns between 0 and 1 (radians). If we multiply that by the distance of the camera, it makes the camera orbit around an imaginary sphere.
+
+Try running the code, and confirm that the camera is rotating the scene. After this we are done, and read to actually start implementing some lights!
