@@ -144,3 +144,5 @@ This is a pretty standard resize method. Nothing to really talk about here. And 
 ```
 
 Again, nothing to brag about here. We set up a pretty standard view matrix, then render the grid, and then translate and render each primitive using their default values. The torus renders green, the sphere red and the cube blue. Your screen should look like this:
+
+![STATIC](static.png)
