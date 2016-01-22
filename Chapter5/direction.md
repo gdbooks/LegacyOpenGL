@@ -43,7 +43,7 @@ public override void Initialize() {
 
 That's all there is to it. If you run your code, it should look like this:
 
-![DIR1](directional1.png)
+![DIR1](directional3.png)
 
 ## Light direction
 
@@ -52,3 +52,5 @@ It may not be obvious from the previous example, but OpenGL shades (lights) obje
 ```
     GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.0f, -0.5f, 0.5f, 0.0f } );
 ```
+
+![DIR2](directional2.png)
