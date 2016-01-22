@@ -303,6 +303,9 @@ Primitives.Cube();
 GL.PopMatrix();
 ```
 
+Run the game to see what it looks like. The sphere is rendered green like we wanted. The cube is rendered purple and blue like we wanted. The ground is rendeed purple and blue like we wanted. The torus however is wrong! It's not red, it's purple and blue! Why?
+
+![DIR8](directional8.png)
 
 
 One thing to note, even tough we have independently lit objects in this scene, we don't actually have local lights. This is because all of the lights are static to the scene, none of the lights move with objects in the scene. Local lights don't make much sense with a directional light. We will implement them when doing point lights.
