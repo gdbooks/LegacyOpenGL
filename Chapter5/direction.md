@@ -97,6 +97,7 @@ public override void Initialize() {
 
 Lets see what that looks like:
 
+![DIR4](directional5.png)
 
 ## Dynamic lights
 
