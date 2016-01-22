@@ -44,3 +44,7 @@ public override void Initialize() {
 That's all there is to it. If you run your code, it should look like this:
 
 ![DIR1](directional1.png)
+
+## Light direction
+
+It may not be obvious from the previous example, but OpenGL shades (lights) objects independently! That is, no object casts a shadow on another object. When the light is comming from the top, like in the above scene it's easy to miss that. So, let's change the light direction to come from the negative Y axis!
