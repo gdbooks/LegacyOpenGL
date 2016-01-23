@@ -190,4 +190,4 @@ Root (game object)
 
 That way each lamp object also has a light object that is offset relative to it. And i don't have to find the world position for every light, because the light is relative to the lamp, each light will have the same relative offset.
 
-A really creative use of a local light is [Navi](https://goo.gl/LTC5WP) from zelda. Navi is local to link, wherever link moves Navi follows. But Navi also moves independently, flying around link. Navi has a small radius that eluminates wherever she is. 
+A really creative use of a local light is [Navi](https://goo.gl/LTC5WP) from zelda. Navi is local to link, wherever link moves Navi follows. But Navi also moves independently, flying around link. Navi has a small radius that eluminates wherever she is. The designers leveraged this, by making navi also be used as a lighting device, whenever you read a sign she flies to it and slightly eluminates it, putting emphasis on the sign being read
