@@ -143,7 +143,15 @@ As you can see, the area of effect for the light remains mainly the same, howeve
 Like i mentioned previously, the closer to 0 your attenuation factors are the stronger the light is. Lets expand the lights area of influence, as well as it's brightness. Try the following:
 
 ```
- GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.01f);
+GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.01f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.1f);
 GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.0f);
 ```
+
+All of a sudden the point light is huge! That's all there is to point lights. You set a position, keeping in mind that the modelview matrix effects this position, and you make sure to configure the lights attenuation.
+
+## Finding good attenuation
+One of the hardest things to do with point lights is finding a decent attenuation factor. Artists will play around with the attenuation numbers for hours before choosing the final attenuation of a light.
+
+How did i find the attenuation numbers we used in the above examples? I wrote a small program:
+
