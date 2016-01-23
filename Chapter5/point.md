@@ -219,3 +219,32 @@ GL.Disable(EnableCap.Light1);
 Because the model-view matrix effects the light at the time that we set the lights position, and we set the lights position AFTER the model matrix of the sphere has been applied, this light will move with the sphere.  So if you move the sphere, (by changing ```GL.Translate(2.5f, 1.0f, -0.5f);```), the light will move with it! This is what your scene should look like:
 
 ![Point8](point8.png)
+
+That's the basic implementation of a local light. Let's try getting a bit more fancy with it by actually moving the light around the sphere! We could do something crazy 
+
+```
+GL.Enable(EnableCap.Light1);
+GL.Color3(1.0f, 0.0f, 0.0f);
+GL.PushMatrix();
+{
+    // Apply the sphere translation
+    GL.Translate(2.5f, 1.0f, -0.5f
+    
+    // Move the light into place
+    GL.PushMatrix();
+    {
+        GL.Rotate(lightAngle, 0f, 1f, 0.0f);
+        GL.Translate(-2f, 0f, -2f);
+        
+        // Render light where the model-view matrix is. No translation.
+        position = new float[] { 0f, 0f, 0f, 1f };
+        GL.Light(LightName.Light1, LightParameter.Position, position);
+    }
+    // Get rid of the light transform, restore the sphere translation
+    GL.PopMatrix();
+    
+    Primitives.DrawSphere();
+}
+GL.PopMatrix();
+GL.Disable(EnableCap.Light1);
+```
