@@ -194,4 +194,27 @@ A really creative use of a local light is [Navi](https://goo.gl/LTC5WP) from zel
 
 With that in mind, let's create a simple local light. We're going to keep the scene illuminated by our yello light, but we're going to add a local red point light to the sphere. This will only light the sphere. Once the light is added, we will animate it to orbit the shere, because local lights don't have to be static.
 
-Start by enabling Light1 in the initialize function. Set it's diffuse color to red, ambient color to black and specular color to white. Set the attenuation of this new light to the default values, Constant: 1, Linear: 0, Quadratic: 0
+Start by enabling Light1 in the initialize function. Set it's diffuse color to red, ambient color to black and specular color to white. Set the attenuation of this new light to the default values, Constant: 1, Linear: 0, Quadratic: 0. So far everything has been pretty standard. Now comes the part that makes this light a local light.
+
+We are going to enable Ligh 1 just before the sphere is drawn, and Disable it right after, this ensures that only the sphere is lit. Then, we are going to set the light position AFTER the model matrix for the sphere has been foncigured.
+
+```
+// Only affect sphere
+GL.Enable(EnableCap.Light1);
+GL.Color3(1.0f, 0.0f, 0.0f);
+GL.PushMatrix();
+{
+    GL.Translate(2.5f, 1.0f, -0.5f);
+    // Set light position, so it's relative to sphere
+    position = new float[] { -2f, 0f, -2f, 1f };
+    GL.Light(LightName.Light1, LightParameter.Position, position);
+    
+    Primitives.DrawSphere();
+}
+GL.PopMatrix();
+// Only affect sphere
+GL.Disable(EnableCap.Light1);
+```
+
+Because the model-view matrix effects the light at the time that we set the lights position, and we set the lights position AFTER the model matrix of the sphere has been applied, this light will move with the sphere.  So if you move the sphere, (by changing ```GL.Translate(2.5f, 1.0f, -0.5f);```), the light will move with it! This is what your scene should look like:
+
