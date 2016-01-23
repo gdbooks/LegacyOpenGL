@@ -56,4 +56,3 @@
     * [Directional Light](Chapter5/direction.md)
     * [Point Light](Chapter5/point.md)
     * [Spot Light](Chapter5/spot.md)
-    * [Dynamic Lights](Chapter5/dynamic_lights.md)
