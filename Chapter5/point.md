@@ -76,7 +76,23 @@ private static void SubdivideQuad(float l, float r, float t, float b, float y, i
 
 Now modify the ```Render``` function so it takes an optional subvidision paramater (0 by default), and instead of manually drawing out two large triangles it calls the subdivide function i just gave you:
 
+```
+public void Render(int subdiv = 0) {
+    // Draw grid
+    if (RenderSolid) {
+        GL.Color3(0.4f, 0.4f, 0.4f);
+        GL.Begin(PrimitiveType.Triangles);
+        {
+            GL.Normal3(0.0f, 1.0f, 0.0f);
+            SubdivideQuad(-10, 10, -10, 10, -0.01f, 0, subdiv);
+        }
+        GL.End();
+    }
+    
+    // ... rest of code is unchanged
+```
 
+Now change the render function of your demo scene to use a subdivision of 1. See what it looks like. When it doesn't look good, change it to 2, repeat until it tooks good. I decided 4 would be the one i use. This is because 4 is the first subdivision where you can see the light as a circle on the ground!
 
 
 ```
