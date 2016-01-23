@@ -94,7 +94,7 @@ public void Render(int subdiv = 0) {
 
 Now change the render function of your demo scene to use a subdivision of 1. See what it looks like. When it doesn't look good, change it to 2, repeat until it tooks good. I decided 4 would be the one i use. This is because 4 is the first subdivision where you can see the light as a circle on the ground!
 
-![P5](point5.png)
+![P5](point6.png)
 
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
