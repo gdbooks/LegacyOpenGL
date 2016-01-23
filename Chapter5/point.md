@@ -18,7 +18,9 @@ If you run your game now, you get the following scene:
 
 ![P1](point2.png)
 
-That does not look right. Not at all. The whole scene is lit, nothing about that says point light to me.
+That does not look right. Not at all. The whole scene is lit, nothing about that says point light to me. Before continuing reading, think about why you think this is broken.
+
+Well, a point light has two major properties, a position and a radius. And frankly, we set the position wrong. Remember, the Position is affected by what's in the __modelview__ matrix. But in the Initialize function, that matrix is essentially trash! So, we must also set the position of the light in the render function. After the modelview is built, but before we render anything.
 
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
