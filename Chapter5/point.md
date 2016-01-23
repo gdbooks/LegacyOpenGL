@@ -12,7 +12,9 @@ Still in initialize, after the color of the light is set up, we need to set the 
 // Having a W of 1 makes the lgiht a point light with a position
 float[] position = new float[] { 0f, 1f, 0f, 1f };
 GL.Light(LightName.Light0, LightParameter.Position, position);
+```
 
+```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.0f);
