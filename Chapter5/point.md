@@ -68,11 +68,15 @@ private static void SubdivideQuad(float l, float r, float t, float b, float y, i
 
         SubdivideQuad(l, l + half_width, t, t + half_height, y, subdivLevel + 1, target);
         SubdivideQuad(l + half_width, r, t, t + half_height, y, subdivLevel + 1, target);
-            SubdivideQuad(l, l + half_width, t + half_height, b, y, subdivLevel + 1, target);
-            SubdivideQuad(l + half_width, r, t + half_height, b, y, subdivLevel + 1, target);
-        }
+        SubdivideQuad(l, l + half_width, t + half_height, b, y, subdivLevel + 1, target);
+        SubdivideQuad(l + half_width, r, t + half_height, b, y, subdivLevel + 1, target);
     }
-    ```
+}
+```
+
+Now modify the ```Render``` function so it takes an optional subvidision paramater (0 by default), and instead of manually drawing out two large triangles it calls the subdivide function i just gave you:
+
+
 
 
 ```
