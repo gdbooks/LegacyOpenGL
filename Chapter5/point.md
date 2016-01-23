@@ -33,7 +33,9 @@ grid.Render();
 
 With that code in place, the scene now looks like this:
 
+![Point3](point3.png)
 
+That looks so much better! It's actually starting to look like a lightbulb eluminating the scene!
 
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
