@@ -272,3 +272,44 @@ GL.Disable(EnableCap.Light1);
 That works, you application now looks the same, but the light is moving around. Take note of what happens when the blue light passes over a section of the sphere that's lit yellow. The geometry turns white! Why is that? Doesn't blue + yellow = green?
 
 ![COLORS](color_wheel.jpg)
+
+In the real world, that would be the case, but computers approximate color with RGB values. The sphere is it yellow, which is RGB(1, 1, 0), then a blue light passes over, blue is RGB(0, 0, 1). What happens when you combine (add) the two vectors RGB(1, 1, 0) + RGB(0, 0, 1), the result equals RGB(1, 1, 1), which is white. This is a really good example of where computer graphics fall short, by approximating colors into RGB channels we loose some of the properties that real world colors have.
+
+The scene looks great, it's almost where we want to to be, but it's really hard to tell where the blue light is. I mean, it's easy to see it's effect on the sphere, but it's hard to tell where the actual light is. Let's fix that. We can visualize the blue light by rendering a small, unlit blue sphere at the lights position. This should be easy, since we already have the modelview matrix configured with the lights model matrix.
+
+```
+GL.Enable(EnableCap.Light1);
+GL.Color3(1.0f, 0.0f, 0.0f);
+GL.PushMatrix();
+{
+    GL.Translate(2.5f, 1.0f, -0.5f);
+    GL.PushMatrix();
+    {
+        GL.Rotate(lightAngle, 0f, 1f, 0.0f);
+        GL.Translate(-2f, 0f, -2f);
+
+        position = new float[] { 0f, 0f, 0f, 1f };
+        GL.Light(LightName.Light1, LightParameter.Position, position);
+        
+        // Disable lighting, we want the visualization sphere to be a solid color
+        GL.Disable(EnableCap.Lighting);
+        // We want the visual light sphere to be small
+        GL.Scale(0.25f, 0.25f, 0.25f);
+        // And blue
+        GL.Color3(0f, 0f, 1f);
+        // Draw the light visualization
+        Primitives.DrawSphere();
+        // Re-enable lighting for the rest of the scene
+        GL.Enable(EnableCap.Lighting);
+    }
+    GL.PopMatrix();
+    // This is still what draws the sphere
+    Primitives.DrawSphere();
+}
+GL.PopMatrix();
+GL.Disable(EnableCap.Light1);
+```
+
+Now it's easy to tell where the blue light is. The scene looks like this:
+
+![P9](point9.png)
