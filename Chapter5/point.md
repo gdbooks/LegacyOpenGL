@@ -194,4 +194,4 @@ A really creative use of a local light is [Navi](https://goo.gl/LTC5WP) from zel
 
 With that in mind, let's create a simple local light. We're going to keep the scene illuminated by our yello light, but we're going to add a local red point light to the sphere. This will only light the sphere. Once the light is added, we will animate it to orbit the shere, because local lights don't have to be static.
 
-Start by enabling Light1 in the initialize function. Set it's diffuse color to red, ambient color to black and specular color to white.
+Start by enabling Light1 in the initialize function. Set it's diffuse color to red, ambient color to black and specular color to white. Set the attenuation of this new light to the default values, Constant: 1, Linear: 0, Quadratic: 0
