@@ -35,7 +35,18 @@ With that code in place, the scene now looks like this:
 
 ![Point3](point3.png)
 
-That looks so much better! It's actually starting to look like a lightbulb eluminating the scene!
+That looks so much better! It's actually starting to look like a lightbulb eluminating the scene! But why is everything an ugly mustard color? That doesn't look right! Well, that's the ambient component of the light. Remember how light works, the diffuse component is applied to an object where the light touches it. The ambient component is applied everywhere, it represents light that bounced around a lot and is now just ambient. The specular component is shininess.
+
+With a large light, like the sun, or a super intense light, like what they use on a construction site it makes sense to have an ambient component. But with a small light (like a light bulb) it does not. Usually a bulb is only strong enough to light a small area, not a large room! With that being said, change the ambient term from yellow to black. This should leave the diffuse term yellow, the ambient term black and the specular term white. 
+
+This will leave your scene looking like this:
+
+![Point4](point4.png)
+
+Wow, we almost have it! Some things are black, there is a yellow light that fades over distance, there is just one problem. Look at the ground. It's not lit! Before reading on, think about why this might be occuring.
+
+
+
 
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
