@@ -220,7 +220,26 @@ Because the model-view matrix effects the light at the time that we set the ligh
 
 ![Point8](point8.png)
 
-That's the basic implementation of a local light. Let's try getting a bit more fancy with it by actually moving the light around the sphere! We could do something crazy 
+That's the basic implementation of a local light. Let's try getting a bit more fancy with it by actually orbiting the light around the sphere! First things first, let's add a new variable for the angle of the light orbit to the class:
+
+```
+namespace GameApplication {
+    class LocalLightSample : Game{
+        Grid grid = null;
+        Vector3 cameraAngle = new Vector3(0.0f, -25.0f, 10.0f);
+        float lightAngle = 0.0f;
+```
+
+In update, we're going to rotate this light faster than the camera:
+
+```
+public override void Update(float dTime) {
+    cameraAngle.X += 30.0f * dTime;
+    lightAngle += 90.0f * dTime;
+}
+```
+
+Now rendering gets a bit tricky. We could do something crazy and figure out how to configure the positon of the light based on the light angle, but that involves a bunch of math that we don't really need to do. Instead, we can simply move the __modelview__ matrix into the position that we want to render the light at, render the light at (0,0,0) relative to the modelview matrix, then restore the modelview matrix before rendering the sphere.
 
 ```
 GL.Enable(EnableCap.Light1);
@@ -233,6 +252,7 @@ GL.PushMatrix();
     // Move the light into place
     GL.PushMatrix();
     {
+        // Orbit the light around the y axis
         GL.Rotate(lightAngle, 0f, 1f, 0.0f);
         GL.Translate(-2f, 0f, -2f);
         
@@ -248,3 +268,7 @@ GL.PushMatrix();
 GL.PopMatrix();
 GL.Disable(EnableCap.Light1);
 ```
+
+That works, you application now looks the same, but the light is moving around. Take note of what happens when the blue light passes over a section of the sphere that's lit yellow. The geometry turns white! Why is that? Doesn't blue + yellow = green?
+
+![COLORS](color_wheel.jpg)
