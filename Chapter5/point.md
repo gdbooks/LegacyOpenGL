@@ -9,5 +9,11 @@ In the Initialize function enable lighting and light 0. Set the color of the lig
 Still in initialize, after the color of the light is set up, we need to set the lights position. The position is a 4 component vector (float array),with the W component being 1.
 
 ```
+// Having a W of 1 makes the lgiht a point light with a position
+float[] position = new float[] { 0f, 1f, 0f, 1f };
+GL.Light(LightName.Light0, LightParameter.Position, position);
 
+GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
+GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
+GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.0f);
 ```
