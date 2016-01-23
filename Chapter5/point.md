@@ -218,3 +218,4 @@ GL.Disable(EnableCap.Light1);
 
 Because the model-view matrix effects the light at the time that we set the lights position, and we set the lights position AFTER the model matrix of the sphere has been applied, this light will move with the sphere.  So if you move the sphere, (by changing ```GL.Translate(2.5f, 1.0f, -0.5f);```), the light will move with it! This is what your scene should look like:
 
+![Point8](point8.png)
