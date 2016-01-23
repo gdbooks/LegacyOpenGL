@@ -108,6 +108,8 @@ Thats it, we're done. It may seem like we went trough a lot of issues to get a s
 
 ## Attenuation
 
+For this section, start with the scene we got at the end of the last section. Now that we can render a point light in the scene, and have it look pretty ok, how do we change the radius / size of the light?
+
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
