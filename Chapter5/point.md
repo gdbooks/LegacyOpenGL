@@ -110,8 +110,40 @@ Thats it, we're done. It may seem like we went trough a lot of issues to get a s
 
 For this section, start with the scene we got at the end of the last section. Now that we can render a point light in the scene, and have it look pretty ok, how do we change the radius / size of the light?
 
+That's where attenuation comes in. Like the color of the light, you can set it's attenuation in Intialize for now, it doesn't need to be set every frame. If you remember, attenuation is an inverse function (it starts with 1.0f /... ). This means the lower the attenuation factors, the stronger / larger the light.
+
+Up to this point our point light has used the default attenuation values set by OpenGL. The default attenuation is:
+
+* Constant, 1
+* Linear, 0
+* Quadratic, 0
+
+Now, seeing how a point light can be visualized as essentially a large sphere, common sense would tell us that there is some way to configure attenuation by defining a radius and some strength. There is not. The attenuation model OpenGL choose looks physically accurate, but there is no common sense way to configure it. You just have to play with the numbers.
+
+For example, try setting a "neutral" attenuation like so:
+
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
+GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.0f);
+```
+
+The lighting in the scene has barley changed. The center is a bit more well-lit, but the area of effect for the light is almost unchanged.
+
+Lets try introducing a quadratic term:
+
+```
+GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
+GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
+GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.25f);
+```
+
+As you can see, the area of effect for the light remains mainly the same, however the brightness of the light has been reduced significantly.
+
+Like i mentioned previously, the closer to 0 your attenuation factors are the stronger the light is. Lets expand the lights area of influence, as well as it's brightness. Try the following:
+
+```
+ GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.01f);
+GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.1f);
 GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.0f);
 ```
