@@ -313,3 +313,15 @@ GL.Disable(EnableCap.Light1);
 Now it's easy to tell where the blue light is. The scene looks like this:
 
 ![P9](point9.png)
+
+## Details
+
+There is one last modification i want to make to the above scene. Right now the lighting on the sphere looks kind of bad. That's because the sphere is made up of a small number of triangles. Remember, lighting is done on a per vertex basis, the further the vertices of a triangle are (that is, the larger a triangle is), the more the lighting has to interpolate. Interpolating essentially kills attenuation and causes the artifacts we see on screen. We can fix this by adding more triangles to the sphere. Change the draw call of the sphere (the one that is rendered, not the light preview) to sub-divide 5 times.
+
+```
+Primitives.DrawSphere(5);
+```
+
+The resulting scene now has much more accurate lighting for the sphere
+
+![P10](point10.png)
