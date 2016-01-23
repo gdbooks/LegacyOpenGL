@@ -174,3 +174,20 @@ MainGameWindow.Window.Title = "Constant:" + constantFactor + ", Linear: " + line
 This way you can build a quick application for yourself that will let you play with attenuation settings in about an hour. It might not be super user friendly, but it will get the job done.
 
 You don't have to buildthis application as a part of this chapter, but if you decide invest the time in building it now it might save you some trouble down the line.
+
+## Local lights
+
+A common use of point lights is to use them as local lights. That is lights that are attached to objects, and move with objects. In an entity-component system, you might have a ```PointLightComponent``` class for this that you can attach to a game object. I might configure a scene like this
+
+```
+Root (game object)
+    World (game object)
+        Lamp (game object)
+            Light (game object with light component)
+        Lamp (game object)
+            Light (game object with light component)
+```
+
+That way each lamp object also has a light object that is offset relative to it. And i don't have to find the world position for every light, because the light is relative to the lamp, each light will have the same relative offset.
+
+A really creative use of a local light is [Navi](https://goo.gl/LTC5WP) from zelda. Navi is local to link, wherever link moves Navi follows. But Navi also moves independently, flying around link. Navi has a small radius that eluminates wherever she is. 
