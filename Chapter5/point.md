@@ -102,7 +102,11 @@ Almost there, one last problem, why is the cube black! On every side! The answer
 float[] position = new float[] { 0.5f, 1f, 0.5f, 1f };
 ```
 
-Now as your scene rotates, you will see one of the sides of the cube lit!
+Now as your scene rotates, you will see one of the sides of the cube lit! 
+
+Thats it, we're done. It may seem like we went trough a lot of issues to get a single point light up, that's because we did. I made sure to include all of the major mistakes that get made when seeing up lights above. Chances are you will make those mistakes (i still do), when that happens i want you to have the tools to fix them
+
+## Attenuation
 
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
