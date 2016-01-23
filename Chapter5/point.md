@@ -23,6 +23,15 @@ That does not look right. Not at all. The whole scene is lit, nothing about that
 Well, a point light has two major properties, a position and a radius. And frankly, we set the position wrong. Remember, the Position is affected by what's in the __modelview__ matrix. But in the Initialize function, that matrix is essentially trash! So, we must also set the position of the light in the render function. After the modelview is built, but before we render anything.
 
 ```
+ GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
+
+float[] position = new float[] { 0f, 1f, 0f, 1f };
+GL.Light(LightName.Light0, LightParameter.Position, position);
+
+grid.Render();
+```
+
+```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.QuadraticAttenuation, 0.0f);
