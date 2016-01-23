@@ -14,6 +14,12 @@ float[] position = new float[] { 0f, 1f, 0f, 1f };
 GL.Light(LightName.Light0, LightParameter.Position, position);
 ```
 
+If you run your game now, you get the following scene:
+
+![P1](point2.png)
+
+That does not look right. Not at all. The whole scene is lit, nothing about that says point light to me.
+
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
