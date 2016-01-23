@@ -31,6 +31,10 @@ GL.Light(LightName.Light0, LightParameter.Position, position);
 grid.Render();
 ```
 
+With that code in place, the scene now looks like this:
+
+
+
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
