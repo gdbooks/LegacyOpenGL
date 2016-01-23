@@ -49,7 +49,30 @@ The answer is a tad technical, but this has to do with how OpenGL handles lights
 
 Remember how the ground (under the grid) is just two large triangles? Well, none of the triangle's vertices happen to fall into the attenuation zone. Therefore, the gound is rendered as if it was ALL outside the attenuation zone, even the parts that are inside. This is a VERY common problem with per vertex point lights. Large meshes tend to get lit wrong.
 
-How can we fix this? By adding more vertices! The higher density your mesh is (the more tesselated your mesh is), the more accurate your lighting will become.
+How can we fix this? By adding more vertices! The higher density your mesh is (the more tesselated your mesh is), the more accurate your lighting will become. I'm going to give you some code that takes a quad, and divides it into 4 quads before rendering. It's a recursive function, so you can sub-divide a quad as many times as you want. Add this to the ```Grid``` class:
+
+```
+private static void SubdivideQuad(float l, float r, float t, float b, float y, int subdivLevel, int target) {
+    if (subdivLevel >= target) {
+        GL.Vertex3(l, y, t);
+        GL.Vertex3(l, y, b);
+        GL.Vertex3(r, y, b);
+
+        GL.Vertex3(l, y, t);
+        GL.Vertex3(r, y, b);
+        GL.Vertex3(r, y, t);
+    }
+    else {
+        float half_width = Math.Abs(r - l) * 0.5f;
+        float half_height = Math.Abs(b - t) * 0.5f;
+
+        SubdivideQuad(l, l + half_width, t, t + half_height, y, subdivLevel + 1, target);
+        SubdivideQuad(l + half_width, r, t, t + half_height, y, subdivLevel + 1, target);
+            SubdivideQuad(l, l + half_width, t + half_height, b, y, subdivLevel + 1, target);
+            SubdivideQuad(l + half_width, r, t + half_height, b, y, subdivLevel + 1, target);
+        }
+    }
+    ```
 
 
 ```
