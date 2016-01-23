@@ -96,6 +96,14 @@ Now change the render function of your demo scene to use a subdivision of 1. See
 
 ![P5](point6.png)
 
+Almost there, one last problem, why is the cube black! On every side! The answer is so simple it's hard to track the bug down sometimes. The light is INSIDE the box! Because the light is inside the geometry, all the faces face the same way as the light, and no face is lit. Change the light position to:
+
+```
+float[] position = new float[] { 0.5f, 1f, 0.5f, 1f };
+```
+
+Now as your scene rotates, you will see one of the sides of the cube lit!
+
 ```
 GL.Light(LightName.Light0, LightParameter.ConstantAttenuation, 0.25f);
 GL.Light(LightName.Light0, LightParameter.LinearAttenuation, 0.25f);
