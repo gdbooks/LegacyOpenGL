@@ -9,13 +9,16 @@ We're going to go trough implementing a simple spot light together. All the adva
 
 ## Implementation
 
-Lets start with the unlit test scene we set up in the begenning. Enable lighting and light 0. Configure light 0 to have a diffuse term of yellow, an ambient term of black and a specular term of white.
+Lets start with the unlit test scene we set up in the begenning. 
+Enable lighting and light 0. Configure light 0 to have a diffuse term of yellow, an ambient term of black and a specular term of white.
 
 Set the position of this light to  (0, 3, 3, 1). Unlike the colors, you can't configure the lights position in the Initialize function. Just like a Point Light, a Spot light must be defined in eye space. Therefore you have to set it after the view matrix is set.
 
 Your scene should be lit like this (once you let it rotate a bit):
 
 ![S1](spot2.png)
+
+Set your grid subdivision to as high as you can while still maintaining a smooth framerate. For me this is 8. At a subdivision level of 8 my game rotates smoothly, at 9 the frame gets super laggy. At 10 my scene moves maybe two seconds every frame and my graphics card catches fire.
 
 Next, let's set the properties that make up a spot light, these are ```SpotCutoff```, ```SpotExponent``` and ```SpotDirection```. For an review of how these work, check the "Spotlights" section of "Light Sources", because they have already been covered there i'm not going to cover them here. We're just going to use them.
 
@@ -28,6 +31,6 @@ GL.Light(LightName.Light0, LightParameter.SpotExponent, 5f);
 GL.Light(LightName.Light0, LightParameter.SpotDirection, direction);
 ```
 
-If you run your game and let it rotate you should see the below image. If your whole scene is black that means your grid's vertices are all outside of the spot lights reach, it needs to be sub-divided more.
+If you run your game and let it rotate you should see the below image. If your whole scene is black that means your grid's vertices are all outside of the spot lights reach, it needs to be sub-divided more. (You need a minimum of 4. At subdiv level 4 you will see a light blob). The below image is with subdivision level 8.
 
 ![S3](spot3.png)
