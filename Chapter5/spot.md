@@ -59,8 +59,13 @@ Render the visualization geometry for the light after the grid is rendered:
         Primitives.DrawSphere();
 
         GL.Begin(PrimitiveType.Lines);
+        
         GL.Vertex3(0f, 0f, 0f);
-        GL.Vertex3(direction[0] * 5.0f, direction[1] * 5f, direction[2] * 5f);
+        // direction for me = new float[] {0, -1, 0};
+        Vector3 lightDirection = new Vector3(direction[0], direction[1], direction[2]);
+        lightDirection.Normalize();
+        GL.Vertex3(lightDirection[0] * 5.0f, lightDirection[1] * 5f, lightDirection[2] * 5f);
+        
         GL.End();
     }
     GL.PopMatrix();
@@ -68,3 +73,10 @@ Render the visualization geometry for the light after the grid is rendered:
     
     // ... Rest of code is unchanged
 ```
+
+With the light visualization code in place, your scene should look like this:
+
+![S4](spot4.png)
+
+And finally, let's tilt the light so it actually lighs up some geometry other than the floor! Change the direction fo the light from (0, -1, 0) to (-2, -1, -3). The scene after rotating a bit will look like this:
+
