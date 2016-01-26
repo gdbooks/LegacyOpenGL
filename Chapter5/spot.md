@@ -9,4 +9,6 @@ We're going to go trough implementing a simple spot light together. All the adva
 
 ## Implementation
 
-Lets start with the unlit test scene we set up in the begenning. Enable lighting and light 0. Configure light 0 to have a diffuse term of yellow, an ambient term of black and a specular term of white.
+Lets start with the unlit test scene we set up in the begenning. Enable lighting and light 0. Configure light 0 to have a diffuse term of yellow, an ambient term of black and a specular term of white.Set the position of this light to  (0.0, 0.5, 0.5). The light is going to be static, but the camera should rotate around the scene. At this point, your scene should look like this:
+
+![S1](spot1.png)
