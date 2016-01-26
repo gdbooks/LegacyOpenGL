@@ -17,4 +17,17 @@ Your scene should be lit like this (once you let it rotate a bit):
 
 ![S1](spot2.png)
 
-Next, let's set the properties that make up a spot light, these are ```SpotCutoff```, ```SpotExponent``` and ```SpotDirection```. For an review of how these work, 
+Next, let's set the properties that make up a spot light, these are ```SpotCutoff```, ```SpotExponent``` and ```SpotDirection```. For an review of how these work, check the "Spotlights" section of "Light Sources", because they have already been covered there i'm not going to cover them here. We're just going to use them.
+
+You can set these properties in the ```Initialize``` function, as they don't change frame to frame. We're going to set a cutoff of 15, an exponent of 5 and a direction of  (0, -1, 0):
+
+```
+float[] direction = { 0f, -1f, 0f };
+GL.Light(LightName.Light0, LightParameter.SpotCutoff, 15f);
+GL.Light(LightName.Light0, LightParameter.SpotExponent, 5f);
+GL.Light(LightName.Light0, LightParameter.SpotDirection, direction);
+```
+
+If you run your game and let it rotate you should see the below image. If your whole scene is black that means your grid's vertices are all outside of the spot lights reach, it needs to be sub-divided more.
+
+![S3](spot3.png)
