@@ -15,4 +15,4 @@ Set the position of this light to  (0, 3, 3, 1). Unlike the colors, you can't co
 
 Your scene should be lit like this:
 
-![S1](spot1.png)
+![S1](spot2.png)
