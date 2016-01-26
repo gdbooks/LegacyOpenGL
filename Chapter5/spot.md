@@ -80,3 +80,8 @@ With the light visualization code in place, your scene should look like this:
 
 And finally, let's tilt the light so it actually lighs up some geometry other than the floor! Change the direction fo the light from (0, -1, 0) to (-2, -1, -3). The scene after rotating a bit will look like this:
 
+![S5](spot5.png)
+
+There are a few artifacts left in here. For example, once the scene rotates enough the light visualizers direction points in a different direction than the light. Or when the light hits the edge of the ground plane, the grid indicators get lit (because the grid vertex will now fall into a light). 
+
+The above issues are expected, we're going to acknowledge that they exist, but it's not worth spending time to fix them.
