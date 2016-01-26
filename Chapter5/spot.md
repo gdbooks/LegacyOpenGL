@@ -13,6 +13,8 @@ Lets start with the unlit test scene we set up in the begenning. Enable lighting
 
 Set the position of this light to  (0, 3, 3, 1). Unlike the colors, you can't configure the lights position in the Initialize function. Just like a Point Light, a Spot light must be defined in eye space. Therefore you have to set it after the view matrix is set.
 
-Your scene should be lit like this:
+Your scene should be lit like this (once you let it rotate a bit):
 
 ![S1](spot2.png)
+
+Next, let's set the properties that make up a spot light, these are ```SpotCutoff```, ```SpotExponent``` and ```SpotDirection```. For an review of how these work, 
