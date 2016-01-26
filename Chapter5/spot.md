@@ -34,3 +34,37 @@ GL.Light(LightName.Light0, LightParameter.SpotDirection, direction);
 If you run your game and let it rotate you should see the below image. If your whole scene is black that means your grid's vertices are all outside of the spot lights reach, it needs to be sub-divided more. (You need a minimum of 4. At subdiv level 4 you will see a light blob). The below image is with subdivision level 8.
 
 ![S3](spot3.png)
+
+## Cleanup
+That's it. The above code is really all there is to spot lights! Let's do a few quick cleanup steps to pull this demo together.
+
+First and foremost, it always helps to be able to visualize where a light is. To do this, we're going to render a small sphere at the position of the light, and a line in its direction. If you're feeling brave try to implement the code without looking at the below example.
+
+Render the visualization geometry for the light after the grid is rendered:
+
+```
+ public override void Render() {
+    // ... Set eye position, configure look at matrix
+
+    GL.Light(LightName.Light0, LightParameter.Position, pos);
+
+    grid.Render(8);
+
+    GL.Disable(EnableCap.Lighting);
+    GL.PushMatrix();
+    {
+        GL.Translate(pos[0], pos[1], pos[2]);
+        GL.Scale(0.25f, 0.25f, 0.25f);
+        GL.Color3(1f, 1f, 0f);
+        Primitives.DrawSphere();
+
+        GL.Begin(PrimitiveType.Lines);
+        GL.Vertex3(0f, 0f, 0f);
+        GL.Vertex3(direction[0] * 5.0f, direction[1] * 5f, direction[2] * 5f);
+        GL.End();
+    }
+    GL.PopMatrix();
+    GL.Enable(EnableCap.Lighting);
+    
+    // ... Rest of code is unchanged
+```
