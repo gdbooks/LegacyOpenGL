@@ -57,3 +57,4 @@
     * [Point Light](Chapter5/point.md)
     * [Spot Light](Chapter5/spot.md)
   * [Materials](Chapter5/materials.md)
+  * [Defining Materials](Chapter5/defmat.md)
