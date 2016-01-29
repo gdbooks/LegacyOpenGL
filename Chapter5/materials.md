@@ -7,4 +7,8 @@ If you where to place a green surface under a white light, it would still look g
 
 Finally, placing this surface under a green light, it would still look green. There is no color for the surface to absorb, and all incomming green is reflected back at the viewer. It would look exactly the same as if we had placed the surface under a white light.
 
-Materials have the same color terms as lights: __ambient__, __diffuse__ and __specular__. These three properties combined will determine how much light a material reflects.
+Materials have the same color terms as lights: __ambient__, __diffuse__ and __specular__. These three properties combined will determine how much light a material reflects. A material with high ambient, low diffuse and low specular will reflect only ambient light sources while absorbing light from diffuse and specular sources. 
+
+A material with hight specular reflectance will appear shiny, even when absorbing the ambient and diffuse light sources. The values defined for the __ambient & diffuse__ reflectances (terms) of a material will __determine the color__ of the material. They are __usually the same__. 
+
+To make sure that the specular highlights end up being the same color as the light being shined, the __specular__ reflectance (term) is usually set to __white or gray__. A good way to think about this is a bright white light shining on a blue marble. While the marble is blue the reflected specular highlight remains white.
