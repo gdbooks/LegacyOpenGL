@@ -43,3 +43,6 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, blue);
 ```
 
 Keep in mind that any polygons you draw after calling GL.Material will be affected by the material settings until the next call to GL.Material
+
+## Shinines
+Try looking at something metallic and something cloth under a direct light. You'll notice that the metalic obejct appears to be shiny, while the clothisn't. This is because the light striking the cloth object is mostly scattered by the rough cloth surface, whereas light is reflecting directly on the smooth metal surface.
