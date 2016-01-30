@@ -25,3 +25,18 @@ Only the faces you specify will be modified by the call to ```GL.Material```. Mo
 ## Material Colors
 The ambient, diffuse and specular components specify how a material interacts with a light source and, thus determine he color of the material. These values are set by passing ```Ambient```, ```Diffuse``` or ```AmbientAnddiffuse``` to ```GL.Material``` as the ```MaterialParamater```. Most often the same values are used for both the ambient and diffuse term, so much so that OpenGL provided a conveniance paramater ```AmbientAndDiffuse``` so you can specify both with 1 function call.
 
+For example, if you wanted to set the ambient material color to red for the front and back of polygons, you would call this function:
+
+```
+float[] red = { 1f, 0f, 0f, 1f };
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, red);
+```
+
+Similarly, to set both the ambient and diffuse paramaters to blue would be:
+
+```
+float[] blue = { 0f, 0f, 1f, 1f };
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, blue);
+```
+
+Keep in mind that any polygons 
