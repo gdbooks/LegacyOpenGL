@@ -63,3 +63,4 @@ The sphere on the right looks like metal. The illusion of shininess is caused by
 The shininess of a material is simulated by the size of the specular highlight. This is controlled with a SINGLE scalar value, which you set with the ```MaterialParameter.Shininess``` paramater. This value can range from 0 to 128 (NOT 0 to 1), with 128 representing an extremly shiny material and 0 representing a non shiny mateiral. 
 
 ## Emissive materials
+The emissive property of a material allow you to cheaply simulate an object that emits light (thing TRON or maybe a glow in the dark toy). It's important to note that the objects dont' really emit light. That is, they will not light or affect nearby objects.
