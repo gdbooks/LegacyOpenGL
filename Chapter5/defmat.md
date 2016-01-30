@@ -77,3 +77,7 @@ The emissive term is simply added to the objects other lighting components to ma
 float[] emissiveColor  = { .3f, .3f, .3f, 1f };
 GL.MaterialMaterialFace.FrontAndBack, MaterialParameter.Emission, emissiveColor);
 ```
+
+By default the emissive term is (0, 0, 0, 1), which means it has no contribution and is therefor effectivley turned off.
+
+## Color Tracking
