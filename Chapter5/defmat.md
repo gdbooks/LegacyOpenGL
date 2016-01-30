@@ -46,3 +46,20 @@ Keep in mind that any polygons you draw after calling GL.Material will be affect
 
 ## Shinines
 Try looking at something metallic and something cloth under a direct light. You'll notice that the metalic obejct appears to be shiny, while the clothisn't. This is because the light striking the cloth object is mostly scattered by the rough cloth surface, whereas light is reflecting directly on the smooth metal surface.
+
+ This image demonstrates the effects of different Specular material colors and Shininess specular exponent values. 
+ 
+ * Left: Zero-intensity (0., 0., 0., 1.) specular material color
+   * specular exponent is irrelevant. 
+ * Center: Low-intensity (.3, .3, .3, 1.) specular material color
+   * with a specular exponent of 10.0. 
+ * Right: Full-intensity (1., 1., 1., 1.) specular material color
+   * with a specular exponent of 128.0.
+ 
+![SHINE](shine.jpg)
+
+The sphere on the right looks like metal. The illusion of shininess is caused by the bright spot, known as a __specular highlight__. The sphere on the left is a more cloth-like material (t-shirt maybe), and therefore looks more dull. The middle sphere gives the look of most plastics.
+
+The shininess of a material is simulated by the size of the specular highlight. This is controlled with a SINGLE scalar value, which you set with the ```MaterialParameter.Shininess``` paramater. This value can range from 0 to 128 (NOT 0 to 1), with 128 representing an extremly shiny material and 0 representing a non shiny mateiral. 
+
+## Emissive materials
