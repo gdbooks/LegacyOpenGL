@@ -1,6 +1,9 @@
 # Defining materials
 
-Now that you have a general understanding of what materials are, lets look at how to use them. Actually, setting a material is fairly similar to creating a light source. The main difference is the name of the functions being used:
+Now that you have a general understanding of what materials are, lets look at how to use them. Materials do not need to be enabled or anything, the truth is you have been using them all along, just with whatever the default values where. Now, we're going to set some non-default values.
+
+
+Actually, setting a material is fairly similar to creating a light source. The main difference is the name of the functions being used:
 
 ```
 void GL.Material(MaterialFace face, MaterialParameter param, float value);
@@ -39,4 +42,4 @@ float[] blue = { 0f, 0f, 1f, 1f };
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, blue);
 ```
 
-Keep in mind that any polygons 
+Keep in mind that any polygons you draw after calling GL.Material will be affected by the material settings until the next call to GL.Material
