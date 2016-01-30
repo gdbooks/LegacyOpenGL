@@ -81,3 +81,36 @@ GL.MaterialMaterialFace.FrontAndBack, MaterialParameter.Emission, emissiveColor)
 By default the emissive term is (0, 0, 0, 1), which means it has no contribution and is therefor effectivley turned off.
 
 ## Color Tracking
+
+Note, _color tracking_ is not an official term. You will probably not hear it used outside the context of this book. But it's an easy way to describe setting the material color with a call to ```GL.Color```.
+
+Color Tracking allows you to set the color of a material with calls to ```GL.Color``` instead of using ```GL.Material```, which often leads to smaller, more easy to read code. You can enable color tracking with the following call:
+
+```
+GL.Enable(EnableCaps.ColorMaterial);
+```
+
+After enabling color tracking you use the ```GL.ColorMaterial``` function to specify which material paramaters will by affected by future calls to ```GL.Color```. The signature of this function is:
+
+```
+void GL.ColorMaterial(MaterialFace face, ColorMaterialParameter param);
+```
+
+Like always, the face can be set to ```Front```, ```Back``` or ```FrontAndBack```. The mode paramater can be:
+
+* Ambient
+* Diffuse
+* Specular
+* AmbientAndDiffuse
+* Emssion
+
+Most often you will be using the default values of this function (so you might not even have to call it). The default values are ```FrontAndBack```, ```AmbientAndDiffuse```. Lets look at some sample code that uses color tracking to set the diffuse color of an objects material:
+
+```
+GL.Enable(EnableCap.ColorMaterial);
+GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.Diffuse);
+GL.Color3(1f, 0f, 0f);
+Primitives.DrawSphere();
+```
+
+As you can see, color tracking is very simple to set up and use. I almost never use it, i think giving multiple utilities to the same function is a bad idea. I like to explicitly type __Material__ when i'm setting a material color component.
