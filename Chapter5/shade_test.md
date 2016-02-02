@@ -29,7 +29,7 @@ With the basic scene set up, lets add a light. We're going to add a red light to
 * It's a direcitonal light. It should shine from the direction {0, 1, 1}
   * Remember, the difference between a directional and a point light is the W component
 * Set the ambient color to red
-* Set the diffuse color to red
+* Set the diffuse color to blue
 * Set the specular color to white (1, 1, 1)
 
 The default values for everything else are fine. Your scene should now look like this:
