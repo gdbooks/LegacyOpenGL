@@ -1,4 +1,4 @@
-# Ambient and diffuse
+# Defining materials
 
 Now that you have a general understanding of what materials are, lets look at how to use them. Materials do not need to be enabled or anything, the truth is you have been using them all along, just with whatever the default values where. Now, we're going to set some non-default values.
 
