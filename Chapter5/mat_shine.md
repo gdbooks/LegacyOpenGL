@@ -79,7 +79,8 @@ Let's have some fun, and try to reflect a different color! Where you set up the 
 
 ![S10](shading10.png)
 
+* Keep the specular color of the light green
 * Set the specular power for all the spheres to 16. 
-* Set the specular color of the first sphere to black
-* Set the specular color of the second sphere to (0.5, 0.5, 0.5)
-* Set the specular color of the third sphere to white
+* Set the specular color of the first sphere's material to black
+* Set the specular color of the second sphere's material to (0.5, 0.5, 0.5)
+* Set the specular color of the third sphere's material to white
