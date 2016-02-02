@@ -21,6 +21,8 @@ Running your game, you should see this:
 
 ![SHADING1](shading2.png)
 
+The camera for this scene __SHOULD NOT ROTATE__
+
 With the basic scene set up, lets add a light. We're going to add a red light to the scene. It's going to shine directly onto the spheres.
 
 * Enable lighting
