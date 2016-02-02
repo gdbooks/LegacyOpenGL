@@ -4,7 +4,7 @@ The ambient and diffuse components of the material define the overall color of t
 
 Let's make a new demo class we'll call it ```MateiralSpecular```. Get the code in it up to par with the test scene.
 
-It's important to know, when setting the Ambient and Diffuse colors, OpenGL expected a floating point array.
+When setting the Ambient and Diffuse colors, OpenGL expected a floating point array. Setting the specular is a two part process. You must set the color (RGBA array) and the power (single float, ranging from 0 to 128).
 
 
 
