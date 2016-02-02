@@ -69,5 +69,5 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, white);
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Emission, black);
 ```
 
-Before you can use an OpenGL light source, it must be positioned using the glLight command and enabled using glEnable(GL_LIGHTn) where 'n' is 0 through 7. There are additional commands to make light sources directional (like a spotlight or a flashlight) and to have it attenuate as a function of range from the light source.
+Before you can use an OpenGL light source, it must be positioned using the ```GL.Light``` command and enabled using ```GL.Enable(EnableCaps.LightN)``` where 'N' is 0 through 7. There are additional commands to make light sources directional (like a spotlight or a flashlight) and to have it attenuate as a function of range from the light source.
 
