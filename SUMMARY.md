@@ -62,4 +62,3 @@
     * [Ambient and Diffuse](Chapter5/color_mat.md)
     * [Specular](Chapter5/mat_shine.md)
     * [Color Tracking](Chapter5/ctrack.md)
-  * [Lighting Review](Chapter5/color.md)
