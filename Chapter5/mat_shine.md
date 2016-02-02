@@ -33,6 +33,12 @@ GL.Material(MaterialFace, MaterialParameter.Shininess, float);
   * Set specular color to white
   * Set specular power to 128
 
+If you set up the properties correctly, your scene should look like this:
+
+
+
+To get to that, i set the above material components like so:
+
 ```
 // Setup camera
 // Render unlit grid
