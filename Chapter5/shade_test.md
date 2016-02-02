@@ -37,4 +37,4 @@ The default values for everything else are fine. Your scene should now look like
 
 ![SHADING2](shading5.png)
 
-The camera for this scene SHOULD NOT ROTATE
+The camera for this scene __SHOULD NOT ROTATE__
