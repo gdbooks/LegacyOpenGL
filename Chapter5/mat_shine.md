@@ -80,4 +80,6 @@ Let's have some fun, and try to reflect a different color! Where you set up the 
 ![S10](shading10.png)
 
 * Set the specular power for all the spheres to 16. 
-* Set the specular color of the first sphere 
+* Set the specular color of the first sphere to black
+* Set the specular color of the second sphere to (0.5, 0.5, 0.5)
+* Set the specular color of the third sphere to white
