@@ -74,16 +74,17 @@ Before you can use an OpenGL light source, it must be positioned using the ```GL
 ## glColorMaterial
 
 This is without doubt the most confusing thing about OpenGL lighting - and the biggest cause of problems for beginners.
-The problem with using glMaterial to change polygon colours is three-fold:
+The problem with using ```GL.Material``` to change polygon colors is two-fold:
 
-It's slow. Well, the OpenGL manual says it's slow - but it's not certain that all implementations will have trouble with it.
-You frequently need to change glMaterial properties for both Ambient and Diffuse to identical values - this takes two OpenGL function calls which is annoying.
-You cannot change glMaterial settings with many of the more advanced polygon rendering techniques such as Vertex arrays and glDrawElements.
-For these reasons, OpenGL has a feature that allows you do drive the glMaterial colours using the more flexible glColor command (which is not otherwise useful when lighting is enabled).
-To drive (say) the Emission component of the glMaterial using glColor, you must say:
+* You frequently need to change ```GL.Mateiral``` properties for both Ambient and Diffuse to identical values - this takes two OpenGL function calls which is annoying.
+* You cannot change ```GL.Mateiral``` settings with many of the more advanced polygon rendering techniques such as Vertex arrays and ```GL.DrawElements```.
 
+For these reasons, OpenGL has a feature that allows you do drive the ```GL.Material``` colors using the more flexible ```GL.Color``` command (which is not otherwise useful when lighting is enabled).
 
-   glColorMaterial ( GL_FRONT_AND_BACK, GL_EMISSION ) ;
+To drive (say) the Emission component of the ```GL.Material``` using ```GL.Color```, you must say:
+
+```
+GL.ColorMaterial ( GL_FRONT_AND_BACK, GL_EMISSION ) ;
    glEnable ( GL_COLOR_MATERIAL ) ;
 
 From this point performing a glColor command (or setting the glColor via a vertex array or something) has the exact same effect as calling:
