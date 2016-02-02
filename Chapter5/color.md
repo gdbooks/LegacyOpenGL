@@ -65,6 +65,7 @@ float[] white = { 1f, 1f, 1f, 1f }
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, red);
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, red);
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, white);
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Emission, black);
 ```
 
 Before you can use an OpenGL light source, it must be positioned using the glLight command and enabled using glEnable(GL_LIGHTn) where 'n' is 0 through 7. There are additional commands to make light sources directional (like a spotlight or a flashlight) and to have it attenuate as a function of range from the light source.
