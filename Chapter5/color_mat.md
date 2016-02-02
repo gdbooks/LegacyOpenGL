@@ -17,3 +17,7 @@ Lets create a new scene.
   * One at (-3, 0.5, 0)
   * One at (0, 0.5, 0)
   * One at (3, 0.5, 0)
+
+Running your game, you should see this:
+
+![SHADING1](shading1.png)
