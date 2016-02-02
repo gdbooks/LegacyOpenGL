@@ -60,4 +60,5 @@
   * [Defining Materials](Chapter5/defmat.md)
     * [Using Colors](Chapter5/color_mat.md)
     * [Defining Shininess](Chapter5/mat_shine.md)
+    * [Color Tracking](Chapter5/ctrack.md)
   * [Lighting Review](Chapter5/color.md)
