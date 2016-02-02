@@ -84,3 +84,6 @@ Let's have some fun, and try to reflect a different color! Where you set up the 
 * Set the specular color of the first sphere's material to black
 * Set the specular color of the second sphere's material to (0.5, 0.5, 0.5)
 * Set the specular color of the third sphere's material to white
+
+The result looks like this:
+
