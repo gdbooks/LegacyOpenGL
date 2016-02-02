@@ -22,5 +22,6 @@ Lets go ahead and set up a test scene. This scene will be used as the base for a
 
 Running your game, you should see this:
 
-![SHADING1](shading1.png)
+![SHADING1](shading2.png)
 
+With the basic scene set up, lets add a light. We're going to add a red light to the scene. It's going to shine directly onto the spheres.
