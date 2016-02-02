@@ -74,3 +74,10 @@ Specular color works much like ambient and diffuse. First we take the specular c
 This object specular color is then added to the object's ambient and diffuse colors. The result is (0.2, 0, 0) + (0, 0, 0.8) + (1, 1, 1, 1) = (1, 1, 1). Notice, the color is capped to 1. This is why the spheres reflect the light as white.
 
 The ammount of surface area that is shaded by the specular color is determined by the specular power (shininess). The higher the power, the less of the surface area is shaded.
+
+Let's have some fun, and try to reflect a different color! Where you set up the light, currently it's specular color is wite. Set the lights specular color to green!
+
+![S10](shading10.png)
+
+* Set the specular power for all the spheres to 16. 
+* Set the specular color of the first sphere 
