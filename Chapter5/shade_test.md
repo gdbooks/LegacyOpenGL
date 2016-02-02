@@ -31,6 +31,7 @@ With the basic scene set up, lets add a light. We're going to add a red light to
 * Set the ambient color to red
 * Set the diffuse color to blue
 * Set the specular color to white (1, 1, 1)
+* Disable lighting for the ground
 
 The default values for everything else are fine. Your scene should now look like this:
 
