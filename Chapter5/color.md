@@ -115,3 +115,32 @@ By default, it is assumed that both the light and the viewer are effectively inf
 
 There is also an option to light the front and back faces of your polygons differently. That is also likely to slow your program down - so don't do it.
 
+## glNormal
+
+When lighting is enabled, OpenGL suddenly needs to know the orientation of the surface at each polygon vertex. You need to call ```GL.Normal``` for each vertex to define that - OpenGL does not provide a useful default.
+
+## Good Settings.
+
+With this huge range of options, it can be hard to pick sensible default values for these things. Even harder is to debug broken lighting! Sometimes you start a scene and everything is black. The best way to debug this is to set some sensible defaults, and work from there.
+
+My advice for a starting point is to:
+
+* Set ```EnableCaps.Light0```'s position to something like 45 degrees to the _"vertical"_. Coordinate (1,1,0) should work nicely in most cases.
+* Set ```EnableCaps.Light0```'s Ambient color to 0,0,0,1
+* Set ```EnableCaps.Light0```'s Diffuse color to 1,1,1,1
+* Set ```EnableCaps.Light0```'s Specular color to 1,1,1,1
+* Set the ```GL.LightModel```'s global ambient to 0.2,0.2,0.2,1 (this is the default).
+* Don't set any other ```GL.Light``` or ```GL.LightModel``` options - just let them default.
+* Enable ```Enable.Lighting``` and ```EnableCaps.Light0```.
+* Enable ```EnableCaps.ColorMaterial``` and set ```ColorMaterialParameter.ColorMaterial``` to ```ColorMaterialParameter.AmbientAndDiffuse```. This means that ```GL.Material``` will control the polygon's specular and emission colours and the ambient and diffuse will both be set using ```GL.Color```.
+* Set the ```GL.Material```'s Specular color to 1,1,1,1
+* Set the ```GL.Material```'s Emission color to 0,0,0,1
+* Set the ```GL.Material``` to whatever color you want each polygon to basically appear to be. That sets the Ambient and Diffuse to the same value which is what you generally want.
+
+## Using Alpha with lighting enabled.
+
+One confusing thing is that each of the color components (Ambient,Diffuse, Specular and Emission) has an associated _"alpha"_ component for setting transparency. 
+
+It is important to know that only the DIFFUSE color's alpha value actually determines the transparency of the polygon. If you have taken my advice and used ```GL.ClolorMaterial``` to cause ```GL.Color``` to drive the ambient and diffuse components then this seems perfectly natural.
+
+But people sometimes want to use the ```GL.Color``` to drive one of the other material components and are then very confused about their inability to set the transparency using ```GL.Color```. If that happens to you - remember to use ```GL.Material``` to set the diffuse color - and hence the alpha for the polygon overall.
