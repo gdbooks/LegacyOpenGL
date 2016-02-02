@@ -36,5 +36,3 @@ With the basic scene set up, lets add a light. We're going to add a red light to
 The default values for everything else are fine. Your scene should now look like this:
 
 ![SHADING2](shading5.png)
-
-The camera for this scene __SHOULD NOT ROTATE__
