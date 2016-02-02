@@ -43,4 +43,4 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, new float[] { 
 
 Like we discussed earlyer, the materials ambient property determines how much of the lights ambient property effects the object. Same for all other properties. When this is set to white, it means the lights ambient fully effects the object, when it's set to black it means the ambient does not affect the object at all.
 
-A few important observations can be made from this code. First,  
+A few important observations can be made from this code. First, 
