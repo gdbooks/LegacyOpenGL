@@ -52,6 +52,7 @@ Lastly, take a look at the third sphere. We have both ambient and diffuse lights
 
 The two values when added to come out to (1, 1, 1, 1). This is purley coincidental, not a requirement! Go ahead, update the render code for that last sphere to reflect these numbers. All of a sudden the scene looks like this:
 
+![S7](shading8.png)
 
 The material code was changed to:
 
@@ -66,3 +67,15 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, new float[] { 
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, new float[] { 0.8f, 0.8f, 0.8f, 1 });
 // Render third sphere
 ```
+
+Now that third sphere looks the same as it did in the test scene. You can really see how the shading works. To get the final color of this sphere. Let's walk trough how this color was obtained.
+
+First we take the ambient component of the light (1, 0, 0) and multiply it with the ambient component of the material (0.2, 0.2, 0.2). The result is the objects ambient component (0.2, 0, 0). 
+
+Next we take the diffuse component of the light (1, 0, 1) and multiply it with the diffuse component of the material (0.8, 0.8, 0.8). The result is the objects diffuse component (0, 0, 0.8)
+
+Finally, to get the color of the object, we add the ambient and diffuse components of the object together, resulting in (0.2, 0, 0.8). The color interpolation (dark on bottom, light on top) is contributed by the diffuse component.
+
+Play around with the colors a bit. See if you can predict what your code will look like once its on screen.
+
+## Specular
