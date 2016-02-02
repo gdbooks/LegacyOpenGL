@@ -59,7 +59,12 @@ GL.Light(LightName.Light0, LightParameter.Specular, blue );
 For the ```GL.Material```, it's usual to set the Ambient and Diffuse colors to the natural color of the object and to put the Specular color to white. The emission color is generally black for objects that do not shine by their own light. So, a yellow object might have the following material:
 
 ```
+float[] red = { 1f, 0f, 0f, 1f };
+float[] white = { 1f, 1f, 1f, 1f}
 
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, red);
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, red);
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, white);
 ```
 
 Before you can use an OpenGL light source, it must be positioned using the glLight command and enabled using glEnable(GL_LIGHTn) where 'n' is 0 through 7. There are additional commands to make light sources directional (like a spotlight or a flashlight) and to have it attenuate as a function of range from the light source.
