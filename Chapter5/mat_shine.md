@@ -87,3 +87,8 @@ Let's have some fun, and try to reflect a different color! Where you set up the 
 
 The result looks like this:
 
+![S11](shading11.png)
+
+By reducing the amount of specular color a sphere takes to 0.5, we dulled out the specular highlight. This makes the middle sphere look more rough, like a plastic as opposed to the first sphere which looks metal.
+
+The last spehere has no specular contribution. This is because the specular color of the light (0, 1, 0) multiplied with the specular component of the material (0, 0, 0) results it black (0, 0, 0). This means it does not effect the lighting.
