@@ -48,16 +48,19 @@ The final polygon color is the sum of all four light components, each of which i
 A good set of settings for a light source would be to set the Diffuse and Specular components to the color of the light source, and the Ambient to the same color - but at MUCH reduced intensity, 10% to 40% seems reasonable in most cases. So, a blue light might be configured like so:
 
 ```
- float[] white = new float[] { 0f, 0f, 0f, 1f };
-    float[] blue = new float[] { 0f, 0f, 1f, 1f };
+float[] blue = new float[] { 0f, 0f, 1f, 1f };
+float[] dimBlue = new float[] { 0f, 0f, 0.1f, 1f);
 
-    GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.0f, 0.5f, 0.5f, 0.0f } );
-    GL.Light(LightName.Light0, LightParameter.Ambient, blue );
-    GL.Light(LightName.Light0, LightParameter.Diffuse, blue );
-    GL.Light(LightName.Light0, LightParameter.Specular, white );
+GL.Light(LightName.Light0, LightParameter.Ambient, dimBlue );
+GL.Light(LightName.Light0, LightParameter.Diffuse, blue );
+GL.Light(LightName.Light0, LightParameter.Specular, blue );
 ```
 
-For the glMaterial, it's usual to set the Ambient and Diffuse colours to the natural colour of the object and to put the Specular colour to white. The emission colour is generally black for objects that do not shine by their own light.
+For the ```GL.Material```, it's usual to set the Ambient and Diffuse colors to the natural color of the object and to put the Specular color to white. The emission color is generally black for objects that do not shine by their own light. So, a yellow object might have the following material:
+
+```
+
+```
 
 Before you can use an OpenGL light source, it must be positioned using the glLight command and enabled using glEnable(GL_LIGHTn) where 'n' is 0 through 7. There are additional commands to make light sources directional (like a spotlight or a flashlight) and to have it attenuate as a function of range from the light source.
 
