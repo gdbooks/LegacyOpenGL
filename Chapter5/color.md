@@ -84,12 +84,15 @@ For these reasons, OpenGL has a feature that allows you do drive the ```GL.Mater
 To drive (say) the Emission component of the ```GL.Material``` using ```GL.Color```, you must say:
 
 ```
-GL.ColorMaterial ( GL_FRONT_AND_BACK, GL_EMISSION ) ;
-   glEnable ( GL_COLOR_MATERIAL ) ;
+GL.Enable(EnableCap.ColorMaterial);
+GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.Emission);
+```
 
-From this point performing a glColor command (or setting the glColor via a vertex array or something) has the exact same effect as calling:
+From this point performing a ```GL.Color``` command has the exact same effect as calling:
 
-   glMaterial ( GL_FRONT_AND_BACK, GL_EMISSION, ...colours... ) ;
+```
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Emission, ...colors...);
+```
 
 One especially useful option is:
 
