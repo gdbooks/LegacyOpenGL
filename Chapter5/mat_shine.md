@@ -8,6 +8,20 @@ When setting the Ambient and Diffuse colors, OpenGL expected a floating point ar
 
 # Simple Specular
 
+* Sphere 1
+  * Set ambient and diffuse to default values
+  * Set specular color to white
+  * Set specular power to 0
+* Sphere 2
+  * Set ambient and diffuse to default values
+  * Set specular color to white
+  * Set specular power to 16
+* Sphere 3
+  * Set ambient and diffuse to default values
+  * Set specular color to white
+  * Set specular power to 128
+  * 
+
 ```
 // Setup camera
 // Render unlit grid
