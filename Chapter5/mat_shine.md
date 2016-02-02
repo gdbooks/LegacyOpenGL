@@ -69,4 +69,8 @@ The lower your specular power, the larger the specular color will be accross the
 
 ## Specular color
 
-Specular color works much like ambient and diffuse. First we figure it out
+Specular color works much like ambient and diffuse. First we take the specular color of the light (1, 1, 1, 1), and multiply it with the specular component of the material (1, 1, 1, 1). In our example, the object specular color is white. 
+
+This object specular color is then added to the object's ambient and diffuse colors. The result is (0.2, 0, 0) + (0, 0, 0.8) + (1, 1, 1, 1) = (1, 1, 1). Notice, the color is capped to 1. This is why the spheres reflect the light as white.
+
+The ammount of surface area that is shaded by the specular color is determined by the specular power (shininess). The higher the power, the less of the surface area is shaded.
