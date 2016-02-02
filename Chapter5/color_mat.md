@@ -47,7 +47,22 @@ A few important observations can be made from this code. Notice that the sphere 
 
 Lastly, take a look at the third sphere. We have both ambient and diffuse lights effecting this, but it looks AWEFUL! Shouldn't it look like the default lit sphere? No, not exactly. By default the lighting model sets the following values
 
-* Ambient - 
-* Diffuse - 
+* Ambient - (0.2, 0.2, 0.2, 1.0)
+* Diffuse - (0.8, 0.8, 0.8, 1.0)
 
-Go ahead, update the render code for that last sphere to reflect these numbers. All of a sudden the scene looks like this:
+The two values when added to come out to (1, 1, 1, 1). This is purley coincidental, not a requirement! Go ahead, update the render code for that last sphere to reflect these numbers. All of a sudden the scene looks like this:
+
+
+The material code was changed to:
+
+```
+// Set up camera
+// Render unlit grid
+
+// Render first sphere
+// Render secong sphere
+
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, new float[] { 0.2f, 0.2f, 0.2f, 1 });
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, new float[] { 0.8f, 0.8f, 0.8f, 1 });
+// Render third sphere
+```
