@@ -77,5 +77,3 @@ Next we take the diffuse component of the light (1, 0, 1) and multiply it with t
 Finally, to get the color of the object, we add the ambient and diffuse components of the object together, resulting in (0.2, 0, 0.8). The color interpolation (dark on bottom, light on top) is contributed by the diffuse component.
 
 Play around with the colors a bit. See if you can predict what your code will look like once its on screen.
-
-## Specular
