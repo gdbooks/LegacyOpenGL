@@ -35,7 +35,7 @@ GL.Material(MaterialFace, MaterialParameter.Shininess, float);
 
 If you set up the properties correctly, your scene should look like this:
 
-
+![S9](shading9.png)
 
 To get to that, i set the above material components like so:
 
@@ -58,3 +58,11 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, new float[] {
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Shininess, 128.0f);
 // Draw sphere 3
 ```
+
+The sphere with a specular power of 0 is all white. That's because with a low specular power, the specular component dominates the object's color.
+
+The sphere with a specular power of 16 looks like it's lit strongly, the light is dispursing on it evenly.
+
+The sphere with a specular power of 128 looks like a real hard light is shining on it, as the light reflection is super tiny.
+
+The lower your specular power, the larger the specular color will be accross the surface of your object.
