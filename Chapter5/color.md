@@ -60,7 +60,7 @@ For the ```GL.Material```, it's usual to set the Ambient and Diffuse colors to t
 
 ```
 float[] red = { 1f, 0f, 0f, 1f };
-float[] white = { 1f, 1f, 1f, 1f}
+float[] white = { 1f, 1f, 1f, 1f }
 
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, red);
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, red);
