@@ -6,9 +6,7 @@ Let's make a new demo class we'll call it ```MateiralSpecular```. Get the code i
 
 When setting the Ambient and Diffuse colors, OpenGL expected a floating point array. Setting the specular is a two part process. You must set the color (RGBA array) and the power (single float, ranging from 0 to 128).
 
-
-
-
+# Simple Specular
 
 ```
 // Setup camera
