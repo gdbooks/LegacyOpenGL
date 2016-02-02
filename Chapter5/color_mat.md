@@ -5,7 +5,7 @@ Let's get started by making a new demo class we'll call it ```MaterialColors```.
 
 Once you have that, we're just going to play around with material colors. Take note, when setting the color components, OpenGL expects a 4 component (RGBA) array of floating point values (0.0f to 1.0f)
 
-## Ambient and Diffuse
+
 First, lets set the following materials
 
 * Sphere 1
