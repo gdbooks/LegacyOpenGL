@@ -66,3 +66,7 @@ The sphere with a specular power of 16 looks like it's lit strongly, the light i
 The sphere with a specular power of 128 looks like a real hard light is shining on it, as the light reflection is super tiny.
 
 The lower your specular power, the larger the specular color will be accross the surface of your object.
+
+## Specular color
+
+Specular color works much like ambient and diffuse. First we figure it out
