@@ -1,5 +1,7 @@
 # Where render color comes from
-This page is a straight up rip of [Steve Baker's OpenGL Lighting](http://www.sjbaker.org/steve/omniv/opengl_lighting.html) tutorial. Some of this stuff we've already covered and will serve as a review, other information might be brand new. 
+This page is a straight up rip of [Steve Baker's OpenGL Lighting](http://www.sjbaker.org/steve/omniv/opengl_lighting.html) tutorial. Some of this stuff we've already covered and will serve as a review, other information might be brand new. Think of this as a one page cheat-sheet for lighting.
+
+## Introduction
 
 Many people starting out with OpenGL are confused by the way that OpenGL's built-in lighting works - and consequently how color functions. I hope to be able to clear up some of the confusion. What is needed to explain this clearly is a flow chart:
 
@@ -96,6 +98,20 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Emission, ...colors...)
 
 One especially useful option is:
 
-   glColorMaterial ( GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE ) ;
+```
+GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
+```
 
-This causes glColor commands to change both Ambient and Diffuse colours at the same time. That's a very common thing to want to do for real-world lighting models.
+This causes ```GL.Color``` commands to change both Ambient and Diffuse colors at the same time. That's a very common thing to want to do for real-world lighting models.
+
+
+## Light Sources.
+
+OpenGL's lights are turned on and off with ```GL.Enable(EnableCaps.LightN)``` and ```GL.Disable(EnableCaps.LightN)``` where 'N' is a number in the range zero to the maximum number of lights that this implementation supports (typically eight). 
+
+The ```GL.Light``` call allows you to specify the color (ambient, diffuse and specular), position, direction, beam width and attenuation rate for each light. 
+
+By default, it is assumed that both the light and the viewer are effectively infinitely far from the object being lit. You can change that with the ```GL.LightModel``` call - but doing so is likely to slow down your program - so don't do it unless you have to. ```GL.LightModel``` also allows you to set a global ambient lighting level that's independent of the other OpenGL light sources.
+
+There is also an option to light the front and back faces of your polygons differently. That is also likely to slow your program down - so don't do it.
+
