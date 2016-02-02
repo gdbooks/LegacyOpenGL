@@ -43,4 +43,11 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Diffuse, new float[] { 
 
 Like we discussed earlyer, the materials ambient property determines how much of the lights ambient property effects the object. Same for all other properties. When this is set to white, it means the lights ambient fully effects the object, when it's set to black it means the ambient does not affect the object at all.
 
-A few important observations can be made from this code. First, 
+A few important observations can be made from this code. Notice that the sphere only affected by ambient lighting isn't shaded. It's solid. That's because ambient light is constant, it doesn't really have a source! Notice, the diffuse lighting IS shaded. This is because the diffuse is the directional component of the light.
+
+Lastly, take a look at the third sphere. We have both ambient and diffuse lights effecting this, but it looks AWEFUL! Shouldn't it look like the default lit sphere? No, not exactly. By default the lighting model sets the following values
+
+* Ambient - 
+* Diffuse - 
+
+Go ahead, update the render code for that last sphere to reflect these numbers. All of a sudden the scene looks like this:
