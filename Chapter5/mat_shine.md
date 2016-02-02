@@ -20,7 +20,6 @@ When setting the Ambient and Diffuse colors, OpenGL expected a floating point ar
   * Set ambient and diffuse to default values
   * Set specular color to white
   * Set specular power to 128
-  * 
 
 ```
 // Setup camera
