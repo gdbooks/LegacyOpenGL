@@ -58,6 +58,7 @@
     * [Spot Light](Chapter5/spot.md)
   * [Materials](Chapter5/materials.md)
   * [Defining Materials](Chapter5/defmat.md)
+    * [Test Scene](Chapter5/shade_test.md) 
     * [Using Colors](Chapter5/color_mat.md)
     * [Defining Shininess](Chapter5/mat_shine.md)
     * [Color Tracking](Chapter5/ctrack.md)
