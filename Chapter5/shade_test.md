@@ -21,7 +21,7 @@ Running your game, you should see this:
 
 ![SHADING1](shading2.png)
 
-I use a subdivision level of 3 as i think it's a good mix between performance and looks. 
+I use a subdivision level of 3 as i think it's a good mix between performance and looks. If you want to see a specific scene rendered WAY more accurateley (and pretty), temporarley set your subdiv level to 4 or 5. If the performance cost doesn't bother you, you might even just want to have them sitting on 4.
 
 The camera for this scene __SHOULD NOT ROTATE__
 
