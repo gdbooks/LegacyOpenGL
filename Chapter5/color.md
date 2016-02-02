@@ -71,3 +71,27 @@ GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Emission, black);
 
 Before you can use an OpenGL light source, it must be positioned using the ```GL.Light``` command and enabled using ```GL.Enable(EnableCaps.LightN)``` where 'N' is 0 through 7. There are additional commands to make light sources directional (like a spotlight or a flashlight) and to have it attenuate as a function of range from the light source.
 
+## glColorMaterial
+
+This is without doubt the most confusing thing about OpenGL lighting - and the biggest cause of problems for beginners.
+The problem with using glMaterial to change polygon colours is three-fold:
+
+It's slow. Well, the OpenGL manual says it's slow - but it's not certain that all implementations will have trouble with it.
+You frequently need to change glMaterial properties for both Ambient and Diffuse to identical values - this takes two OpenGL function calls which is annoying.
+You cannot change glMaterial settings with many of the more advanced polygon rendering techniques such as Vertex arrays and glDrawElements.
+For these reasons, OpenGL has a feature that allows you do drive the glMaterial colours using the more flexible glColor command (which is not otherwise useful when lighting is enabled).
+To drive (say) the Emission component of the glMaterial using glColor, you must say:
+
+
+   glColorMaterial ( GL_FRONT_AND_BACK, GL_EMISSION ) ;
+   glEnable ( GL_COLOR_MATERIAL ) ;
+
+From this point performing a glColor command (or setting the glColor via a vertex array or something) has the exact same effect as calling:
+
+   glMaterial ( GL_FRONT_AND_BACK, GL_EMISSION, ...colours... ) ;
+
+One especially useful option is:
+
+   glColorMaterial ( GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE ) ;
+
+This causes glColor commands to change both Ambient and Diffuse colours at the same time. That's a very common thing to want to do for real-world lighting models.
