@@ -11,6 +11,9 @@ It's important to know, when setting the Ambient and Diffuse colors, OpenGL expe
 
 
 ```
+// Setup camera
+// Render unlit grid
+
 // Set ambient and diffuse
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, new float[] { 1, 1, 1, 1 } );
 GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Shininess, 0.0f);
