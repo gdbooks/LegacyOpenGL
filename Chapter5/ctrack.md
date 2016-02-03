@@ -12,4 +12,3 @@ GL.Enable(EnableCaps.ColorMaterial);
 
 This will cause calls to ```GL.Color``` to change not only the primary color, but also the current ambient and diffuse material colors. Of course you can change which properties color tracking affects by calling ```GL.ColorMaterial```.
 
-the 
