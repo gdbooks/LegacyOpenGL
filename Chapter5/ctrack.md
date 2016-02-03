@@ -63,3 +63,26 @@ public override void Render() {
     Draw third sphere
 }
 ```
+
+The most important thing to note here is the shading. Because of the way the shading model works, the blue sphere gets a lot of diffuse light, the other two get too much ambient. Let's fix that!
+
+### Example 2
+
+Using Example 1 as our starting point.
+
+* In initialize
+  * Change the color material tracking point to diffuse
+  * Set the materials default ambient to { .2f, .2f, .2f, 1f }
+
+Here is the code change
+
+```
+// This is new
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Ambient, new float[] { .2f, .2f, .2f, 1f });
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, new float[] { 1, 1, 1, 1 });
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Shininess, 20.0f);
+
+GL.Enable(EnableCap.ColorMaterial);
+// This changed
+GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.Diffuse);
+```
