@@ -47,4 +47,19 @@ In case your scene doesn't look like that, here is the code i used to get that r
     GL.Enable(EnableCap.ColorMaterial);
     GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
 }
+
+public override void Render() {
+    // Set up view matrix
+
+    // Render unlit grid
+
+    GL.Color3(1f, 0f, 0f);
+    // Draw first sphere
+
+    GL.Color3(0f, 1f, 0f);
+    // Draw second sphere
+
+    GL.Color3(0f, 0f, 1f);
+    Draw third sphere
+}
 ```
