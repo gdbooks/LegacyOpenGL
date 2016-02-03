@@ -94,4 +94,39 @@ This still doesn't look great. All the spheres now take a uniform ambient term, 
 ### Example 3
 The key to good material usage is to think about color a little differently! Instead of thinking about a light having a color and a material having a color, think of the light as an overall brightness (always have a white light), and the mateiral as the color.
 
-So, using example 1 (not example 2!) as a starting point 
+We're going to be using example 1 (not example 2!) as a starting point. That is, the color material is going to track both the ambient and diffuse terms. The sphere colors are set with ```GL.Color3```, they are: red, green and blue. This is the starting point.
+
+Now, change the LIGHT (not material) ambient color to { 0.2f, 0.2f, 0.2f, 1.0f } and the LIGHT (not mateiral) diffuse color to {0.8f, 0.8f, 0.8f, 1.0f }. Run the game and your scene looks the way one would expecte it:
+
+![C4](ctrack4.png)
+
+Only the initialize function changed from example 1, here it is in its entirety:
+
+```
+public override void Initialize() {
+base.Initialize();
+
+GL.Enable(EnableCap.Lighting);
+GL.Enable(EnableCap.Light0);
+
+float[] red = new float[] { 1, 0, 0, 1 };
+float[] blue = new float[] { 0, 0, 1, 1 };
+float[] white = new float[] {0, 1, 0, 1 };
+
+// We changed the LIGHT! Not the Material
+GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0, 1, 1, 0});
+GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { .2f, .2f, .2f, 1f });
+GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { .8f, .8f, .8f, 1f } );
+GL.Light(LightName.Light0, LightParameter.Specular, white);
+
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, new float[] { 1, 1, 1, 1 });
+GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Shininess, 20.0f);
+
+GL.Enable(EnableCap.ColorMaterial);
+GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
+}
+```
+
+This works because the light now defines how strong the ambient and diffuse components are. The actual material defines the color. Because if the material diffuse is blue (0, 0, 1) and the light diffuse is (.8, .8, .8) then the two multiplied together create the objects diffuse (0, 0, .8).
+
+This (example 3) is the configuration i do 90% of my lighting with! It's something you should be comfotrable setting up.
