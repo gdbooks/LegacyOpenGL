@@ -16,6 +16,7 @@ Lets go ahead and set up a test scene. This scene will be used as the base for a
   * One at (-3, 1, 0)
   * One at (0, 1, 0)
   * One at (3, 1, 0)
+* Make sure the spheres render blue
 
 Running your game, you should see this:
 
