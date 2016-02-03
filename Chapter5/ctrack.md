@@ -19,8 +19,32 @@ We've already discussed how to change which color is tracked in the __Defining M
 Lets make a new demo scene, call it ```ColorTrackingDemo``` and get it up to par with the test scene. Once you have that:
 
 * In the initialize function
-  * Enable color material
-  * Set color materials to track the ambeint AND diffuse components for front and back face
   * Call ```GL.Mateiral``` to:
     * Set the specular component to white
     * Set the shininess to 20
+  * Enable color material
+  * Set color materials to track the ambeint AND diffuse components for front and back face
+* In the render function
+  * Set the first spheres render color to red
+  * Set the second spheres render color to green
+  * Set the third spheres color to blue
+
+Your scene should look like the below image:
+
+![C2](ctrack2.png)
+
+In case your scene doesn't look like that, here is the code i used to get that result
+
+```
+ public override void Initialize() {
+    base.Initialize();
+
+    // Enable lighting and configure light 0
+    
+    GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Specular, new float[] { 1, 1, 1, 1 });
+    GL.Material(MaterialFace.FrontAndBack, MaterialParameter.Shininess, 20.0f);
+
+    GL.Enable(EnableCap.ColorMaterial);
+    GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
+}
+```
