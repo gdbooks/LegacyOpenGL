@@ -14,7 +14,7 @@ This will cause calls to ```GL.Color``` to change not only the primary color, bu
 
 We've already discussed how to change which color is tracked in the __Defining Materials__ section.
 
-### Example
+### Example 1
 
 Lets make a new demo scene, call it ```ColorTrackingDemo``` and get it up to par with the test scene. Once you have that:
 
