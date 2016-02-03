@@ -74,6 +74,8 @@ Using Example 1 as our starting point.
   * Change the color material tracking point to diffuse
   * Set the materials default ambient to { .2f, .2f, .2f, 1f }
 
+![C3](ctrack3.png)
+
 Here is the code change
 
 ```
@@ -86,3 +88,10 @@ GL.Enable(EnableCap.ColorMaterial);
 // This changed
 GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.Diffuse);
 ```
+
+This still doesn't look great. All the spheres now take a uniform ambient term, but only the blue sphere has a blue term to take for it's diffuse! That's why the other two look red-ish.
+
+### Example 3
+The key to good material usage is to think about color a little differently! Instead of thinking about a light having a color and a material having a color, think of the light as an overall brightness (always have a white light), and the mateiral as the color.
+
+So, using example 1 (not example 2!) as a starting point 
