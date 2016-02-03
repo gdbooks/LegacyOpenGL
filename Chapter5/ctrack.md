@@ -12,3 +12,15 @@ GL.Enable(EnableCaps.ColorMaterial);
 
 This will cause calls to ```GL.Color``` to change not only the primary color, but also the current ambient and diffuse material colors. Of course you can change which properties color tracking affects by calling ```GL.ColorMaterial```.
 
+We've already discussed how to change which color is tracked in the __Defining Materials__ section.
+
+### Example
+
+Lets make a new demo scene, call it ```ColorTrackingDemo``` and get it up to par with the test scene. Once you have that:
+
+* In the initialize function
+  * Enable color material
+  * Set color materials to track the ambeint AND diffuse components for front and back face
+  * Call ```GL.Mateiral``` to:
+    * Set the specular component to white
+    * Set the shininess to 20
