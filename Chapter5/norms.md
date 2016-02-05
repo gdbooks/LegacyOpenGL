@@ -61,3 +61,4 @@ Check your math code for implementation details.
 
 This means, that you need two vectors, A and B to calculate the normal of a surface. Where can you find these vectors? All triangles are made up of 3 points: P1, P2 and P3. You can use them to find the vectors. Here is a visual example:
 
+![PV](p_from_v.png)
