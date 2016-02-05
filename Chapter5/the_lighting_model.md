@@ -71,3 +71,15 @@ GL.LightModel(LightModelParamater.LightModelTwoSide, 1);
 Because most of the time you will not see inside closed meshes, and you will not see the back side of visible meshes, keeping this off is a good idea. It's off by default to save on performance.
 
 ## Seperate Specular Color
+The final light model property you can set is the ```LightModelColorControl``` property. This control was added because when you do lighting with texturing the specular highlight tends to get washed out once the texture is applied. 
+
+When you enable this property, OpenGL stores two colors per vertex. One that is a combination of the ambient, diffuse, and emissive light combined with the texture of the object. And one that is it's specular value. At render time it applies the specular value, this keeps the specular highlight from getting washed out by the texture colors.
+
+Enabling this property is pretty straight forward:
+
+```
+// 0 or 1
+GL.LightModel(LightModelParamater.LightModelColorControl, 1); 
+```
+
+Because i've never rendered anything where the specular highlight __REALLY__ mattered, i've never had a need to turn this component on
