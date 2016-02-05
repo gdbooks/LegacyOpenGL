@@ -78,3 +78,13 @@ Vector3 GetNormal(Triangle tri) {
 ```
 
 Remember, the cross product just returns a perpendicular vector. You still have to normalize it!
+
+## OpenGL Normalization
+
+You can ask OpenGL to do the normalization for you, so you can pass non-normal vectors into the ```GL.Normal3``` function. To do so, you just have to enable Normalization:
+
+```
+GL.Enable(EnableCaps.Normalize);
+```
+
+However, i strongly discourage doing this. It is viewed as bad practice, asking OpenGL to normalize is actually a lot slower than just doing the normalization your self.
