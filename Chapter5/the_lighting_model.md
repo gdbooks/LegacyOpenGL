@@ -12,5 +12,6 @@ In addition to individual lights and materials, and normals there are additional
 You control these elements of the lighting model with the ```GL.LightModel``` function, which is defined as:
 
 ```
-
+void GL.LightModel(LightModelParameter, float);
+void GL.LightModel(LightModelParameter, float[]);
 ```
