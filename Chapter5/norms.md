@@ -62,3 +62,19 @@ Check your math code for implementation details.
 This means, that you need two vectors, A and B to calculate the normal of a surface. Where can you find these vectors? All triangles are made up of 3 points: P1, P2 and P3. You can use them to find the vectors. Here is a visual example:
 
 ![PV](p_from_v.png)
+
+So, the full code to get the normal of a triangle would look like this:
+
+```
+Vector3 GetNormal(Triangle tri) {
+    Vector3 v1 = tri.p2 - tri.p1;
+    Vector3 v2 = tri.p3 - tri.p1;
+    
+    Vector3 cross = Vector3.CrossProduct(v1, v2);
+    Vector2 norm = Vector3.Normalize(cross);
+    
+    return norm;
+}
+```
+
+Remember, the cross product just returns a perpendicular vector. You still have to normalize it!
