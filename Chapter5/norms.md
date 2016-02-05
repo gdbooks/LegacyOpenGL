@@ -55,4 +55,9 @@ GL.End();
 But that becomes hard to manage later on. I encourage you to specify a normal for ever vertex, even if it's a duplicate. You can take a look at the static Primitives class we use to draw primitives. It draws all primitives WITH normals.
 
 ## Calculating normals
-Finding the normal of a flat surface is easy, given a little vector math. 
+Finding the normal of a flat surface is easy, given a little vector math, in particular the cross product. You might remember, given two 3D vectors A and B, the cross product will produce a vector that is perpendicular to both A and B.
+
+Check your math code for implementation details.
+
+This means, that you need two vectors, A and B to calculate the normal of a surface. Where can you find these vectors? All triangles are made up of 3 points: P1, P2 and P3. You can use them to find the vectors. Here is a visual example:
+
