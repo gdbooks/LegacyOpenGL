@@ -59,3 +59,15 @@ If the default isn't realistic enough for your application, you can change it an
 // 0 is OFF
 GL.LightModel(LightModelParamater.LightModelLocalViewer, 1); 
 ```
+
+## Two Sided or One Sided Lighting
+The next paramater you can specify is ```LightModelTwoSide```. This paramater deals with weather you want to calculate the ighting for the back of polygons correctly. For example, if you where to take an enclosed object, like a cube and cut it in half the inside would not be lit correctly. To light the inside correctly, you must enable two sided lighting like so:
+
+```
+// 0 or 1
+GL.LightModel(LightModelParamater.LightModelTwoSide, 1); 
+```
+
+Because most of the time you will not see inside closed meshes, and you will not see the back side of visible meshes, keeping this off is a good idea. It's off by default to save on performance.
+
+## Seperate Specular Color
