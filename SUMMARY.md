@@ -63,3 +63,4 @@
     * [Specular](Chapter5/mat_shine.md)
     * [Color Tracking](Chapter5/ctrack.md)
   * [Lighting Review](Chapter5/color.md)
+  * [Normals](Chapter5/norms.md)
