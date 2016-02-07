@@ -23,7 +23,10 @@ void GL.Fog(FogParameter, float[])
 
 The values of the ```GL.Fog(FogParameter)``` enumeration are:
 
-* __FogMode__ This parameter can be 
+* __FogMode__ This parameter can be set to:
+  * ```(int)FogMode.Linear```
+  * ```(int)FogMode.Exp```
+  * ```(int FogMode.Exp2```
 * __FogDensity__
 * __FogStart__
 * __FogEnd__
