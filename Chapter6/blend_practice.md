@@ -15,3 +15,5 @@ First, set up a test scene. In this scene your camera will not be moving!
 * Set the specular property of the front and back of the material to white
 * Set the mateiral specular exponent to 20
 * Enable color tracking for the ambient AND diffuse components
+* Turn OFF the global ambient light by setting it to black
+  * We never wrote code for this, it was discussed in "The Lighting Model"
