@@ -50,3 +50,5 @@ Inside Render:
 * Set the alpha component of the red sphere to 0.5
 
 Having made these changes, your scene should now look like this:
+
+![B2](blend2.png)
