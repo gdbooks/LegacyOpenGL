@@ -71,19 +71,19 @@ public override void Render() {
     grid.Render();
     GL.Enable(EnableCap.Lighting);
 
-    GL.Color3(0f, 1f, 0f);
+    GL.Color4(0f, 1f, 0f, 1f);
     GL.PushMatrix();
         GL.Translate(0f, 1f, 3f);
         Primitives.DrawSphere(3);
     GL.PopMatrix();
 
-    GL.Color3(0f, 0f, 1f);
+    GL.Color4(0f, 0f, 1f, .25f);
     GL.PushMatrix();
         GL.Translate(1f, 1f, 2f);
         Primitives.DrawSphere(3);
     GL.PopMatrix();
 
-    GL.Color3(1f, 0f, 0f)
+    GL.Color4(1f, 0f, 0f, .5f)
     GL.PushMatrix();
         GL.Translate(0f, 2f, 1f);
         Primitives.DrawSphere(3);
