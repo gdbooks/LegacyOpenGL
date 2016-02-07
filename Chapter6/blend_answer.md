@@ -90,3 +90,7 @@ public override void Render() {
     GL.PopMatrix();
 }
 ```
+
+Having made these changes, your scene should now look like this:
+
+![B2](blend2.png)
