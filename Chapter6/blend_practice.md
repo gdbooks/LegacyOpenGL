@@ -39,6 +39,8 @@ At this point, your scene should look like this:
 
 ### Now for some blending
 
+Inside Initialize
+* Enable blending
 
 Inside Render: 
 * To indicate we're going to use alpha, change ```GL.Color3``` to ```GL.Color4```
