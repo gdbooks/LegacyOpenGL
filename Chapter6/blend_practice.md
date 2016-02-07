@@ -52,3 +52,9 @@ Inside Render:
 Having made these changes, your scene should now look like this:
 
 ![B2](blend2.png)
+
+Thats it. That's all there is to transparency. If you look at the source of our 2D game framework, it enables blending and sets the transperancy function when the framework is initialized, and that's all it does. Alpha values come from textures.
+
+### Mess it up!
+
+Want to see how alpha rendering can go wrong? Change the order up. Render the red sphere first, blue second and green last. Do this whout modifying the Z values or color values, just change the order you render them in, to intentionally mess the scene up.
