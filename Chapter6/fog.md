@@ -18,16 +18,17 @@ Fog has several paramaters associated with it, which you can control with calls 
 
 ```
 void GL.Fog(FogParameter, int);
+void GL.Fog(FogParameter, float);
 void GL.Fog(FogParameter, float[])
 ```
 
 The values of the ```GL.Fog(FogParameter)``` enumeration are:
 
-* __FogMode__ This parameter can be set to:
+* __FogMode__ This parameter specifies which blend equasion to use when caluclating fog. By default it's ```Exp```. It can be set to:
   * ```(int)FogMode.Linear```
   * ```(int)FogMode.Exp```
   * ```(int FogMode.Exp2```
-* __FogDensity__
+* __FogDensity__ This parameter is a single value, representing the density of the fog. The default value is 1.0
 * __FogStart__
 * __FogEnd__
 * __FogIndex__
