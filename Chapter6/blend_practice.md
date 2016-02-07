@@ -1,5 +1,5 @@
 # Blend Practice
-We're going to real quick try to render a scene which uses blending. This exercise will also re-inforce lessons we've learned in the materials section.
+We're going to real quick try to render a scene which uses blending. This exercise will also re-inforce lessons we've learned in the materials section. The code i used to get this practice challenge done is provided in the next section "Solution". Try to do this code on your own before looking at my implementation.
 
 First, set up a test scene. In this scene your camera will not be moving!
 
