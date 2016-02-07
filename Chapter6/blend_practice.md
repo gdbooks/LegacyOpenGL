@@ -41,6 +41,7 @@ At this point, your scene should look like this:
 
 Inside Initialize
 * Enable blending
+* Set the blend func to the transperancy function we talked about in the last section
 
 Inside Render: 
 * To indicate we're going to use alpha, change ```GL.Color3``` to ```GL.Color4```
