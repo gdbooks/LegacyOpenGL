@@ -65,3 +65,4 @@
   * [Normals](Chapter5/norms.md)
   * [The Lighting Model](Chapter5/the_lighting_model.md)
   * [Lighting Review](Chapter5/color.md)
+* [Blending and Fog](Chapter6/Introduction.md)
