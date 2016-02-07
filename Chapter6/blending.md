@@ -66,4 +66,14 @@ To get an idea of how this works, Let's examine how it would work for a single p
   * SRC + DST = (0, 0, 0.5) + (0.5, 0, 0)
   * Result: ( 0.5, 0, 0.5)
 * This added number is written to the frame buffer
-  * (0.5, 0, 0.5) written to frame buffer 
+  * (0.5, 0, 0.5) written to frame buffer
+
+This simple example ignores one very important thing: you have to pay attention to the depth of the objects and the order in which they are rendered when using transperancy.
+
+When we draw without transperancy, the order of drawing commands doesn't matter, as the Z-Buffer will take care of hiding overlapping objects for us. 
+
+When you use transparency however, order most definateley matters! Lets assume you have two objects, a solid and a transparent one. If you draw a solid object first, then a transparent object, you will see the image get blended as expected. But if you draw the transparent object first, then the solid object, the transparent object will draw and blend with the clear color. Then parts of the solid object not overlapping the transparent object will draw. And your scene will look broken. 
+
+The most common way to handle this is to make two render passes at the scene. First, render only solid objects. Next, enable blending and render only transparent objects. This will fix the problem in 90% of the cases, but sometimes you have overlapping transparent objects!
+
+The full fix is to do the two render passes as described above, but also sort the transparent objects so the furthest objects render first. As you will see later, even this isn't a perfect solution
