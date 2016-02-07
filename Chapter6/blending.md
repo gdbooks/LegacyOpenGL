@@ -48,3 +48,22 @@ GL.BelndFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 ```
 
 Memorize that function! It's the one you will use 90% of the time!
+
+To get an idea of how this works, Let's examine how it would work for a single pixel. 
+
+* Say we drew a red triangle onto screen
+  * The frame buffer has a red pixel 
+  * DST: (1, 0, 0, 1)
+* Next, we draw a blue triangle with 50% opacity 
+  * SRC: (0, 0, 1, 0.5)
+* With the blend factors we've chose, the source color is multiplied by the srouce alpha 
+  * (0, 0, 1) * 0.5 = (0, 0, 0.5)
+  * SRC: (0, 0, 0.5, 0.5) 
+* The destination will be multiplied by 1 - source alpha (0.5)
+  * (1, 0, 0) * (1 - 0.5) = (0.5, 0, 0)
+  * DST: (0.5, 0, 0, 1)
+* Finally, the source and destination colors are added together. 
+  * SRC + DST = (0, 0, 0.5) + (0.5, 0, 0)
+  * Result: ( 0.5, 0, 0.5)
+* This added number is written to the frame buffer
+  * (0.5, 0, 0.5) written to frame buffer 
