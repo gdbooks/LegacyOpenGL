@@ -36,4 +36,6 @@ The values of the ```GL.Fog(FogParameter)``` enumeration are:
 * __FogColor__ This specifies the color to be used for fog. It's an array, RGBA 
 * __FogCoordSrc__ We don't touch this. It specifies the depth term of the fog blend equation. This is an extension, and is not always available.
 
-The mode determines which of the 3 equations is used to be
+That's all there is to fog. Because modern computers can handle far planes that are insanley far away (1000 to 5000) we tend to not use fog to hide things, we only tend to use it as an environmental effect when appropriate. 
+
+Because you will likeley not need to use fog (I've NEVER used it) we're not going to do an exercise on it. Just know that you have to first enable it, then you can set paramaters if the default fog doesn't look good.
