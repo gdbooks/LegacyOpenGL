@@ -103,13 +103,13 @@ public override void Render() {
         Primitives.DrawSphere(3);
     GL.PopMatrix();
 
-    GL.Color4(0f, 0f, 1f, .25f);
+    GL.Color4(0f, 0f, 1f, .25f); // CHANGED
     GL.PushMatrix();
         GL.Translate(1f, 1f, 2f);
         Primitives.DrawSphere(3);
     GL.PopMatrix();
 
-    GL.Color4(1f, 0f, 0f, .5f)
+    GL.Color4(1f, 0f, 0f, .5f); // CHANGED
     GL.PushMatrix();
         GL.Translate(0f, 2f, 1f);
         Primitives.DrawSphere(3);
