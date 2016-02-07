@@ -20,3 +20,12 @@ Fog has several paramaters associated with it, which you can control with calls 
 void GL.Fog(FogParameter, float);
 void GL.Fog(FogParameter, float[])
 ```
+
+The values of the ```GL.Fog(FogParameter)``` enumeration are:
+
+* __FogMode__
+* __FogDensity__
+* __FogStart__
+* __FogEnd__
+* __FogIndex__
+* __FogCoordSrc__
