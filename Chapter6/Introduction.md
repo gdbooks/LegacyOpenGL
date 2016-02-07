@@ -6,4 +6,8 @@ OpenGL let's you actually use the Alpha component to draw translusent and transp
 
 In addition to blending, OpenGL also offers fog. Fog is great to fade objects in the distance out. If something is at the end of your view frustum, it's better to fade it out and make your world look like it's in a fog than it is to have a hard cut-off point that shows players that they are viewing the world trough a limited window.
 
-We're going to explore both of these concepts.
+Perhaps the most famous use of fog is the original resident evil. The PS1 could not draw many triangles (weak processor). To avoid drawing too many triangles and loosing framerate, the developers had to set the camera frustums far plane pretty close to a distance of about 25 (compared to the 1000 we set ours to). 
+
+This short frustum caused objects farther than 25 game units to not render, making things like building pop in and out of view. To compensate for this, the developers added a heavy fog to the game to limit the players visibility. Really, it was just used to hide the fact that anything further than 25 units would pop out of existance.
+
+They used this heavy fog to add an air of mistery to the game, and accidentally gave rise to modern horror games.
