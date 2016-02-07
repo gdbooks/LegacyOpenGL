@@ -36,3 +36,11 @@ First, set up a test scene. In this scene your camera will not be moving!
 At this point, your scene should look like this:
 
 ![B1](blend1.png)
+
+### Now for some blending
+
+
+Inside Render: 
+* keep the alpha component of the green sphere at 1
+* Set the alpha component of the blue sphere to 0.25
+* Set the alpha component of the red sphere to 0.5
