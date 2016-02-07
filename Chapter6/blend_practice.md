@@ -48,3 +48,5 @@ Inside Render:
 * Set the alpha component of the green sphere at 1
 * Set the alpha component of the blue sphere to 0.25
 * Set the alpha component of the red sphere to 0.5
+
+Having made these changes, your scene should now look like this:
