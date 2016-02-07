@@ -30,3 +30,5 @@ First, set up a test scene. In this scene your camera will not be moving!
 * Draw a sphere at: (0, 1, 3)
 * Set the material color to blue
 * Draw a sphere at: (1, 1, 2)
+* Set the material color to red
+* Draw a sphere at (0, 2, 1)
