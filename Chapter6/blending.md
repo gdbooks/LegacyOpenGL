@@ -37,3 +37,7 @@ The first argument is the source blend factor, the second argument is the destin
 * __ConstantAlpha__ Each component is multiplied by an alpha value set using ```GL.BlendColor```
 * __OneMinusConstantAlpha__ Each component is multiplied by 1 - a constant alpha value set using ```GL.BlendColor```
 * __SrcAlphaSaturate__ Multiplies the source color by the minimum of source and (1 - destination). The  alpha value is not modified. Only valid as the source blend factor
+
+The default values are One for the source and Zero for the destination. Which produces the same results as not using blending at all.
+
+Many different effects can be created with these blending factors, some o which are more useful in medical imaging than games. To better understand how this voodoo works, let's look at the application that is most often used in games: transparency!
