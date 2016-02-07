@@ -6,5 +6,12 @@ There is more than one way to impement fog, but because OpenGL has a built in so
 
 ## OpenGL Fog
 
-OpenGL's built-in fog support works by blending each pixel with the color of the fog, using a blend factor dependent on the distance from the viewer, the density of the god and the currently selected fog mode. This is the blend factor:
+OpenGL's built-in fog support works by blending each pixel with the color of the fog, using a blend factor dependent on the distance from the viewer, the density of the god and the currently selected fog mode. 
 
+To use fog, you must first enable it:
+
+```
+GL.Enable(EnableCaps.Fog);
+```
+
+Fog has several paramaters associated with it, which you can control with calls to ```GL.Fog```
