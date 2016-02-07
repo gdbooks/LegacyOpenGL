@@ -68,4 +68,4 @@
 * [Blending and Fog](Chapter6/Introduction.md)
   * [Blending](Chapter6/blending.md) 
     * [Challenge](Chapter6/blend_practice.md) 
-    * [Solution](Chpater6/blend_answer.md)
+    * [Solution](Chapter6/blend_answer.md)
