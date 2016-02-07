@@ -122,3 +122,39 @@ public override void Render() {
 Having made these changes, your scene should now look like this:
 
 ![B2](blend2.png)
+
+To mess things up, simply change the render order:
+
+### Render
+
+```
+public override void Render() {
+    Matrix4 lookAt = Matrix4.LookAt(new Vector3(0f, 2f, -7f), new Vector3(0f, 0f, 0f), new Vector3(0f, 1f, 0f));
+    GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
+
+    GL.Disable(EnableCap.Lighting);
+    grid.Render();
+    GL.Enable(EnableCap.Lighting);
+    
+    // WAR LAST, NOW FIRST
+    GL.Color4(1f, 0f, 0f, .5f);
+    GL.PushMatrix();
+        GL.Translate(0f, 2f, 1f);
+        Primitives.DrawSphere(3);
+    GL.PopMatrix();
+    
+    // STAYED IN CENTER
+    GL.Color4(0f, 0f, 1f, .25f);
+    GL.PushMatrix();
+        GL.Translate(1f, 1f, 2f);
+        Primitives.DrawSphere(3);
+    GL.PopMatrix();
+    
+    // WAS FIRST, NOW LAST
+    GL.Color4(0f, 1f, 0f, 1f);
+    GL.PushMatrix();
+        GL.Translate(0f, 1f, 3f);
+        Primitives.DrawSphere(3);
+    GL.PopMatrix();
+}
+```
