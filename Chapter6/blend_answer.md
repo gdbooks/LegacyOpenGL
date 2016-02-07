@@ -79,6 +79,10 @@ public override void Initialize() {
     GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
 
     GL.LightModel(LightModelParameter.LightModelAmbient, new float[] { 0f, 0f, 0f, 1f });
+    
+    // NEW
+    GL.Enable(EnableCap.Blend);
+    GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 }
 ```
 
