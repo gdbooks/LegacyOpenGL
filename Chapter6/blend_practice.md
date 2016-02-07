@@ -57,4 +57,8 @@ Thats it. That's all there is to transparency. If you look at the source of our 
 
 ### Mess it up!
 
-Want to see how alpha rendering can go wrong? Change the order up. Render the red sphere first, blue second and green last. Do this whout modifying the Z values or color values, just change the order you render them in, to intentionally mess the scene up.
+Want to see how alpha rendering can go wrong? Change the order up. Render the red sphere first, blue second and green last. Do this without modifying the Z values or color values, just change the order you render them in, to intentionally mess the scene up.
+
+The rendered scene will look like this:
+
+![B3](blend3.png)
