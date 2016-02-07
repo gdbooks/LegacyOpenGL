@@ -22,3 +22,10 @@ When multiple polygons cross each other, we refer to that as cycling. You only n
 ![C](cycle.jpg)
 
 If all 3 of those triangles have alpha, which one do you draw first?
+
+## Transparent frame buffer
+
+The alpha value of the frame buffer should always be 1. If for some reason it's not, then the blending is going to be off. Luckly, so long as you use the standard transparency function:
+
+
+This will be a non-issue
