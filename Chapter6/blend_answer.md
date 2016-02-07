@@ -97,7 +97,7 @@ public override void Render() {
     grid.Render();
     GL.Enable(EnableCap.Lighting);
 
-    GL.Color4(0f, 1f, 0f, 1f);
+    GL.Color4(0f, 1f, 0f, 1f); // CHANGED
     GL.PushMatrix();
         GL.Translate(0f, 1f, 3f);
         Primitives.DrawSphere(3);
