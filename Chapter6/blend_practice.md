@@ -41,6 +41,7 @@ At this point, your scene should look like this:
 
 
 Inside Render: 
-* keep the alpha component of the green sphere at 1
+* To indicate we're going to use alpha, change ```GL.Color3``` to ```GL.Color4```
+* Set the alpha component of the green sphere at 1
 * Set the alpha component of the blue sphere to 0.25
 * Set the alpha component of the red sphere to 0.5
