@@ -15,3 +15,8 @@ GL.Enable(EnableCaps.Fog);
 ```
 
 Fog has several paramaters associated with it, which you can control with calls to ```GL.Fog```
+
+```
+void GL.Fog(FogParameter, float);
+void GL.Fog(FogParameter, float[])
+```
