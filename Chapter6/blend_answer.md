@@ -158,3 +158,7 @@ public override void Render() {
     GL.PopMatrix();
 }
 ```
+
+The messed up scene looks like this:
+
+![B3](blend3.png)
