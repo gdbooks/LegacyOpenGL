@@ -41,7 +41,7 @@ This value is controlled with ```LightModelAmbient```. The following code sets t
 
 ```
 float[] ambient = new float[] { 0f, 0.2f, 0.3f, 1f };
-GL.LightMode(LightModelParamater.LightModelAmbient, ambient);
+GL.LightModel(LightModelParamater.LightModelAmbient, ambient);
 ```
 
 __Note:__ I don't really like a magical light source that i can't see, more often than not i will straight up set this to black to avoid it from contributing to my scene.
