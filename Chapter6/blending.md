@@ -40,4 +40,11 @@ The first argument is the source blend factor, the second argument is the destin
 
 The default values are One for the source and Zero for the destination. Which produces the same results as not using blending at all.
 
-Many different effects can be created with these blending factors, some o which are more useful in medical imaging than games. To better understand how this voodoo works, let's look at the application that is most often used in games: transparency!
+Many different effects can be created with these blending factors, some o which are more useful in medical imaging than games. To better understand how this voodoo works, let's look at the application that is most often used in games: transparency! Typically transparency is implemented as follows:
+
+```
+GL.Enable(EnableCaps.Blend)
+GL.BelndFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+```
+
+Memorize that function! It's the one you will use 90% of the time!
