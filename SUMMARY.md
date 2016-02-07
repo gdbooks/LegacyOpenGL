@@ -67,3 +67,4 @@
   * [Lighting Review](Chapter5/color.md)
 * [Blending and Fog](Chapter6/Introduction.md)
   * [Blending](Chapter6/blending.md) 
+    * [Practice](Chapter6/blend_practice.md) 
