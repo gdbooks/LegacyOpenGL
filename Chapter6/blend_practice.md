@@ -32,3 +32,7 @@ First, set up a test scene. In this scene your camera will not be moving!
 * Draw a sphere at: (1, 1, 2)
 * Set the material color to red
 * Draw a sphere at (0, 2, 1)
+
+At this point, your scene should look like this:
+
+![B1](blend1.png)
