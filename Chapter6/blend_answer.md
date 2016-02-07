@@ -59,6 +59,8 @@ At this point, your scene should look like this:
 
 ![B1](blend1.png)
 
+Now that the initial scene has been set up, let's take a look at the code changes we had to make in order to have transperancy work
+
 ### Initialize
 
 ```
