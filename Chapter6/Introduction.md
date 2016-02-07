@@ -11,3 +11,5 @@ Perhaps the most famous use of fog is the original silent hill. The PS1 could no
 This short frustum caused objects farther than 25 game units to not render, making things like building pop in and out of view. To compensate for this, the developers added a heavy fog to the game to limit the players visibility. Really, it was just used to hide the fact that anything further than 25 units would pop out of existance.
 
 They used this heavy fog to add an air of mistery to the game, and accidentally gave rise to modern horror games.
+
+![SH](silent_hill.jpg)
