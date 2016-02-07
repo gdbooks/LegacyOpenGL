@@ -62,3 +62,11 @@ Want to see how alpha rendering can go wrong? Change the order up. Render the re
 The rendered scene will look like this:
 
 ![B3](blend3.png)
+
+It messes up so bad because we draw the red sphere with nothing in the frame buffer except the clear color, so the red sphere blends on top of the clear color (except a small sliver on it's bottom that blends with the plane). 
+
+Next we render the blue sphere, again in it's visible parts we can only blend it with the clear color. You might expect the blue sphere to draw over the red one, but the objects are recorded in the Z buffer as if they where solid. 
+
+The Z buffer knows no alpha. As far as Z is concerned, the red sphere is closer than the blue sphere, so the fragments of the blue sphere that are behind the red one are simply discarded.
+
+The green sphere is only partially visible for the same reason, most of it's fragments are discarded during the z-test.
