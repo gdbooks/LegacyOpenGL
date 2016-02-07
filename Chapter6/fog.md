@@ -29,7 +29,11 @@ The values of the ```GL.Fog(FogParameter)``` enumeration are:
   * ```(int)FogMode.Exp```
   * ```(int FogMode.Exp2```
 * __FogDensity__ This parameter is a single value, representing the density of the fog. The default value is 1.0
-* __FogStart__
-* __FogEnd__
-* __FogIndex__
-* __FogCoordSrc__
+* __FogStart__ A single float, representing how far from the near plane the fog should start
+* __FogEnd__ A single float, representing how far from the near plane the fog should end
+* __FogIndex__ Specifies the color index to be used in 8-bit color mode
+  * Don't bother, we don't use this!
+* __FogColor__ This specifies the color to be used for fog. It's an array, RGBA 
+* __FogCoordSrc__ We don't touch this. It specifies the depth term of the fog blend equation. This is an extension, and is not always available.
+
+The mode determines which of the 3 equations is used to be
