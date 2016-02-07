@@ -12,4 +12,8 @@ Remember the alpha value we've been ignoring all this time? Well, now that we're
 
 Blending operations are typically specified with the RGB values representing color, and the Alpha value representing opacity. But other combinations are possible. From now on,we will refer to the incomming fragment as SOURCE, and the pixel that is already in the frame buffer as DESTINATION.
 
-To enable blending, call the ```GL.Enable``` method with ```EnableCaps.Blend``` as it's argument.
+To enable blending, call the ```GL.Enable``` method with ```EnableCaps.Blend``` as it's argument. You can call the function ```GL.BlendFunc``` to define the source and destination blend factors. Blend factors are values in the 0 to 1 range, that are multiplied by the RGBA components of both the source and destination colors. The resulting colors are then combined (usually by adding them) and clamped to the range of 0 to 1. 
+
+```
+void GL.BlendFunc(BlendingFactorSrc, BlendingFactorDest);
+```
