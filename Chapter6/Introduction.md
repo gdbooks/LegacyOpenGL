@@ -6,3 +6,4 @@ OpenGL let's you actually use the Alpha component to draw translusent and transp
 
 In addition to blending, OpenGL also offers fog. Fog is great to fade objects in the distance out. If something is at the end of your view frustum, it's better to fade it out and make your world look like it's in a fog than it is to have a hard cut-off point that shows players that they are viewing the world trough a limited window.
 
+We're going to explore both of these concepts.
