@@ -78,3 +78,4 @@
   * [Texture Binding](Chapter7/Binding.md)
   * [Specifying Textures](Chapter7/SpecTex.md)
   * [Deleting Textures](Chapter7/DelTex.md)
+  * [Texture Coordinates](Chapter7/TexCoords.md)
