@@ -77,4 +77,4 @@
   * [Texture Objects](Chapter7/TextureObj.md)
   * [Texture Binding](Chapter7/Binding.md)
   * [Specifying Textures](Chapter7/SpecTex.md)
-  * [Deleting Textures]()
+  * [Deleting Textures](Chapter7/DelTex.md)
