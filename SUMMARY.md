@@ -76,3 +76,5 @@
   * [Enable Texturing](Chapter7/Enable.md)
   * [Texture Objects](Chapter7/TextureObj.md)
   * [Texture Binding](Chapter7/Binding.md)
+  * [Specifying Textures](Chapter7/SpecTex.md)
+  * [Deleting Textures]()
