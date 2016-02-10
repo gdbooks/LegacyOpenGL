@@ -71,3 +71,4 @@
     * [Solution](Chapter6/blend_answer.md)
     * [Issues](Chapter6/blending_problem.md)
   * [Fog](Chapter6/fog.md) 
+* [Texture Mapping](Chapter7/README.md) 
