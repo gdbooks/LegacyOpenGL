@@ -72,3 +72,7 @@
     * [Issues](Chapter6/blending_problem.md)
   * [Fog](Chapter6/fog.md) 
 * [Texture Mapping](Chapter7/README.md) 
+  * [Overview](Chapter7/Overview.md) 
+  * [Enable Texturing](Chapter7/Enable.md)
+  * [Texture Objects](Chapter7/TextureObj.md)
+  * [Texture Binding](Chapter7/Binding.md)
