@@ -32,6 +32,7 @@ This brings up the next point. When you have texturing enabled, all color info w
 GL.Disable(EnableCap.Texture2D);
 GL.Disable(EnableCap.Lighting);
 grid.Render();
+// Now that the grid is drawn, re-enable lighting and texturing!
 GL.Enable(EnableCap.Lighting);
 GL.Enable(EnableCap.Texture2D);
 ```
