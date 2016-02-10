@@ -9,3 +9,5 @@ In a picture, each pixel has 4 components (RGBA). Each of these components would
 Why __texel__, why not pixel? As we map a texture to a 3D object, and the 3D object to screen, a single pixel in the source texture could occupy multiple pixels on screen (Because of wrapping around a 3D object that could be scaled, rotates, skewed, etc...). Because the mapping is not 1 to 1, the source of the image comes from texel coordinates and the destination on screen is pixel coordinates.
 
 Usually developers use two-dimensional textures for graphics, however using one dimensional or even 3 dimensional textures is not unheard of. 1D textures have a width. 2D textures have a width and a height (these are the images we are used to as png files). 3D textures have a width, a height and a depth. 3D textures are sometimes called _volume textures_. We generally only use 1D and 2D textures. 1D is used almost exclusivley for "toon shading"
+
+When you map a texture to a polygon, it will deform with the polygon. In other words, if you rotate the earth, it's texture will rotate along with the sphere. This applies to all deformations and transformations. 
