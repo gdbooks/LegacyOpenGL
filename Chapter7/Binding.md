@@ -52,3 +52,5 @@ int handle = GL.GenTexture();
 GL.BindTexture(TextureTarget.Texture2D, handle);
 // ???
 ```
+
+Now that we have generated a texture, and told OpenGL that we want to make changes to it by binding the texture handle, it's time to actually fill the texture with some data. We will discuss how to do this in the next section.
