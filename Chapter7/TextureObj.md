@@ -14,3 +14,9 @@ void GL.GenTextures(int n, out int[] textures);
 ```
 
 Generating a single texture handle is straight forward. When generating multiple, the function takes as it's first paramater the number of textures you want. As it's second paramater it takes an out qualifyed integer array that is large enough to hold all requested handles.
+
+Before generating textures, you must enable texturing. This is what we've learned so far put to code:
+
+```
+
+```
