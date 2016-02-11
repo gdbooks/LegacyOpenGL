@@ -18,5 +18,9 @@ Generating a single texture handle is straight forward. When generating multiple
 Before generating textures, you must enable texturing. This is what we've learned so far put to code:
 
 ```
-
+// Enable Texturing
+GL.Enable(EnableCap.Texture2D);
+// Generate a texture handle
+int handle = GL.GenTexture();
+// ??? Profit?
 ```
