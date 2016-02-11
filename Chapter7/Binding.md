@@ -42,3 +42,11 @@ What happens if you enable Texture2D, then try to bind a Texture1D object? Nothi
 A bound texture will remain bound until it is either unbound, or deleted. It's **GOOD PRACTICE** to unbind your texture (by binding 0), after you are done drawing with it.
 
 Here is what we've learned so far:
+
+```
+// Enable Texturing
+GL.Enable(EnableCap.Texture2D);
+// Generate a texture handle
+int handle = GL.GenTexture();
+// ??? Profit?
+```
