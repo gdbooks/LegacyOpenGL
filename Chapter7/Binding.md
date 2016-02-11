@@ -38,3 +38,5 @@ To bind no texture, set the second argument (texId) to 0. By default, no texture
 There are a lot of other options, but seeing how those are the four texture types we can actually create, they are the only ones we care about.
 
 What happens if you enable Texture2D, then try to bind a Texture1D object? Nothing. No errors, nothing. But also, nothing will be drawn. More often that not you will be using Texture2D for this argument. If you are not getting anything rendering on screen, make sure you have the right texture unit enabled.
+
+A bound texture will remain bound until it is either unbound, or deleted. It's **GOOD PRACTICE** to unbind your texture (by binding 0), after you are done drawing with it.
