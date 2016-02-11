@@ -24,3 +24,5 @@ GL.Enable(EnableCap.Texture2D);
 int handle = GL.GenTexture();
 // ??? Profit?
 ```
+
+Generating a texture handle is useless without being able to actually put data in it. We will cover how this works over the next two sections.
