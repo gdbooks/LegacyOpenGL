@@ -49,5 +49,5 @@ GL.Enable(EnableCap.Texture2D);
 // Generate a texture handle
 int handle = GL.GenTexture();
 // Bind the handle we generated as the active texture object
-GL.BindTexture(TextureTarget.Texture2D, int texId);
+GL.BindTexture(TextureTarget.Texture2D, handle);
 ```
