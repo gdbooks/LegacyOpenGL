@@ -123,8 +123,11 @@ int GetWidth(int textureId) {
     GL.BindTexture(TextureTarget.Texture2D, textureId);
     int result = 0;
     GL.GetTexLevelParameter(TextureTarget.Texture2D, 0, GetTextureParameter.TextureWidth, out result);
+    return result;
 }
 ```
+
+But just storing the width / height at load time is much easyer and much more performatn!
 
 ## So far
 
