@@ -86,7 +86,7 @@ private int LoadGLTexture(string filename, out int width, out int height) {
     // This will load the encoded texture into CPU memory
     Bitmap bmp = new Bitmap(filename);
     
-    // Decode the data and the image into CPU memory
+    // Decode the image data and the image into CPU memory
     BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
     /* TODO: 
