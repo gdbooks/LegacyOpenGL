@@ -86,7 +86,7 @@ private int LoadGLTexture(string filename, out int width, out int height) {
     // This will load the encoded texture into CPU memory
     Bitmap bmp = new Bitmap(filename);
     
-    // Decode the image data and the image into CPU memory
+    // Decode the image data and store the byte array into CPU memory
     BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
     /* TODO: 
@@ -113,6 +113,16 @@ Using this function is pretty easy. It returns the texture handle and gives you 
 int texWidth = -1;
 int texHeight = -1;
 int texHandle = LoadGLTexture("File.png", out texWidth, out texHeight);
+```
+
+## Width & Height
+By far the easyest way to obtain the width and height of a texture is to store it at the time of loading that texture. However, you don't HAVE to do it this way. You can get the width or height of a texture anytime with the ``` ``` function.
+
+```
+int GetWidth(int textureId) {
+    int result = 0;
+    GL.GetTexLevelParameter(TextureTarget.Texture2D, 0, GetTextureParameter.TextureWidth, out result);
+}
 ```
 
 ## So far
