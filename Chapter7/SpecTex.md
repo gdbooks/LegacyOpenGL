@@ -60,7 +60,9 @@ Let's break each argument down
 The function looks complicated, but you only have to really write it once in a friendly wrapper. After calling this function, you can discard the pixel data you are holding onto on the CPU, as the function will have uploaded it to the GPU
 
 ## Decoder
-So, how do we get that array of bytes that represents the texture?
+So, how do we get that array of bytes that represents the texture? We have to decode a texture from it's source format (png, jpg, tga, etc...) into an array of bytes. We're going to use built-in windows functions to do this.
+
+In order to use windows to decode, you must include a reference to __System.Drawing__, as it contains the ```Bitmap``` class that we will use to decode the texture. The following block of code is commented to explain what is involved in devoding a texture. 
 
 ```
 private int LoadGLTexture(string filename, out int width, out int height) {
@@ -81,9 +83,10 @@ private int LoadGLTexture(string filename, out int width, out int height) {
     */
     
     // Allocate CPU system memory for the image
+    // This will load the encoded texture into CPU memory
     Bitmap bmp = new Bitmap(filename);
     
-    // Load the image into CPU memory using the Windows API
+    // Decode the data and the image into CPU memory
     BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
     /* TODO: 
