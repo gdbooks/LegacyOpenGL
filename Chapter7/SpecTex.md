@@ -20,3 +20,15 @@ The ``` ``` function is fairly straight forward
 Explain arguments
 
 So, how do we get that array of bytes that represents the texture?
+
+## So far
+
+
+## Other loading methods
+The method we used to load textures here is by far the simplest. It relies on Windows to decode texture files for us. Sometimes, this isn't an option tough. For example, on an iPhone. So, how can we decode textures on non-windows platforms?
+
+A common method is to use [stb_image](https://github.com/nothings/stb) or [LodePng](http://lodev.org/lodepng/). Both are C libraries that you have to compile into a .dll file and link against. Once compiled, you can use C#'s interop features to access the C functions.
+
+If that sounds like a lot of work just to load a texture, well that's because it is! Another way to get texture loading to work is to browse NuGet for a png or jpg decoder package. NuGet is the Visual Studio package manager we used to link against OpenGL (In the form of OpenTK) and NAudio. 
+
+We actually use NAudio that we got trough NuGet to decode mp3 files in the OpenTK framework. You can find LodePNG on NuGet if you want to play around with a third party decoder. LodePNG is actually faster than the built in Windows decoder.
