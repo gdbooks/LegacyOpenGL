@@ -104,7 +104,7 @@ private int LoadGLTexture(string filename, out int width, out int height) {
 }
 ```
 
-Using this function is pretty easy. It returns the texture handle and gives you the width & height of the loaded texture as :
+Using this function is pretty easy. It returns the texture handle and gives you the width & height of the loaded texture as out paramaters:
 
 ```
 int texWidth = -1;
