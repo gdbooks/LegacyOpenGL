@@ -134,11 +134,10 @@ But just storing the width / height at load time is much easyer and much more pe
 ```
 // Enable Texturing
 GL.Enable(EnableCap.Texture2D);
-// Generate a texture handle
-int handle = GL.GenTexture();
-// Bind the handle we generated as the active texture object
-GL.BindTexture(TextureTarget.Texture2D, handle);
-// ???
+// Generate a texture handle, bind it and load it with data
+int width = -1;
+int height = -1;
+int handle = LoadGLTexture(file.png, out width, out height);
 ```
 
 ## Other loading methods
