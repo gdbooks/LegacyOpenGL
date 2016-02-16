@@ -131,6 +131,15 @@ But just storing the width / height at load time is much easyer and much more pe
 
 ## So far
 
+```
+// Enable Texturing
+GL.Enable(EnableCap.Texture2D);
+// Generate a texture handle
+int handle = GL.GenTexture();
+// Bind the handle we generated as the active texture object
+GL.BindTexture(TextureTarget.Texture2D, handle);
+// ???
+```
 
 ## Other loading methods
 The method we used to load textures here is by far the simplest. It relies on Windows to decode texture files for us. Sometimes, this isn't an option tough. For example, on an iPhone. So, how can we decode textures on non-windows platforms?
