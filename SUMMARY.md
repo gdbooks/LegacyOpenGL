@@ -80,3 +80,5 @@
   * [Min & Mag Filters](Chapter7/MinMag.md)
   * [Deleting Textures](Chapter7/DelTex.md)
   * [Texture Coordinates](Chapter7/TexCoords.md)
+  * [Putting it all together](Chapter7/Ex1.md)
+  * [Mip Mapping](Chapter7/Mip.md)
