@@ -62,6 +62,65 @@ The function looks complicated, but you only have to really write it once in a f
 ## Decoder
 So, how do we get that array of bytes that represents the texture?
 
+```
+private int LoadGLTexture(string filename, out int width, out int height, bool nearest) {
+    if (string.IsNullOrEmpty(filename)) {
+        Error("Load texture file path was null");
+        throw new ArgumentException(filename);
+    }
+
+    // Generate a handle on the GPU
+    int id = GL.GenTexture();
+    // Bind the handle to the be the active texture.
+    GL.BindTexture(TextureTarget.Texture2D, id);
+
+    // Ming & Mag filters are needed to figure out how to interpolate scaling. If you don't 
+    // provide them the GPU will not draw your texture. Trilinear is the nicest looking,
+    // but most expensive. Linear is kind of standard.
+    if (nearest) {
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
+    }
+    else {
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+    }
+    // Allocate system memory for the image
+    Bitmap bmp = new Bitmap(filename);
+    // Load the image into system memory
+    BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+    // If the texture is non POT, or bigger than 2048 warn the user so they can fix
+    // the texutre during development
+    if (!IsPowerOfTwo(bmp.Width)) {
+        Warning("Texture width non power of two: " + filename);
+    }
+
+    if (!IsPowerOfTwo(bmp.Height)) {
+        Warning("Texture height  non power of two: " + filename);
+    }
+
+    if (bmp.Width > 2048) {
+        Warning("Texture width > 2048: " + filename);
+    }
+
+    if (bmp.Height > 2048) {
+        Warning("Texture height > 2048: " + filename);
+    }
+
+    // Upload the image data to the GPU
+    GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.Short, bmp_data.Scan0);
+    
+    // Mark system memory eligable for GC
+    bmp.UnlockBits(bmp_data);
+
+    // Return the textures width, height and GPU ID
+    width = bmp.Width;
+    height = bmp.Height;
+    return id;
+}
+```
+
 ## So far
 
 
