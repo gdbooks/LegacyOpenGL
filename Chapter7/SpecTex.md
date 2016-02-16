@@ -38,6 +38,20 @@ Let's break each argument down
 * int height
   * Specifies the height of the texture being loaded
   * Remember, you should be using a power of 2!
+* int border
+  * Specifies a memory border, NOT a pixel border
+  * When written to OpenGL throws an error 
+  * THIS MUST BE 0 (I don't know why they included this paramater)
+* PixelFormat sourceFormat
+  * Spefifies how the source data is laid out 
+  * Values are Argb, Bgra, Rgb, Alpha, etc... 
+* PixelType sourceType
+  * Specifies what data type we are storing the source as
+  * Most often this will be an unsigned byte, values are:
+    * PixelType.UnsignedByte
+    * PixelType.Short
+    * PixelType.Int
+  * There are more types, but those are the 3 you will most often use 
 
 Explain arguments
 
