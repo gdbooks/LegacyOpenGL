@@ -7,13 +7,14 @@ The process of getting a texture into GPU memory is fairly straight forward.
 
 * First, you must have the texture object you want to fill with data bound. 
 * Read the texture data into CPU memory.
-* Upload to the GPU with ``` ```
+* Upload to the GPU with ```GL.TexImage2D```
 * At this point, you can manually delete CPU memory
     * Or let the garbage collector do it, depends on how you loaded the texture
 
-The ``` ``` function is fairly straight forward
+The ```GL.TexImage2D``` function is fairly straight forward, but it does have a lot of arguments
 
 ```
+            (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bmp_data.Scan0);
 
 ```
 
