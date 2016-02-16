@@ -57,7 +57,7 @@ Let's break each argument down
   * It can point to any array of numeric data (int[], byte[], etc...)
   * This is a long, single dimensional array containing the pixels to upload to the GPU
 
-Explain arguments
+The function looks complicated, but you only have to really write it once in a friendly wrapper. After calling this function, you can discard the pixel data you are holding onto on the CPU, as the function will have uploaded it to the GPU
 
 So, how do we get that array of bytes that represents the texture?
 
