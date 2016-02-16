@@ -42,16 +42,20 @@ Let's break each argument down
   * Specifies a memory border, NOT a pixel border
   * When written to OpenGL throws an error 
   * THIS MUST BE 0 (I don't know why they included this paramater)
-* PixelFormat sourceFormat
+* __PixelFormat sourceFormat__
   * Spefifies how the source data is laid out 
   * Values are Argb, Bgra, Rgb, Alpha, etc... 
-* PixelType sourceType
+* __PixelType sourceType__
   * Specifies what data type we are storing the source as
   * Most often this will be an unsigned byte, values are:
     * PixelType.UnsignedByte
     * PixelType.Short
     * PixelType.Int
   * There are more types, but those are the 3 you will most often use 
+* __IntPtr data__
+  * An IntPtr is an unsafe data type
+  * It can point to any array of numeric data (int[], byte[], etc...)
+  * This is a long, single dimensional array containing the pixels to upload to the GPU
 
 Explain arguments
 
