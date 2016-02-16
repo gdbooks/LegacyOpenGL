@@ -32,7 +32,12 @@ Let's break each argument down
     * ```PixelInternalFormat.Rgb```
     * ```PixelInternalFormat.Alpha```
   * There are other options, but they are not useful for games. 
-
+* int width
+  * Specifies the width of the texture being loaded
+  * Remember, you should be using a power of 2!
+* int height
+  * Specifies the height of the texture being loaded
+  * Remember, you should be using a power of 2!
 
 Explain arguments
 
