@@ -14,9 +14,25 @@ The process of getting a texture into GPU memory is fairly straight forward.
 The ```GL.TexImage2D``` function is fairly straight forward, but it does have a lot of arguments
 
 ```
-            (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bmp_data.Scan0);
-
+GL.TexImage2D(TextureTarget target, int level, PixelInternalFormat internalFormat, int width, int height, int border, PixelFormat sourceFormat, PixelType sourceType, IntPtr data)
 ```
+
+Let's break each argument down
+* TextureTarget target
+  * Which texture are we loading data into? Texture1D, Texture2D, etc..
+  * Most often (99% of the time) this will be ```TextureTarget.Texture2D```
+* int level
+  * Specifies how many levels of detail the image has. 
+  * Level 0 is the base, each additional level is a new mip-map
+  * We will cover mip-maps later. For now, keep this at 0
+* PixelInternalFormat internalFormat
+  * Specifies what the image is formatted for, Color, Light, etc..
+  * 99% of the time you will use: ```PixelInternalFormat.Rgba```
+  * The other two that we use are:
+    * ```PixelInternalFormat.Rgb```
+    * ```PixelInternalFormat.Alpha```
+  * There are other options, but they are not useful for games. 
+
 
 Explain arguments
 
