@@ -127,7 +127,7 @@ int GetWidth(int textureId) {
 }
 ```
 
-But just storing the width / height at load time is much easyer and much more performatn!
+But just storing the width / height at load time is much easyer and much more performant!
 
 ## So far
 
