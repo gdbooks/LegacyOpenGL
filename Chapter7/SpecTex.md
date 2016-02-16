@@ -59,6 +59,7 @@ Let's break each argument down
 
 The function looks complicated, but you only have to really write it once in a friendly wrapper. After calling this function, you can discard the pixel data you are holding onto on the CPU, as the function will have uploaded it to the GPU
 
+## Decoder
 So, how do we get that array of bytes that represents the texture?
 
 ## So far
