@@ -18,27 +18,27 @@ GL.TexImage2D(TextureTarget target, int level, PixelInternalFormat internalForma
 ```
 
 Let's break each argument down
-* TextureTarget target
+* __TextureTarget target__
   * Which texture are we loading data into? Texture1D, Texture2D, etc..
   * Most often (99% of the time) this will be ```TextureTarget.Texture2D```
-* int level
+* __int level__
   * Specifies how many levels of detail the image has. 
   * Level 0 is the base, each additional level is a new mip-map
   * We will cover mip-maps later. For now, keep this at 0
-* PixelInternalFormat internalFormat
+* __PixelInternalFormat internalFormat__
   * Specifies what the image is formatted for, Color, Light, etc..
   * 99% of the time you will use: ```PixelInternalFormat.Rgba```
   * The other two that we use are:
     * ```PixelInternalFormat.Rgb```
     * ```PixelInternalFormat.Alpha```
   * There are other options, but they are not useful for games. 
-* int width
+* __int width__
   * Specifies the width of the texture being loaded
   * Remember, you should be using a power of 2!
-* int height
+* __int height__
   * Specifies the height of the texture being loaded
   * Remember, you should be using a power of 2!
-* int border
+* __int border__
   * Specifies a memory border, NOT a pixel border
   * When written to OpenGL throws an error 
   * THIS MUST BE 0 (I don't know why they included this paramater)
