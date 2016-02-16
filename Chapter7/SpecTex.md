@@ -115,6 +115,19 @@ int texHeight = -1;
 int texHandle = LoadGLTexture("File.png", out texWidth, out texHeight);
 ```
 
+## So far
+
+Reading the above code, you will notice that we've wrapped not only ```GL.TexImage2D```, but also ```GL.GenTexture``` and ```GL.BindTexture``` into the ```LoadGLTexture``` helper function. So, our code to load (and eventually display) a texture becomes:
+
+```
+// Enable Texturing
+GL.Enable(EnableCap.Texture2D);
+// Generate a texture handle, bind it and load it with data
+int width = -1;
+int height = -1;
+int handle = LoadGLTexture(file.png, out width, out height);
+```
+
 ## Width & Height
 By far the easyest way to obtain the width and height of a texture is to store it at the time of loading that texture. However, you don't HAVE to do it this way. You can get the width or height of a texture anytime with the ``` ``` function.
 
@@ -128,17 +141,6 @@ int GetWidth(int textureId) {
 ```
 
 But just storing the width / height at load time is much easyer and much more performant!
-
-## So far
-
-```
-// Enable Texturing
-GL.Enable(EnableCap.Texture2D);
-// Generate a texture handle, bind it and load it with data
-int width = -1;
-int height = -1;
-int handle = LoadGLTexture(file.png, out width, out height);
-```
 
 ## Other loading methods
 The method we used to load textures here is by far the simplest. It relies on Windows to decode texture files for us. Sometimes, this isn't an option tough. For example, on an iPhone. So, how can we decode textures on non-windows platforms?
