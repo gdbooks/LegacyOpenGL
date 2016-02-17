@@ -66,4 +66,57 @@ GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, 
 
 ## Load Texture
 
-Let's retrofit setting the min and mag filters into the 
+Let's retrofit setting the min and mag filters into the ```LoadGLTexture``` function we wrote in the last section. We're going to take advantage of the fact that both min and mag filters tend to be set to the same value by simply adding one new argument to the function.
+
+This new argument, __bool nearest__ if true will make the function use nearest filtering. If false, it will use bilinear.
+
+```
+private int LoadGLTexture(string filename, out int width, out int height, bool nearest) {
+    if (string.IsNullOrEmpty(filename)) {
+        Error("Load texture file path was null");
+        throw new ArgumentException(filename);
+    }
+
+    // Generate a handle on the GPU
+    int id = GL.GenTexture();
+    
+    // Bind the handle to the be the active texture.
+    GL.BindTexture(TextureTarget.Texture2D, id);
+    
+    ///////////////////////////////////////////////
+    // THIS IS NEW
+    Set appropriate filters
+    if (nearest) {
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
+    }
+    else {
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+    }
+    ///////////////////////////////////////////////
+
+    // Allocate CPU system memory for the image
+    // This will load the encoded texture into CPU memory
+    Bitmap bmp = new Bitmap(filename);
+    
+    // Decode the image data and store the byte array into CPU memory
+    BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+    /* TODO: 
+     *    Check bmp.Width and bmp.Height, if they are not a power
+     *    of two, throw an error
+    */
+
+    // Upload the image data to the GPU
+    GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.Short, bmp_data.Scan0);
+    
+    // Mark CPU memory eligable for GC, disposing it
+    bmp.UnlockBits(bmp_data);
+
+    // Return the textures width, height and GPU ID
+    width = bmp.Width;
+    height = bmp.Height;
+    return id;
+}
+```
