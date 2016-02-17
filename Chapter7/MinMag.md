@@ -123,4 +123,10 @@ private int LoadGLTexture(string filename, out int width, out int height, bool n
 
 In this example we set the texture filter after the texture was bound, but before it is filled with data. So long as the texture is bound, we can set its filtering mode any time, you don't HAVE to set it before it is filled with data. As a matter of fact, you can change this during runtime!
 
-However it's considered best practice to set the filtering before filling a texture with data, and changing the filtering at runtime has a MUCH higher performance penalty than just having a second, duplicate texture with different filtering. So, follow the above convention
+However it's considered best practice to set the filtering before filling a texture with data, and changing the filtering at runtime has a MUCH higher performance penalty than just having a second, duplicate texture with different filtering. So, follow the above convention.
+
+## Done loading
+
+Wow, that's it. This image is now ready to be displayed! In general you will want to load all your images in an initialize function, delete them all in a shutdown function and draw them all in a render function.
+
+We've finally gone trough all the code required in the inialize section of your application. Let's take a look at what is involved in deleting texutres on shutdown before we actually render anything!
