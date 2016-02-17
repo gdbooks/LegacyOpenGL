@@ -41,3 +41,6 @@ In contrast 3D games tend to use bilinear filtering. Because the world is smooth
 
 There are of course exceptions. Minecraft for instance uses nearest neighbor filtering despite being a 3D game. And most Klei games use bilinear filtering, even tough they are 2D games.
 
+## Code
+
+## Load Texture
