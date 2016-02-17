@@ -1,6 +1,8 @@
 # Min and Mag Filters
 We're almost done! We've managed to load some memory onto the GPU at this point, but if we tried to render that memory as a texutre, nothing would show up. This is because our texture loading code neglected to specify min and mag filters. There is a TODO comment section in the function.
 
+Min and mag filters describe to OpenGL what to do when we are trying to render a 256x256 texture on a 512x512 surface, or even a 128x128 surface! There is no clear way to map the pixels of a smaller image to a larger surface or a larger image to a smaller surface. Each approach in handling the problem has it's own ups and downs, so OpenGL lets you pick what to do.
+
 ## What is a Min filter
 
 Min filter is the minification filter. It is applied when an image is zoomed out so far that multiple pixels (texels) on the source image make up a single pixel (fragment) on the display screen. There are two common settings
