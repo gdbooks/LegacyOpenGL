@@ -42,5 +42,28 @@ In contrast 3D games tend to use bilinear filtering. Because the world is smooth
 There are of course exceptions. Minecraft for instance uses nearest neighbor filtering despite being a 3D game. And most Klei games use bilinear filtering, even tough they are 2D games.
 
 ## Code
+Setting the min and mag filters in code is pretty straight forward. You call the ```GL.TexParameter``` function two times, once for the min and once for the mag filters.
+
+```
+GL.TexParameter(TextureTarget target, TextureParameterName param, int value)
+```
+
+The first argument, __target__ is of course which texture this command targets. More often than not the value of this is going to be ```Texture2D```. The second paramater, __param__ is the important one, it tells OpenGL what texture paramater you are setting. We want to set ```TextureMagFilter``` or ```TextureMinFilter```. The last paramater is an integer, this is a bit of a magic number. There is an enumeration ```TextureMagFilter```, you can cast the values of this enum into an int for the last paramater
+
+Knowing what the function looks like, this is how you would go about setting a linear filter
+
+```
+GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
+GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+```
+
+And this is how you would set a nearest filter
+
+```
+GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
+```
 
 ## Load Texture
+
+Let's retrofit setting the min and mag filters into the 
