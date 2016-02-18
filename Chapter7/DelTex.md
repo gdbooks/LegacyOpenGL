@@ -15,7 +15,7 @@ One of them takes a single handle and deletes it, the other takes an array of ha
 
 ## So Far
 
-We're almost ready to draw some textured stuff! Let's recap as to the texturing process so far:
+We're almost ready to draw some textured stuff! Let's recap the texturing process so far:
 
 ```
 int texture1 = -1;
