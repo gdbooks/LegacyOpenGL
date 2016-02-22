@@ -80,7 +80,7 @@ void Initialize() {
     GL.Enable(EnableCap.Texture2D);
     
     // Take note, we store the width and height!
-    textureHandle = LoadGLTexture("file.png", out textureWidth, out height, true);
+    textureHandle = LoadGLTexture("file.png", out textureWidth, out textureHeight, true);
 }
 
 void Render() {
