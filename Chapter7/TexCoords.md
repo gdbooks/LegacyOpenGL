@@ -84,6 +84,11 @@ void Initialize() {
 }
 
 void Render() {
+    float left = 0f;
+    float right = 20f;
+    float top = 0f;
+    float bottom = 10f;
+
     GL.Begin(PrimitiveType.Quads);
         GL.TexCoord2(0, 1);
         GL.Vertex3(left, bottom, 0.0f);
