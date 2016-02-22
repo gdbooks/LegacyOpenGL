@@ -67,6 +67,9 @@ The order in which you define the vertex attributes does not matter so long as A
 
 Most of the time when you specify a texture you will not specify a color. But position and normal will usually be specified for all 3D models. UI and 2D games tend to only use UV-Coords and position.
 
+## So far
+It's not enough to just specify texture coordinates. Texturing must be enabled, 
+
 ## What's next
 Before we move on to the "putting it all together" section where we actually write code i want you to take a peek into the 2DOpenTKFramework we've been using to make 2D games. Specifically, i want you to check out the [TextureManager.cs](https://github.com/gszauer/2DOpenTKFramework/blob/master/2DFramework/Framework/TextureManager.cs) file, it's the one with all the texture goodies. 
 
