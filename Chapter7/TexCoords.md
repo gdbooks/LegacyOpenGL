@@ -92,7 +92,7 @@ void Render() {
     float bottom = 10f;
     
     // We have to bind a valid texture to draw
-    GL.BindTexture(TextureTarget.Texture2D, managedTextures[textureId].glHandle);
+    GL.BindTexture(TextureTarget.Texture2D, textureHandle);
     
     GL.Begin(PrimitiveType.Quads);
         GL.TexCoord2(0, 1);
@@ -107,16 +107,17 @@ void Render() {
         GL.TexCoord2(0, 0); 
         GL.Vertex3(left, top, 0.0f);
     GL.End();
+    
+    // You don't have to do this, but i don't like leaving bound textures
+    GL.BindTexture(TextureTarget.Texture2D, 0);
 }
 
 void Shutdown() {
     // Now that we are done, delete the texture handles!
-    GL.DeleteTexture(texture1);
-    GL.DeleteTexture(texture2);
+    GL.DeleteTexture(textureHandle);
     
-    // And i like to set any int references to invalid values
-    // just so i know that these are no longer usable
-    texture1 = texture2 = -1;
+    // Invalidate references
+    textureHandle = -1;
 }
 ```
 
