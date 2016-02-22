@@ -146,23 +146,42 @@ void Render() {
     GL.BindTexture(TextureTarget.Texture2D, textureHandle);
     
     GL.Begin(PrimitiveType.Quads);
-        GL.TexCoord2(0, 1);
-        GL.Vertex3(left, bottom, 0.0f);
+        GL.TexCoord2(uv_left, uv_bottom);
+        GL.Vertex3(left, bottom, 0f);
         
-        GL.TexCoord2(1, 1); 
-        GL.Vertex3(right, bottom, 0.0f);
+        GL.TexCoord2(uv_right, uv_bottom); 
+        GL.Vertex3(right, bottom, 0f);
         
-        GL.TexCoord2(1, 0); 
-        GL.Vertex3(right, top, 0.0f); 
+        GL.TexCoord2(uv_right, uv_top); 
+        GL.Vertex3(right, top, 0f); 
         
-        GL.TexCoord2(0, 0); 
-        GL.Vertex3(left, top, 0.0f);
+        GL.TexCoord2(uv_left, uv_top); 
+        GL.Vertex3(left, top, 0f);
     GL.End();
     
     // You don't have to do this, but i don't like leaving bound textures
     GL.BindTexture(TextureTarget.Texture2D, 0);
 }
 ```
+
+You will notice in my code that i map the Y axis of my UV-Coordinates in reverse. This is because having (0, 0) on the bottom left makes no sense to me. So i map the UV's in reverse, effectivley putting (0, 0) at the top left of uv-space.
+
+One trick i like to use to avoid dividing twice is reciprical multiplication. This code:
+
+```
+float uv_top = 34f / textureHeight;
+float uv_bottom = 50f / textureHeight;
+```
+
+can be written as
+
+```
+float inverseHeight = 1f / textureHeight;
+float uv_top = 34f * inverseHeight;
+float uv_bottom = 50f * inverseHeight;
+```
+
+The final values of ```uv_top``` and ```uv_bottom``` will be the same, but instead of doing two divisions we now do 1 division and two multiplications. Which is actually faster. Not by a lot, but still faster.
 
 ## What's next
 Before we move on to the "putting it all together" section where we actually write code i want you to take a peek into the 2DOpenTKFramework we've been using to make 2D games. Specifically, i want you to check out the [TextureManager.cs](https://github.com/gszauer/2DOpenTKFramework/blob/master/2DFramework/Framework/TextureManager.cs) file, it's the one with all the texture goodies. 
