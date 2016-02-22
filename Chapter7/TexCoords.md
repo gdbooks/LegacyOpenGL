@@ -84,7 +84,19 @@ void Initialize() {
 }
 
 void Render() {
-    // TODO: Render textures!
+    GL.Begin(PrimitiveType.Quads);
+        GL.TexCoord2(0, 1);
+        GL.Vertex3(left, bottom, 0.0f);
+        
+        GL.TexCoord2(1, 1); 
+        GL.Vertex3(right, bottom, 0.0f);
+        
+        GL.TexCoord2(1, 0); 
+        GL.Vertex3(right, top, 0.0f); 
+        
+        GL.TexCoord2(0, 0); 
+        GL.Vertex3(left, top, 0.0f);
+    GL.End();
 }
 
 void Shutdown() {
