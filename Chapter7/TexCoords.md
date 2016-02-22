@@ -30,11 +30,14 @@ Where S is the U axis and T is the V axis. So, if we wanted for example to draw 
 GL.Begin(PrimitiveType.Quads);
     GL.TexCoord2(0, 1);             // What part of the texture to draw
     GL.Vertex3(left, bottom, 0.0f); // Where on screen to draw it
+    
     GL.TexCoord2(1, 1);             // What part of the texture to draw
     GL.Vertex3(right, bottom, 0.0f);// Where on screen to draw it
+    
     GL.TexCoord2(1, 0);             // What part of the texture to draw
     GL.Vertex3(right, top, 0.0f);   // Where on screen to draw it
+    
     GL.TexCoord2(0, 0);             // What part of the texture to draw
-    GL.Vertex3(left, top, 0.0f);
+    GL.Vertex3(left, top, 0.0f);    // Where on screen to draw it
 GL.End();
 ```
