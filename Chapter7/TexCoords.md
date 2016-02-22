@@ -41,3 +41,11 @@ GL.Begin(PrimitiveType.Quads);
     GL.Vertex3(left, top, 0.0f);    // Where on screen to draw it
 GL.End();
 ```
+
+Notice how i define the UV coordinate before the vertex. You specify whatever attributes a vertex needs, you could even specify all the attributes we've used until now for a single vertex!
+
+```
+GL.Begin(PrimitiveType.Triangles);
+
+GL.End();
+```
