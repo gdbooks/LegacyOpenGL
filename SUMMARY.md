@@ -83,3 +83,5 @@
   * [Putting it all together](Chapter7/Ex1.md)
   * [Mip Mapping](Chapter7/Mip.md)
   * [Texture Paramaters](Chapter7/TexParams.md)
+  * [Textures for UI](Chapter7/ui.md)
+* [Resource Management](Chapter8/README.md) 
