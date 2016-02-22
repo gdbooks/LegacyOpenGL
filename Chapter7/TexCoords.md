@@ -46,6 +46,23 @@ Notice how i define the UV coordinate before the vertex. You specify whatever at
 
 ```
 GL.Begin(PrimitiveType.Triangles);
-
+    GL.TexCoord2(1f, 1f);
+    GL.Normal3(0f, 1f, 0f);
+    GL.Color3(0f, 1f, 0f);
+    GL.Vertex3(0f, 1f, 0f);
+    
+    GL.TexCoord2(1f, 0f);
+    GL.Normal3(0f, 1f, 0f);
+    GL.Color3(1f, 0f, 0f);
+    GL.Vertex3(1f, 0f, 0.0f);
+    
+    GL.TexCoord2(0f, 0f);
+    GL.Normal3(0f, 1f, 0f);
+    GL.Color3(0f, 0f, 1f)
+    GL.Vertex3(-1f, 0f, 0f);
 GL.End();
 ```
+
+The order in which you define the vertex attributes does not matter so long as A) you are consistent within the Begin / End calls and B) the ```GL.Vertex3``` call specifying position comes last. 
+
+Most of the time when you specify a texture you will not specify a color. But position and normal will usually be specified for all 3D models. UI and 2D games tend to only use UV-Coords and position.
