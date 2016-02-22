@@ -15,3 +15,26 @@ What happens when your texture isn't a square? Let's say you have 512x1024. Then
 While we're talking about textures, let's review why a power of two textue is faster on a graphics card. A U-V coordinate doesn't map to a pixel, it maps to a __texel__. As such, each pixel on an image might take up one or more pixels on the actual render target, or no pixels at all. In order to convert texels to pixels, a graphics card must divide by 2.
 
 If you remember WAY back to when we started programming, we briefley talked about bitshifting. Let's take the binary number for 4 for example: ```0000 0100```. If we right shift this by 1 ```>> 1``` the result is two: ```000 0010```. We just achived the same thing as a division by two, except this is about 500 times less expensive than division! This trick only works with powers of two.
+
+## Tex Coords
+
+Alright, enough theory. You can specify texture coordinates for vertices using the ```GL.TexCoord2``` function. This function has the following signature:
+
+```
+GL.TexCoord2(float s, float t);
+```
+
+Where S is the U axis and T is the V axis. So, if we wanted for example to draw a textured quad on screen, we would specify UV coordinates for each vertex, like so:
+
+```
+GL.Begin(PrimitiveType.Quads);
+    GL.TexCoord2(0, 1);             // What part of the texture to draw
+    GL.Vertex3(left, bottom, 0.0f); // Where on screen to draw it
+    GL.TexCoord2(1, 1);             // What part of the texture to draw
+    GL.Vertex3(right, bottom, 0.0f);// Where on screen to draw it
+    GL.TexCoord2(1, 0);             // What part of the texture to draw
+    GL.Vertex3(right, top, 0.0f);   // Where on screen to draw it
+    GL.TexCoord2(0, 0);             // What part of the texture to draw
+    GL.Vertex3(left, top, 0.0f);
+GL.End();
+```
