@@ -122,6 +122,44 @@ void Shutdown() {
 
 That's a lot of code, and it's even more when you consider that all our texture loading code is nicley wrapped up in the ```LoadGLTexture``` function, not shown here. But that's what it takes to draw a textured primitive.
 
+So, let's pretend that the quad we drew is a health bar. And the health bar is on an atlas. Our artist tells us that the UV-Coordinates for this health bar are at top-left:125x34, bottom-right(150, 50). How do we take those pixel coordinates and convert them into UV-coords? 
+
+By __normalizing__ them. That is, divide the X pixel by the width or the imge, and the Y pixel by the height of the image. This will put the pixel coordinates into a normal space. Let's take a look at how we might change the render function to do this:
+
+void Render() {
+    // Normalized uv coordinates, remember we kept a reference
+    float uv_left = 0f;
+    float uv_right = 20f;
+    float uv_top = 0f;
+    float uv_bottom = 10f;
+    
+    // World coordinates of the quad we are drawing
+    float left = 0f;
+    float right = 20f;
+    float top = 0f;
+    float bottom = 10f;
+    
+    // We have to bind a valid texture to draw
+    GL.BindTexture(TextureTarget.Texture2D, textureHandle);
+    
+    GL.Begin(PrimitiveType.Quads);
+        GL.TexCoord2(0, 1);
+        GL.Vertex3(left, bottom, 0.0f);
+        
+        GL.TexCoord2(1, 1); 
+        GL.Vertex3(right, bottom, 0.0f);
+        
+        GL.TexCoord2(1, 0); 
+        GL.Vertex3(right, top, 0.0f); 
+        
+        GL.TexCoord2(0, 0); 
+        GL.Vertex3(left, top, 0.0f);
+    GL.End();
+    
+    // You don't have to do this, but i don't like leaving bound textures
+    GL.BindTexture(TextureTarget.Texture2D, 0);
+}
+
 ## What's next
 Before we move on to the "putting it all together" section where we actually write code i want you to take a peek into the 2DOpenTKFramework we've been using to make 2D games. Specifically, i want you to check out the [TextureManager.cs](https://github.com/gszauer/2DOpenTKFramework/blob/master/2DFramework/Framework/TextureManager.cs) file, it's the one with all the texture goodies. 
 
