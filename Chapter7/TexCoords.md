@@ -72,21 +72,15 @@ It's not enough to just specify texture coordinates. Texturing must be enabled, 
 
 ```
 int texture1 = -1;
-int texture2 = -1;
+int width = -1;
+int height = -1;
 
 void Initialize() {
     // Enable Texturing
     GL.Enable(EnableCap.Texture2D);
     
-    int width = -1;
-    int height = -1;
-    
-    // Load in textures, we don't even care 
-    // about the width / height right now
-    // Be sure to use the version of this 
-    // function that specifies a min & mag filter!
+    // Take note, we store the width and height!
     texture1 = LoadGLTexture("file.png", out width, out height, true);
-    texture2 = LoadGLTexture("file2.png", out width, out height, false);
 }
 
 void Render() {
