@@ -66,3 +66,20 @@ GL.End();
 The order in which you define the vertex attributes does not matter so long as A) you are consistent within the Begin / End calls and B) the ```GL.Vertex3``` call specifying position comes last. 
 
 Most of the time when you specify a texture you will not specify a color. But position and normal will usually be specified for all 3D models. UI and 2D games tend to only use UV-Coords and position.
+
+## What's next
+Before we move on to the "putting it all together" section where we actually write code i want you to take a peek into the 2DOpenTKFramework we've been using to make 2D games. Specifically, i want you to check out the [TextureManager.cs](https://github.com/gszauer/2DOpenTKFramework/blob/master/2DFramework/Framework/TextureManager.cs) file, it's the one with all the texture goodies. 
+
+There is a specific function in there, it takes a texture-id and a screen rectangle. It draws the texture in it's entirety to the screen. The signature of this function is:
+
+```
+public void Draw(int textureId, Point screenPosition)
+```
+
+It's heavily commented, it should be easy to see how it works. If you have a pretty good grasp on how that function works, and feel up to a challenge, take a look at it's cousin with the overrides:
+
+```
+public void Draw(int textureId, Point screenPosition, PointF scale, Rectangle sourceSection)
+```
+
+This function does a bunch of math (mostly multiplication) to convert pixel coordinates on the source texture into normalized texture coordinates.
