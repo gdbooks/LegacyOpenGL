@@ -84,7 +84,6 @@ void Initialize() {
 }
 
 void Render() {
-
     // World coordinates of the quad we are drawing
     float left = 0f;
     float right = 20f;
@@ -120,6 +119,8 @@ void Shutdown() {
     textureHandle = -1;
 }
 ```
+
+That's a lot of code, and it's even more when you consider that all our texture loading code is nicley wrapped up in the ```LoadGLTexture``` function, not shown here. But that's what it takes to draw a textured primitive.
 
 ## What's next
 Before we move on to the "putting it all together" section where we actually write code i want you to take a peek into the 2DOpenTKFramework we've been using to make 2D games. Specifically, i want you to check out the [TextureManager.cs](https://github.com/gszauer/2DOpenTKFramework/blob/master/2DFramework/Framework/TextureManager.cs) file, it's the one with all the texture goodies. 
