@@ -126,12 +126,15 @@ So, let's pretend that the quad we drew is a health bar. And the health bar is o
 
 By __normalizing__ them. That is, divide the X pixel by the width or the imge, and the Y pixel by the height of the image. This will put the pixel coordinates into a normal space. Let's take a look at how we might change the render function to do this:
 
+```
 void Render() {
     // Normalized uv coordinates, remember we kept a reference
-    float uv_left = 0f;
-    float uv_right = 20f;
-    float uv_top = 0f;
-    float uv_bottom = 10f;
+    // to the width and height of the image, returned 
+    // from the LoadGLTexture function.
+    float uv_left = 125f / textureWidth;
+    float uv_right = 150f / textureWidth;
+    float uv_top = 34f / textureHeight;
+    float uv_bottom = 50f / textureHeight;
     
     // World coordinates of the quad we are drawing
     float left = 0f;
@@ -159,6 +162,7 @@ void Render() {
     // You don't have to do this, but i don't like leaving bound textures
     GL.BindTexture(TextureTarget.Texture2D, 0);
 }
+```
 
 ## What's next
 Before we move on to the "putting it all together" section where we actually write code i want you to take a peek into the 2DOpenTKFramework we've been using to make 2D games. Specifically, i want you to check out the [TextureManager.cs](https://github.com/gszauer/2DOpenTKFramework/blob/master/2DFramework/Framework/TextureManager.cs) file, it's the one with all the texture goodies. 
