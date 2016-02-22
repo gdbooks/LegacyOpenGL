@@ -71,24 +71,29 @@ Most of the time when you specify a texture you will not specify a color. But po
 It's not enough to just specify texture coordinates. Texturing must be enabled, and a valid texture must be bound. Let's see some code as to what it takes to draw a textured quad:
 
 ```
-int texture1 = -1;
-int width = -1;
-int height = -1;
+int textureHandle = -1;
+int textureWidth = -1;
+int textureHeight = -1;
 
 void Initialize() {
     // Enable Texturing
     GL.Enable(EnableCap.Texture2D);
     
     // Take note, we store the width and height!
-    texture1 = LoadGLTexture("file.png", out width, out height, true);
+    textureHandle = LoadGLTexture("file.png", out textureWidth, out height, true);
 }
 
 void Render() {
+
+    // World coordinates of the quad we are drawing
     float left = 0f;
     float right = 20f;
     float top = 0f;
     float bottom = 10f;
-
+    
+    // We have to bind a valid texture to draw
+    GL.BindTexture(TextureTarget.Texture2D, managedTextures[textureId].glHandle);
+    
     GL.Begin(PrimitiveType.Quads);
         GL.TexCoord2(0, 1);
         GL.Vertex3(left, bottom, 0.0f);
