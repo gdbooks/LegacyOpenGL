@@ -113,6 +113,9 @@ class Scene {
             // Backup view matrix
             GL.PushMatrix();
             
+            // Apply game object transform
+            GL.MulMatrix(Matrix4.Transpose(worldTransform).Matrix);
+            // Render component
             component.Render();
             
             // Restore view matrix
