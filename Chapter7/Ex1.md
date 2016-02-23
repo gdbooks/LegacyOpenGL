@@ -141,7 +141,9 @@ class Scene {
     }
     
     void SortList(List<RenderCommand> list) {
-    
+        // TODO: Implement bubble sort, 
+        // sort the list using the DistanceToCamera field
+        // of each RenderCommand
     }
     
     List<RenderCommand> CollectTransparent(GameObject object) {
