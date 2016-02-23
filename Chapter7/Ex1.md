@@ -107,6 +107,7 @@ class Scene {
     protected class RenderCommand {
         MeshRenderer component;
         Matrix worldTransform;
+        float DistanceToCamera;
         
         public void Execute() {
             component.Render();
