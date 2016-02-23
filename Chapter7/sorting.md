@@ -47,10 +47,11 @@ class MeshRenderer : Component {
                 }
                 
                 if (uvs != null && textureHandle != -1) {
-                    GL.TexCoord2(
+                    GL.TexCoord2(uvs[i].x, uvs[i].y);
                 }
+                
+                GL.Vertex3(vertices[i].x, vertices[i].y, vertices[i].z);
             }
-            
         GL.End();
         
         // Disable texturing if it was enabled
