@@ -11,6 +11,30 @@ When reading this remember, you can render solid objects in any order. The Z-Buf
 
 Game Objects only need to be sorted when they are rendered with transperancy! And even then, it's advised to render in two passes. First, render the solid objects, next render the transparent ones.
 
+## The Component (and render component)
+We're going to use a fairly simple component base class
+
+```
+class Component {
+    GameObject owner;
+    
+    public virtual void Render() { }
+    public virtual void Update(float deltaTime) { }
+}
+```
+
+And the render component is going to be pretty simple too
+
+```
+class MeshRenderer : Component {
+    public int textureHandle;
+    public bool UsingAlpha; // Set if object is transparent
+    
+    public override void Render() {
+    
+    }
+}
+
 ## The Game Object
 
 For this example, let's assume we have a super simple 3D game object class. The class is going to be super minimal for this example, it's going to have a list of components, a list of children, a potential parent and a 3D transform (a matrix).
