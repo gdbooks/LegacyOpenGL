@@ -130,6 +130,8 @@ class Scene {
     }
     
     List<RenderCommand> CollectTransparent(GameObject object) {
+        List<RenderCommand> result = new List<RenderCommand>();
+        
         foreach(Component component in object.Components) {
             if (component is MeshRenderer) {
                 MeshRenderer renderer = component as MeshRenderer;
