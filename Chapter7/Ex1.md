@@ -140,7 +140,15 @@ class Scene {
                     RenderCommand command = new RenderCommand();
                     command.component = renderer;
                     command.worldTransform = object.WorldTransform;
+                    result.Add(command;
                 }
+            }
+        }
+        
+        foreach(GameObject child in object) {
+            List<RenderCommand> childRenderers = CollectTransparent(child);
+            if (childRenderers != null && childRenderers.Count > 0) {
+                result.AddRange(childRenderers);
             }
         }
     }
