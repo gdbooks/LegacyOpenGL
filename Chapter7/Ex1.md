@@ -155,7 +155,17 @@ class Scene {
                     RenderCommand command = new RenderCommand();
                     command.component = renderer;
                     command.worldTransform = object.WorldTransform;
-                    result.Add(command;
+                    
+                    // Find the distance to camera. We do this by taking two points at 0, 0, 0
+                    // Next transform one point to where the camera is
+                    // and the other point to where the game obejct is
+                    // With the transformed vectors, check their difference
+                    
+                    Vector3 cam = Matrix4.Inverse(View) * new Vector3(0, 0, 0);
+                    Vector3 obj = object.WorldTransform * Vector3(0, 0, 0);
+                    command.DistanceToCamera = Vector3.Length(cam - obj);
+                    
+                    result.Add(command);
                 }
             }
         }
