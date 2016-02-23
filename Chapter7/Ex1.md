@@ -127,6 +127,8 @@ class Scene {
             // Each object will load it's own model matrix
             Root.RenderSolid();
         }
+        
+        List<RenderCommand>
     }
     
     List<RenderCommand> CollectTransparent(GameObject object) {
