@@ -134,6 +134,13 @@ class Scene {
         
         // Collect transparent objects
         List<RenderCommand> transparentObjects = CollectTransparent(Root);
+        
+        // Sort the transparent objects
+        SortList(transparentObjects)
+    }
+    
+    void SortList(List<RenderCommand> list) {
+    
     }
     
     List<RenderCommand> CollectTransparent(GameObject object) {
@@ -167,3 +174,5 @@ class Scene {
 It's a lot of code, but our renderer finally has a list of transparent objects. Instead of storing GameObjects i made a helper calss called RenderCommand. We could have just stored objects, then found the render component on those objects later when it's time to draw them, but this is slightly more efficient.
 
 Render commands are also pretty standard in 3D games. Usually even solid objects get grouped into a set of render commands, they are not sorted; but commands only get created for objects that the camera can see. We will talk about this more in detail later.
+
+All that's 
