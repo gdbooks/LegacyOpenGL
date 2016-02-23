@@ -110,7 +110,13 @@ class Scene {
         float DistanceToCamera;
         
         public void Execute() {
+            // Backup view matrix
+            GL.PushMatrix();
+            
             component.Render();
+            
+            // Restore view matrix
+            GL.PopMatrix();
         }
     }
     
