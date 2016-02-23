@@ -86,6 +86,8 @@ class Scene {
     }
     
     public void Render() {
+        GL.LoadMatrix(Matrix4.Transpose(View).Matrix);
+
         if (Root != null) {
             Root.RenderSolid();
         }
