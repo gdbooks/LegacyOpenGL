@@ -14,9 +14,9 @@ Now we know everything we need to know to make a simple textured scene! Nothing 
 
 So far we've been writing all of this rendering code inline, that is whenever we needed to render anything, we just do! The only thing we really wrapped into an object has been the grid.
 
-In the dungeon game objects rendered according to how deep they where in the scene graph. This works for a simple 2D game, but not for a complex 2D game. It would never work on a 3D game. It's pretty advanced, but there is a few [Handmade Hero](https://hero.handmadedev.org/videos/game-architecture/day229.html) episodes on the topic.
+Rendering a 3D game will get complex. A 3D mixes and matches solid and transparent objects sometimes. Altough, if you look at modern 3D games, it doesn't happen a lot. In order to draw transparent objects, you must first draw solid objects, then draw transparent objects based on who is furthest from the camera.
 
-I'll walk you trough how it would normally work. This is not something you need to implement or anything, but it is something to be aware of, as you will need to do this at some point.
+I'll walk you trough how it would normally work. This is not something you need to implement right now, but it is something to be aware of, as you will need to do this at some point.
 
 ## Transparent objects
 When reading this remember, you can render solid objects in any order. The Z-Buffer will make sure that objects get rendered correctly.
