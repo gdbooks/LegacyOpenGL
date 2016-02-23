@@ -31,7 +31,9 @@ class MeshRenderer : Component {
     public bool UsingAlpha; // Set if object is transparent
     
     public override void Render() {
-    
+        if (textureHandle != -1) {
+            
+        }
     }
 }
 
