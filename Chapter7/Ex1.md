@@ -151,6 +151,8 @@ class Scene {
                 result.AddRange(childRenderers);
             }
         }
+        
+        return result;
     }
 }
 ```
