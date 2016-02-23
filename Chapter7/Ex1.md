@@ -21,7 +21,7 @@ I'll walk you trough how it would normally work. This is not something you need 
 ## Transparent objects
 When reading this remember, you can render solid objects in any order. The Z-Buffer will make sure that objects get rendered correctly.
 
-Game Objects only need to be sorted when they are rendered with transperancy!
+Game Objects only need to be sorted when they are rendered with transperancy! And even then, it's advised to render in two passes. First, render the solid objects, next render the transparent ones.
 
 ## The Game Object
 
@@ -43,6 +43,15 @@ class GameObject {
     }
     
     public void Update(float deltaTime) {
+        foreach (Component component in Components) {
+            component.Update(deltaTime);
+        }
+        foreach(GameObject child in Children) {
+            child.Update(deltaTime);
+        }
+    }
+    
+    public void RenderSolid(float deltaTime) {
         foreach (Component component in Components) {
             component.Update(deltaTime);
         }
