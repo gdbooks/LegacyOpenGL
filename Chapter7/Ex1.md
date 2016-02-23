@@ -132,7 +132,7 @@ class Scene {
             Root.RenderSolid();
         }
         
-        List<RenderCommand>
+        List<RenderCommand> transparentObjects = CollectTransparent(Root);
     }
     
     List<RenderCommand> CollectTransparent(GameObject object) {
