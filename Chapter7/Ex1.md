@@ -100,4 +100,47 @@ class Scene {
 This will render all solid objects in the scene. Now, let's see what we need to do to render transparent objects!
 
 ## Rendering transparent objects
-The thing you have probably noticed is we don't have a Render function in the scene, or the game object! This is because we can't just recursivley render objects. Well, we technically could, and the Z-Buffer would take care of the display. But if we want to render transparent object, they must be sorted!
+In order to render transparent objects, we have to do a 2 step process. First, we need to collect all transparent object. Then, we need to sort them based on distance to camera. I'm going to make a new class (a protected helper of scene) and create a method to collect all transparent objects
+
+```
+class Scene {
+    protected class RenderCommand {
+        MeshRenderer component;
+        Matrix worldTransform;
+    }
+    
+    public string Name;
+    public GameObject Root;
+    public Matrix View;
+    
+    public void Update(float deltaTime) {
+        if (Root != null) {
+            Root.Update(deltaTime);
+        }
+    }
+    
+    public void Render() {
+        // load the view matrix
+        GL.LoadMatrix(Matrix4.Transpose(View).Matrix);
+
+        if (Root != null) {
+            // Each object will load it's own model matrix
+            Root.RenderSolid();
+        }
+    }
+    
+    List<RenderCommand> CollectTransparent(GameObject object) {
+        foreach(Component component in object.Components) {
+            if (component is MeshRenderer) {
+                MeshRenderer renderer = component as MeshRenderer;
+                
+                if (renderer.UsingAlpha) {
+                    RenderCommand command = new RenderCommand();
+                    command.component = renderer;
+                    command.worldTransform = object.WorldTransform;
+                }
+            }
+        }
+    }
+}
+```
