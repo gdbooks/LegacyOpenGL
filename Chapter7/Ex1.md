@@ -86,9 +86,11 @@ class Scene {
     }
     
     public void Render() {
+        // load the view matrix
         GL.LoadMatrix(Matrix4.Transpose(View).Matrix);
 
         if (Root != null) {
+            // Each object will load it's own model matrix
             Root.RenderSolid();
         }
     }
