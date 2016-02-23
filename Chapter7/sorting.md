@@ -23,19 +23,43 @@ class Component {
 }
 ```
 
-And the render component is going to be pretty simple too
+And the render component is going to be pretty simple too. It will however need to do some logic to see if a model is textured, or has normals.
 
 ```
 class MeshRenderer : Component {
     public int textureHandle;
     public bool UsingAlpha; // Set if object is transparent
     
+    protected List<Vector3> vertices;
+    protected List<Vector3> normals;
+    protected List<Vector2> uvs;
+    
     public override void Render() {
+        // Enable texturing if we use it
         if (textureHandle != -1) {
+            GL.Enable(EnableCaps.Texture2D);
+        }
+        
+        GL.Begin(PrimitiveType.Triangles);
+            for (int i = 0; i < vertices.Count; ++i) {
+                if (normals != null) {
+                    GL.Normal3(normals[i].x, normals[i].y, normals[i].z);
+                }
+                
+                if (uvs != null && textureHandle != -1) {
+                    GL.TexCoord2(
+                }
+            }
             
+        GL.End();
+        
+        // Disable texturing if it was enabled
+        if (textureHandle != -1) {
+            GL.Disable(EnableCaps.Texture2D);
         }
     }
 }
+```
 
 ## The Game Object
 
