@@ -56,7 +56,17 @@ class GameObject {
             if (component is MeshRenderer) {
                 MeshRenderer renderer = component as MeshRenderer;
                 if (!renderer.UsingAlpha) {
+                    // Backup view matrix
+                    GL.PushMatrix();
+                    
+                    // Apply game object transform
+                    GL.MulMatrix(Matrix4.Transpose(WorldTransform).Matrix);
+                    
+                    // Render the object
                     component.Render();
+                    
+                    // Restore view matrix
+                    GL.PopMatrix();
                 }
             }
         }
