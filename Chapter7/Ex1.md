@@ -202,4 +202,4 @@ It's a lot of code, but our renderer finally has a list of transparent objects. 
 
 Render commands are also pretty standard in 3D games. Usually even solid objects get grouped into a set of render commands, they are not sorted; but commands only get created for objects that the camera can see. We will talk about this more in detail later.
 
-All that's 
+Once we have a list of render commands, you need to sort them based on distance to camera. You can use whatever sort you like. Then, in the correct back to front order, render all the game objects.
