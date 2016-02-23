@@ -93,5 +93,7 @@ class Scene {
 }
 ```
 
+This will render all solid objects in the scene. Now, let's see what we need to do to render transparent objects!
+
 ## Rendering transparent objects
 The thing you have probably noticed is we don't have a Render function in the scene, or the game object! This is because we can't just recursivley render objects. Well, we technically could, and the Z-Buffer would take care of the display. But if we want to render transparent object, they must be sorted!
