@@ -51,12 +51,17 @@ class GameObject {
         }
     }
     
-    public void RenderSolid(float deltaTime) {
+    public void RenderSolid() {
         foreach (Component component in Components) {
-            component.Update(deltaTime);
+            if (component is MeshRenderer) {
+                MeshRenderer renderer = component as MeshRenderer;
+                if (!renderer.UsingAlpha) {
+                    component.Render();
+                }
+            }
         }
         foreach(GameObject child in Children) {
-            child.Update(deltaTime);
+            child.RenderSolid();
         }
     }
 }
@@ -79,8 +84,14 @@ class Scene {
             Root.Update(deltaTime);
         }
     }
+    
+    public void Render() {
+        if (Root != null) {
+            Root.RenderSolid();
+        }
+    }
 }
 ```
 
-## Rendering
+## Rendering transparent objects
 The thing you have probably noticed is we don't have a Render function in the scene, or the game object! This is because we can't just recursivley render objects. Well, we technically could, and the Z-Buffer would take care of the display. But if we want to render transparent object, they must be sorted!
