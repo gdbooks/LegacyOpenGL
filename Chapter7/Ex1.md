@@ -145,8 +145,13 @@ class Scene {
         // Collect transparent objects
         List<RenderCommand> transparentObjects = CollectTransparent(Root);
         
-        // Sort the transparent objects
-        SortList(transparentObjects)
+        // Sort the transparent objects back to front
+        SortList(transparentObjects);
+        
+        // Finally, render all transparent objects, back to front
+        foreach (RenderCommand command in transparentObjects) {
+            command.Execute();
+        }
     }
     
     void SortList(List<RenderCommand> list) {
