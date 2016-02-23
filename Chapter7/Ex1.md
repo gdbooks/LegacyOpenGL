@@ -107,6 +107,10 @@ class Scene {
     protected class RenderCommand {
         MeshRenderer component;
         Matrix worldTransform;
+        
+        public void Execute() {
+            component.Render();
+        }
     }
     
     public string Name;
