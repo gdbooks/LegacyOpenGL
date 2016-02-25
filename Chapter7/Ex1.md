@@ -59,6 +59,8 @@ At this point, the test scene should look like this:
 
 ![TEX1](tex1.png)
 
+Now, lets add two quads to the scene, these are the quads we will be texturing later on.  I'm going to name each quad in comments, but the closer one is **Q1** and the further one is **Q2**
+
 ## On your Own
 
 ## Adding some detail
