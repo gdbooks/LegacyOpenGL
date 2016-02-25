@@ -99,7 +99,8 @@ private int LoadGLTexture(string filename, out int width, out int height) {
     
     // Mark CPU memory eligable for GC, disposing it
     bmp.UnlockBits(bmp_data);
-
+    bmp.Dispose();
+    
     // Return the textures width, height and GPU ID
     width = bmp.Width;
     height = bmp.Height;
