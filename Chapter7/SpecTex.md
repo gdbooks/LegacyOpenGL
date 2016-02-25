@@ -48,7 +48,7 @@ Let's break each argument down
 * __PixelType sourceType__
   * Specifies what data type we are storing the source as
   * Most often this will be an unsigned byte, values are:
-    * PixelType.UnsignedByte
+    * **PixelType.UnsignedByte**
     * PixelType.Short
     * PixelType.Int
   * There are more types, but those are the 3 you will most often use 
@@ -95,7 +95,7 @@ private int LoadGLTexture(string filename, out int width, out int height) {
     */
 
     // Upload the image data to the GPU
-    GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.Short, bmp_data.Scan0);
+    GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bmp_data.Scan0);
     
     // Mark CPU memory eligable for GC, disposing it
     bmp.UnlockBits(bmp_data);
