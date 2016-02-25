@@ -106,6 +106,7 @@ We are going to do everything inline for now, so no LoadTexture helper function.
 * In initialize, generate a texture handle
   * Assign the result to the member variable you created earlyer 
 * In initialize, bind the new texture handle 
+* In initialize, set the min and mag filters to linear
 
 ## Adding some detail
 
