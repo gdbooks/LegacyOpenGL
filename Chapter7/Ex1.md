@@ -115,7 +115,9 @@ We are going to do everything inline for now, so no LoadTexture helper function.
   * You MUST do this before GL.Begin
 * In Render, add UV coordinates to each vertex 
 
-Running your game should in theory work. Mine is broken, i get an exception for GL.TexImage2D. Have not been able to solve it yet. Let me know what happens for you!
+Running your game should show the textured quad. It should look like this:
+
+![TEX3](tex3.png)
 
 ## Adding some detail
 
