@@ -106,7 +106,9 @@ We are going to do everything inline for now, so no LoadTexture helper function.
   * Assign the result to the member variable you created earlyer 
 * In initialize, bind the new texture handle 
 * In initialize, set the min and mag filters to linear
-* In initialize, load the texture into the 
+* In initialize, load the texture data into the handle
+  * This can be done in 4 lines of code, again no helper function
+  * If you get stuck, look at the "Loading Help" sub page
 
 ## Adding some detail
 
