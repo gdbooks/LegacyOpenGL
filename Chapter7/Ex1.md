@@ -9,10 +9,8 @@ The name of this new test scene will be ```TexturedPlanes```, so create it in a 
 So, we're going to need to make a member grid, inside the intialize function we will make a new grid. Also inside of initialize we need to enable depth testing for a proper depth buffer, as well as face culling. The shutdown function is going to stay empty for now.
 
 ```cs
-using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Collections.Generic;
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
 
