@@ -74,20 +74,20 @@ Modify the Render function, by adding this code at it's end:
 GL.Color3(1f, 1f, 1f);
 GL.Begin(PrimitiveType.Triangles);
 
-GL.Vertex3(1, 3,  1); // Top Right
-GL.Vertex3(1, 3, -1); // Top Let
-GL.Vertex3(1, 0, -1); // Bottom Left
+GL.Vertex3(1, 4,  2); // Top Right
+GL.Vertex3(1, 4, -2); // Top Let
+GL.Vertex3(1, 0, -2); // Bottom Left
 
-GL.Vertex3(1, 3,  1); // Top Right
-GL.Vertex3(1, 0, -1); // Bottom Left
-GL.Vertex3(1, 0,  1); // Bottom Right
+GL.Vertex3(1, 4,  2); // Top Right
+GL.Vertex3(1, 0, -2); // Bottom Left
+GL.Vertex3(1, 0,  2); // Bottom Right
 
 GL.End();
 ```
 
 Your scene should now look like this:
 
-
+![TEX2](tex2.png)
 
 ## On your Own
 
