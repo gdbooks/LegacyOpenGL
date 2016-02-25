@@ -115,6 +115,8 @@ We are going to do everything inline for now, so no LoadTexture helper function.
   * You MUST do this before GL.Begin
 * In Render, add UV coordinates to each vertex 
 
+Running your game should in theory work. Mine is broken, i get an exception for GL.TexImage2D. Have not been able to solve it yet. Let me know what happens for you!
+
 ## Adding some detail
 
 ## On Your Own
