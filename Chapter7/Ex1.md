@@ -11,6 +11,7 @@ So, we're going to need to make a member grid, inside the intialize function we 
 ```cs
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Collections.Generic;
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
