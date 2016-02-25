@@ -100,8 +100,11 @@ Remember, you have to set visual studio's working directory to one above the ass
 
 We are going to do everything inline for now, so no LoadTexture helper function. Back to our code, do the following:
 
+* Make a new integer member variable
+  * This is going to be a texture handle
 * In initialize, enable texturing
-* Make a member variable (int), this is going to be a texture handle
+* In initialize, generate a texture handle
+  * Assign the result to the member variable you created earlyer 
 
 ## Adding some detail
 
