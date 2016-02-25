@@ -109,7 +109,7 @@ private int LoadGLTexture(string filename, out int width, out int height, bool n
     */
 
     // Upload the image data to the GPU
-    GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.Short, bmp_data.Scan0);
+    GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bmp_data.Scan0);
     
     // Mark CPU memory eligable for GC, disposing it
     bmp.UnlockBits(bmp_data);
