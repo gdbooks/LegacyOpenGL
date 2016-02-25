@@ -105,7 +105,7 @@ We are going to do everything inline for now, so no LoadTexture helper function.
 * In initialize, enable texturing
 * In initialize, generate a texture handle
   * Assign the result to the member variable you created earlyer 
-* In initialize, Bind the new texture handle 
+* In initialize, bind the new texture handle 
 
 ## Adding some detail
 
