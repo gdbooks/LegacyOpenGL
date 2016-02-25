@@ -4,7 +4,9 @@ Now we know everything we need to know to make a simple textured scene! Nothing 
 
 ## Putting together the test scene
 
-The name of this new test scene will be ```TexturedPlanes```, so create it in a file called **TexturedPlanes.cs**. The initialize function for now will not need to do anything. Neither will the shutdown.
+The name of this new test scene will be ```TexturedPlanes```, so create it in a file called **TexturedPlanes.cs**. For the last few examples, they have all extended a sample scene, not the empty game scene. I want to make sure we start from scratch here, notice that the ```TexturedPlanes``` class extends the ```Game``` scene, not the ```LightingExample``` class like the lighting examples before this.
+
+So, we're going to need to make a member grid, inside the intialize function we will make a new grid. Also inside of initialize we need to enable depth testing for a proper depth buffer, as well as face culling. The shutdown function is going to stay empty for now.
 
 ```cs
 using System;
@@ -14,9 +16,14 @@ using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
 
 namespace GameApplication {
-    class TexturedPlanes : LightingExample {
+    class TexturedPlanes : Game {
+        protected Grid grid = null;
+
         public override void Initialize() {
             base.Initialize();
+            grid = new Grid(true);
+            GL.Enable(EnableCap.DepthTest);
+            GL.Enable(EnableCap.CullFace);
         }
         
         public override void Shutdown() {
@@ -59,8 +66,24 @@ At this point, the test scene should look like this:
 
 ![TEX1](tex1.png)
 
-Now, lets add two quads to the scene, these are the quads we will be texturing later on.  I'm going to name each quad in comments, but the closer one is **Q1** and the further one is **Q2**
+Now, let's add a quad to the scene that is to be rendered. We are going to draw this quad using two triangles. I'll make sure to comment the code to specify which vertex is which corner of the quad. Because we use two triangles, two of the corners will be defined twice. 
 
+Modify the Render function, by adding this code at it's end:
+
+```cs
+GL.Color3(1f, 1f, 1f);
+GL.Begin(PrimitiveType.Triangles);
+
+GL.Vertex3(1, 3,  1); // Top Right
+GL.Vertex3(1, 3, -1); // Top Let
+GL.Vertex3(1, 0, -1); // Bottom Left
+
+GL.Vertex3(1, 3,  1); // Top Right
+GL.Vertex3(1, 0, -1); // Bottom Left
+GL.Vertex3(1, 0,  1); // Bottom Right
+
+GL.End();
+```
 ## On your Own
 
 ## Adding some detail
