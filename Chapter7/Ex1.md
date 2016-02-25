@@ -57,7 +57,7 @@ Finally the resize function is going to set the viewport and load an updated pro
 
 At this point, the test scene should look like this:
 
-
+![TEX1](tex1.png)
 
 ## On your Own
 
