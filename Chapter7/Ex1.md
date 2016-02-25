@@ -37,7 +37,8 @@ The render function is going to set the camera at position (-7, 5, -7), looking 
         public override void Render() {
             Matrix4 lookAt = Matrix4.LookAt(new Vector3(-7.0f, 5.0f, -7.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
             GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
-
+            
+            GL.Disable
             GL.Disable(EnableCap.DepthTest);
             GL.Disable(EnableCap.Lighting);
             grid.Render();
