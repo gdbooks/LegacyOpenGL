@@ -84,6 +84,11 @@ GL.Vertex3(1, 0,  1); // Bottom Right
 
 GL.End();
 ```
+
+Your scene should now look like this:
+
+
+
 ## On your Own
 
 ## Adding some detail
