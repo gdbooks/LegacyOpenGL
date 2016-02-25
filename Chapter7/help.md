@@ -15,4 +15,4 @@ Three of these 4 lines are just fillers. This is the only line that matters:
 GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.Short, bmp_data.Scan0);
 ```
 
-Make sure you understand the paramaters of the ```GL.TexImage2D``` function, as it is what uploads the large array of pixel data to the HPU
+Make sure you understand the paramaters of the ```GL.TexImage2D``` function, as it is what uploads the large array of pixel data to the GPU
