@@ -31,7 +31,9 @@ namespace GameApplication {
         }
 ```
 
-The render function is going to set the camera at position (-7, 5, -7), looking at point (0, 0, 0). So we are going to load the appropriate view matrix. Then we're going to render our standard grid background.
+The render function is going to set the camera at position (-7, 5, -7), looking at point (0, 0, 0). So we are going to load the appropriate view matrix. 
+
+Then we're going to render our standard grid background. Take note, when we draw the grid we disable texturing, then re-enable texturing. This is because the grid color should come from GL.Color3, not the active texture.
 
 ```cs
         public override void Render() {
@@ -40,9 +42,7 @@ The render function is going to set the camera at position (-7, 5, -7), looking 
             
             GL.Disable(EnableCap.Texture2D);
             GL.Disable(EnableCap.DepthTest);
-            GL.Disable(EnableCap.Lighting);
             grid.Render();
-            GL.Enable(EnableCap.Lighting);
             GL.Enable(EnableCap.DepthTest);
             GL.Enable(EnableCap.Texture2D);
         }
