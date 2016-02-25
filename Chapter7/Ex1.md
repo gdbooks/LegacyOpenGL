@@ -91,6 +91,12 @@ Your scene should now look like this:
 
 ## On your Own
 
+First, make an assets directory and save this image into it:
+
+![CRAZY TAXI](crazy_taxi.png)
+
+Remember, you have to set visual studio's execution directory to one above the asset directory for loading resources! Just like with the 2D games.
+
 ## Adding some detail
 
 ## On Your Own
