@@ -111,6 +111,9 @@ We are going to do everything inline for now, so no LoadTexture helper function.
   * If you get stuck, look at the "Loading Help" sub page
 * In shutdown, delete the texture handle
   * Remember to unbind it first! 
+* In render, bind the texture handle before drawing the quad
+  * You MUST do this before GL.Begin
+* In Render, add UV coordinates to each vertex 
 
 ## Adding some detail
 
