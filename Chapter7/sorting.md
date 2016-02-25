@@ -14,7 +14,7 @@ Game Objects only need to be sorted when they are rendered with transperancy! An
 ## The Component (and render component)
 We're going to use a fairly simple component base class
 
-```
+```cs
 class Component {
     GameObject owner;
     
@@ -25,7 +25,7 @@ class Component {
 
 And the render component is going to be pretty simple too. It will however need to do some logic to see if a model is textured, or has normals.
 
-```
+```cs
 class MeshRenderer : Component {
     public int textureHandle;
     public bool UsingAlpha; // Set if object is transparent
@@ -66,7 +66,7 @@ class MeshRenderer : Component {
 
 For this example, let's assume we have a super simple 3D game object class. The class is going to be super minimal for this example, it's going to have a list of components, a list of children, a potential parent and a 3D transform (a matrix).
 
-```
+```cs
 class GameObject {
     public string Name;
     public List<Component> Components;
@@ -122,7 +122,7 @@ The scene class, is going to for the most part be what we are used to, a root ga
 
 Remember, you can get the world position of the camera (the viewer) by taking the inverse of the view matrix. And you can get the view matrix by taking the inverse of the world position of the camera matrix.
 
-```
+```cs
 class Scene {
     public string Name;
     public GameObject Root;
@@ -151,7 +151,7 @@ This will render all solid objects in the scene. Now, let's see what we need to 
 ## Rendering transparent objects
 In order to render transparent objects, we have to do a 2 step process. First, we need to collect all transparent object. Then, we need to sort them based on distance to camera. I'm going to make a new class (a protected helper of scene) and create a method to collect all transparent objects
 
-```
+```cs
 class Scene {
     protected class RenderCommand {
         MeshRenderer component;
