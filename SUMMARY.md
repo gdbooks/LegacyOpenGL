@@ -81,6 +81,7 @@
   * [Deleting Textures](Chapter7/DelTex.md)
   * [Texture Coordinates](Chapter7/TexCoords.md)
   * [Putting it all together](Chapter7/Ex1.md)
+    * [Loading Help](Chapter7/help.md) 
   * [Mip Mapping](Chapter7/Mip.md)
   * [Texture Paramaters](Chapter7/TexParams.md)
   * [Textures for UI](Chapter7/ui.md)
