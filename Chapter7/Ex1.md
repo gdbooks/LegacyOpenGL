@@ -98,9 +98,10 @@ First, make an assets directory and save this image into it:
 
 Remember, you have to set visual studio's working directory to one above the asset directory for loading resources! Just like with the 2D games.
 
-Now, back to our code, do the following:
+We are going to do everything inline for now, so no LoadTexture helper function. Back to our code, do the following:
 
 * In initialize, enable texturing
+* Make a member variable (int), this is going to be a texture handle
 
 ## Adding some detail
 
