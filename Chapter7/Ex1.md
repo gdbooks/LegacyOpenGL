@@ -122,5 +122,7 @@ Running your game should show the textured quad. It should look like this:
 Before we render the quad we set the color to white with this code: ```GL.Color3(1f, 1f, 1f);```. Try setting that to blue to see how vertex colors affect textures. 
 
 ## Adding some detail
+Let me know when you get to this point and i'll upload the rest
 
 ## On Your Own
+Let me know when you get to this point and i'll upload the rest
