@@ -10,7 +10,7 @@ bmp.UnlockBits(bmp_data);
 bmp.Dispose();
 ```
 
-Three of these 4 lines are just fillers. This is the only line that matters:
+Three of these 5 lines are just fillers. This is the only line that matters:
 
 ```cs
 GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.Short, bmp_data.Scan0);
