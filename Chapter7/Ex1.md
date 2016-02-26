@@ -199,4 +199,7 @@ Now that we have some sample planes rendering, let's actually texture them. You 
 
 * First, create another class scope texture handle
   * Even tough we're texturing 2 objects, they are in an atlas 
-* In initialize,  
+* In initialize, generate a new handle for this texture
+* In initialize, bind the newly created handle
+* In initialize, set min and mag filters
+* In initialize, load the png file into this new texture handle
