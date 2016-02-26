@@ -195,4 +195,8 @@ Running the game, your scene should look like this:
 ![T4](tex4.png)
 
 ## On Your Own
-Let me know when you get to this point and i'll upload the rest
+Now that we have some sample planes rendering, let's actually texture them. You are going to have to do this bit on your own. Just like above, don't make a helper function, write out all the code.
+
+* First, create another class scope texture handle
+  * Even tough we're texturing 2 objects, they are in an atlas 
+* In initialize,  
