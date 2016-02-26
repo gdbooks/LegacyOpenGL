@@ -211,3 +211,14 @@ Now that we have some sample planes rendering, let's actually texture them. You 
 * In render, add UV coordinates for each square
   * To display each house you will need to know where it's
   * rectangle is and bring it into (normalized) uv space.
+
+Once you havedone all of that, running the game should look like this:
+
+![T5](tex5.png)
+
+Well, that's cool. But it's not. Why is the alpha section of the image black? It has alpha pixels! Shouldn't it be transparent?!?!?
+
+Yes and no. The fact is, those are transparent pixels. But if you remember, transparency is not magic. It's not free. And it's not on by default. Let's fix this. Do the following
+
+* In initialize enable blending
+* In initialize set the blend function
