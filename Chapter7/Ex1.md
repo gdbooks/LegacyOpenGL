@@ -176,6 +176,19 @@ GL.Enable(EnableCap.Texture2D);
 
 For now we disable texturing before drawing the quads, then enable it after were done. We do this so we can confirm that the white boxes are rendered correctly. If we didn't do this, the color of those boxes would be undefined, as OpenGL would try to read the color from the texture, for a model with no UV coordinates.
 
+What this does is simple. We render a plane with a width of 1 and a height of 1 (a depth of 0). Then we use matrix transformations to move the plane into position in the world, rotate it towards the camera, adjust it's aspect ratio and scale it up. The following lines adjust the aspect ratio:
+
+```
+...
+    GL.Scale(0.57f, 1f, 1f);
+...
+    GL.Scale(0.53f, 1f, 1f);
+...
+```
+
+Where do 0.57 and 0.53 come from? Just like with the screen aspect ratio, any aspect is width divided by height. The first building is 186/326 which equals 0.57. The second building is 180/336 which equals 0.53. Of course i'm rounding the number a bit ;). The size and location of the texture bits is on the actual texture sheet.
+
+Running the game, your scene should look like this:
 
 ![T4](tex4.png)
 
