@@ -186,7 +186,9 @@ What this does is simple. We render a plane with a width of 1 and a height of 1 
 ...
 ```
 
-Where do 0.57 and 0.53 come from? Just like with the screen aspect ratio, any aspect is width divided by height. The first building is 186/326 which equals 0.57. The second building is 180/336 which equals 0.53. Of course i'm rounding the number a bit ;). The size and location of the texture bits is on the actual texture sheet.
+Where do 0.57 and 0.53 come from? Just like with the screen aspect ratio, any aspect is width divided by height. The first building is 186/326 which equals 0.57. The second building is 180/336 which equals 0.53. Of course i'm rounding the number a bit ;). 
+
+The size and location of the texture bits is on the actual texture sheet. The aspect ratio of an image is the scale of it's width compared to its height. So at a scale of 1, the width of an image is it's aspect.
 
 Running the game, your scene should look like this:
 
