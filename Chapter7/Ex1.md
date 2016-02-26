@@ -128,5 +128,7 @@ First things first tough, save the following image to your Assets directory. I c
 
 ![HOUSES](houses.png)
 
+
+
 ## On Your Own
 Let me know when you get to this point and i'll upload the rest
