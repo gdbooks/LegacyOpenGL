@@ -203,3 +203,11 @@ Now that we have some sample planes rendering, let's actually texture them. You 
 * In initialize, bind the newly created handle
 * In initialize, set min and mag filters
 * In initialize, load the png file into this new texture handle
+* In shutdown, delete the actual texture handle
+  * Set the member variable to -1, to signify that it's invalid
+* In Render, remove the enable and disable texturing around the two new quads
+* Before rendering the quads, bind the houses texture
+  * It's a good idea to bind 0 at the end of the render loop
+* In render, add UV coordinates for each square
+  * To display each house you will need to know where it's
+  * rectangle is and bring it into (normalized) uv space.
