@@ -176,5 +176,8 @@ GL.Enable(EnableCap.Texture2D);
 
 For now we disable texturing before drawing the quads, then enable it after were done. We do this so we can confirm that the white boxes are rendered correctly. If we didn't do this, the color of those boxes would be undefined, as OpenGL would try to read the color from the texture, for a model with no UV coordinates.
 
+
+![T4](tex4.png)
+
 ## On Your Own
 Let me know when you get to this point and i'll upload the rest
