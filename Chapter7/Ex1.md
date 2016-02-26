@@ -124,5 +124,7 @@ Before we render the quad we set the color to white with this code: ```GL.Color3
 ## Adding some detail
 Let me know when you get to this point and i'll upload the rest
 
+![HOUSES](houses.png)
+
 ## On Your Own
 Let me know when you get to this point and i'll upload the rest
