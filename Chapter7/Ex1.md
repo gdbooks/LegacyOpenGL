@@ -231,3 +231,19 @@ One more thing you can try. To see how the order of the sprites effects transpar
 
 Here is what that would look like, but try it anyway:
 
+![T7](tex7.png)
+
+This happens because the rendering goes like this now:
+
+* First the grid renders
+* Then crazy taxy renders
+* Then the closest (green) building renders.
+  * It's alpha pixes blend with whats on screen (grid & taxi)
+* Finally the further (brown) building renders
+  * It blends with whats on screen (grid, taxi, green building)
+  * The green building is still rendered on a QUAD geometry
+  * So a quad is written to the Z-Buffer
+  * This quad has a closer Z than the new geometry, 
+  * New geometry which fails z-test and does not render in area
+
+And this is why order matters when you are rendering alpha blended objects. You ALWAYS should be rendering the objects furthest away first, and then the closer objects.
