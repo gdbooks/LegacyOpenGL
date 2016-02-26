@@ -222,3 +222,11 @@ Yes and no. The fact is, those are transparent pixels. But if you remember, tran
 
 * In initialize enable blending
 * In initialize set the blend function
+
+Once you have done that, your scene will look like this:
+
+![T6](tex6.png)
+
+One more thing you can try. To see how the order of the sprites effects transparency, try moving the code that renders house 2 above the code that renders house 1. Just to see the artifacts it causes. You need to know what it looks like when you have wrong z-order for alpha blending, and this is the perfect example to check out. 
+
+Here is what that would look like:
