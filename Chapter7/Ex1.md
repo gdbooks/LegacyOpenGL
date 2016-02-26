@@ -128,7 +128,53 @@ First things first tough, save the following image to your Assets directory. I c
 
 ![HOUSES](houses.png)
 
+Let's modify the render function. After the crazy taxy texture is rendered, add the following code:
 
+```cs
+// TODO: When you do texturing, remove the Disable call
+GL.Disable(EnableCap.Texture2D);
+
+// House 1
+GL.Color3(1f, 1f, 1f);
+    GL.PushMatrix();
+        GL.Translate(-1f, 0.5f, -1f);
+        GL.Rotate(-130f, 0f, 1f, 0f);
+        GL.Scale(0.57f, 1f, 1f);
+        GL.Scale(3f, 3f, 3f);
+        GL.Begin(PrimitiveType.Triangles);
+        GL.Vertex3(0.5, 0.5, 0);//top right
+        GL.Vertex3(-0.5, 0.5, 0);//top left
+        GL.Vertex3(-0.5, -0.5, 0);//bottom left
+
+        GL.Vertex3(0.5, 0.5, 0);//top right
+        GL.Vertex3(-0.5, -0.5, 0);//bottom left
+        GL.Vertex3(0.5, -0.5, 0);//bottom Right
+    GL.End();
+GL.PopMatrix();
+
+// House 2
+GL.Color3(1f, 1f, 1f);
+GL.PushMatrix();
+    GL.Translate(-2f, 0.5f, -3f);
+    GL.Rotate(-130f, 0f, 1f, 0f);
+    GL.Scale(0.53f, 1f, 1f);
+    GL.Scale(3f, 3f, 3f);
+    GL.Begin(PrimitiveType.Triangles);
+        GL.Vertex3(0.5, 0.5, 0);//top right
+        GL.Vertex3(-0.5, 0.5, 0);//top left
+        GL.Vertex3(-0.5, -0.5, 0);//bottom left
+
+        GL.Vertex3(0.5, 0.5, 0);//top right
+        GL.Vertex3(-0.5, -0.5, 0);//bottom left
+        GL.Vertex3(0.5, -0.5, 0);//bottom Right
+    GL.End();
+GL.PopMatrix();
+
+// TODO: When you do texturing, remove the Enable call
+GL.Enable(EnableCap.Texture2D);
+```
+
+For now we disable texturing before drawing the quads, then enable it after were done. We do this so we can confirm that the white boxes are rendered correctly. If we didn't do this, the color of those boxes would be undefined, as OpenGL would try to read the color from the texture, for a model with no UV coordinates.
 
 ## On Your Own
 Let me know when you get to this point and i'll upload the rest
