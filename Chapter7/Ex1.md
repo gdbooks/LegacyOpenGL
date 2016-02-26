@@ -122,7 +122,9 @@ Running your game should show the textured quad. It should look like this:
 Before we render the quad we set the color to white with this code: ```GL.Color3(1f, 1f, 1f);```. Try setting that to blue to see how vertex colors affect textures. 
 
 ## Adding some detail
-Let me know when you get to this point and i'll upload the rest
+Rendering a textured quad is interesting, but we can make this a bit better. Let's add two more quads and explore how to render images with some alpha in them! Just like above, i'm going to walk you trough adding the geometry for these images to the scene, but then it's going to be all you when it comes to actually texturing them.
+
+First things first tough, save the following image to your Assets directory. I call my version of it houses.png
 
 ![HOUSES](houses.png)
 
