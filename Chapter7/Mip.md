@@ -51,4 +51,4 @@ The best argument for uploading pre-mipmapped images comes from [this OpenTK](ht
 
 ## Lets see some code!
 
-You don't have to follow along with this code, BUT when you do make a 3D world you will need it. As such, while you don't HAVE to follow along, you most certainly CAN. You can mip-map any scene that uses textures. The best place to start would be to add mip-maps to the scene from the 
+You don't have to follow along with this code, BUT when you do make a 3D world you will need it. As such, while you don't HAVE to follow along, you most certainly CAN. You can mip-map any scene that uses textures. The best place to start would be to add mip-maps to the scene from the [Putting it all together](Ex1.md) section.
