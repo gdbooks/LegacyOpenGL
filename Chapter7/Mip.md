@@ -53,8 +53,20 @@ The best argument for uploading pre-mipmapped images comes from [this OpenTK](ht
 
 You don't have to follow along with this code, BUT when you do make a 3D world you will need it. As such, while you don't HAVE to follow along, you most certainly CAN. You can mip-map any scene that uses textures. The best place to start would be to add mip-maps to the scene from the [Putting it all together](Ex1.md) section.
 
-Mip mapping happens when a texture is being put trough the min and mag filters. As such, the first step is to modify the min filter. Instead of using ```TextureMinFilter.Linear``` as the argument use ```TextureMinFilter.LinearMipmapLinear```. Do take note, mip mapping is for min filters only, as such the ```TextureMinFilter``` enum contains this option, but the ```TextureMagFilter``` enum does not.
+Mip mapping happens when a texture is being put trough the min and mag filters. As such, the first step is to modify the min filter. Instead of using ```TextureMinFilter.Linear``` as the argument use  ```TextureMinFilter.LinearMipmapLinear```. 
 
-```
+Take note, mip mapping is for min filters only, as such the ```TextureMinFilter``` enum contains this option, but the ```TextureMagFilter``` enum does not.
+
+With all that being said, keep the mag filter on linear and configure the min filter  like so:
+
+```cs
 GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.LinearMipmapLinear);
 ```
+
+Then, you simply call ```GL.GenerateMipmap``` and specify a texture target to generate the mipmap for. Like so:
+
+```cs
+GL.GenerateMipmap(GenerateMipmapTarget.Texture2D);
+```
+
+And thats all there is to it. Mip mapping is now enabled, and mip-maps are now generated. But just to be compleate, let's take a look at loading a full texture with mip-mapping
