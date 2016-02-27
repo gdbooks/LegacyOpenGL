@@ -38,4 +38,17 @@ The closer a pixel is to the camera, the closer it is the mip level 0. The furth
 
 It's still a single texture, but that single texture is now larger, and holds multiple copies of the image at different scales. For example, if a base texture is 1024x1024, the mipmapped version of that texture will have a resolution of 1536x1024 and will contain resized versions of the image. (1536 = 1024 + 512)
 
+When a mip map texture is generated, the image keeps being halved until it is only a single pixel. Each time the image is halved it's called a new mip level. The base image is level 0, the last level could be anything depending on the size of the original image.
+
 ## Where do mip maps come from?
+A natural next question to ask is where do mip maps come from? There are two possible sources for mip maps. Most of the time you will have OpenGL generate mip maps for you. But it's also possible to upload a texture that is pre-mipmapped. 
+
+Some graphics cards don't support uploading pre-mipmapped images as they store the mip format in a proprietary way. Because of this, to reach as many devices as possible, we tend to let OpenGL generate mipmaps for as as the default.
+
+The best argument for uploading pre-mipmapped images comes from [this OpenTK](http://www.opentk.com/node/2575) article. They use a different colored image for each mip-level to debug the application and make it look better. Their multi-image mip looks like this when rendered:
+
+![MIP8](mip8.png)
+
+## Lets see some code!
+
+You don't have to follow along with this code, BUT when you do make a 3D world you will need it. As such, while you don't HAVE to follow along, you most certainly CAN. You can mip-map any scene that uses textures. The best place to start would be to add mip-maps to the scene from the 
