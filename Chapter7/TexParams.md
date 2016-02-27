@@ -69,3 +69,4 @@ GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureBorderColor
 
 Modify the sample scene we've been working with so that the crazy taxi image is uv'd from -2 to 2 instead of 0 to 1. Make sure the wrapping paramaters on both axis are set to repeat. The final image should look like this:
 
+![C2](clamp2.png)
