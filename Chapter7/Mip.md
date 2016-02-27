@@ -89,3 +89,5 @@ GL.GenerateMipmap(GenerateMipmapTarget.Texture2D);
 bmp.UnlockBits(bmp_data);
 bmp.Dispose();
 ```
+
+There is a decent example of this code being used on the [Official OpenTK website](http://www.opentk.com/files/MainWindow_0.cs)
