@@ -55,3 +55,6 @@ You don't have to follow along with this code, BUT when you do make a 3D world y
 
 Mip mapping happens when a texture is being put trough the min and mag filters. As such, the first step is to modify the min filter:
 
+```
+GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.LinearMipmapLinear);
+```
