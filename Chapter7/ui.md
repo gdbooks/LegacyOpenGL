@@ -67,5 +67,19 @@ I STRONGLY suggest breaking your scene into two render functions, ```RenderWorld
 Right now positioning the UI is a pain in the ass. Because the screen goes from -1 to 1 we have to figure out how much space a ui element takes up, then normalize that into the screen. We might end up with UI code that looks like this:
 
 ```
-
+```
+GL.Begin(PrimitiveType.Quads);
+    GL.TexCoord2(0, 1);
+    GL.Vertex3(left, bottom, 0.0f);
+    
+    GL.TexCoord2(1, 1);  
+    GL.Vertex3(right, bottom, 0.0f);
+    
+    GL.TexCoord2(1, 0);
+    GL.Vertex3(right, top, 0.0f); 
+    
+    GL.TexCoord2(0, 0);
+    GL.Vertex3(left, top, 0.0f); 
+GL.End();
+```
 ```
