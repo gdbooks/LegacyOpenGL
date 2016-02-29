@@ -128,4 +128,15 @@ GL.End();
 
 And that's that. We just defined a texture to be drawn using pixel coordinates. All because the orthographic projection matrix mapped the projections NDC space 1 to 1 with our windows pixel space. 
 
+What if you wanted that same quad to be 15 pixels from the right of the screen instead of the left?
+
+```
+int quadWidth = 20;
+int right = screenWidth - 15; // Place right side of quad 15 pixels from width of screen
+int left = right - quadWidth; // Place left side of quad 20 pixels from right side of quad
+
+// Top and bottom like normal
+// Draw like normal
+```
+
 ## Utility
