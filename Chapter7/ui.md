@@ -106,7 +106,19 @@ GL.Ortho(0, screenWidth, screenHeight, 0, -1, 1);
 Now the left of the screen is at 0, the right is at ```screenWidth``` units. This makes our orthographic projection space map 1 to 1 with pixels, meaning if we want a quad to render in the top left, 10 pixels from the top, 15 pixels from the left 20 pixels wide and 30 pixels tall, we could just do this:
 
 ```
-
+GL.Begin(PrimitiveType.Quads);
+    GL.TexCoord2(0, 1);             // What part of the texture to draw
+    GL.Vertex3(left, bottom, 0.0f); // Where on screen to draw it
+    
+    GL.TexCoord2(1, 1);             // What part of the texture to draw
+    GL.Vertex3(right, bottom, 0.0f);// Where on screen to draw it
+    
+    GL.TexCoord2(1, 0);             // What part of the texture to draw
+    GL.Vertex3(right, top, 0.0f);   // Where on screen to draw it
+    
+    GL.TexCoord2(0, 0);             // What part of the texture to draw
+    GL.Vertex3(left, top, 0.0f);    // Where on screen to draw it
+GL.End();
 ```
 
 ## Utility
