@@ -130,7 +130,7 @@ And that's that. We just defined a texture to be drawn using pixel coordinates. 
 
 What if you wanted that same quad to be 15 pixels from the right of the screen instead of the left?
 
-```
+```cs
 int quadWidth = 20;
 int right = screenWidth - 15; // Place right side of quad 15 pixels from width of screen
 int left = right - quadWidth; // Place left side of quad 20 pixels from right side of quad
@@ -138,5 +138,7 @@ int left = right - quadWidth; // Place left side of quad 20 pixels from right si
 // Top and bottom like normal
 // Draw like normal
 ```
+
+The point is, once you are in pixel space, you can figure out how to anchor UI to different parts of a window
 
 ## Utility
