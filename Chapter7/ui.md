@@ -64,3 +64,8 @@ After the depth buffer is cleared, we back up the world space projection and res
 I STRONGLY suggest breaking your scene into two render functions, ```RenderWorld``` and ```RenderUI```, and calling them like i did above. This will keep the main render function ```Render``` of your scene from getting unmaintanable.
 
 ## Positioning the UI
+Right now positioning the UI is a pain in the ass. Because the screen goes from -1 to 1 we have to figure out how much space a ui element takes up, then normalize that into the screen. We might end up with UI code that looks like this:
+
+```
+
+```
