@@ -29,7 +29,7 @@ void Render() {
     GL.MatrixMode(MatrixMode.Projection); // Switch
     GL.PushMatrix(); // Backup
     GL.LoadIdentity(); // Clear
-    GL.Ortho(-1, 1, -1, 1, -10, 10); // Load UI Projection
+    GL.Ortho(-1, 1, -1, 1, -1, 1); // Load UI Projection
     
     // Switch back to modelview mode, backup 3D modelview, clear
     GL.MatrixMode(MatrixMode.ModelView); // Switch
@@ -87,5 +87,20 @@ And that is kind of awefull! I mean, what if you need to change the screen posit
 And that's the real issue here, sometimes we NEED for UI to be pixel perfect. Other times it doesn't matter, but if you are serious about making something 2D, you need to at least have the option of being pixel perfect.
 
 ## Pixel Perfect
+
+The key to a pixel perfect UI lies in the orthographic projection matrix. Right now we have the space map to NDC space, that is a cube ranging from -1 to 1, like so:
+
+```
+GL.Ortho(-1, 1, -1, 1, -10, 10); // Load UI Projection
+```
+
+That maps 1 unit to half the width of the screen. What if we didn't do this? Instead we could change our orthographic space to map 1 unit to 1 pixel? Can we even do this? Yes, yes we can, like so:
+
+```cs
+int screenWidth = MainGameWindow.Window.Width;
+int screenHeight = MainGameWindow.Window.Height;
+// Ortho: left, right, bottom, top, near, far
+GL.Ortho(0, screenWidth, screenHeight, 0, -1, 1);
+```
 
 ## Utility
