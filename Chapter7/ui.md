@@ -106,19 +106,26 @@ GL.Ortho(0, screenWidth, screenHeight, 0, -1, 1);
 Now the left of the screen is at 0, the right is at ```screenWidth``` units. This makes our orthographic projection space map 1 to 1 with pixels, meaning if we want a quad to render in the top left, 10 pixels from the top, 15 pixels from the left 20 pixels wide and 30 pixels tall, we could just do this:
 
 ```
+int left = 15; // Left is 15 pixels from edge of screen
+int top = 10; // Top is 10 pixels from edge of screen
+int right = 15 + 20; // 20 pixels wide, right side is left + 20
+int bottom = 10 + 30; // 30 pixels tall, bottom is top + 30
+
 GL.Begin(PrimitiveType.Quads);
-    GL.TexCoord2(0, 1);             // What part of the texture to draw
-    GL.Vertex3(left, bottom, 0.0f); // Where on screen to draw it
+    GL.TexCoord2(0, 1); 
+    GL.Vertex3(left, bottom, 0.0f);
     
-    GL.TexCoord2(1, 1);             // What part of the texture to draw
-    GL.Vertex3(right, bottom, 0.0f);// Where on screen to draw it
+    GL.TexCoord2(1, 1);  
+    GL.Vertex3(right, bottom, 0.0f);
     
-    GL.TexCoord2(1, 0);             // What part of the texture to draw
-    GL.Vertex3(right, top, 0.0f);   // Where on screen to draw it
+    GL.TexCoord2(1, 0);   
+    GL.Vertex3(right, top, 0.0f); 
     
-    GL.TexCoord2(0, 0);             // What part of the texture to draw
-    GL.Vertex3(left, top, 0.0f);    // Where on screen to draw it
+    GL.TexCoord2(0, 0);    
+    GL.Vertex3(left, top, 0.0f);  
 GL.End();
 ```
+
+And that's that. We just defined a texture to be drawn using pixel coordinates. All because the orthographic projection matrix mapped the projections NDC space 1 to 1 with our windows pixel space. 
 
 ## Utility
