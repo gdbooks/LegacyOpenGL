@@ -85,3 +85,7 @@ GL.End();
 And that is kind of awefull! I mean, what if you need to change the screen position later, this becomes a nightmare to maintain. Worse yet, it does not account for aspect ration. Worse, worse yet, because of the aspect ratio error compounded with possible floating point error it's nearly impossible to get a pixel perfect UI.
 
 And that's the real issue here, sometimes we NEED for UI to be pixel perfect. Other times it doesn't matter, but if you are serious about making something 2D, you need to at least have the option of being pixel perfect.
+
+## Pixel Perfect
+
+## Utility
