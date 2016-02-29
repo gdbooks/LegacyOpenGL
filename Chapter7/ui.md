@@ -28,6 +28,7 @@ void Render() {
     // Switch to projection matrix mode, backup 3D projection, load UI projection
     GL.MatrixMode(MatrixMode.Projection); // Switch
     GL.PushMatrix(); // Backup
+    GL.LoadIdentity(); // Clear
     GL.Ortho(-1, 1, -1, 1, -10, 10); // Load UI Projection
     
     // Switch back to modelview mode, backup 3D modelview, clear
@@ -49,3 +50,17 @@ void Render() {
     // We make sure the matrix mode is modelview for the next render iteration
 }
 ```
+
+That's a LOT of code, but it kind of shows you how rendering the UI is almost an entireley different render path alltogether. It's like rendering an overlay. Perhaps the most important thing when rendering the UI is the call to clear the depth buffer:
+
+```
+GL.Clear(ClearBufferMask.DepthBufferBit);
+```
+
+This call clears all Z-values that have been written into the depth buffer so far. By doing this, we ensure that our UI never clips against anything in world space. This should look familiar, a similar call is used in Program.cs to clear the depth and color bufers.
+
+After the depth buffer is cleared, we back up the world space projection and reset it to UI space, next we back up the world space view matrix and replace it with the UI view matrix. And that all there is to it, now we just render the UI.
+
+I STRONGLY suggest breaking your scene into two render functions, ```RenderWorld``` and ```RenderUI```, and calling them like i did above. This will keep the main render function ```Render``` of your scene from getting unmaintanable.
+
+## Positioning the UI
