@@ -103,4 +103,6 @@ int screenHeight = MainGameWindow.Window.Height;
 GL.Ortho(0, screenWidth, screenHeight, 0, -1, 1);
 ```
 
+Now the left of the screen is at 0, the right is at ```screenWidth``` units. This makes our orthographic projection space map 1 to 1 with pixels, meaning if we want a 
+
 ## Utility
