@@ -142,3 +142,11 @@ int left = right - quadWidth; // Place left side of quad 20 pixels from right si
 The point is, once you are in pixel space, you can figure out how to anchor UI to different parts of a window
 
 ## Utility
+
+I suggest writing a utility function. Something along the lines of 
+
+```cs
+void DrawTexture(int texId, Rect screenRect, Rect sourceRect, Size sourceImageSize) {
+    // TODO, figure out how to render quad to screen
+}
+```
