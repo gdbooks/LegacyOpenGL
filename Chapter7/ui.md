@@ -150,3 +150,7 @@ void DrawTexture(int texId, Rect screenRect, Rect sourceRect, Size sourceImageSi
     // TODO, figure out how to render quad to screen
 }
 ```
+
+This way, you won't have to write the above verbose GL.Begin / GL.End every time you want to render a ui quad. Also, it will make your life super easy if your projection is pixel perfect. 
+
+Try to write the function on your own, maybe load some UI texture to test it with. If you want you can send it to me for review before doing the "On Your Own" section. The ```Primitives``` class might be a good place for this function to live.
