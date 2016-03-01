@@ -24,4 +24,4 @@ The first thing you want to do is make a ```RenderUI``` function. You can leave 
   * Call your ```RenderUI``` function
   * Restore the projection and view matrices
 
-Running your game at this point, everything should render as it did before. It's a really good place to check and make sure nothing is broken yet.
+Running your game at this point, everything should render as it did before. It's a really good place to check and make sure nothing is broken yet. After you've confirmed that nothing is broken, it's time to start working on the actual UI.
