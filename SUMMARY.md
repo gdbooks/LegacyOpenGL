@@ -93,5 +93,6 @@
   * [Implementing a camera](Chapter8/README.md)
   * [Halfspace Culling](Chapter8/README.md)  
   * [Frustum Culling](Chapter8/README.md)
+  * [Performance Optimization](Chapter8/README.md)
 * [Advanced Topics](Chapter9/README.md) 
   * [Terrains](Chapter9/README.md)  
