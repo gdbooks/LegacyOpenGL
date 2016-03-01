@@ -89,20 +89,20 @@
   * [Sorting Objects](Chapter7/sorting.md)
 * [Particles](Chapter10/README.md) 
 * [Common Graphics Topics](Chapter8/README.md)
+  * [Performance Optimization](Chapter8/optimization.md)
   * [Loading Meshes](Chapter8/loading.md)
   * [Resource Management](Chapter8/resource.md) 
   * [Implementing a camera](Chapter8/camera.md)
   * [Halfspace Culling](Chapter8/halfspace.md)  
   * [Frustum Culling](Chapter8/frustum.md)
-  * [Performance Optimization](Chapter8/optimization.md)
 * [Advanced Topics](Chapter9/README.md) 
   * Multi-Texturing
   * Normal Mapping
   * Specular Mapping
-  * Ambient Occlusion
-  * [Outlines](outlines.md)
-  * [Occluded Peek](peek.md)
-  * [Stencyl Shadows](stencyl.md)
+  * [Ambient Occlusion](Chapter9/ambient.md)
+  * [Outlines](Chapter9/outlines.md)
+  * [Occluded Peek](Chapter9/peek.md)
+  * [Stencyl Shadows](Chapter9/stencyl.md)
   * [Shadow Mapping](Chapter9/shadowmap.md)
   * [Reflections](Chapter9/reflect.md)
   * [Cube Mapped Reflections](Chapter9/cube.md)
