@@ -34,8 +34,8 @@ Running your game at this point, everything should render as it did before. It's
   * Screen coordinates (in pixels):
     * X: 10
     * Y: 10
-    * W: 421
-    * H: 87
+    * W: 210
+    * H: 43
   * UV Coordinates (in pixels):
     * X: 2
     * Y: 2
