@@ -94,7 +94,7 @@
   * [Implementing a camera](Chapter8/camera.md)
   * [Halfspace Culling](Chapter8/halfspace.md)  
   * [Frustum Culling](Chapter8/frustum.md)
-  * [Performance Optimization](Chapter8/README.md)
+  * [Performance Optimization](Chapter8/optimization.md)
 * [Advanced Topics](Chapter9/README.md) 
   * Multi-Texturing
   * Normal Mapping
