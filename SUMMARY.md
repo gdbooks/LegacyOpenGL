@@ -104,7 +104,7 @@
   * Occluded Peek
   * Stencyl Shadows
   * Shadow Mapping
-  * Reflections
+  * [Reflections](Chapter9/reflect.md)
   * [Cube Mapped Reflections](Chapter9/cube.md)
   * [Water](Chapter9/water.md)
   * [Fire](Chapter9/fire.md)
