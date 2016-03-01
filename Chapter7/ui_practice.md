@@ -4,7 +4,7 @@ We're going to modify the demo scene we've been working with to have a simple UI
 
 If you want to write or use some helper functions for this example, that's fine. By the time we're done, the demo scene will look like this:
 
-# TODO
+![Mock](ui_mock.png)
 
 First, download the following texture into your assets directory:
 
