@@ -48,10 +48,19 @@ Running your game at this point, everything should render as it did before. It's
     * When the window is resized, these stay the same distance from the corner 
 * Render facebook button on screen
   * UV Coordinates: _Written on texture_
+  * Screen Coordinates:
+    * Bottom: 10 pixels above the window bottom 
+    * Top: The height of the buton above "Bottom"
 * Render help button on screen
   * UV Coordinates: _Written on texture_
+  * Screen Coordinates:
+    * Bottom: 10 pixels above the window bottom 
+    * Top: The height of the buton above "Bottom"
 * Render home button on screen
   * UV Coordinates: _Written on texture_
+  * Screen Coordinates:
+    * Bottom: 10 pixels above the window bottom 
+    * Top: The height of the buton above "Bottom"
 
 When resizing the screen, the health bar is relative to the top left. This is why you could just do screen coordinates. But when you render the buttons in the bottom right, they need to move with the screen size. So you need to adjust their X-Y coordinates accordingly.
 
