@@ -102,7 +102,7 @@
   * Ambient Occlusion
   * Outlines
   * Occluded Peek
-  * Stencyl Shadows
+  * [Stencyl Shadows](stencyl.md)
   * [Shadow Mapping](Chapter9/shadowmap.md)
   * [Reflections](Chapter9/reflect.md)
   * [Cube Mapped Reflections](Chapter9/cube.md)
