@@ -95,4 +95,11 @@
   * [Frustum Culling](Chapter8/README.md)
   * [Performance Optimization](Chapter8/README.md)
 * [Advanced Topics](Chapter9/README.md) 
+  * Multi-Texturing
+  * Normal Mapping
+  * Specular Mapping
+  * Stencyl Shadows
+  * Shadow Mapping
+  * Reflections
+  * Cube Mapped Reflections
   * [Terrains](Chapter9/README.md)  
