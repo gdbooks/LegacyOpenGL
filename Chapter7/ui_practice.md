@@ -25,3 +25,25 @@ The first thing you want to do is make a ```RenderUI``` function. You can leave 
   * Restore the projection and view matrices
 
 Running your game at this point, everything should render as it did before. It's a really good place to check and make sure nothing is broken yet. After you've confirmed that nothing is broken, it's time to start working on the actual UI.
+
+* First, clear your depth buffer!
+* Render the health-bar on screen.
+  * Screen coordinates:
+    * X: 
+    * Y: 
+    * W: 
+    * H: 
+  * UV Coordinates:
+    * X:
+    * Y:
+    * W:
+    * H:
+  * You can either figure out the normalized UV position by hand
+  * Or normalize it in code, all you need is the texture width / height
+* The 3 buttons need to be rendered independently,
+  * Because they are in a different order on screen than in the atlas 
+  * All 3 buttons should be **Relative** to the bottom left corner
+    * When the window is resized, these stay the same distance from the corner 
+* Render facebook button on screen
+* Render help button on screen
+* Render home button on screen
