@@ -29,6 +29,7 @@ The first thing you want to do is make a ```RenderUI``` function. You can leave 
 Running your game at this point, everything should render as it did before. It's a really good place to check and make sure nothing is broken yet. After you've confirmed that nothing is broken, it's time to start working on the actual UI.
 
 * First, clear your depth buffer!
+* Make sure the right texture is bound
 * Render the health-bar on screen.
   * Screen coordinates (in pixels):
     * X: 10
