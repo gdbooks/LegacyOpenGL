@@ -8,3 +8,7 @@ First, download the following texture into your assets directory:
 
 ![UI](ui_atlas.png)
 
+* Add a new integer variable to the class to hold the UI
+* In initialize, load the UI texture
+  * Remember to unload it in shutdown
+* 
