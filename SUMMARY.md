@@ -98,6 +98,7 @@
   * Multi-Texturing
   * Normal Mapping
   * Specular Mapping
+  * Ambient Occlusion
   * Stencyl Shadows
   * Shadow Mapping
   * Reflections
