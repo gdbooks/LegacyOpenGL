@@ -97,8 +97,8 @@
   * [Frustum Culling](Chapter8/frustum.md)
 * [Advanced Topics](Chapter9/README.md) 
   * Multi-Texturing
-  * Normal Mapping
-  * Specular Mapping
+  * [Normal Mapping](Chapter9/normal.md)
+  * [Specular Mapping](Chapter9/specular.md)
   * [Ambient Occlusion](Chapter9/ambient.md)
   * [Outlines](Chapter9/outlines.md)
   * [Occluded Peek](Chapter9/peek.md)
