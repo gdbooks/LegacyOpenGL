@@ -69,7 +69,7 @@ Running your game at this point, everything should render as it did before. It's
     * Right: 10 pixels from the right of help buttons "Left"
     * Left: the width of the button to the right of "Right"
 
-**Hint**, not seeing anything on screen? Try ```GL.Disable(EnableCap.CullFace)``` to see if your UI rect's are being culled improperly.
+**Hint**, not seeing anything on screen? Try ```GL.Disable(EnableCap.CullFace)``` to see if your UI rect's are being culled improperly. Keeping cull face disabled is not an option, but it's a debug step towards seeing what is broken.
 
 When resizing the screen, the health bar is relative to the top left. This is why you could just do screen coordinates. But when you render the buttons in the bottom right, they need to move with the screen size. So you need to adjust their X-Y coordinates accordingly.
 
