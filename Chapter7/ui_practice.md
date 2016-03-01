@@ -1,6 +1,8 @@
 # Implementing a simple UI
 
-We're going to modify the demo scene we've been working with to have a simple UI. By the time we're done, the demo scene will look like this:
+We're going to modify the demo scene we've been working with to have a simple UI. I suggest reading this whole page over at least one time before implementing any code, just so you have an idea of everything that will be happening.
+
+By the time we're done, the demo scene will look like this:
 
 # TODO
 
@@ -52,7 +54,7 @@ When resizing the screen, the health bar is relative to the top left. This is wh
 
 For example:
 
-```
+```cs
 int buttonSpace = 10;
 int homeButtonX = screen.Width - buttonSpace - home.Width;
 int helpButtonX = homeButtonX - buttonSpace - help.Width;
