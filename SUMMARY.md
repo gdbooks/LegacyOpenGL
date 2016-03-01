@@ -100,7 +100,7 @@
   * Specular Mapping
   * Ambient Occlusion
   * Outlines
-  * Occluded View
+  * Occluded Peek
   * Stencyl Shadows
   * Shadow Mapping
   * Reflections
