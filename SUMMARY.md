@@ -96,7 +96,7 @@
   * [Halfspace Culling](Chapter8/halfspace.md)  
   * [Frustum Culling](Chapter8/frustum.md)
 * [Advanced Topics](Chapter9/README.md) 
-  * Multi-Texturing
+  * [Multi-Texturing](Chapter9/multi.md)
   * [Normal Mapping](Chapter9/normal.md)
   * [Specular Mapping](Chapter9/specular.md)
   * [Ambient Occlusion](Chapter9/ambient.md)
