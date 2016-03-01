@@ -7,3 +7,4 @@ We're going to modify the demo scene we've been working with to have a simple UI
 First, download the following texture into your assets directory:
 
 ![UI](ui_atlas.png)
+
