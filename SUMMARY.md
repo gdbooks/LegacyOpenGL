@@ -100,7 +100,7 @@
   * Normal Mapping
   * Specular Mapping
   * Ambient Occlusion
-  * Outlines
+  * [Outlines](outlines.md)
   * [Occluded Peek](peek.md)
   * [Stencyl Shadows](stencyl.md)
   * [Shadow Mapping](Chapter9/shadowmap.md)
