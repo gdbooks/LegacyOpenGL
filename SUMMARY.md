@@ -106,6 +106,6 @@
   * Shadow Mapping
   * Reflections
   * Cube Mapped Reflections
-  * Water
-  * Fire
+  * [Water](Chapter9/water.md)
+  * [Fire](Chapter9/fire.md)
   * [Terrains](Chapter9/terrains.md)  
