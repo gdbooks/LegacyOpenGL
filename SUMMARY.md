@@ -87,6 +87,7 @@
   * [Textures for UI](Chapter7/ui.md)
     * [On your own](Chapter7/ui_practice.md) 
   * [Sorting Objects](Chapter7/sorting.md)
+* [Particles](Chapter10/README.md) 
 * [Common Graphics Topics](Chapter8/README.md)
   * [Loading Meshes](Chapter8/README.md)
   * [Resource Management](Chapter8/README.md) 
