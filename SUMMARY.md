@@ -99,6 +99,8 @@
   * Normal Mapping
   * Specular Mapping
   * Ambient Occlusion
+  * Outlines
+  * Occluded View
   * Stencyl Shadows
   * Shadow Mapping
   * Reflections
