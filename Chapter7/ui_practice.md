@@ -46,6 +46,7 @@ Running your game at this point, everything should render as it did before. It's
   * Because they are in a different order on screen than in the atlas 
   * All 3 buttons should be **Relative** to the bottom right corner
     * When the window is resized, these stay the same distance from the corner 
+  * The spacing between buttons is 10 pixels
 * Render facebook button on screen
   * UV Coordinates: _Written on texture_
   * Screen Coordinates:
