@@ -101,7 +101,7 @@
   * Specular Mapping
   * Ambient Occlusion
   * Outlines
-  * Occluded Peek
+  * [Occluded Peek](peek.md)
   * [Stencyl Shadows](stencyl.md)
   * [Shadow Mapping](Chapter9/shadowmap.md)
   * [Reflections](Chapter9/reflect.md)
