@@ -92,7 +92,7 @@
   * [Loading Meshes](Chapter8/loading.md)
   * [Resource Management](Chapter8/resource.md) 
   * [Implementing a camera](Chapter8/camera.md)
-  * [Halfspace Culling](Chapter8/README.md)  
+  * [Halfspace Culling](Chapter8/halfspace.md)  
   * [Frustum Culling](Chapter8/README.md)
   * [Performance Optimization](Chapter8/README.md)
 * [Advanced Topics](Chapter9/README.md) 
