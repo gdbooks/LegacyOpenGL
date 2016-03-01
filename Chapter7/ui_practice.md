@@ -44,7 +44,6 @@ Running your game at this point, everything should render as it did before. It's
   * You can either figure out the normalized UV position by hand
   * Or normalize it in code, all you need is the texture width / height
 * The 3 buttons need to be rendered independently,
-  * Because they are in a different order on screen than in the atlas 
   * All 3 buttons should be **Relative** to the bottom right corner
     * When the window is resized, these stay the same distance from the corner 
   * The spacing between buttons is 10 pixels
