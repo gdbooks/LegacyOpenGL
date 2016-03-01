@@ -1,8 +1,8 @@
 ## Sorting
 
-So far we've been writing all of this rendering code inline, that is whenever we needed to render anything, we just do! The only thing we really wrapped into an object has been the grid.
+So far we've been writing all of this rendering code inline, that is whenever we needed to render anything, we just do! The only thing we really wrapped into an object has been the grid. And maybe a "Draw Texture" function.
 
-Rendering a 3D game will get complex. A 3D mixes and matches solid and transparent objects sometimes. Altough, if you look at modern 3D games, it doesn't happen a lot. In order to draw transparent objects, you must first draw solid objects, then draw transparent objects based on who is furthest from the camera.
+Rendering a 3D game will get complex. A 3D mixes and matches solid and transparent objects sometimes. In order to draw transparent objects, you must first draw solid objects, then draw transparent objects. Transparent objects need to be sorted based on who is furthest from the camera.
 
 I'll walk you trough how it would normally work. This is not something you need to implement right now, but it is something to be aware of, as you will need to do this at some point.
 
