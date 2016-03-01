@@ -1,8 +1,8 @@
 # Implementing a simple UI
 
-We're going to modify the demo scene we've been working with to have a simple UI. I suggest reading this whole page over at least one time before implementing any code, just so you have an idea of everything that will be happening.
+We're going to modify the demo scene we've been working with to have a simple UI. I suggest reading this whole page over at least one time before implementing any code, just so you have an idea of everything that will be happening. 
 
-By the time we're done, the demo scene will look like this:
+If you want to write or use some helper functions for this example, that's fine. By the time we're done, the demo scene will look like this:
 
 # TODO
 
