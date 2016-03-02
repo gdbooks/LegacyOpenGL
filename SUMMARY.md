@@ -98,6 +98,7 @@
   * [Frustum Culling](Chapter8/frustum.md)
 * [Advanced Topics](Chapter9/README.md)
   * [Multi-Texturing](Chapter9/multi.md)
+  * [Sub Textures](Chapter9/subtex.md)
   * [Normal Mapping](Chapter9/normal.md)
   * [Specular Mapping](Chapter9/specular.md)
   * [Ambient Occlusion](Chapter9/ambient.md)
