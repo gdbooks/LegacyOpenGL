@@ -13,4 +13,3 @@ See, the concept of a particle system is rather abstract. Any number of things w
 When it comes to particles all we care about is what the final image looks like. Do these entitites acting under some system look the way we expect / want? If so, the particle system works. If not, it just needs some additional work.
 
 _"We don't try to model the outcome of the system, we try to model the system and see its outcome"_ - Andre LaMothe
-
