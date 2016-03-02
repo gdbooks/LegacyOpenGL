@@ -111,6 +111,7 @@
   * [Cube Mapped Reflections](Chapter9/cube.md)
   * [Water](Chapter9/water.md)
   * [Fire](Chapter9/fire.md)
+  * [Motion Blur](Chapter9/blur.md)
   * [Terrains](Chapter9/terrains.md)
 * [Rendering Project](Chapter11/README.md)
   * [JSON](Chapter11/json.md)
