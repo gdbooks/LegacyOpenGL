@@ -6,7 +6,7 @@ Explosions, sparks, underwater bubbles, other special fx, particle systems in mo
 
 Particles in effect are a number of entities that behave according to some pre-defined rules. Take rain for example. Each rain drop is a particle, all drops behave according to gravity. That is, a cloud spawns rain particles, they fall down with gravity. When a rain drop entity hits the ground it dies (is recycled as a different drop).
 
-A more formal definition: _A particle system is a collection of any number of entities, either related or unrelated, that behave according to a set of logical rules._
+A more formal definition: _A particle system is a collection of any number of entities, either related or unrelated, that behave according to a set of logical rules, (a system)._
 
 See, the concept of a particle system is rather abstract. Any number of things will fit into that description, the roads of GTA, the speckles of a screensaver, rain... This is what makes particles so hard for most programmers. Two games can both have particle systems, and the implementation can be compelatly different. 
 
