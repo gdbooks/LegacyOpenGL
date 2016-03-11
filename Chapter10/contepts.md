@@ -53,3 +53,11 @@ To have particles produce some kind of effect, you're going to have to see them.
 * __Textured Quads__ This offers the most flexibility, and is the most widley used method. The particles its self is a quad or a triangle, and has a (possibly alpha blended) texture on it. Fire, sparks, smoke all use this method.
 
 Note, if you decide to use quads, it's a good idea to use billboarding to amke them always face the camera. Billboarding will be covered two chapters from now, under the "Advanced Topics" section.
+
+### Color
+
+If you choose the point or line representation discussed in the preceeding section you will probably want each particle to have a color. Even if you are using textured quads, a color tint might be a good idea. Color may change over time.
+
+### Owner
+
+Sometimes particles benefit from knowing what particle system owns them. That way they can call methods in their owner system. 
