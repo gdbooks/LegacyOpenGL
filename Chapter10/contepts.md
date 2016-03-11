@@ -49,3 +49,6 @@ Weight is a lot like size in terms of weather it's needed as an attribute or not
 To have particles produce some kind of effect, you're going to have to see them. The real question is, how are you going to represent them on screen? There are three commonly used methods, tough you may find other ways to represent them depending on your needs. The most common representations are:
 
 * __Points__ Points can be used for a number of effects, especially those that arn't viewed closely. Each particle might be a 3D point.
+* __Lines__ These can be used to create a trailing effect, which is often useful. The line connects the particles current position and it's last one. Often used for rain
+* __Textured Quads__ This offers the most flexibility, and is the most widley used method. The particles its self is a quad or a triangle, and has a (possibly alpha blended) texture on it. Fire, sparks, smoke all use this method.
+
