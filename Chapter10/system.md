@@ -38,3 +38,5 @@ When a system creates a new particle, it should do so with some default attribtu
 You might want your particle system to change its behaviour over time; this may simply involve turning a system on or off. For example, a snow particle system should be off during summer.This is essentially enabling / disabling the system.
 
 Sometimes you want to manually turn the system on or off, but other times you might want to have the system turn off on it's own after some time. An explosion would be a great example of this.
+
+### Blending
