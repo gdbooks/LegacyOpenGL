@@ -25,3 +25,25 @@ There are of course many other attributes you may want to try out, but these are
 ### Position
 
 You need to know where the particle is in 3D space so that you can render it correctly. This is an attribute that will almost certainly belong to the particle, not the partcle system. You may also want to track the particles last position to achieve effects such as trails. Note that the particles position will be affected by velocity.
+
+### Velocity
+
+Your particles are probably going to be moving, so you need to store their velocity. It's most convenient to store this as a vector representing both speed and direction so you can use the vector to update the particles position.
+
+Velocity will likely be affected by such factors as wind and gravity which we'll discuss later in this chapter, in the "Forces" subsection under "Particle Systems". If the particle is capable of accelerating itself, that could affect the velocity as well, and you'd want to create an additional vector to store the acceleration. More often tough, the factors that affect the velocity of a particle are external.
+
+### Life Span
+
+For most effects, particles are going to be emitted from their source, and after some period of time are going to disappear. For this reason, you need to either keep track of how long a particle has been alive, or how long it has left to live. The life span may affect other attributes as a particle might grow, shrink or fade over time.
+
+### Size
+
+Size in an attribute that may not need to be handled by indevidual particles. In fact, unless the size changes based on something, it's a useless attribute! However you might want to increase the size of particles, for example to represent a large fire, then decrease them as the fire dwindles. 
+
+### Weight
+
+Weight is a lot like size in terms of weather it's needed as an attribute or not. If a particle might accelerate differently based on weight, or if it is affected by gravity differently you should include weight. Otherwise it's useless.
+
+### Representation
+
+To have particles produce some kind of effect, you're going to have to see them. 
