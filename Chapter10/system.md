@@ -40,3 +40,9 @@ You might want your particle system to change its behaviour over time; this may 
 Sometimes you want to manually turn the system on or off, but other times you might want to have the system turn off on it's own after some time. An explosion would be a great example of this.
 
 ### Blending
+
+Most particle systems use some sort of blending. For this reason you might want to include source and destination blend paramaters as attirbutes of the particle system. Then again, most systems will make due with the default alpha blending, in which case this attribute is useless.
+
+### Representation
+
+In most cases all particles within a system are going to be represented the same way. Because of this you might want to store a particles representation as a system attribute, instead of as an indevidual particle attribtue.
