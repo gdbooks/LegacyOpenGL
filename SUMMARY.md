@@ -92,6 +92,7 @@
   * [Design](Chapter10/contepts.md) 
     * [Particles](Chapter10/particles.md)
     * [Particle Systems](Chapter10/system.md)
+  * [Implementation](Chapter10/impl.md) 
 * [Common Graphics Topics](Chapter8/README.md)
   * [Performance Optimization](Chapter8/optimization.md)
   * [Loading Meshes](Chapter8/loading.md)
