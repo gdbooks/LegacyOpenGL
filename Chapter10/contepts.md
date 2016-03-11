@@ -46,4 +46,4 @@ Weight is a lot like size in terms of weather it's needed as an attribute or not
 
 ### Representation
 
-To have particles produce some kind of effect, you're going to have to see them. 
+To have particles produce some kind of effect, you're going to have to see them. The real question is, how are you going to represent them on screen? 
