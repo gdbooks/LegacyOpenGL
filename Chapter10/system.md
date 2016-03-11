@@ -24,3 +24,17 @@ The particle system must be located somewhere to determine where particles start
 ### Emission Rate
 
 The emission rate determines how often a new particle is created. To maintain a regular emission rate, the system will also need to keep track of how long it's been since the last particle was emitted.
+
+### Forces
+
+Adding one or more forces to a particle system can create a greater degree of realism, or lack thereof. Forces can range anywhere from graivty, gravity wells to exploding forces and torque.
+
+### Default particle attributes and ranges
+
+When a system creates a new particle, it should do so with some default attribtues. For certain systems, having each particle spawn the same size will work perfectly. Other systems might need a default range. That is any particle might spawn between a range of 2 and 4 in terms of size. Wether your system uses default attribtues or ranges depends on the effect you want to create.
+
+### Current State
+
+You might want your particle system to change its behaviour over time; this may simply involve turning a system on or off. For example, a snow particle system should be off during summer.This is essentially enabling / disabling the system.
+
+Sometimes you want to manually turn the system on or off, but other times you might want to have the system turn off on it's own after some time. An explosion would be a great example of this.
