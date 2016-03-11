@@ -46,4 +46,6 @@ Weight is a lot like size in terms of weather it's needed as an attribute or not
 
 ### Representation
 
-To have particles produce some kind of effect, you're going to have to see them. The real question is, how are you going to represent them on screen? 
+To have particles produce some kind of effect, you're going to have to see them. The real question is, how are you going to represent them on screen? There are three commonly used methods, tough you may find other ways to represent them depending on your needs. The most common representations are:
+
+* __Points__ Points can be used for a number of effects, especially those that arn't viewed closely. Each particle might be a 3D point.
