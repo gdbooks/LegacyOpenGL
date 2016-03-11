@@ -89,7 +89,7 @@
     * [On your own](Chapter7/ui_practice.md)
   * [Sorting Objects](Chapter7/sorting.md)
 * [Particles](Chapter10/README.md)
-  * [Planning](Chapter10/contepts.md) 
+  * [Design](Chapter10/contepts.md) 
 * [Common Graphics Topics](Chapter8/README.md)
   * [Performance Optimization](Chapter8/optimization.md)
   * [Loading Meshes](Chapter8/loading.md)
