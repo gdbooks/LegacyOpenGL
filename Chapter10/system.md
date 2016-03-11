@@ -20,3 +20,7 @@ First and foremost, the system needs to be able to access the particles it is ma
 ### Position
 
 The particle system must be located somewhere to determine where particles start. Altough this is usually modelled as a single point in space (For example, a campfire), but they don't have to be. You could represent the position of a system as a rectangle, so particles can be emitted randomly within that space (For example, rain), which would make the rectangle the part of the sky that is raining.
+
+### Emission Rate
+
+The emission rate determines how often a new particle is created. To maintain a regular emission rate, the system will also need to keep track of how long it's been since the last particle was emitted.
