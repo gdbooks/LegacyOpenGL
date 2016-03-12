@@ -138,4 +138,22 @@ We've saved the best for last, the InitParticle function is what makes the snow 
 ```
 
 ## Adding snow to the game
-Let's head back to the latest texture mapped scene (the one we rendered the UI in) and add some particles to it!
+Let's head back to the latest texture mapped scene (the one we rendered the UI in) and add some particles to it! First thing is first, add a new ```SnowstormParticleSystem``` member variable, set it to null by default. I called mine ```snow```
+
+In initialize, set the particle system to a new system. Use the below values.
+
+```cs
+snow = new SnowstormParticleSystem(5000, new Vector3(0f, 0f, 0f), new Vector3(10f, 10f, 10f));
+```
+
+Call the particle systems shutdown function in the scene shutdown.
+
+In the scene render, after the world is rendered, but before anything else happens, render the particle system:
+
+```cs
+RenderWorld();
+snow.Render();
+```
+
+The particle system also needs to be updated. This means you will have to override the scenes update function, and call the particle systems update function in it. When all is done, wait a few seconds in your scene for all the snow to spawn. The final scene should look like this:
+
