@@ -119,7 +119,7 @@ The render function is relativley easy, it just loops trough all the particles i
         }
 ```
 
-We've saved the best for last, the InitParticle function is what makes
+We've saved the best for last, the InitParticle function is what makes the snow look like snow. It sets each variable to some default value plus some random value. The values are defined by the first constants that the class defined on the top. Other than that, this should be pretty straight forward
 
 ```cs
         public override void InitParticle(int index) {
@@ -136,3 +136,6 @@ We've saved the best for last, the InitParticle function is what makes
     }
 }
 ```
+
+## Adding snow to the game
+Let's head back to the latest texture mapped scene (the one we rendered the UI in) and add some particles to it!
