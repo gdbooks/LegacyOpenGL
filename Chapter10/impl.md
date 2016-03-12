@@ -9,3 +9,5 @@ We're going to use this snow texture:
 The final scene we will have at the end of the implementation will look like this:
 
 ![SNOWIN](snowin.png)
+
+Notice that the snow falls above the world, but below the UI. This is because of where we positioned the snow's draw call.
