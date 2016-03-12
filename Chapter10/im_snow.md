@@ -26,7 +26,7 @@ Next, let's define some member values. The snow storm is a volumetric effect, so
 
 The constructor takes 1 more variable than the base constructor, which is the size of the snow volume. Becuase of this, the default constructor is called using the : convention with the first two arguments only.
 
-After we store the dimensions of the snow volume, we go ahead and load a snow texture. You can download the texture from [here]
+After we store the dimensions of the snow volume, we go ahead and load a snow texture. You can download the texture from [here](snow.png).
 
 ```cs
         public SnowstormParticleSystem(int maxParticles, Vector3 origin, Vector3 size)
@@ -46,30 +46,55 @@ After we store the dimensions of the snow volume, we go ahead and load a snow te
             bmp.UnlockBits(bmp_data);
             bmp.Dispose();
         }
+```
 
+The shutdown function is straight forward, it deletes the snow texture.
+
+```cs
         public override void Shutdown() {
             GL.DeleteTexture(texture);
         }
+```
 
+Update is a little funky, you might be able to write it cleaner than i could. Basically all particles that are alive in a list go from 0 to numParticles. This function goes ahead and updates each particles position by it's velocity. If a particle is below the ground plane, we go ahead and copy the last active particle to it's index. By not updating the loop counter when this happens we ensure that the next iteration will update the newly copied value. We also replace the old last particle with a new one. If the particle is still alive, we increase the iterator.
+
+```cs
         public override void Update(float deltaTime) {
-            for (int i = 0; i < numParticles;) {
+            for (int i = 0; i < numParticles; /*omitted*/) {
+                // Update particles position based on velocity
                 particleList[i].position = particleList[i].position + particleList[i].velocity * deltaTime;
-
+                
+                // If the particle hit the ground kill it
                 if (particleList[i].position.Y <= systemOrigin.Y) {
+                    // Copy last active particle into this slot, decrease avtive particle count.
+                    // Because we dont step the loop counter here, the next iteration fo the for loop executes on the same index
                     particleList[i] = particleList[--numParticles];
                     particleList[numParticles] = new Particle();
                 }
+                // Move on to next particle
                 else {
                     i++;
                 }
             }
-
+            
+            // Store elapsed time
             accumulatedTime += deltaTime;
+            
+            // Determine how many particles should be alive
             int newParticles = (int)(SNOWFLAKE_PER_SEC * accumulatedTime);
+            
+            // Reduce stored time by number of newly spawned particles
             accumulatedTime -= 1.0f / SNOWFLAKE_PER_SEC * newParticles;
+            
+            // Request that more particles get spawned
+            // Remember, Emit is only present in the base class
             Emit(newParticles);
         }
+```
 
+The render function is relativley easy, it just loops trough all the particles in the list and renders a textured quad for each of them.
+
+```cs
         public override void Render() {
             GL.BindTexture(TextureTarget.Texture2D, texture);
 
@@ -92,7 +117,11 @@ After we store the dimensions of the snow volume, we go ahead and load a snow te
             }
             GL.End();
         }
+```
 
+We've saved the best for last, the InitParticle function is what makes
+
+```cs
         public override void InitParticle(int index) {
             particleList[index].position.X = systemOrigin.X + (float)random.NextDouble() * width;
             particleList[index].position.Y = height;
