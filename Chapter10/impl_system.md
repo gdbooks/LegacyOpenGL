@@ -71,4 +71,4 @@ Particles might or might not start out with some randomized values. For this rea
 }
 ```
 
-That's all there is to the particle system. It's a base class, so a lot of the effect related heavy lifting is going to be done by child classes. 
+That's all there is to the particle system. It's a base class, so a lot of the effect related heavy lifting is going to be done by child classes. Speaking of which, let's go ahead and create an example of a snow particle system in the next section!
