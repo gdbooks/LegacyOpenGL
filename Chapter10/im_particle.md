@@ -12,13 +12,16 @@ using Math_Implementation;
 namespace GameApplication {
     class Particle {
         // These are used in our demo
-        public Vector3 m_pos = new Vector3();
-        public Vector3 m_velocity = new Vector3();
-        public float m_size = 0f;
+        public Vector3 position = new Vector3();
+        public Vector3 velocity = new Vector3();
+        public float size = 0f;
 
         // Unused in our demo, might be nice for other systems
-        public float[] m_color = new float[4];
+        public float[] color = new float[4];
     }
 }
-
 ```
+
+That's all there is to it. The __position__ variable is used to determine where to render the particle. The __velocity__ variable determines how the particle will travel. The __size__ variable sets the size of the particle. 
+
+The __color__ variable is not going to be used in our demo, but other systems might need it. You should add attributes to the particle class every time a specific system needs them!
