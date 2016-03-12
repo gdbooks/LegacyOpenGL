@@ -40,6 +40,8 @@ Next, let's define some strictly virtual functions. Because each particle effect
 
 The interesting function here is ```InitParticle```. This function is responsible for taking an unused particle and initalizing it with some semi random values. This will of course need to be overridden.
 
+Because all the particles we have are stored in a list, the InitParticle function just needs an index into that list. It will intialize the appropriate variables.
+
 ```cs
         public virtual void Update(float deltaTime) { }
         public virtual void Render() { }
