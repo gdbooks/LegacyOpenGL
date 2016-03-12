@@ -10,4 +10,4 @@ The final scene we will have at the end of the implementation will look like thi
 
 ![SNOWIN](snowin.png)
 
-Notice that the snow falls above the world, but below the UI. This is because of where we positioned the snow's draw call.
+Notice that the snow falls above the world, but below the UI. This is because of where we will position the snow's draw call.
