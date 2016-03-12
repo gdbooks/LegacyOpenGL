@@ -6,7 +6,7 @@ For example, if we have a snow particle system and a fire particle system they w
 
 The other thing to note about this class is that it has no methods. It's a class strictly to hold data. I've decided that my particle systems are going to know how to render each particle, so i gave the responsibility to render and update the particles to the system. This makes the partcile class super simple.
 
-```
+```cs
 using Math_Implementation;
 
 namespace GameApplication {
