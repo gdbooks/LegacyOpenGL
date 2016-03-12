@@ -157,3 +157,10 @@ snow.Render();
 
 The particle system also needs to be updated. This means you will have to override the scenes update function, and call the particle systems update function in it. When all is done, wait a few seconds in your scene for all the snow to spawn. The final scene should look like this:
 
+![SNOW](snowin.png)
+
+Of course from this scene it's obvious that i'm not an artist . Usually a technical artist will play around with a particle systems attributes to create the desired effects.
+
+## Other systems
+
+Other particle systems like fire and lighting are done in similar fashions. If you are confused about how what we did so far has worked, or how that knowledge translates into creating a fire system give me a call on skype and i'll be happy to explain in more detail.
