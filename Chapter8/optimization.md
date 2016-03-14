@@ -53,3 +53,9 @@ This is the thing with vertex arrays, the data is stred in LARGE floating point 
 
 Like most OpenGL features, to be able to use vertex arrays, you must first enable them. You might expect this to be done with ```GL.Enable```, but it's not. OpenGL provides a seperate pair of functions to control vertex array support:
 
+```cs
+void GL.EnableClientState(ArrayCap state);
+void GL.DisableClientState(ArrayCap state);
+```
+
+# TODO
