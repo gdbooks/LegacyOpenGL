@@ -82,4 +82,8 @@ void GL.DisableClientState(ArrayCap.NormalArray);
 void GL.DisableClientState(ArrayCap.VertexArray);
 ```
 
+## Working with arrays
+
+After you have enabled the array types that you will be using, the next step is to give OpenGL some data to work with. It's up to you to create arrays and fill them with the data you will be using. After you have filled the arrays with data, you need to tell OpenGL about these arrays so it can draw them. The function used to do this depends on the type of array you're using, let's look at each function in detail:
+
 # TODO
