@@ -39,3 +39,10 @@ Moving forward, whenever possible i want you to avoid immediate mode rendering a
 Now that we've discussed the reasons for using vertex arrays, let's see how they are used. 
 
 ## Array based data
+
+So far, we've been using relatively simple objects in our demos, and this, we've been able to describe them explicitly in the code. In a real game, however, you'll be working with models containing hundreds or even thousands of polygons, and describing such complicated models directly in code isn't practical. Instead, one of the following two approaches is usually taken:
+
+* __Load the model from a file__ Dozens of great modeling packages enable you to create a model visually, and then export the geometric data to a file which can be read by your program. This approach offers the greatest flexibility. Model loading will be discussed later.
+* __Generate the model procedurally__. Some things you want to represent can be implicitly described with equations due to patterns they contain, or because they posses some random proerties you can generate on the flu. A good example of this is fractials, or a sphere.
+
+Whichever approach is used, it should be fairly obvious that you don't want to repeat all the work every frame. You certainly dont
