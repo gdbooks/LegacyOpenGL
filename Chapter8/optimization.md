@@ -45,4 +45,11 @@ So far, we've been using relatively simple objects in our demos, and this, we've
 * __Load the model from a file__ Dozens of great modeling packages enable you to create a model visually, and then export the geometric data to a file which can be read by your program. This approach offers the greatest flexibility. Model loading will be discussed later.
 * __Generate the model procedurally__. Some things you want to represent can be implicitly described with equations due to patterns they contain, or because they posses some random proerties you can generate on the flu. A good example of this is fractials, or a sphere.
 
-Whichever approach is used, it should be fairly obvious that you don't want to repeat all the work every frame. You certainly dont
+Whichever approach is used, it should be fairly obvious that you don't want to repeat all the work every frame. You certainly dont want to be constantly loading or generating a model. Instead you want to load the data into arrays in initialize, and then just use those arrays in the render function. 
+
+This is the thing with vertex arrays, the data is stred in LARGE floating point arrays. Perhaps arrays of 2 to 6 thousand elements.
+
+## Enabling vertex arrays
+
+Like most OpenGL features, to be able to use vertex arrays, you must first enable them. You might expect this to be done with ```GL.Enable```, but it's not. OpenGL provides a seperate pair of functions to control vertex array support:
+
