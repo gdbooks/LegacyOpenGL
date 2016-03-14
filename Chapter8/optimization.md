@@ -20,3 +20,22 @@ There are several problems here, the first of which is that in order to render t
 
 The second and third problems are illustrated in this image:
 
+![ISSUE](issue.png)
+
+Assuming that this mesh is made up of triangle strips (perhaps it's a portion of the mesh created in pseudo-code above), each circled vertex is redundant. In other words, these vertices are shared by more than 3 triangles, but since a triangle strip can represent at most three triangles per vertex, each of the circled vertices have to be sent to the graphics card more than once.
+
+This results in additional bandwith when uploading data to the video card. More importantly, those vertices will need to be transformed and lit multiple times, once for each duplicate vertex.
+
+To address these issues OpenGL provides vertex arrays. A Vertex array has the following advantages:
+
+* Large batches of data can be sent with a small number of function calls. 
+  * Using vertex arrays we could reduce the above example from 6000 function calls to 2
+* Through the use of indexed vertex arrays, vertices can be sent exactly once per triangle mesh, reducing bandwith and lighting calculations
+  * This is the reason 90% of the things we render are triangles, not quads or triangle strips
+  * When rendered with indexed arrays we can avoid sending duplicate data
+
+Moving forward, whenever possible i want you to avoid immediate mode rendering and only use vertex arrays. It's the only viable way to render and maintain high framerates. No professional game ships with immediate mode, it's only used to prototype.
+
+Now that we've discussed the reasons for using vertex arrays, let's see how they are used. 
+
+## Array based data
