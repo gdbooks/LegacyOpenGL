@@ -97,7 +97,7 @@
     * [Particle System](Chapter10/impl_system.md)
     * [Snow Example](Chapter10/im_snow.md)
 * [Common Graphics Topics](Chapter8/README.md)
-  * [Performance Optimization](Chapter8/optimization.md)
+  * [Vertex Arrays](Chapter8/optimization.md)
   * [Loading Meshes](Chapter8/loading.md)
   * [Resource Management](Chapter8/resource.md)
     * [Implementation](Chapter8/resource_impl.md)
