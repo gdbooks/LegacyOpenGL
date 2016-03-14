@@ -60,13 +60,13 @@ void GL.DisableClientState(ArrayCap stateArray);
 
 The ```stateArray``` parameter is a flag indicating which type of array you're enabling (or disabling). Each type of vertex attribute (position, normal, color, uv) can be stored in an array, you need to enable whichever attributes you are using indevidually. These are the valid flags:
 
-* __ArrayCap.VertexArray__
-* __ArrayCap.NormalArray__
-* __ArrayCap.ColorArray__
-* __ArrayCap.SecondaryColorArray__
-* __ArrayCap.IndexArray__
-* __ArrayCap.TextureCoordArray__
-* __ArrayCap.EdgeFlagArray__
+* __ArrayCap.VertexArray__ Enables an array containing the position of each verted
+* __ArrayCap.NormalArray__ Enables an array containing the normal of each vertex
+* __ArrayCap.ColorArray__ Enables an array containing color information for each vertex
+* __ArrayCap.SecondaryColorArray__ Enables an array containing color information for each vertex
+* __ArrayCap.IndexArray__ Enabled an array containing indices into a _color pallete_ for each vertex
+* __ArrayCap.TextureCoordArray__ Enabled an array containing the uv coordinates for each vertex
+* __ArrayCap.EdgeFlagArray__ Enables an array containing an edge flag for each vertex
 
 For example, if you wanted to render a model that has vertex positions, normals and texture coordinates,you'd have to do the following:
 
