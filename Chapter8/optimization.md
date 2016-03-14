@@ -16,4 +16,7 @@ for (int i = 0; i < 2002; ++i) { // 2002 because of the triangle STRIP
 GL.End();
 ```
 
-There are several problems here, the first of which is that in order to render this model we make over 6000 function calls! Remember, no function call is free!
+There are several problems here, the first of which is that in order to render this model we make over 6000 function calls! Remember, no function call is free! Every function call has a very tiny overhead, but with over 6000 calls, this overhead adds up really fast!
+
+The second and third problems are illustrated in this image:
+
