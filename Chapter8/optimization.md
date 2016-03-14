@@ -1,2 +1,4 @@
-#TODO
+#Optimization
 Perf
+
+## Vertex arrays
