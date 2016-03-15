@@ -142,6 +142,9 @@ This specifies the primary color array (vertex color). __size__ is the number of
 
 After having specified which arrays OpenGL should use for each vertex attribute, you can begin to have it access the data for rendering. There are several functions you can render with, next we will talk about each of them.
 
+## TODO: Pinning:
+http://www.opentk.com/doc/graphics/geometry/vertex-arrays
+
 # GL.DrawArrays
 
 When this function is called,OpenGL iterates over each of the currently enabled arrays, rendering primitives as it goes. Lets take a look at the function to understand how it works:
