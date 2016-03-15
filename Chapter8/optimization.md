@@ -224,6 +224,7 @@ void GL.EnableClientState(ArrayCap.NormalArray);
 unsafe { 
     fixed (float* pverts = vertices) {
     fixed (float* pnormas = normals) {
+    
         GL.VertexPointer(3, VertexPointerType.Float, 0, pverts);
         GL.NormalPointer(NormalPointerType.Float, 0, pnorms);
         GL.DrawArrays(BeginMode.Triangles, mesh1.offset, mesh1.Length); // Draw mesh 1
@@ -231,7 +232,6 @@ unsafe {
         GL.VertexPointer(3, VertexPointerType.Float, 0, pverts);
         GL.NormalPointer(NormalPointerType.Float, 0, pnorms);
         GL.DrawArrays(BeginMode.Triangles, mesh2.offset, mesh2.Length); // Draw mesh 2
-        
         
         GL.Finish(); // Force OpenGL to finish rendering while the arrays are still pinned.
     } // Fixed normals
