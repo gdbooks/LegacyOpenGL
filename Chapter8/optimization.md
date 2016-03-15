@@ -204,7 +204,6 @@ unsafe {
         GL.DrawArrays(BeginMode.Triangles, 0, vertices.Length); // Discussed in next section
         GL.Finish();    // Force OpenGL to finish rendering while the arrays are still pinned.
     }
-    fixed
 }
 
 GL.DrawArrays(PrimitiveType.Triangles, player.characterStart, player.characterCount);
