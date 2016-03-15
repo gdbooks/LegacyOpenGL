@@ -96,7 +96,7 @@
     * [Particle](Chapter10/im_particle.md)
     * [Particle System](Chapter10/impl_system.md)
     * [Snow Example](Chapter10/im_snow.md)
-* [Optimization Techniques](Chapter8/README.md)
+* [Optimization](Chapter8/README.md)
   * [Vertex Arrays](Chapter8/optimization.md)
     * [On your own](Chapter8/var_todo.md) 
   * [Loading Meshes](Chapter8/loading.md)
