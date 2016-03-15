@@ -195,17 +195,22 @@ It should be noted that after calling ```GL.DrawArrays``` the state of the array
 ```cs
 void GL.EnableClientState(ArrayCap.VertexArray);
 void GL.EnableClientState(ArrayCap.NormalArray);
-void GL.EnableClientState(ArrayCap.TextureCoordArray);
 
-void GL.VertexPointer(3, VertexPointerType.Float, 0, 0);
-void GL.NormalPointer(NormalPointerType.Float, 0, 0);
-void GL.TexCoordPointer(2, TexCoordPointerType.Float, 0, 0);
+unsafe { 
+    fixed (float* pverts = vertices, float* pnorms = normals) {
+        GL.VertexPointer(3, VertexPointerType.Float, 0, pverts);
+        GL.NormalPointer(NormalPointerType.Float, 0, pnorms);
+        
+        GL.DrawArrays(BeginMode.Triangles, 0, vertices.Length); // Discussed in next section
+        GL.Finish();    // Force OpenGL to finish rendering while the arrays are still pinned.
+    }
+    fixed
+}
 
 GL.DrawArrays(PrimitiveType.Triangles, player.characterStart, player.characterCount);
 
 GL.DrawArrays(PrimitiveType.Triangles, player.swordStart, player.swordCount);
 
-void GL.DisableClientState(ArrayCap.TextureCoordArray);
 void GL.DisableClientState(ArrayCap.NormalArray);
 void GL.DisableClientState(ArrayCap.VertexArray);
 ```
