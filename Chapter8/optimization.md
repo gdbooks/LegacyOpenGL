@@ -144,7 +144,16 @@ After having specified which arrays OpenGL should use for each vertex attribute,
 
 #Pinning
 
-[This](http://www.opentk.com/doc/graphics/geometry/vertex-arrays) article explains the next bit of code in great detail.
+The following section is copied from [This](http://www.opentk.com/doc/graphics/geometry/vertex-arrays) article, which explains how vertex arrays should be used.
+
+Vertex Arrays use client storage, because they are stored in system memory (not video memory). Since .Net is a Garbage Collected environment, the arrays must remain pinned until the GL.DrawArrays() or GL.DrawElements() call is complete.
+
+Pinning an array means that while the array is pinned the garbage collector is not allowed to touch it. If the arrays are unpinned prematurely, they may be moved or collected by the Garbage Collector before the draw call finishes. This will lead to random access violation exceptions and corrupted rendering, issues which can be difficult to trace.
+
+Due to the asynchronous nature of OpenGL, ```GL.Finish()``` must be used to ensure that rendering is complete before the arrays are unpinned.
+
+
+
 
 Also, rework last argument!
 
