@@ -105,9 +105,10 @@ float[] modelData = new float[] {
   0f, 1f, 0f, // NORMAL 1
   9f, 5f, 6f, // VERTEX 2
   0f, 1f, 0f  // NORMAL 2
+}
 ```
 
-Because in the above example each vertex has 3 floats between its-self and the next vertex; and similarly normals are seperated by 3 floats the __stride__ of the above array is ```3 * sizeof(float)```
+In the above example vertex 1 and vertex 2 are seperated by 6 floating point numbers. Similarly Normal 1 and Normal 2 are also seperated by 6 numbers. Therefore, the stride of the above array is ```6 * sizeof(float)```
 
 The datatype of the array (float, int short, etc...) is indicated by __type__.
 
@@ -159,13 +160,14 @@ struct Vertex {
     public Vector3 Position;
     public Vector2 TexCoord;
 }
+// Vertex size = 5 * sizeof(float)
  
 Vertex[] vertices = new Vertex[100];
  
 unsafe { // MUST BE CALLED TO ACCESS POINTERS
     fixed (float* pvertices = vertices) { // Pins memory
-        GL.VertexPointer(3, VertexPointerType.Float, BlittableValueType.StrideOf(vertices), pvertices);
-        GL.TexCoordPointer(2, VertexPointerType.Float, BlittableValueType.StrideOf(vertices), pvertices + sizeof(Vector3));
+        GL.VertexPointer(3, VertexPointerType.Float, 5 * sizeof(float), pvertices);
+        GL.TexCoordPointer(2, VertexPointerType.Float, 5 * sizeof(float), pvertices + sizeof(Vector3));
         GL.DrawArrays(BeginMode.Triangles, 0, vertices.Length); // Discussed in next section
         GL.Finish();    // Force OpenGL to finish rendering while the arrays are still pinned.
     }
