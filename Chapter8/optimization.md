@@ -139,4 +139,39 @@ void GL.ColorPointer(int size, ColorPointerType type, int stride, int offset);
 
 This specifies the primary color array (vertex color). __size__ is the number of components per color, which is either 3 or 4 (RGB or RGBA). __type__ can be Byte, UnsignedByte, Short, UnsignedShort, Int, UnsignedInt, Float or Double.
 
-# TODO
+
+After having specified which arrays OpenGL should use for each vertex attribute, you can begin to have it access the data for rendering. There are several functions you can render with, next we will talk about each of them.
+
+# GL.DrawArrays
+
+When this function is called,OpenGL iterates over each of the currently enabled arrays, rendering primitives as it goes. Lets take a look at the function to understand how it works:
+
+```cs
+void GL.DrawArrays(PrimitiveType type, int first, int count);
+```
+
+__type__ serves the same basic function as the paramater of ```GL.Begin```. It specifies what type of primitives the vertex data creates. Valid values are: Points, LineStrip, LineLoop, Lines, TriangleStrip, TriangleFan, Triangles, QuadStrip, Quads and Polygon.
+
+__first__ specifies the index at which we should start drawing. This means you can choose to only draw a part of the array data.
+
+__count__ is how many indices to draw.
+
+It should be noted that after calling ```GL.DrawArrays``` the state of the arrays being processed is undefined. Meaning you have to re-bind them or the behaviour of the next ```DrawArrays``` call is undefined. For example, this code is bad:
+
+```cs
+void GL.EnableClientState(ArrayCap.VertexArray);
+void GL.EnableClientState(ArrayCap.NormalArray);
+void GL.EnableClientState(ArrayCap.TextureCoordArray);
+
+void GL.VertexPointer(3, VertexPointerType.Float, 0, 0);
+void GL.NormalPointer(NormalPointerType.Float, 0, 0);
+void GL.TexCoordPointer(2, TexCoordPointerType.Float, 0, 0);
+
+GL.DrawArrays(PrimitiveType.Triangles, player.characterStart, player.characterCount);
+
+GL.DrawArrays(PrimitiveType.Triangles, player.swordStart, player.swordCount);
+
+void GL.DisableClientState(ArrayCap.TextureCoordArray);
+void GL.DisableClientState(ArrayCap.NormalArray);
+void GL.DisableClientState(ArrayCap.VertexArray);
+```
