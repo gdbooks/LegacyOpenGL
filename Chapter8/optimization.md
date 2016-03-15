@@ -1,3 +1,4 @@
+#TODO: Don't insist on using arrays, use VBO's Instead!
 # Vertex Arrays
 
 Thus far, all examples have used the```GL.Begin``` / ```GL.End``` method of drawing objects. This method is  refered to as __Immediate Mode Rendering__.  Immediate mode is useful for simple applications and prototype code as it is easy to understand and visualize. However it comes with some performance penalties that make it less useful for applications that need to render lots of geometry at a high framerate, like games.
