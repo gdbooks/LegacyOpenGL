@@ -142,6 +142,8 @@ This specifies the primary color array (vertex color). __size__ is the number of
 
 After having specified which arrays OpenGL should use for each vertex attribute, you can begin to have it access the data for rendering. There are several functions you can render with, next we will talk about each of them.
 
+# TODO: Rework above last argument
+
 #Pinning
 
 The following section is copied from [This](http://www.opentk.com/doc/graphics/geometry/vertex-arrays) article, which explains how vertex arrays should be used.
@@ -153,9 +155,6 @@ Pinning an array means that while the array is pinned the garbage collector is n
 Due to the asynchronous nature of OpenGL, ```GL.Finish()``` must be used to ensure that rendering is complete before the arrays are unpinned.
 
 
-
-
-Also, rework last argument!
 
 # GL.DrawArrays
 
