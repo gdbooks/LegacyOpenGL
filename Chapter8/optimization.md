@@ -152,7 +152,25 @@ Vertex Arrays use client storage, because they are stored in system memory (not 
 
 Pinning an array means that while the array is pinned the garbage collector is not allowed to touch it. If the arrays are unpinned prematurely, they may be moved or collected by the Garbage Collector before the draw call finishes. This will lead to random access violation exceptions and corrupted rendering, issues which can be difficult to trace.
 
-Due to the asynchronous nature of OpenGL, ```GL.Finish()``` must be used to ensure that rendering is complete before the arrays are unpinned.
+Due to the asynchronous nature of OpenGL, ```GL.Finish()``` must be used to ensure that rendering is complete before the arrays are unpinned. Let's take a look at how this might be used in context:
+
+```cs
+struct Vertex {
+    public Vector3 Position;
+    public Vector2 TexCoord;
+}
+ 
+Vertex[] vertices = new Vertex[100];
+ 
+unsafe { // MUST BE CALLED TO ACCESS POINTERS
+    fixed (float* pvertices = vertices) { // Pins memory
+        GL.VertexPointer(3, VertexPointerType.Float, BlittableValueType.StrideOf(vertices), pvertices);
+        GL.TexCoordPointer(2, VertexPointerType.Float, BlittableValueType.StrideOf(vertices), pvertices + sizeof(Vector3));
+        GL.DrawArrays(BeginMode.Triangles, 0, vertices.Length); // Discussed in next section
+        GL.Finish();    // Force OpenGL to finish rendering while the arrays are still pinned.
+    }
+}
+```
 
 
 
