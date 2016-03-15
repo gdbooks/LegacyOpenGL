@@ -145,6 +145,8 @@ After having specified which arrays OpenGL should use for each vertex attribute,
 ## TODO: Pinning:
 http://www.opentk.com/doc/graphics/geometry/vertex-arrays
 
+Also, rework last argument!
+
 # GL.DrawArrays
 
 When this function is called,OpenGL iterates over each of the currently enabled arrays, rendering primitives as it goes. Lets take a look at the function to understand how it works:
