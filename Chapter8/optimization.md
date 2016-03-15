@@ -241,3 +241,5 @@ unsafe {
 void GL.DisableClientState(ArrayCap.NormalArray);
 void GL.DisableClientState(ArrayCap.VertexArray);
 ```
+
+Take note of how the VertexPointer and Normal pointers are re-defined between calls to ```DrawArrays```
