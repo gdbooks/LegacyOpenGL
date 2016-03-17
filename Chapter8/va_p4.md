@@ -36,3 +36,6 @@ unsafe { // MUST BE CALLED TO ACCESS POINTERS
 Notice that all of the code is wrapped in an __unsafe__ section. In order to use pointers you must tell C# that the code you are using is going to be touching memory directly, since this is considered risky business in the C# world we put all such code in an unsafe block.
 
 The __fixed__ keyword will pin memory to the desired variable until the fixed block is exited. A pointer datatype is denoted by adding an asterix (\*) after the variable type. So a pointer to an array bacomes ```float*```, but a pointer to a single floating point value would also be ```float*```. 
+
+In order to run unsafe code, you need to turn it on as a compiler option. You can just check the option under project settings:
+
