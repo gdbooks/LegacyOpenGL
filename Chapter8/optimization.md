@@ -40,14 +40,15 @@ No professional game ships with immediate mode, vertex arrays used to be the got
 
 ## Array based data
 
-So far, we've been using relatively simple objects in our demos, and this, we've been able to describe them explicitly in the code. In a real game, however, you'll be working with models containing hundreds or even thousands of polygons, and describing such complicated models directly in code isn't practical. Instead, one of the following two approaches is usually taken:
+The biggest challenge for graphics is getting data. So far we've used simple primitives like cubes and planes. These are easy to describe directly in code using ```GL.Vertex3```. Complicated models however will not be easily described in code.
 
-* __Load the model from a file__ Dozens of great modeling packages enable you to create a model visually, and then export the geometric data to a file which can be read by your program. This approach offers the greatest flexibility. Model loading will be discussed later.
-* __Generate the model procedurally__. Some things you want to represent can be implicitly described with equations due to patterns they contain, or because they posses some random proerties you can generate on the flu. A good example of this is fractials, or a sphere.
+Most games use two approaches to solve this. First, it's possible to __generate gemetric data procedurally__. This just entails running some algorithm that will eventually spit out vertices to 3D geometry. We render the spehere in our demos using this method.
+
+More often than not tough, geometric data will be __loaded from an external file__. Later on we will actually discuss how to load complex 3D models from an OBJ file. There are standard model formats out there, like OBJ, FBX and DAE but most games use some custom format. This custom format tends to be one that simply makes sense to the programmers.ctials, or a sphere.
 
 Whichever approach is used, it should be fairly obvious that you don't want to repeat all the work every frame. You certainly dont want to be constantly loading or generating a model. Instead you want to load the data into arrays in initialize, and then just use those arrays in the render function. 
 
-This is the thing with vertex arrays, the data is stred in LARGE floating point arrays. Perhaps arrays of 2 to 6 thousand elements.
+This is the point of vertex arrays, the data is stored in LARGE floating point arrays. Perhaps arrays of 2 to 6 thousand elements.
 
 ## Enabling vertex arrays
 
