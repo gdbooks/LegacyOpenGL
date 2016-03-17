@@ -12,14 +12,18 @@ namespace GameApplication {
     class DrawElementsExample : Game {
 ```
 
-Next up are member variables
+Next up are member variables. This demo will have the standard grid, and a cube that has different colors for each vertex. So we're going to make 3 arrays. One for the vertex positions, one for the vertex colors, and one for the indices into the previous two arrays to draw.
 
 ```
         Grid grid = null;
         float[] cubeVertices = null;
         float[] cubeColors = null;
         uint[] cubeIndices = null;
+```
 
+Next up is a standard copy / paste resize function:
+
+```
         public override void Resize(int width, int height) {
             GL.Viewport(0, 0, width, height);
             GL.MatrixMode(MatrixMode.Projection);
@@ -28,7 +32,11 @@ Next up are member variables
             GL.LoadMatrix(Matrix4.Transpose(perspective).Matrix);
             GL.MatrixMode(MatrixMode.Modelview);
         }
+```
 
+In the ```Initialize``` function we're going to make a solid grid. We're also going to populate the box arrays. Take note, we only define vertices for the front (1 - 4) and back (5 - 8) faces of the cube. Same with colors. This is because those corners are shared with the top, bottom, left and right faces. We can just include them using the index array.
+
+```
         public override void Initialize() {
             grid = new Grid(true);
 
@@ -53,7 +61,11 @@ Next up are member variables
                 0.0f, 0.0f, 1.0f, // Vertex 7
                 1.0f, 1.0f, 1.0f  // Vertex 8
             };
+```
 
+Still in ```Initialize``` we next need to define the index array. Of course we need two triangles / cube face. The way to read this is each integer here is an index into the ```cubeVertices``` and ```cubeColors``` array.
+
+```
             cubeIndices = new uint[] {
                 // Front
 		        0, 1, 2, // Front triangle 1
@@ -75,7 +87,11 @@ Next up are member variables
                 6, 7, 3  // Right triangle 2
             };
         }
+```
 
+Finally let's get started on the ```Render``` function. First we load up a modelview matrix, then render the grid:
+
+```
         public override void Render() {
             Matrix4 lookAt = Matrix4.LookAt(new Vector3(-7.0f, 5.0f, -7.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
             GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
@@ -84,9 +100,18 @@ Next up are member variables
             grid.Render();
             GL.Enable(EnableCap.DepthTest);
 
+```
+
+In order to use ```DrawElements``` (Or ```DrawArrays```) we must first enable client states for each vertex attribute we're going to be rendering:
+
+```
             GL.EnableClientState(ArrayCap.VertexArray);
             GL.EnableClientState(ArrayCap.ColorArray);
+```
 
+Next, we need to tell OpenGL where to find that vertex data:
+
+```
             GL.VertexPointer(3, VertexPointerType.Float, 0, cubeVertices);
             GL.ColorPointer(3, ColorPointerType.Float, 0, cubeColors);
             GL.DrawElements(PrimitiveType.Triangles, cubeIndices.Length, DrawElementsType.UnsignedInt, cubeIndices);
