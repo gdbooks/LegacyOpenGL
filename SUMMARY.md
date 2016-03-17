@@ -98,6 +98,7 @@
     * [Snow Example](Chapter10/im_snow.md)
 * [Optimization](Chapter8/README.md)
   * [Vertex Arrays](Chapter8/optimization.md)
+    * [Array Based Data](Chapter8/va_p1.md)
   * [Vertex Buffers](Chapter8/vbo.md)
   * [Loading Meshes](Chapter8/loading.md)
   * [Resource Management](Chapter8/resource.md)
