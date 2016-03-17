@@ -146,7 +146,7 @@ After having specified which arrays OpenGL should use for each vertex attribute,
 
 #Pinning
 
-The following section is copied from [This](http://www.opentk.com/doc/graphics/geometry/vertex-arrays) article, which explains how vertex arrays should be used.
+The following section is copied from [This](http://www.opentk.com/doc/graphics/geometry/vertex-arrays) article, which explains how vertex arrays should be used. [This](http://www.opentk.com/doc/chapter/2/opengl/geometry/drawing) page also provides some very usable information on rendering in OpenTK.
 
 Vertex Arrays use client storage, because they are stored in system memory (not video memory). Since .Net is a Garbage Collected environment, the arrays must remain pinned until the GL.DrawArrays() or GL.DrawElements() call is complete.
 
@@ -173,6 +173,9 @@ unsafe { // MUST BE CALLED TO ACCESS POINTERS
 }
 ```
 
+Notice that all of the code is wrapped in an __unsafe__ section. In order to use pointers you must tell C# that the code you are using is going to be touching memory directly, since this is considered risky business in the C# world we put all such code in an unsafe block.
+
+The __fixed__ keyword will pin memory to the desired variable until the fixed block is exited. A pointer datatype is denoted by adding an asterix (\*) after the variable type. So a pointer to an array bacomes ```float*```, but a pointer to a single floating point value would also be ```float*```. 
 
 
 # GL.DrawArrays
