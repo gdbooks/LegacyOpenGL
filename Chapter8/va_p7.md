@@ -135,3 +135,5 @@ After the cube has ben drawn we should Disable any client states that we enabled
 Compare what we just wrote to the [Cube function in Primitives.cs](https://github.com/Mszauer/OpenGL1X/blob/master/GameApplication/Primitives.cs#L100) (line 100). You can see how much cheaper this is, it doesn't use duplicate vertices, and is using FAR less draw calls!
 
 The final application should look like this:
+
+![DEMO](cube_demo.png)
