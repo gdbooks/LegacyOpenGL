@@ -100,7 +100,7 @@
   * [Vertex Arrays](Chapter8/optimization.md)
     * [Array Based Data](Chapter8/va_p1.md)
     * [Enabling Vertex Arrays](Chapter8/va_p2.md)
-    * [Wprking With Arrays(Chapter8/va_p3.md)
+    * [Wprking With Arrays](Chapter8/va_p3.md)
   * [Vertex Buffers](Chapter8/vbo.md)
   * [Loading Meshes](Chapter8/loading.md)
   * [Resource Management](Chapter8/resource.md)
