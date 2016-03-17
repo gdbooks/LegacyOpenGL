@@ -114,11 +114,24 @@ Next, we need to tell OpenGL where to find that vertex data:
 ```
             GL.VertexPointer(3, VertexPointerType.Float, 0, cubeVertices);
             GL.ColorPointer(3, ColorPointerType.Float, 0, cubeColors);
-            GL.DrawElements(PrimitiveType.Triangles, cubeIndices.Length, DrawElementsType.UnsignedInt, cubeIndices);
+```
 
-            GL.DisableClientState(ArrayCap.VertexArray);
-            GL.DisableClientState(ArrayCap.ColorArray);
+And finally, we just call DrawElements with the right arguments. Remember, the count argument is how many vertices you are rendering, NOT TRIANGLES.
+
+```
+            GL.DrawElements(PrimitiveType.Triangles, cubeIndices.Length, DrawElementsType.UnsignedInt, cubeIndices);
+```
+
+After the cube has ben drawn we should Disable any client states that we enabled. This is just so the next draw call can work.
+
+```
+          GL.DisableClientState(ArrayCap.VertexArray);
+          GL.DisableClientState(ArrayCap.ColorArray);
         }
     }
 }
 ```
+
+Compare what we just wrote to the [Cube function in Primitives.cs](https://github.com/Mszauer/OpenGL1X/blob/master/GameApplication/Primitives.cs#L100) (line 100). You can see how much cheaper this is, it doesn't use duplicate vertices, and is using FAR less draw calls!
+
+The final application should look like this:
