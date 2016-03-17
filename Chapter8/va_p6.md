@@ -10,7 +10,7 @@ void GL.DrawElements(BeginMode mode, int count, DrawElementsType type, uint indi
 
 __mode__ and __count__ are used the same as in ```GL.DrawArrays```. __type__ is the type of the valies in the indices array, it should be UnsignedByte, UnsignedShort, or UnsignedInt. __indices__ is an array containing indexes for the vertices you want to render.
 
-The last argument for ```GL.DrawElements``` is an array, but unlike
+The last argument for ```GL.DrawElements``` is an array of unsigned integers ```uint[]```. It could also be unsigned byte or short, depending on the __type__ paramater.
 
 To understand the value of this method, it must be reiterated that not only can you specify the indices in any order, you can also specify the same vertex repeatedly in the series. In games, most vertices will be shared by more than one polygon. By storing the vertex once and accessing it repeatedly by it's index, you can save a substantial amount of memory. 
 
