@@ -180,7 +180,7 @@ The __fixed__ keyword will pin memory to the desired variable until the fixed bl
 
 # GL.DrawArrays
 
-When this function is called,OpenGL iterates over each of the currently enabled arrays, rendering primitives as it goes. Lets take a look at the function to understand how it works:
+When this function is called, OpenGL iterates over each of the currently enabled arrays, rendering primitives as it goes. Lets take a look at the function to understand how it works:
 
 ```cs
 void GL.DrawArrays(PrimitiveType type, int first, int count);
