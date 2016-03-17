@@ -113,38 +113,36 @@ In the above example vertex 1 and vertex 2 are seperated by 6 floating point num
 
 The datatype of the array (float, int short, etc...) is indicated by __type__.
 
-__offset__ is an index to the first element of the array containing the specific data. For example in the last code sample provided (the one with a stride) the vertex offset is 0, but the normal offset is 3. Because the normal data starts at element 3 of the array.
+__data__ is a pointer to the first element of your vertex array. This might be a bit indimidating as we havent used Pointers at all yet, after all the whole point of C# is to not need pointers. But OpenGL was designed for C, some functions will need direct memory. Don't worry, we will talk about how to get and use pointers shortly.
 
 Other paramaters will be explained as they are used in the functions.
 
 ```cs 
-void GL.VertexPointer(int size, VertexPointerType type, int stride, int offset);
+void GL.VertexPointer(int size, VertexPointerType type, int stride, IntPtr data);
 ```
 
 This array contains positional data for vertices. __size__ is the number of coordinates per vertex, it must be 2, 3, or 4. The above example has 3 floats for every vetex, so it's size is 3. __type__ can be Short, Int, Float or Double.
 
 ```cs
-void GL.TexCoordPointer(int size, TexCoordPointerType type, int stride, int offset);
+void GL.TexCoordPointer(int size, TexCoordPointerType type, int stride, IntPtr data);
 ```
 
 This array contains texture coordinates for each vertex. __size__ is the number of coordinates, it must be 1, 2, 3 or 4. __type__ can be Short, Int, Float or Double.
 
 ```cs
-void GL.NormalPointer(NormalPointerType type, int stride, int offset);
+void GL.NormalPointer(NormalPointerType type, int stride, IntPtr data);
 ```
 
 This array contains normal vectors for each vertex. Normals are always stored with exactly 3 coordinates (x, y, z) so there is __no size paramater__. __type__ can be Byte, Short, Int, Float or Double.
 
 ```cs
-void GL.ColorPointer(int size, ColorPointerType type, int stride, int offset);
+void GL.ColorPointer(int size, ColorPointerType type, int stride, IntPtr data);
 ```
 
 This specifies the primary color array (vertex color). __size__ is the number of components per color, which is either 3 or 4 (RGB or RGBA). __type__ can be Byte, UnsignedByte, Short, UnsignedShort, Int, UnsignedInt, Float or Double.
 
 
 After having specified which arrays OpenGL should use for each vertex attribute, you can begin to have it access the data for rendering. There are several functions you can render with, next we will talk about each of them.
-
-# TODO: Rework above last argument
 
 #Pinning
 
