@@ -2,6 +2,12 @@
 
 The following section is copied from [This](http://www.opentk.com/doc/graphics/geometry/vertex-arrays) article, which explains how vertex arrays should be used. [This](http://www.opentk.com/doc/chapter/2/opengl/geometry/drawing) page also provides some very usable information on rendering in OpenTK.
 
+You don't have to store data in linear arrays. So long as your data is laid out linearly, you can use pointers to access it as if it where arrays. If you want to use strides within your arrays, that is have all vertex data in a large array instaed of having a color and a position array, you have to use pointers
+
+# Advanced
+
+You will NOT need to do this if you just store your vertex data in linear array. This is actually super advanced, but i figured i'd dedicate a page to it for the sake of completeness.
+
 Vertex Arrays use client storage, because they are stored in system memory (not video memory). Since .Net is a Garbage Collected environment, the arrays must remain pinned until the GL.DrawArrays() or GL.DrawElements() call is complete.
 
 Pinning an array means that while the array is pinned the garbage collector is not allowed to touch it. If the arrays are unpinned prematurely, they may be moved or collected by the Garbage Collector before the draw call finishes. This will lead to random access violation exceptions and corrupted rendering, issues which can be difficult to trace.
