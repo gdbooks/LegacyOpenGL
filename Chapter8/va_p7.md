@@ -1,11 +1,20 @@
+# Example
+
+You should go ahead and code along with this example.
+
+First, we include the required libraries, and define our standard application:
+
 ```
 using OpenTK.Graphics.OpenGL;
 using Math_Implementation;
-using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace GameApplication {
     class DrawElementsExample : Game {
+```
+
+Next up are member variables
+
+```
         Grid grid = null;
         float[] cubeVertices = null;
         float[] cubeColors = null;
