@@ -2,7 +2,7 @@
 
 This function is very similar to ```GL.DrawArrays```, but it is even more powerful! With ```GL.DrawArrays```, your only option is to draw all vertices in the array sequentially. Meaning you can't reference the same vertex more than once. So ```GL.DrawArrays``` still has the problem of needing duplicate verts.
 
-```GL.DrawElements``` on the other hand allows you to specify the array elements in any order, and access each element (vertex) as many times as needed. Let's take a look at the function prototype:
+_```GL.DrawElementson```_ on the other hand allows you to specify the array elements in any order, and access each element (vertex) as many times as needed. Let's take a look at the function prototype:
 
 ```
 void GL.DrawElements(BeginMode mode, int count, DrawElementsType type, IntPtr indices);
