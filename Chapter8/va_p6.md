@@ -8,7 +8,7 @@ _```GL.DrawElementson```_ on the other hand allows you to specify the array elem
 void GL.DrawElements(BeginMode mode, int count, DrawElementsType type, uint indices);
 ```
 
-__mode__ and __count__ are used the same as in ```GL.DrawArrays```. __type__ is the type of the valies in the indices array, it should be UnsignedByte, UnsignedShort, or UnsignedInt. __indices__ is a pointer to an array containing indexes for the vertices you want to render.
+__mode__ and __count__ are used the same as in ```GL.DrawArrays```. __type__ is the type of the valies in the indices array, it should be UnsignedByte, UnsignedShort, or UnsignedInt. __indices__ is an array containing indexes for the vertices you want to render.
 
 The last argument for ```GL.DrawElements``` is an array, but unlike
 
