@@ -50,3 +50,76 @@ namespace GameApplication {
     }
 }
 ```
+
+## Loading
+
+Loading can be broken up into two parts, first reading all of the data in, then parsing all of the data. I'm going to provide some skeleton code for you to work in for this one.
+
+First let's make 6 arrays. One to hold sequential vertex information, one for normals and one for texCoords. When you encounter a line like
+
+```
+v 0 10.0 20.0
+```
+
+That should add 3 floats to the vertices array, 0, 10 and 20. Same for normals and tex-coords
+
+```cs
+public OBJModel(string path) {
+    List<float> vertices = new List<float>();
+    List<float> normals = new List<float>();
+    List<float> texCoords = new List<float>();
+
+    List<uint> vertIndex = new List<uint>();
+    List<uint> normIndex = new List<uint>();
+    List<uint> uvIndex = new List<uint>();
+
+    using (TextReader tr = File.OpenText(path)) {
+        string line = tr.ReadLine();
+        while (line != null) {
+            if (string.IsNullOrEmpty(line) || line.Length < 2) {
+                continue;
+            }
+
+            // TODO Parse Line, fill out above arrays
+
+            line = tr.ReadLine();
+        }
+    }
+
+    List<float> vertexData = new List<float>();
+    List<float> normalData = new List<float>();
+    List<float> uvData = new List<float>();
+
+    for (int i = 0; i < vertIndex.Count; ++i) {
+        vertexData.Add(vertices[(int)vertIndex[i] * 3 + 0]);
+        vertexData.Add(vertices[(int)vertIndex[i] * 3 + 1]);
+        vertexData.Add(vertices[(int)vertIndex[i] * 3 + 2]);
+    }
+    for (int i = 0; i < normIndex.Count; ++i) {
+        normalData.Add(normals[(int)normIndex[i] * 3 + 0]);
+        normalData.Add(normals[(int)normIndex[i] * 3 + 1]);
+        normalData.Add(normals[(int)normIndex[i] * 3 + 2]);
+    }
+    for (int i = 0; i < uvIndex.Count; ++i) {
+        uvData.Add(texCoords[(int)uvIndex[i] * 2 + 0]);
+        uvData.Add(texCoords[(int)uvIndex[i] * 2 + 1]);
+    }
+
+    hasNormals = normalData.Count > 0;
+    hasUvs = uvData.Count > 0;
+
+    numVerts = vertexData.Count;
+    numUvs = uvData.Count;
+    numNormals = normalData.Count;
+
+    List<float> data = new List<float>();
+    data.AddRange(vertexData);
+    data.AddRange(normalData);
+    data.AddRange(uvData);
+
+    vertexBuffer = GL.GenBuffer();
+    GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBuffer);
+    GL.BufferData(BufferTarget.ArrayBuffer, new IntPtr(data.Count * sizeof(float)), data.ToArray(), BufferUsageHint.StaticDraw);
+    GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+}
+```
