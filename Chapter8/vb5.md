@@ -53,10 +53,6 @@ public override void Render() {
     Matrix4 lookAt = Matrix4.LookAt(new Vector3(-7.0f, 5.0f, -7.0f), new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 1.0f, 0.0f));
     GL.LoadMatrix(Matrix4.Transpose(lookAt).Matrix);
 
-    GL.Disable(EnableCap.DepthTest);
-    grid.Render();
-    GL.Enable(EnableCap.DepthTest);
-
     GL.EnableClientState(ArrayCap.VertexArray);
     GL.EnableClientState(ArrayCap.ColorArray);
 
