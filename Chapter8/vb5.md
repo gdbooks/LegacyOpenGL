@@ -46,6 +46,10 @@ public override void Initialize() {
 
 ## Render
 
+Rendering is almost the same as rendering vertex arrays. You use the same functions. All you have to do is bind your VBO (Vertex Buffer Object) and possibly IBO (Index Buffer Object), then treat the last element of each function call as a byte offset into the appropriate buffer.
+
+
+
 ## Shutdown
 
 Finally, when your program is done, you should delete your buffers. Make sure nothing is bound when doing so:
