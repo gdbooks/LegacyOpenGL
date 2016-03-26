@@ -51,6 +51,8 @@ namespace GameApplication {
 }
 ```
 
+The member variables are all protected becasue they are only used for rendering
+
 ## Loading
 
 Loading can be broken up into two parts, first reading all of the data in, then parsing all of the data. I'm going to provide some skeleton code for you to work in for this one.
@@ -61,7 +63,15 @@ First let's make 6 arrays. One to hold sequential vertex information, one for no
 v 0 10.0 20.0
 ```
 
-That should add 3 floats to the vertices array, 0, 10 and 20. Same for normals and tex-coords
+That should add 3 floats to the vertices array, 0, 10 and 20. Same for normals and tex-coords. 
+
+Then we have three more arrays, all unsigned integers. These are for the actual triangle data. For example, if a triangle is listed as such
+
+```
+f 1//2 4//5 6//8
+```
+
+That should put 1, 4 and 6 into the vertex index array, 2, 5 and 8 into the normal index array and nothing into the uv index array. Do take note, ANY of those numbers could be missing, be in the double digits, etc...
 
 ```cs
 public OBJModel(string path) {
@@ -85,11 +95,21 @@ public OBJModel(string path) {
             line = tr.ReadLine();
         }
     }
+```
 
+Once all the data is parsed, it's time to process it into something that's a bit more sequential. For this i'm going to make 3 new arrays that contain positions, normals and uv's all in order.
+
+```cs
     List<float> vertexData = new List<float>();
     List<float> normalData = new List<float>();
     List<float> uvData = new List<float>();
-
+```
+  
+  Then, we're going to loop trough the index arrays we've build up and fill the sequential data up in order. One of the things you will notice is ```index * 3 + 1```, why is this needed all over the place? 
+  
+  Because indexin assumes that we have an array of float3's, that is, each array element is 3 floats. C# would support this with a multidimensional array, but we can modify the indexing of our big array to emulate that effect. 
+  
+```cs
     for (int i = 0; i < vertIndex.Count; ++i) {
         vertexData.Add(vertices[(int)vertIndex[i] * 3 + 0]);
         vertexData.Add(vertices[(int)vertIndex[i] * 3 + 1]);
@@ -104,7 +124,11 @@ public OBJModel(string path) {
         uvData.Add(texCoords[(int)uvIndex[i] * 2 + 0]);
         uvData.Add(texCoords[(int)uvIndex[i] * 2 + 1]);
     }
+```
 
+We now have enough data to fill in the class member variables:
+
+```cs
     hasNormals = normalData.Count > 0;
     hasUvs = uvData.Count > 0;
 
@@ -112,6 +136,11 @@ public OBJModel(string path) {
     numUvs = uvData.Count;
     numNormals = normalData.Count;
 
+```
+
+Finally it's time to upload all this data to the GPU, i'm going to make one last array, this is going to be used to transfer ALL of the above properties to OpenGL. Then we're just going to make a buffer and populate it with data from this new array.
+
+```
     List<float> data = new List<float>();
     data.AddRange(vertexData);
     data.AddRange(normalData);
