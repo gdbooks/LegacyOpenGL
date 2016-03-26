@@ -113,6 +113,7 @@
     * [Review](Chapter8/vb5.md)
     * [On Your Own](Chapter8/vb6.md)
   * [Loading Meshes](Chapter8/loading.md)
+    * [Implementation](Chapter8/lmesh.md) 
   * [Resource Management](Chapter8/resource.md)
     * [Implementation](Chapter8/resource_impl.md)
   * [Implementing a camera](Chapter8/camera.md)
