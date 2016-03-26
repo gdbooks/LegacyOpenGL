@@ -13,3 +13,7 @@ The interesting thing about vertex buffers is that they re-use 90% of the same c
 This does get a little confusing at times. Because both techniques use the same function calls, using a VBO veruses using a VA comes down to weather or not an active buffer is bound.
 
 If an active buffer is bound, OpenGL assumes you want to use Vertex Buffers, otherwise it assumes you want Vertex arrays. This will become clear in the next section.
+
+## Sample
+
+After having read trough the general guide, if the process still doesn't make sense, there is a decent [VBO Example](http://www.opentk.com/node/2302) on the OpenTK website.
