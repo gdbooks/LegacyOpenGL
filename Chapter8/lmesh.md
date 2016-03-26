@@ -160,3 +160,5 @@ The destroy function is pretty simple:
 * Make sure no buffers are bound (unbind buffer)
 * Actually delete the buffer
 * Set buffer handle to -1
+
+## Rendering
