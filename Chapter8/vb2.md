@@ -26,3 +26,5 @@ The third argument is either a ```float``` or a ```uint``` array. This of course
 
 Using consecutive data helps speed up the rendering process just a little bit, and makes it easyer to write the actual render code.
 
+The last argument is a hint. Some OpenGL implementations will use this hint to optimize how they store the data, based on what you intend to do with it. There are two values to this that we care about:
+
