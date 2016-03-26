@@ -14,3 +14,5 @@ You can use the following function to bind your generated buffer ID to an actual
 ```
 void GL.BindBuffer(BufferTarget target, int buffer);
 ```
+
+Just like with textures, if your buffer isn't bound, the function calls will not do what you think they will.
