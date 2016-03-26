@@ -51,7 +51,7 @@ namespace GameApplication {
 }
 ```
 
-The member variables are all protected becasue they are only used for rendering
+The member variables are all protected becasue they are only used for rendering.
 
 ## Loading
 
