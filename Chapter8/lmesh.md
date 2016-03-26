@@ -162,3 +162,13 @@ The destroy function is pretty simple:
 * Set buffer handle to -1
 
 ## Rendering
+
+Rendering is pretty simple too, i want you to try it on your own
+
+First, enable the appropriate client states. Take note of the arguments the function takes, if for example use normals is false, then don't enable the normals array.
+
+Next, bind your aray buffer
+
+Then set your client pointers, the vertex pointer will always start at ofset 0, the normal pointer is at numverts \* sizeof(float), and the uv pointer is at (numverts + numnorms) \* sizeof(float). You have all the data for these offsets in member variables. Mind the paramaters of the function!
+
+Finally, call ```GL.DrawArrays``` to render, the topology is ALWAYS going to be triangles.
