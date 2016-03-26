@@ -152,3 +152,11 @@ Finally it's time to upload all this data to the GPU, i'm going to make one last
     GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
 }
 ```
+
+## Unloading
+
+The destroy function is pretty simple:
+
+* Make sure no buffers are bound (unbind buffer)
+* Actually delete the buffer
+* Set buffer handle to -1
