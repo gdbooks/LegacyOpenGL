@@ -69,7 +69,7 @@ Here are the lines we will care about:
 * v is a vertex
 * vt is the texture coordinate of one vertex
 * vn is the normal of one vertex
-* f is a face
+* f is a face (triangle)
 
 And these are the things we don't care about:
 
@@ -79,3 +79,19 @@ And these are the things we don't care about:
 
 A material describes how to shade a model. OBJ files often come with .mtl files which then link to textures. We're not going to care about mtl files. We just want to get vertex data into our game!
 
+## Data format
+
+Now that we know that we only care about v, vt, vn and f, let's take a look at the format of each of these lines:
+
+v, vt and vn are simple to understand. The letter is followed by a space, then three space seperated floats. That's the line.
+
+f is more tricky. So, for f 8/11/7 7/12/7 6/10/7 :
+
+* 8/11/7 describes the first vertex of the triangle
+* 7/12/7 describes the second vertex of the triangle
+* 6/10/7 describes the third vertex of the triangle 
+* For the first vertex, 8 says which vertex to use. So in this case, -1.000000 1.000000 -1.000000 (index start to 1, not to 0 like in C#)
+* 11 says which texture coordinate to use. So in this case, 0.748355 0.998230
+* 7 says which normal to use. So in this case, 0.000000 1.000000 -0.000000
+
+This means that every model we load will utilie an index buffer. A triangle is described as 3 sets of indices into the vertex / normal / uv arrays. It's important to note that arrays in C# are indexed starting at 0, in OBJ land they start at 1. A conversion needs to be made when you write your parser.
