@@ -2,7 +2,10 @@
 
 That was a lot of information in a very short ammount of time. Let's real quick review all the things we've learned.
 
+## Globals
+
 ## Initialize
+
 
 ## Render
 
