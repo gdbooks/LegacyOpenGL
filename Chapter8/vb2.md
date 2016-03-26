@@ -26,4 +26,3 @@ The third argument is either a ```float``` or a ```uint``` array. This of course
 
 Using consecutive data helps speed up the rendering process just a little bit, and makes it easyer to write the actual render code.
 
-[VBO Example](http://www.opentk.com/node/2302)
