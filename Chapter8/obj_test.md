@@ -73,3 +73,4 @@ namespace GameApplication {
 
 If your OBJ loads and renders properly, the above scene should look like this, with a rotating camera:
 
+![Susane](susane.png)
