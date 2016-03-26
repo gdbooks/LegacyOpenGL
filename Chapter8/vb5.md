@@ -28,6 +28,7 @@ public override void Initialize() {
     uint[] indexData = new uint[] {
         ...
     };
+    
     numIndices = indexData.Length;
 
     vertexBuffer = GL.GenBuffer();
