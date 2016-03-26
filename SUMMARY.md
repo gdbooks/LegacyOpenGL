@@ -107,6 +107,7 @@
     * [Example](Chapter8/va_p7.md)
   * [Vertex Buffers](Chapter8/vbo.md)
     * [Generate and Bind](Chapter8/vb1.md) 
+    * [Fill data](Chapter8/vb2.md)
   * [Loading Meshes](Chapter8/loading.md)
   * [Resource Management](Chapter8/resource.md)
     * [Implementation](Chapter8/resource_impl.md)
