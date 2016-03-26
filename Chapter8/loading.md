@@ -94,4 +94,4 @@ f is more tricky. So, for f 8/11/7 7/12/7 6/10/7 :
 * 11 says which texture coordinate to use. So in this case, 0.748355 0.998230
 * 7 says which normal to use. So in this case, 0.000000 1.000000 -0.000000
 
-This means that every model we load will utilie an index buffer. A triangle is described as 3 sets of indices into the vertex / normal / uv arrays. It's important to note that arrays in C# are indexed starting at 0, in OBJ land they start at 1. A conversion needs to be made when you write your parser.
+ A triangle is described as 3 sets of indices into the vertex / normal / uv arrays. It's important to note that arrays in C# are indexed starting at 0, in OBJ land they start at 1. A conversion needs to be made when you write your parser.
