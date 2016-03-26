@@ -114,6 +114,7 @@
     * [On Your Own](Chapter8/vb6.md)
   * [Loading Meshes](Chapter8/loading.md)
     * [Implementation](Chapter8/lmesh.md) 
+    * [Test it](Chapter8/obj_test.md)
   * [Resource Management](Chapter8/resource.md)
     * [Implementation](Chapter8/resource_impl.md)
   * [Implementing a camera](Chapter8/camera.md)
