@@ -28,3 +28,5 @@ Using consecutive data helps speed up the rendering process just a little bit, a
 
 The last argument is a hint. Some OpenGL implementations will use this hint to optimize how they store the data, based on what you intend to do with it. There are two values to this that we care about:
 
+* __BufferUsageHint.StaticDraw__ is used for static objects. That is, any object you draw whose vertices don't change from frame to frame.
+* __BufferUsageHint.DynamicDraw__ is used for _skinned animation_. That is, 3D characters who animate their arms or legs in a realistic way. We won't use this until we talk about animation.
