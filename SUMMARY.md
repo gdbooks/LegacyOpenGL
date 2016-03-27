@@ -137,5 +137,3 @@
   * [Fire](Chapter9/fire.md)
   * [Motion Blur](Chapter9/blur.md)
   * [Terrains](Chapter9/terrains.md)
-* [Rendering Project](Chapter11/README.md)
-  * [JSON](Chapter11/json.md)
