@@ -118,6 +118,8 @@
   * [Resource Management](Chapter8/resource.md)
     * [Design](Chapter8/resource_impl.md)
     * [Implementation](Chapter8/resource_real_design.md)
+      * [Helper Functions](Chapter8/resource_help.md)
+      * [Public API](Chapter8/resource_public.md)
     * [On Your Own](Chapter8/resource_on_your_own.md)
     * [Sample Usage](Chapter8/resource_sample.md)
   * [Implementing a camera](Chapter8/camera.md)
