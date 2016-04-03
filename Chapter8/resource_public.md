@@ -99,6 +99,10 @@ public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
 }
 ```
 
+###UnloadTexture
+
+Compared to ```LoadTexture```, ```UnloadTexture``` is pretty simple. It decreases the reference count of the provided texture handle by 1. If the reference count of a texture reaches 0, that texture is deleted, it's handle will become eligable to be recycled.
+
 ```cs
 public void UnloadTexture(int textureId) {
     InitCheck("Trying to unload texture without intializing texture manager!");
@@ -114,6 +118,10 @@ public void UnloadTexture(int textureId) {
 }
 ```
 
+###GetTextureWidth
+
+This function is a simple getter that returns the width of a texture. This is information that ```LoadTexture``` stored inside the actual ```managedTextures``` element when the texture was loaded.
+
 ```cs
 public int GetTextureWidth(int textureId) {
     InitCheck("Trying to access texture width without intializing texture manager!");
@@ -123,6 +131,10 @@ public int GetTextureWidth(int textureId) {
 }
 ```
 
+###GetTextureHeight
+
+This function is a simple getter that returns the height of a texture. This is information that ```LoadTexture``` stored inside the actual ```managedTextures``` element when the texture was loaded.
+
 ```cs
 public int GetTextureHeight(int textureId) {
     InitCheck("Trying to access texture height without intializing texture manager!");
@@ -131,6 +143,10 @@ public int GetTextureHeight(int textureId) {
     return managedTextures[textureId].height;
 }
 ```
+
+###GetTextureSize
+
+This function works just like ```GetTextureWidth``` and ```GetTextureHeight```. It packs the return values into a ```Size``` struct.
 
 ```cs
 public Size GetTextureSize(int textureId) {
