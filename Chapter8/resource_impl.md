@@ -1,4 +1,4 @@
-# Implementing a Manager
+# Designing a Manager
 
 Let's go trough and create a texture manager together. What functions will this manager need?
 
@@ -15,3 +15,5 @@ This is an important question because it affects the data structures we will use
 Because most games use a loading screen when loading assets, we're going to design this system for fast retrieval, slow insertion. This means the underlying data structure is going to be an array, so our handles will be integers (Indices into the array)
 
 ## Helper classes
+
+We can't just have a 
