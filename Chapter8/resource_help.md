@@ -2,6 +2,11 @@
 
 Let's start off by implementing all of the helper functions we're going to need
 
+
+###Error
+
+This function will print something to the console in red. We use it to message any errors to the developer. When an error occurs it will not break the game, but fixing it should be the number 1 priority
+
 ```cs
 private void Error(string error) {
     ConsoleColor old = Console.ForegroundColor;
@@ -9,14 +14,22 @@ private void Error(string error) {
     Console.WriteLine(error);
     Console.ForegroundColor = old;
 }
+```
 
+### Warning
+
+This function will print something to the console in yellow. Unlike errors
+
+```cs
 private void Warning(string error) {
     ConsoleColor old = Console.ForegroundColor;
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine(error);
     Console.ForegroundColor = old;
 }
+```
 
+```cs
 private void InitCheck(string errorMessage) {
     if (!isInitialized) {
         Error(errorMessage);
