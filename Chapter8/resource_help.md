@@ -80,7 +80,15 @@ private bool IsPowerOfTwo(int x) {
     }
     return x == 1;
 }
+```
 
+###LoadGLTexture
+
+This function is the powerhouse of the manager. It actually loads a texture and returns it's OpenGL texture handle. It also returns the textures width and height in arguments marked as ```out```.
+
+Most of the code should be fairly familiar, you've loaded plenty of textures before. Pay attention to the error logging, this is the only place that ```IsPowerOfTwo``` is actually called.
+
+```cs
 private int LoadGLTexture(string filename, out int width, out int height, bool nearest) {
     int id = GL.GenTexture();
     GL.BindTexture(TextureTarget.Texture2D, id);
