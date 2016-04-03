@@ -74,4 +74,4 @@ We defined a private inner class called ```TextureInstance```. Because it's an i
 
 We have two member variables, one is a list of ```TextureInstance```, this is all the textures we are managing, the other is a bool to keep track of weather the manager has been initialized or not.
 
-We have 6 private helper functions. These are private because they will never be used outside of the texture manager class.
+We have 6 private helper functions. These are private because they will never be used outside of the texture manager class. We will talk about them more in detail as we implement each of them.
