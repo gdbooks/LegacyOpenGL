@@ -157,6 +157,10 @@ public Size GetTextureSize(int textureId) {
 }
 ```
 
+###GetGLHandle
+
+This function returns the OpenGL handle when provided with a handle to the TextureManager. It's crutial, becuase you will need the OpenGL handle to actually bind a texture for rendering.
+
 ```cs
 public int GetGLHandle(int textureId) {
     InitCheck("Trying to access texture ID without intializing texture manager!");
