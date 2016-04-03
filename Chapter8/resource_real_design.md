@@ -13,17 +13,8 @@ using System.Collections.Generic;
 
 namespace GameFramework {
     public class TextureManager {
-        private class TextureInstance {
-            public int glHandle = -1;
-            public string path = string.Empty;
-            public int refCount = 0;
-            public int width = 0;
-            public int height = 0;
-        }
-
-        private List<TextureInstance> managedTextures = null;
-        private bool isInitialized = false;
-
+    
+#region Singleton
         private static TextureManager instance = null;
         public static TextureManager Instance {
             get {
@@ -37,6 +28,22 @@ namespace GameFramework {
         private TextureManager() {
 
         }
+#endregion
+
+#region HelperClass
+        private class TextureInstance {
+            public int glHandle = -1;
+            public string path = string.Empty;
+            public int refCount = 0;
+            public int width = 0;
+            public int height = 0;
+        }
+#endregion
+
+#region MemberVariables
+        private List<TextureInstance> managedTextures = null;
+        private bool isInitialized = false;
+#endregion
 
 #region HelperFunctions
         private void Error(string error) { }
