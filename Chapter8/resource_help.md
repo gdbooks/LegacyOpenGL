@@ -43,7 +43,7 @@ private void InitCheck(string errorMessage) {
 
 ### IndexCheck
 
-A large number of our public API functions take a handle (index into the 
+A large number of our public API functions take a handle (index into the ```managedTextures``` array) as an argument. Those functions will call this function to make sure that the index passed in is valid.
 
 ```cs
 private void IndexCheck(int index, string function) {
@@ -63,7 +63,15 @@ private void IndexCheck(int index, string function) {
         Warning(function + " is acting on a texture with a reference count of: " + managedTextures[index].refCount);
     }
 }
+```
 
+### IsPowerOfTwo
+
+Given an integer, this function returns true of the integer is a power of two, false otherwise. Remember, we only want to load textures that are POT. This function is called in the LoadTexture function to ensure that the loaded texture is a POT texture.
+
+I didn't actually write this function, i just googled "C# Is Power Of Two" and copied the best answer from a stack overflow article. I'd give you the link, but i've since lost the article.
+
+```cs
 private bool IsPowerOfTwo(int x) {
     if (x > 1) {
         while (x % 2 == 0) {
