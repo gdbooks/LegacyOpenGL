@@ -16,4 +16,8 @@ Because most games use a loading screen when loading assets, we're going to desi
 
 ## Helper classes
 
-We can't just have a 
+We can't just have an array of OpenGL handles. We need more data! Like a unique way of identifying each texture (the texture path) and a reference count (an integer). 
+
+We could maintain parallel arrays, but it would become a nightmare to maintain them all. Instead we're going to use OOP design, and make private inner classes to the manager. 
+
+A private inner class means that the class will not be referenced (or known) from outside of the manager, and that's a good thing, it's just housekeeping data.
