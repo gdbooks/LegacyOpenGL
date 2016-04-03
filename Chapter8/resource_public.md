@@ -59,6 +59,8 @@ First, if the texture path requested is already loaded, increment it's reference
 
 Next, it loops trough all the loaded textures in the array. If any of them have a reference count of < 0, that means that texture is already unloaded. We take this unloaded texture, and load the new texture into it's slot, essentially recycling the texture handle.
 
+Finally, if the texture was not already loaded and we cant recycle any texture handles; we will load the texture and add it to the array, creating a new texture handle.
+
 ```cs
 public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
     InitCheck("Trying to load texture without intializing texture manager!");
@@ -86,6 +88,8 @@ public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
         }
     }
 
+    // Texture was not loaded, and there are no re-cyclable slots in the array
+    // Load texture into a new array slot
     TextureInstance newTexture = new TextureInstance();
     newTexture.refCount = 1;
     newTexture.glHandle = LoadGLTexture(texturePath, out newTexture.width, out newTexture.height, UseNearestFiltering);
