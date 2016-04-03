@@ -49,6 +49,14 @@ public void Shutdown() {
 }
 ```
 
+### LoadTexture
+
+The public facing ```LoadTexture``` can be misleading. It actually calls to the private helper function ```LoadGLTexture``` to load the texture data. The public facing function is concerned with referenced. To make sure that no texture is loaded twice. 
+
+This function returns an integer, it is a __handle__, it's an index into the managedTextures array. There are three possible situations this function needs to handle:
+
+First, if the texture path requested is already loaded, increment it's reference count and return it's handle.
+
 ```cs
 public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
     InitCheck("Trying to load texture without intializing texture manager!");
@@ -58,6 +66,7 @@ public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
         throw new ArgumentException(texturePath);
     }
 
+    // Check if the texture is already loaded. If it is, increment it's reference count and return it's handle.
     for (int i = 0; i < managedTextures.Count; ++i) {
         if (managedTextures[i].path == texturePath) {
             managedTextures[i].refCount += 1;
