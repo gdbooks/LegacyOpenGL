@@ -18,7 +18,7 @@ private void Error(string error) {
 
 ### Warning
 
-This function will print something to the console in yellow. Unlike errors
+This function will print something to the console in yellow. Unlike errors warnings are not super high up on the priority list, they just have to be fixed before the game ships.
 
 ```cs
 private void Warning(string error) {
@@ -29,13 +29,22 @@ private void Warning(string error) {
 }
 ```
 
+###InitCheck
+
+This functions takes a look at the member variable ```isInitialized``` and throws an error if the manager has not been initialized. We use this in EVERY public API function to make sure no function is called before the manager is initialized.
+
 ```cs
 private void InitCheck(string errorMessage) {
     if (!isInitialized) {
         Error(errorMessage);
     }
 }
+```
 
+### IndexCheck
+
+
+```cs
 private void IndexCheck(int index, string function) {
     if (managedTextures == null) {
         Error(function + " is trying to access element " + index + " when managedTextures is null");
