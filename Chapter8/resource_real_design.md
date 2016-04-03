@@ -60,3 +60,7 @@ namespace GameFramework {
     }
 }
 ```
+
+As you can see this class is a singleton, therefore it has a public ```Instance``` accessor, and it's constructor is marked as __private__ to ensure that only this class can make a new instance of it's self.
+
+We defined a private inner class called ```TextureInstance```. Because it's an inner class, you can only make a new instance of it as ```new TextureManager.TextureInstance``` outside of ```TextureManager```, but inside you can just use ```new TextureInstance```. This however doesn't matter, because the inner class is private, nothing outside of ```TextureManager``` can ever reference it.
