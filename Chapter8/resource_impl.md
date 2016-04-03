@@ -6,6 +6,7 @@ Let's go trough and create a texture manager together. What functions will this 
 * __Destroy__ Whatever is initialized must be destroyed! This is also a good place to warn the rest of the code if any resources where not unloaded
 * __LoadTexture__ This function is the powerhouse, it does the actual work of loading a texture, OR incrementing the reference on an already loaded texture
 * __UnloadTexture__ ```LoadTexture``` requests memory, this function will release memory
+* __GetSize__ We need a way to retrieve the width / height of a texture, we might need it to normalize coordinates.
 * __GetTexture__ We need a way to access the raw OpenGL texture handle. This is it.
 
 Are there any other considerations to designing this system? Tons! Do we want insertion of new data to be fast and retrieval to be slow? Or do we want insertion to be slow and retrieval to be fast? 
