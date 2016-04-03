@@ -43,6 +43,7 @@ private void InitCheck(string errorMessage) {
 
 ### IndexCheck
 
+A large number of our public API functions take a handle (index into the 
 
 ```cs
 private void IndexCheck(int index, string function) {
