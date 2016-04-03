@@ -35,7 +35,7 @@ So what are the handles in the framework? The handle of a texture is it's index 
 
 ## Whats next?
 
-Next up, i want to walk you trough actually creating a simple resource manager. It's not going to work the way the 2DOpenTKFramework one did, instead this one will be based on a dictionary, with the handles being strings.
+Next up, i want to walk you trough actually creating a simple resource manager. 
 
 There is no one size fits all solution for asset management, and the methods i show you are far from perfect. Each game figures out what they need and build the asset pipeline around their needs. Engines like Unity or Unreal handle this for you.
 
