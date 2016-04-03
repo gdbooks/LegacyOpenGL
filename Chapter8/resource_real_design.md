@@ -55,7 +55,7 @@ namespace GameFramework {
 #endregion
 
 #region PublicAPI
-        public void Initialize(OpenTK.GameWindow window) { }
+        public void Initialize() { }
         public void Shutdown() { }
         public int LoadTexture(string texturePath, bool UseNearestFiltering = false) { }
         public void UnloadTexture(int textureId) { }
@@ -75,3 +75,5 @@ We defined a private inner class called ```TextureInstance```. Because it's an i
 We have two member variables, one is a list of ```TextureInstance```, this is all the textures we are managing, the other is a bool to keep track of weather the manager has been initialized or not.
 
 We have 6 private helper functions. These are private because they will never be used outside of the texture manager class. We will talk about them more in detail as we implement each of them.
+
+Finally, the public API consists of 8 functions. These are the functions that the rest of the code can use to interact with our manager. Again, we will talk about these in more detail as we implement them
