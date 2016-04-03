@@ -55,7 +55,9 @@ The public facing ```LoadTexture``` can be misleading. It actually calls to the 
 
 This function returns an integer, it is a __handle__, it's an index into the managedTextures array. There are three possible situations this function needs to handle:
 
-First, if the texture path requested is already loaded, increment it's reference count and return it's handle.
+First, if the texture path requested is already loaded, increment it's reference count and return it's handle. If the texture is not already loaded, a new texture must be allocated, the next two steps deal with this allocation.
+
+Next, it loops trough all the loaded textures in the array. If any of them have a reference count of < 0, that means that texture is already unloaded. We take this unloaded texture, and load the new texture into it's slot, essentially recycling the texture handle.
 
 ```cs
 public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
@@ -74,6 +76,7 @@ public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
         }
     }
 
+    // Try to recycle an old texture handle
     for (int i = 0; i < managedTextures.Count; ++i) {
         if (managedTextures[i].refCount <= 0) {
             GL.DeleteTexture(managedTextures[i].glHandle);
