@@ -79,7 +79,6 @@ public int LoadTexture(string texturePath, bool UseNearestFiltering = false) {
     // Try to recycle an old texture handle
     for (int i = 0; i < managedTextures.Count; ++i) {
         if (managedTextures[i].refCount <= 0) {
-            GL.DeleteTexture(managedTextures[i].glHandle);
             managedTextures[i].glHandle = LoadGLTexture(texturePath, out managedTextures[i].width, out managedTextures[i].height, UseNearestFiltering);
             managedTextures[i].refCount = 1;
             managedTextures[i].path = texturePath;
@@ -102,8 +101,10 @@ public void UnloadTexture(int textureId) {
     IndexCheck(textureId, "UnloadTexture");
 
     managedTextures[textureId].refCount -= 1;
-
-    if (managedTextures[textureId].refCount < 0) {
+    if (managedTextures[textureId].refCount == 0) {
+        GL.DeleteTexture(managedTextures[i].glHandle);
+    }
+    else if (managedTextures[textureId].refCount < 0) {
         Error("Ref count of texture is less than 0: " + managedTextures[textureId].path);
     }
 }
