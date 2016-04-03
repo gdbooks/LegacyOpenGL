@@ -2,6 +2,12 @@
 
 With the inner class and helper functions done, let's actually write the public API that the rest of the code will interact with.
 
+###Initialize
+
+The initialize function is pretty simple, first it makes sure that the game is not already initialized, if it is an error gets printed. Then we just make a new ```TextureInstance``` list and set the  ```isInitialized``` variable to true.
+
+Why is this in the code ```managedTextures.Capacity = 100;```? By setting the initial capacity to 100 we ensure that the List (Vector) has enough room for at least 100 elements. Remember, when a vector data structure runs out of room it doubles in size, when the List runs out it will resize to 200, 400, 800, etc...
+
 ```cs
 public void Initialize(OpenTK.GameWindow window) {
     if (isInitialized) {
@@ -13,16 +19,28 @@ public void Initialize(OpenTK.GameWindow window) {
 }
 ```
 
+### Shutdown
+
+Like initialize shutdown is fairly straight forward. It first checks to make sure that the manager has been initialized. 
+
+It then loops trough all the managed textures. If anything has a reference count that is greater than 0 a warning is thrown, but the texture is deleted to make sure that we don't leak memory.
+
+After that we just clear the list, set it to null and set ```isInitialized``` back to false. The Manager is now shut down, it can be re-initialized if needed.
+
 ```cs
 public void Shutdown() {
     InitCheck("Trying to shut down a non initialized texture manager!");
 
     for (int i = 0; i < managedTextures.Count; ++i) {
-        if (managedTextures[i].refCount != 0) {
+        if (managedTextures[i].refCount > 0) {
             Warning("Texture reference is > 0: " + managedTextures[i].path);
+
+            GL.DeleteTexture(managedTextures[i].glHandle);
+            managedTextures[i] = null;
         }
-        GL.DeleteTexture(managedTextures[i].glHandle);
-        managedTextures[i] = null;
+        else if (managedTextures[i].refCount < 0) {
+            Error("Texture reference is < 0, should never happen! " + managedTextures[i].path);
+        }
     }
 
     managedTextures.Clear();
