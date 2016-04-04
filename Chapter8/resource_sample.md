@@ -17,5 +17,16 @@ class TexturedModel {
     ModelManager.Instance.UnloadModel(objHandle);
     objHandle = texHandle = -1;
   }
+  
+  public void Render() {
+    int texture = TextureManager.Instance.GetGLHandle(texHandle);
+    OBJLoader model = ModelManager.Instance.GetModel(objHandle);
+    
+    GL.BindTexture(TextureTarget.Texture2D, texture);
+    model.Render();
+    GL.BindTexture(TextureTarget.Texture2D, 0);
+  }
 }
 ```
+
+That's it. That's how simple it is to use our new manager classes to display any textured obj model. The constructor takes two arguments, both file paths. Each object is loaded up, a handle to each is kept and released accordingly.
