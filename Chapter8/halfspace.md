@@ -118,3 +118,13 @@ protected Matrix4 viewMatrix;
 // NEW
 Plane cameraPlane = null;
 ```
+
+We're going to construct this new plane inside the ```Move3DCamera``` function. We know we can construct a plane using 3 points, so what 3 points of the camera can we use to make a plane?
+
+Well we know the forward and right and up of the camera. We can use the right and up to construct a camera plane whose normal will be the camera forward. But that's only two vectors, what about the third one? We can invert the right vector to get a left vector. 
+
+This means we can create the camera plane using the camera world matrix left, right and up planes. Let's see how this would look in code:
+
+```cs
+
+```
