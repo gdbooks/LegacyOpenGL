@@ -8,5 +8,14 @@ This method revolves around the cameras frusutm:
 
 ![frustum.jpg](frustum.jpg)
 
-Basically if an object is not inside the green frustum it will not be rendered. As you can imagine, the math behind this method of culling is more intense than the math behind halfspace culling.
+Basically if an object is not inside the green frustum it will not be rendered. The math behind frustum culling isn't much different than the math behind Half Space Culling. It's the same thing actually!
 
+To do Furstum culling, we first extract the 6 planes taht make up the Frustum from the modelview matrix. Then, we do a half space test with ALL 6 planes. If the point is in front of all 6 planes then we render the object. If any one fails, we reject the object from being rendered.
+
+## Extracting planes
+
+Recall the plane equasion
+
+```
+
+```
