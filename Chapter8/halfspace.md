@@ -154,3 +154,15 @@ We get the right, and up out of the matrix, then invert right to get left. Remem
 However, extracting these vectors is not enough. These are vectors, not points, so the translation has not been applied yet. That's why we multiply each of these vectors by the world matrix of the camera.
 
 After we have left, right and up in world space (each one unit away from the cameras position), we can construct the camera plane.
+
+Finally, lets modify the render code:
+
+```cs
+if (Plane.HalfSpace(cameraPlane, new Vector3(0f, 0f, 0f)) >= 0) {
+                GL.Color3(1f, 1f, 1f);
+                model.Render(true, false);
+            }
+            else {
+                Console.WriteLine("Green susane culled");
+            }
+```
