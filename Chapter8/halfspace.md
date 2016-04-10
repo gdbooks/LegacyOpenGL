@@ -126,5 +126,26 @@ Well we know the forward and right and up of the camera. We can use the right an
 This means we can create the camera plane using the camera world matrix left, right and up planes. Let's see how this would look in code:
 
 ```cs
+...old code
+Matrix4 position = Matrix4.Translate(CameraPosition);
+Matrix4 cameraWorldPosition = orientation * position;
+Matrix4 cameraViewMatrix = Matrix4.Inverse(cameraWorldPosition);
 
+// NEW
+Vector3 right = new Vector3(cameraViewMatrix[0, 0], cameraViewMatrix[0, 1], cameraViewMatrix[0, 2]);
+Vector3 left = new Vector3(-right.X, -right.Y, -right.Z);
+Vector3 up = new Vector3(cameraViewMatrix[1, 0], cameraViewMatrix[1, 1], cameraViewMatrix[1, 2]);
+
+right = Matrix4.MultiplyPoint(cameraWorldPosition, right);
+left = Matrix4.MultiplyPoint(cameraWorldPosition, left);
+up = Matrix4.MultiplyPoint(cameraWorldPosition, up);
+
+cameraPlane = Plane.ComputePlane(left, right, up);
+
+// OLD
+return cameraViewMatrix;
+... old code
 ```
+
+We get the right, and up out of the matrix, then invert right to get left. Remember, you can extract a matrices  forward, right and up basis vectors because they make up the upper 3x3 matrix:
+
