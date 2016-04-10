@@ -42,11 +42,11 @@ When two planes are not parallel to each other, they intersect in a line. Simila
 
 The theory of a half space test is simple. Given a plane, with a normal. What is the angle between the plane and the point!
 
-Remember how the dot product works! If we take the planes right vector, and a vector from the plane to the point we are testing we can do a dot product between the two. 
+Remember how the dot product works! If we take the planes up vector, and a vector from the plane to the point we are testing we can do a dot product between the two vectors. 
 
 The result of this dot product is the half space test, remember if the result of the dot product is:
 
-* 0, the vectors are parallel
+* 0, the vectors are perpendicular (90 degrees)
 * positive, the vectors are less than 90 degrees apart
 * negative, the vectors are more than 90 degrees apart
 
@@ -104,7 +104,7 @@ Because the dot product returns a number that is relative to an angle this repre
 
 ## Implementation
 
-Cool, now that we understand the half space test (If you don't call me on skype) let's go ahead and implement it in our test scene. I'm going to be working in the camera scene we just implemented in the last section.
+Cool, now that we understand the half space test (If you don't call me on skype) let's go ahead and implement it in our test scene. Go ahead and make a new test scene that's exactly the same as the caemra scene we created earlyer. Don't use the camera scene!
 
 Implement a ```Plane``` class, and the ```HalfSpace``` function. For ease of use, make the ```HalfSpace``` function a static member of the ```Plane``` class. Also, make the ```ComputePlane``` function a static member of the plane class.
 
