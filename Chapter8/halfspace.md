@@ -105,3 +105,5 @@ Because the dot product returns a number that is relative to an angle this repre
 ## Implementation
 
 Cool, now that we understand the half space test (If you don't call me on skype) let's go ahead and implement it in our test scene. I'm going to be working in the camera scene we just implemented in the last section.
+
+Implement a ```Plane``` class, and the ```HalfSpace``` function. For ease of use, make the ```HalfSpace``` function a static member of the ```Plane``` class. Also, make the ```ComputePlane``` function a static member of the plane class.
