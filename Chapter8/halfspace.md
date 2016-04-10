@@ -149,3 +149,8 @@ return cameraViewMatrix;
 
 We get the right, and up out of the matrix, then invert right to get left. Remember, you can extract a matrices  forward, right and up basis vectors because they make up the upper 3x3 matrix:
 
+![gl_mat.png](gl_mat.png)
+
+However, extracting these vectors is not enough. These are vectors, not points, so the translation has not been applied yet. That's why we multiply each of these vectors by the world matrix of the camera.
+
+After we have left, right and up in world space (each one unit away from the cameras position), we can construct the camera plane.
