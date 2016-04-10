@@ -68,6 +68,8 @@ static int HalfSpaceDotProduct(Plane p, Vector3 v) {
 
 Note that the W component of the plane vector is the d term of the plane, while the W component of the point vector is 1. This is because if the W component of the point vector was 0 it would cancel out the planes W term, breaking the equasion.
 
+Whichever method (dot product, or plane equasion) you want to use is up to you. But the straight plane equasion method is simpler.
+
 ## Alternate representation
 
 There are other ways of representing planes, and doing the half space test. For example, a plane can be represented by a normal and any point on the plane. 
