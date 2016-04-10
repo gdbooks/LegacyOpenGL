@@ -6,4 +6,4 @@ So what's the solution? Don't render what you can't see! This is called __view c
 
 The theory behind half space culling is simple. Construct a plane at the position of the camera, the plane will span the cameras X and Y axis, and will face in the direction of it's Z axis. Then, test all models we are rendering against this plane. Only render models that are in front of the plane. This way, we don't render anything behind the camera!
 
-How do we actually test what side of the plane a point is on? Using the game programmers bread and butter, the __dot product__!
+How do we actually test what side of the plane a point is on? Using the game programmers bread and butter, the __dot product__! If you want to google how to do this, you should be looking for [Half Space Test](https://www.google.com/#q=half+space+test)
