@@ -38,6 +38,24 @@ static Plane ComputePlane(Vector3 a, Vector3 b, Vector3 c) {
 
 When two planes are not parallel to each other, they intersect in a line. Similarly, three planes (two not parallel to each other) intersect at a 3D point.
 
+##Theory
+
+The theory of a half space test is simple. Given a plane, with a normal. What is the angle between the plane and the point!
+
+Remember how the dot product works! If we take the planes right vector, and a vector from the plane to the point we are testing we can do a dot product between the two. 
+
+The result of this dot product is the half space test, remember if the result of the dot product is:
+
+* 0, the vectors are parallel
+* positive, the vectors are less than 90 degrees apart
+* negative, the vectors are more than 90 degrees apart
+
+So, if the dot product of the planes vector and the vector from the plane to the point is:
+
+* 0, the point is on the plane
+* positive, the point is in front of the plane
+* negative, the point is behind the plane
+
 ## Half Space Test
 
 Before we talk about the half space test, let's take a quick look at the plane equasion (Equasion of a plane).
