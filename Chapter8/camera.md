@@ -106,3 +106,86 @@ Next we've added a Vector3 to represent the cameras position in the world. We're
 Last we need to add a Vector2 to maintain the last position of the mouse. We need this because we have to calculate the delta movement of the mouse. Depending on the input library you are using this might not be needed, some input handlers will have a ```GetMouseDelta``` function. OpenTK by default does not.
 
 And of course the ```viewMatrix``` variable was already there in the skeleton framework.
+
+## The Camera
+
+We're going to implement our FPS camera in a helper function. I've documented this function using comments, be sure to read them!
+
+```cs
+// Returns the view matrix. Takes in delta time and a movement speed.
+Matrix4 Move3DCamera(float timeStep, float moveSpeed = 10f) {
+    // Helper variables, we need to know the mouse and keyboard states
+    const float mouseSensitivity = .01f;
+    MouseState mouse = OpenTK.Input.Mouse.GetState();
+    KeyboardState keyboard = OpenTK.Input.Keyboard.GetState();
+    
+    // Figure out the delta mouse movement
+    Vector2 mousePosition = new Vector2(mouse.X, mouse.Y);
+    var mouseMove = mousePosition - LastMousePosition;
+    LastMousePosition = mousePosition;
+
+    // If the left button is pressed, update Yaw and Pitch based on delta mouse
+    if (mouse.LeftButton == ButtonState.Pressed) {
+        Yaw += mouseSensitivity * mouseMove.X;
+        Pitch -= mouseSensitivity * mouseMove.Y;
+        if (Pitch < -90f) {
+            Pitch = 90f;
+        }
+        else if (Pitch > 90f) {
+            Pitch = 90f;
+        }
+    }
+    
+    // Now that we have yaw and pitch, create an orientation matrix
+    Matrix4 pitch = Matrix4.XRotation(Pitch);
+    Matrix4 yaw = Matrix4.YRotation(Yaw);
+    Matrix4 orientation = /*roll * */ pitch * yaw;
+
+    // Update the position vector based on WASD
+    if (keyboard[OpenTK.Input.Key.W]) {
+        CameraPosition += new Vector3(0f, 0f, -1f) * moveSpeed * timeStep;
+    }
+    if (keyboard[OpenTK.Input.Key.S]) {
+        CameraPosition += new Vector3(0f, 0f, 1f) * moveSpeed * timeStep;
+    }
+    if (keyboard[OpenTK.Input.Key.A]) {
+        CameraPosition += new Vector3(-1f, 0f, 0f) * moveSpeed * timeStep;
+    }
+    if (keyboard[OpenTK.Input.Key.D]) {
+        CameraPosition += new Vector3(1f, 0f, 0f) * moveSpeed * timeStep;
+    }
+    
+    // Now that we have a position vector, make a position matrix
+    Matrix4 position = Matrix4.Translate(CameraPosition);
+    // Using position and orientation, get the camera in world space
+    Matrix4 cameraWorldPosition = orientation * position;
+    // The view matrix is the inverse of the cameras world space matrix
+    Matrix4 cameraViewMatrix = Matrix4.Inverse(cameraWorldPosition);
+
+    return cameraViewMatrix;
+}
+```
+
+The function is verbose, but it's pretty simple. Following the steps outlined below you can construct just about any kind of camera.
+
+Update pitcha and yaw by the mouse delta position. Because Pitch looks up and down, clamp it to the -90 to 90 range. Once we have these, construct a new orientation.
+
+Update the position vector based on the WASD key states. Once we have an updated position, make a position matrix.
+
+Once we have a position and orientation matrix we can figure out where the camera is in world space.
+
+Once you know where the camera is in world space, the view matrix is just the inverse of that.
+
+## Applying the camera
+
+Now that we have the code to move our camera in 3D, we still need to call it.
+
+```cs
+public override void Update(float dTime) {
+    viewMatrix = Move3DCamera(dTime);
+}
+```
+
+With that, go ahead and run the application. You should be able to move with WASD, and when you click your mouse button, dragging it should look around the screen.
+
+You can adjust the mouse sensitivity using the ```mouseSensitivity``` constant in the move function. If the WASD movement is too slow, you can adjust it using the functions second argument.
