@@ -132,13 +132,15 @@ Matrix4 cameraWorldPosition = orientation * position;
 Matrix4 cameraViewMatrix = Matrix4.Inverse(cameraWorldPosition);
 
 // NEW
-Vector3 right = new Vector3(cameraViewMatrix[0, 0], cameraViewMatrix[0, 1], cameraViewMatrix[0, 2]);
+right = new Vector3(cameraWorldPosition[0, 0], cameraWorldPosition[1, 0], cameraWorldPosition[2, 0]);
 Vector3 left = new Vector3(-right.X, -right.Y, -right.Z);
-Vector3 up = new Vector3(cameraViewMatrix[1, 0], cameraViewMatrix[1, 1], cameraViewMatrix[1, 2]);
+Vector3 up = new Vector3(cameraWorldPosition[0, 1], cameraWorldPosition[1, 1], cameraWorldPosition[2, 1]);
 
 right = Matrix4.MultiplyPoint(cameraWorldPosition, right);
 left = Matrix4.MultiplyPoint(cameraWorldPosition, left);
 up = Matrix4.MultiplyPoint(cameraWorldPosition, up);
+
+cameraPlane = Plane.ComputePlane(left, right, up);
 
 cameraPlane = Plane.ComputePlane(left, right, up);
 
@@ -150,6 +152,8 @@ return cameraViewMatrix;
 We get the right, and up out of the matrix, then invert right to get left. Remember, you can extract a matrices  forward, right and up basis vectors because they make up the upper 3x3 matrix:
 
 ![gl_mat.png](gl_mat.png)
+
+We could have multiplied the right and up vectors by the orientation matrix, like earlyer in this same function, but extracting the vectors straight from the matrix is much simpler (and a lot less expensive). And you should be aware of both ways to extract the vector.
 
 However, extracting these vectors is not enough. These are vectors, not points, so the translation has not been applied yet. That's why we multiply each of these vectors by the world matrix of the camera.
 
