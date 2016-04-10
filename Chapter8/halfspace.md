@@ -85,3 +85,5 @@ Because the dot product returns a number that is relative to an angle this repre
 ![figure16-20.jpeg](figure16-20.jpeg)
 
 ## Implementation
+
+Cool, now that we understand the half space test (If you don't call me on skype) let's go ahead and implement it in our test scene. I'm going to be working in the camera scene we just implemented in the last section.
