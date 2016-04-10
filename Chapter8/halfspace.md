@@ -159,10 +159,14 @@ Finally, lets modify the render code:
 
 ```cs
 if (Plane.HalfSpace(cameraPlane, new Vector3(0f, 0f, 0f)) >= 0) {
-                GL.Color3(1f, 1f, 1f);
-                model.Render(true, false);
-            }
-            else {
-                Console.WriteLine("Green susane culled");
-            }
+    GL.Color3(1f, 1f, 1f);
+    model.Render(true, false);
+}
+else {
+    Console.WriteLine("Green susane culled");
+}
 ```
+
+Now if you move past susane, or rotate the camera that she's off screen, we wont see her. But some text will be written to the console instead.
+
+Why are we testing 0, 0, 0 for susane, because she is rendered at origin. If you have a model rendered at 2, 4, 6 you would test that point.
