@@ -28,7 +28,7 @@ class Plane {
 So we've chosen to represent a plane as a normal and a distance from origin. We can calulate this plane, from 3 (3D) points
 
 ```cs
-Plane ComputePlane(Vector3 a, Vector3 b, Vector3 c) {
+static Plane ComputePlane(Vector3 a, Vector3 b, Vector3 c) {
   Plane p = new Plane();
   p.n = Vector3.Normalize(Vector3.Cross(b - a, c - a));
   p.d = Dot(p.n, a);
