@@ -38,7 +38,40 @@ static Plane ComputePlane(Vector3 a, Vector3 b, Vector3 c) {
 
 When two planes are not parallel to each other, they intersect in a line. Similarly, three planes (two not parallel to each other) intersect at a 3D point.
 
+## Half Space Test
 
-## Test
+Before we talk about the half space test, let's take a quick look at the plane equasion (Equasion of a plane).
+
+```
+a * x + b * y + c * z + d = 0
+```
+
+Where, ABC is the normal of the plane, D is the distance of the plane from origin and XYZ is some point. This equasion states that if point XYZ is on the plane, the result of the above equasion is 0. If a point is in front of the plane the result will be a positive number (distance from the plane) and if the point is behind the plane the result will be a negative number.
+
+Because you already know what ABC and D are, you could just plug int XYZ into the above equasion and return the result. Try implementing this function in code
+
+```cs
+static int HalfSpace(Plane p, Vector3 v) {
+  // TODO: Return result of plane equasion
+}
+```
+
+That code lets you perform a half space test between a plane and a point. But earlyer i mentioned that the half space test would be done using a dot product, what gives? Look at the plane equasion, it's the expanded form of a 4D dot product. The above function COULD be expressed as:
+
+```cs
+static int HalfSpaceDotProduct(Plane p, Vector3 v) {
+  Vector4 v1 = new Vector4(p.n.X, p.n.Y, p.n.Z, p.d);
+  Vector4 v2 = new Vector4(v.X, v.Y, v.X, 1);
+  return Vector4.Dot(v1, v2);
+}
+```
+
+Note that the W component of the plane vector is the d term of the plane, while the W component of the point vector is 1. This is because if the W component of the point vector was 0 it would cancel out the planes W term, breaking the equasion.
+
+## Alternate representation
+
+There are other ways of representing planes, and doing the half space test. For example, a plane can be represented by a normal and any point on the plane. 
+
+If this was the case, the half space test would in involve 
 
 ## Implementation
