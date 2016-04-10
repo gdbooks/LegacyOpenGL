@@ -172,9 +172,11 @@ Matrix4 Move3DCamera(float timeStep, float moveSpeed = 10f) {
 
 The function is verbose, but it's pretty simple. Following the steps outlined below you can construct just about any kind of camera.
 
-Update pitcha and yaw by the mouse delta position. Because Pitch looks up and down, clamp it to the -90 to 90 range. Once we have these, construct a new orientation.
+Update pitch and yaw by the mouse delta position. Because Pitch looks up and down, clamp it to the -90 to 90 range. Once we have these, construct a new orientation.
 
-Update the position vector based on the WASD key states. Once we have an updated position, make a position matrix.
+Update the position vector based on the WASD key states and orientation. Once we have an updated position, make a position matrix.
+
+We can't just move the camera based on world forward and up, we want to take the orientation of the camera into account when moving. That's why we take the right vector (1, 0, 0) and multiply it by the orientation matrix, to get the local right vector of that matrix. Same with forward.
 
 Once we have a position and orientation matrix we can figure out where the camera is in world space.
 
