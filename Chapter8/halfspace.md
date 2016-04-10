@@ -72,6 +72,14 @@ Note that the W component of the plane vector is the d term of the plane, while 
 
 There are other ways of representing planes, and doing the half space test. For example, a plane can be represented by a normal and any point on the plane. 
 
-If this was the case, the half space test would in involve 
+If this was the case, the half space test would in involve subtracting the plane point from the point you are testing to get a direction vector, then doing a dot product with the plane normal and direction vector.
+
+Because the dot product returns a number that is relative to an angle this representation might be easyer to understand. 
+
+* If the dot of the plane normal and direction vector is negative, then the angle is greater than 90 degrees
+* if it is 0 then the angle is exactly 90 degrees (on the plane)
+* If it is positive, then the angle is less than 90 degrees
+
+![figure16-20.jpeg](figure16-20.jpeg)
 
 ## Implementation
