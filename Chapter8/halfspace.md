@@ -142,8 +142,6 @@ up = Matrix4.MultiplyPoint(cameraWorldPosition, up);
 
 cameraPlane = Plane.ComputePlane(left, right, up);
 
-cameraPlane = Plane.ComputePlane(left, right, up);
-
 // OLD
 return cameraViewMatrix;
 ... old code
