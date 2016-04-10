@@ -10,6 +10,13 @@ How do we actually test what side of the plane a point is on? Using the game pro
 
 ## Plane
 
+A _plane_ in 3D space can be thought of as a flat surface extending indefinitely in all directions. It can be described in several different ways. For examply by:
+
+* Three points not on a straight line
+* A normal, and a point on the plane
+* A normal, and a distance from origin
+
+
 ## Test
 
 ## Implementation
