@@ -22,8 +22,6 @@ namespace GameApplication {
     class CameraExample : Game {
         Grid grid = null;
         OBJModel model = null;
-        protected Vector3 cameraAngle = new Vector3(0.0f, -25.0f, 10.0f);
-        protected float rads = (float)(Math.PI / 180.0f);
 
         // TODO: Set based on camera input
         protected Matrix4 viewMatrix = new Matrix4();
