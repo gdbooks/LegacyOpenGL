@@ -140,19 +140,23 @@ Matrix4 Move3DCamera(float timeStep, float moveSpeed = 10f) {
     Matrix4 pitch = Matrix4.XRotation(Pitch);
     Matrix4 yaw = Matrix4.YRotation(Yaw);
     Matrix4 orientation = /*roll * */ pitch * yaw;
-
-    // Update the position vector based on WASD
+    
+    // Get the orientations right and forward vectors
+    Vector3 right = Matrix4.MultiplyVector(orientation, new Vector3(1f, 0f, 0f));
+    Vector3 forward = Matrix4.MultiplyVector(orientation, new Vector3(0f, 0f, 1f));
+    
+    // Update movement based on WASD
     if (keyboard[OpenTK.Input.Key.W]) {
-        CameraPosition += new Vector3(0f, 0f, -1f) * moveSpeed * timeStep;
+        CameraPosition += forward * -1f * moveSpeed * timeStep;
     }
     if (keyboard[OpenTK.Input.Key.S]) {
-        CameraPosition += new Vector3(0f, 0f, 1f) * moveSpeed * timeStep;
+        CameraPosition += forward * moveSpeed * timeStep;
     }
     if (keyboard[OpenTK.Input.Key.A]) {
-        CameraPosition += new Vector3(-1f, 0f, 0f) * moveSpeed * timeStep;
+        CameraPosition += right * -1f * moveSpeed * timeStep;
     }
     if (keyboard[OpenTK.Input.Key.D]) {
-        CameraPosition += new Vector3(1f, 0f, 0f) * moveSpeed * timeStep;
+        CameraPosition += right * moveSpeed * timeStep;
     }
     
     // Now that we have a position vector, make a position matrix
