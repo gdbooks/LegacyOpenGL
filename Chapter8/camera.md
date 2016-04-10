@@ -76,3 +76,33 @@ namespace GameApplication {
     }
 }
 ```
+
+The new thing to note here is the ```viewMatrix``` matrix. We use it to set the view when rendering. Right now it's set to identity, so you should see almost nothing when rendering. We're going to be updating this based on the move code.
+
+## Variables
+
+Let's start by adding some class variables.
+
+```cs
+protected float Yaw = 0f;
+protected float Pitch = 0f
+protected Vector3 CameraPosition = new Vector3(0, 0, 10);
+protected Vector2 LastMousePosition = new Vector2();
+/*Already exists*/ protected Matrix4 viewMatrix;
+```
+
+Yaw and Pitch are the Y and X rotation of the camera respectivley. This represents the cameras orientation in the world.
+
+When we're talking about orientation, we use the terms yaw, pitch and roll. You multiply these together to get an orientation. Order matters!
+
+```
+orientation = roll * pitch * yaw;
+```
+
+![PRY.gif](PRY.gif)
+
+Next we've added a Vector3 to represent the cameras position in the world. We're going to start the camera off at 10 units in the Z axis. If we started it at 0 it would start INSIDE the 3D model, instead we want to be looking at it.
+
+Last we need to add a Vector2 to maintain the last position of the mouse. We need this because we have to calculate the delta movement of the mouse. Depending on the input library you are using this might not be needed, some input handlers will have a ```GetMouseDelta``` function. OpenTK by default does not.
+
+And of course the ```viewMatrix``` variable was already there in the skeleton framework.
