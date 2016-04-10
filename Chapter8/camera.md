@@ -126,7 +126,7 @@ Matrix4 Move3DCamera(float timeStep, float moveSpeed = 10f) {
 
     // If the left button is pressed, update Yaw and Pitch based on delta mouse
     if (mouse.LeftButton == ButtonState.Pressed) {
-        Yaw += mouseSensitivity * mouseMove.X;
+        Yaw -= mouseSensitivity * mouseMove.X;
         Pitch -= mouseSensitivity * mouseMove.Y;
         if (Pitch < -90f) {
             Pitch = 90f;
@@ -158,7 +158,7 @@ Matrix4 Move3DCamera(float timeStep, float moveSpeed = 10f) {
     // Now that we have a position vector, make a position matrix
     Matrix4 position = Matrix4.Translate(CameraPosition);
     // Using position and orientation, get the camera in world space
-    Matrix4 cameraWorldPosition = orientation * position;
+    Matrix4 cameraWorldPosition = position * orientation;
     // The view matrix is the inverse of the cameras world space matrix
     Matrix4 cameraViewMatrix = Matrix4.Inverse(cameraWorldPosition);
 
