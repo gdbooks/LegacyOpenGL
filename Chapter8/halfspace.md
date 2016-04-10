@@ -16,6 +16,28 @@ A _plane_ in 3D space can be thought of as a flat surface extending indefinitely
 * A normal, and a point on the plane
 * A normal, and a distance from origin
 
+Let's define a plane class in code:
+
+```cs
+class Plane {
+  public Vector3 n; // Plane normal. Points x on the plane satisfy Dot(n, x) = d
+  public float d; // Distance from origin, d = Dot(n, p), for a given point p on the plane
+}
+```
+
+So we've chosen to represent a plane as a normal and a distance from origin. We can calulate this plane, from 3 (3D) points
+
+```cs
+Plane ComputePlane(Vector3 a, Vector3 b, Vector3 c) {
+  Plane p = new Plane();
+  p.n = Vector3.Normalize(Vector3.Cross(b - a, c - a));
+  p.d = Dot(p.n, a);
+  return p;
+}
+```
+
+When two planes are not parallel to each other, they intersect in a line. Similarly, three planes (two not parallel to each other) intersect at a 3D point.
+
 
 ## Test
 
