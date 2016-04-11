@@ -14,7 +14,7 @@ To do Furstum culling, we first extract the 6 planes taht make up the Frustum fr
 
 ## Extracting planes
 
-Recall the plane equasion
+Recall the plane equation
 
 ```
 a * x + b * y + c * z + d = 0
