@@ -17,5 +17,14 @@ To do Furstum culling, we first extract the 6 planes taht make up the Frustum fr
 Recall the plane equasion
 
 ```
-
+a * x + b * y + c * z + d = 0
 ```
+
+To extract the planes of a frustum, you need the __viewProjection__ matrix, which you get by multiplying the projection and view matrices together. The plane values can be found by adding or subtracting one of the first three rows of the __viewProjection__ matrix from the fourth row.
+
+* __Left Plane__
+* __Right Plane__
+* __Bottom Plane__
+* __Top Plane__
+* __Near Plane__
+* __Far Plane__
