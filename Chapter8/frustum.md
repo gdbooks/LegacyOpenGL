@@ -22,9 +22,9 @@ a * x + b * y + c * z + d = 0
 
 To extract the planes of a frustum, you need the __viewProjection__ matrix, which you get by multiplying the projection and view matrices together. The plane values can be found by adding or subtracting one of the first three rows of the __viewProjection__ matrix from the fourth row.
 
-* __Left Plane__
-* __Right Plane__
-* __Bottom Plane__
-* __Top Plane__
-* __Near Plane__
-* __Far Plane__
+* __Left Plane__ Row 1 (addition)
+* __Right Plane__ Row 1 Negated (subtraction)
+* __Bottom Plane__ Row 2 (addition)
+* __Top Plane__ Row 2 Negated (subtraction)
+* __Near Plane__ Row 3 (addition)
+* __Far Plane__ Row 3 Negated (subtraction)
