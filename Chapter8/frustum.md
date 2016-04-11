@@ -154,3 +154,49 @@ Vector4 row4 = new Vector4(mv[3, 0], mv[3, 1], mv[3, 2], mv[3, 3]);
 
 ... old code
 ```
+
+After we have those 4 rows calculating the camera planes becomes super simple, right after they where made, add this code to populate the frustum:
+
+```cs
+frustum[0] = Plane.FromNumbers(row4 + row1);
+frustum[1] = Plane.FromNumbers(row4 - row1);
+frustum[2] = Plane.FromNumbers(row4 + row2);
+frustum[3] = Plane.FromNumbers(row4 - row2);
+frustum[4] = Plane.FromNumbers(row4 + row3);
+frustum[5] = Plane.FromNumbers(row4 - row3);
+```
+
+Next, let's add a helper function to test if a point is inside the frustum:
+
+```cs
+public bool PointInFrustum(Plane[] frustum, Vector3 point) {
+    foreach (Plane plane in frustum) {
+        if (Plane.HalfSpace(plane, point) < 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+And finally, we have to actually use this function in the Render function to determine what gets drawn and what does not:
+
+```cs
+if (PointInFrustum(frustum, new Vector3(0f, 0f, 0f))) {
+    GL.Color3(1f, 1f, 1f);
+    model.Render(true, false);
+}
+else {
+    Console.WriteLine("Green susane culled");
+}
+```
+
+That's it. If you run the game now you should see susane, until the center point of the world goes off-screen.
+
+## Non-Points
+
+You might have noticed a flaw in all of this visibility optimization. With susane when the center of the world goes out of bounds (susanes position), she dissapears. But, really half of the geometry i still on screen.
+
+You can imagine larger geometry will have MUCH more noticable poping. Generally we don't want this. I'd rather an unseen object render than a seen object not render.
+
+This is expected. To do proper Frustum Culling involves more math and primitive geometry testing. These topics are outside the realm of rendering, we will discuss them when we talk about scene management.
