@@ -135,3 +135,22 @@ for (int i = 0; i < 6; ++i) {
 viewMatrix = Move3DCamera(0f);
 ... old code
 ```
+
+Now that the actual planes have been created we have a frustum. Let's update the ```Move3DCamera``` function to populate this frustum. We're not going to take out any code (the near plane generation), we're just going to add new code to generate a frustum as well.
+
+After the cameraPlane (near plane) has been created, make a projection matrix, then use that to make a __viewProjection__ matrix. Then, extract each row into a Vector4:
+
+```cs
+... old code
+cameraPlane = Plane.ComputePlane(left, right, up);
+// NEW
+Matrix4 perspective = Matrix4.Perspective(60.0f, aspect, 0.01f, 1000.0f);
+Matrix4 mv =  perspective * cameraViewMatrix;
+
+Vector4 row1 = new Vector4(mv[0, 0], mv[0, 1], mv[0, 2], mv[0, 3]);
+Vector4 row2 = new Vector4(mv[1, 0], mv[1, 1], mv[1, 2], mv[1, 3]);
+Vector4 row3 = new Vector4(mv[2, 0], mv[2, 1], mv[2, 2], mv[2, 3]);
+Vector4 row4 = new Vector4(mv[3, 0], mv[3, 1], mv[3, 2], mv[3, 3]);
+
+... old code
+```
