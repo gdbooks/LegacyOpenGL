@@ -84,7 +84,54 @@ public bool PointInFrustum(Plane[] frustum, Vector3 point) {
 }
 ```
 
+And finally you just use it in your render function for anything that you want to have culled:
+
+```cs
+void Render() {
+    if (PointInFrustum(frustum, object.Position)) {
+      object.Render();
+    }
+}
+```
 
 ## Implementation
 
-As you can see above it's useful to make a Vector4 into a Plane, so lets add a new 
+As you can see above it's useful to make a Vector4 into a Plane, so lets add a new helper function to the Plane class to create one from a Vector:
+
+```cs
+public static Plane FromNumbers(Vector4 numbers) {
+    Plane p = new Plane();
+    p.n = new Vector3();
+    p.n.X = numbers.X;
+    p.n.Y = numbers.Y;
+    p.n.Z = numbers.Z;
+    p.d = numbers.W;
+    return p;
+}
+```
+
+Next we need to make two member variables:
+
+```cs
+Plane[] frustum = new Plane[6];
+float aspect = 0f;
+```
+
+The resason for frustum is pretty self explanatory, you need a frustum to do frustum culling. The aspect, not so much. We need an aspect ratio to recreate the projection matrix to extract planes from.
+
+Aspect is actually already defined in the ```Resize``` function, take out the local definition of aspect from ```Resize``` so that it sets the value of the member variable.
+
+Now, we have an array of 6 Planes, but we do not have 6 planes. We only allocated the array. Let's allocate the actual planes in the ```Initialize``` function.
+
+```cs
+... old code
+MouseState mouse = OpenTK.Input.Mouse.GetState();
+LastMousePosition = new Vector2(mouse.X, mouse.Y);
+// NEW
+for (int i = 0; i < 6; ++i) {
+    frustum[i] = new Plane();
+}
+// OLD
+viewMatrix = Move3DCamera(0f);
+... old code
+```
