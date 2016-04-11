@@ -33,6 +33,7 @@ So, assuming that matrix ```mp``` is the view-projection matrix, you could get t
 
 ```cs
 Matrix4 mv =  perspective * view;
+
 Vector4 row1 = new Vector4(mv[0, 0], mv[0, 1], mv[0, 2], mv[0, 3]);
 Vector4 row4 = new Vector4(mv[3, 0], mv[3, 1], mv[3, 2], mv[3, 3]);
 
