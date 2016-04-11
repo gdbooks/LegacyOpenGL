@@ -55,4 +55,36 @@ right.n.Z = p2.Z;
 right.d = p2.w;
 ```
 
+## Frustum Culling
+
+Once you have all the planes of a matrix, the actual Frustum Culling comes down to doing 6 half space tests. Assume that we have our frustum defined like so:
+
+```cs
+Plane[] frustum = new Plane[6];
+
+void Init() {
+  for (int i = 0; i < 6; ++i) {
+    frustum[i] = new Plane();
+  }
+  
+  ExtractPlanes(); // Fill the global frustum variable with planes
+}
+```
+
+Now that we have a frustum, the culling code becomes very simple, first we use a helper function to test if a point is inside a frustum:
+
+```cs
+public bool PointInFrustum(Plane[] frustum, Vector3 point) {
+    foreach (Plane plane in frustum) {
+        if (Plane.HalfSpace(plane, point) < 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+
 ## Implementation
+
+As you can see above it's useful to make a Vector4 into a Plane, so lets add a new 
