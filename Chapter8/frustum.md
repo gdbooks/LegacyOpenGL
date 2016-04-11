@@ -54,3 +54,5 @@ right.n.Y = p2.Y;
 right.n.Z = p2.Z;
 right.d = p2.w;
 ```
+
+## Implementation
