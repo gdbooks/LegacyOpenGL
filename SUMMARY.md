@@ -133,7 +133,7 @@
   * [Specular Mapping](Chapter9/specular.md)
   * [Ambient Occlusion](Chapter9/ambient.md)
   * [Outlines](Chapter9/outlines.md)
-  * [Projected Shadows](Chapter9/proj_shadow.md)
+  * [Planar Shadows](Chapter9/proj_shadow.md)
   * [Stencyl Shadows](Chapter9/stencyl.md)
   * [Shadow Mapping](Chapter9/shadowmap.md)
   * [Reflections](Chapter9/reflect.md)
