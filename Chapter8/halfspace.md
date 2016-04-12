@@ -69,28 +69,16 @@ Where, ABC is the normal of the plane, D is the distance of the plane from origi
 Because you already know what ABC and D are, you could just plug int XYZ into the above equasion and return the result. Try implementing this function in code
 
 ```cs
-static int HalfSpace(Plane p, Vector3 v) {
+static float HalfSpace(Plane p, Vector3 v) {
   // TODO: Return result of plane equasion
 }
 ```
 
-That code lets you perform a half space test between a plane and a point. But earlyer i mentioned that the half space test would be done using a dot product, what gives? Look at the plane equasion, it's the expanded form of a 4D dot product. The above function COULD be expressed as:
-
-```cs
-static int HalfSpaceDotProduct(Plane p, Vector3 v) {
-  Vector4 v1 = new Vector4(p.n.X, p.n.Y, p.n.Z, p.d);
-  Vector4 v2 = new Vector4(v.X, v.Y, v.X, 1);
-  return Vector4.Dot(v1, v2);
-}
-```
-
-Note that the W component of the plane vector is the d term of the plane, while the W component of the point vector is 1. This is because if the W component of the point vector was 0 it would cancel out the planes W term, breaking the equasion.
-
-Whichever method (dot product, or plane equasion) you want to use is up to you. But the straight plane equasion method is simpler.
+The above code is the preffered method of implementing the half space test. A solution is given at the end of the page
 
 ## Alternate representation
 
-There are other ways of representing planes, and doing the half space test. For example, a plane can be represented by a normal and any point on the plane. 
+There are other ways of representing planes, and doing the half space test. For example, a plane can be represented by a normal and any point on the plane. As opposed to what we have now, a normal and a distance from origin. 
 
 If this was the case, the half space test would in involve subtracting the plane point from the point you are testing to get a direction vector, then doing a dot product with the plane normal and direction vector.
 
@@ -101,6 +89,17 @@ Because the dot product returns a number that is relative to an angle this repre
 * If it is positive, then the angle is less than 90 degrees
 
 ![figure16-20.jpeg](figure16-20.jpeg)
+
+We can actually make a point on the plane by multiplying the plane normal by the plane distance. Once we have a point on the plane we could use the dot product to perform a half space test.
+
+```cs
+public static float HalfSpace(Plane p,Vector3 v) {
+    Vector4 N = new Vector4(p.n.X, p.n.Y, p.n.Z, 0f);
+    Vector4 PointOnPlane = new Vector4(p.n.X * p.d, p.n.Y * p.d, p.n.Z * p.d, 1);
+    Vector4 V = PointOnPlane - new Vector4(v.X, v.Y, v.Z, 1f);
+    return Vector4.Dot(N, V);
+}
+```
 
 ## Implementation
 
@@ -172,3 +171,13 @@ else {
 Now if you move past susane, or rotate the camera that she's off screen, we wont see her. But some text will be written to the console instead.
 
 Why are we testing 0, 0, 0 for susane, because she is rendered at origin. If you have a model rendered at 2, 4, 6 you would test that point.
+
+### Solution
+
+Above i mentioned a solution would be given at the end of the page:
+
+```cs
+static float HalfSpace(Plane p, Vector3 v) {
+  return (p.n.X*v.X) + (p.n.Y*v.Y) + (p.n.Z*v.Z) + p.d;
+}
+```
