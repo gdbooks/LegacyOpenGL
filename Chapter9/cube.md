@@ -13,3 +13,7 @@ So, how to we achieve this effect? First the scene has to be rendered 6 times fr
 Now comes the magic, when you render the object, OpenGL will take pixel color from the cube map. Imagine a cube that's just big enough to surroung the object being rendered (The green outline around the tea pot). The cube map is wrapped around this cube:
 
 ![ENV](ENV.jpg)
+
+Now when a pixel is rendered, OpenGL figures out what direction the light on that pixel reflects from, and casts a ray out. Wherever that ray hits the enclosing cube, that pixel is used for the color of the object.
+
+This is a super advanced graphics method, that i've never had to implement. Mainly because engines like Unity do the hard work for you, you just have to tag an object as cube-map refected. But at some point in time i will try to implement this for fun.
