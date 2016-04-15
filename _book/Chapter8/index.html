@@ -1,0 +1,2489 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Optimization | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.3">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Chapter8/optimization.html" />
+    
+    
+    <link rel="prev" href="../Chapter10/im_snow.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="9" data-basepath=".." data-revision="Fri Apr 15 2016 10:05:48 GMT-0700 (PDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Chapter1/Introduction.html">
+            
+                
+                    <a href="../Chapter1/Introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introduction
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Chapter1/OpenGL.html">
+            
+                
+                    <a href="../Chapter1/OpenGL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        OpenGL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Chapter1/OpenTK.html">
+            
+                
+                    <a href="../Chapter1/OpenTK.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        OpenTK
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Chapter2/Introduction.html">
+            
+                
+                    <a href="../Chapter2/Introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Getting a window
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Chapter2/Setup.html">
+            
+                
+                    <a href="../Chapter2/Setup.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Setting up the window
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Chapter2/Callbacks.html">
+            
+                
+                    <a href="../Chapter2/Callbacks.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Using callbacks
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Chapter2/FullScreen.html">
+            
+                
+                    <a href="../Chapter2/FullScreen.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Going fullscreen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Chapter2/YourCode.html">
+            
+                
+                    <a href="../Chapter2/YourCode.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Your code
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Chapter2/Input.html">
+            
+                
+                    <a href="../Chapter2/Input.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Input
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="Chapter3/Introduction.html">
+            
+                
+                    <a href="../Chapter3/Introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        OpenGL States and Primitives
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Chapter3/StateFunctions.html">
+            
+                
+                    <a href="../Chapter3/StateFunctions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        State functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Chapter3/ErrorsAndHints.html">
+            
+                
+                    <a href="../Chapter3/ErrorsAndHints.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Errors and Hints
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Chapter3/HandlingPrimitives.html">
+            
+                
+                    <a href="../Chapter3/HandlingPrimitives.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Handling Primitives
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Chapter3/Vertex.html">
+            
+                
+                    <a href="../Chapter3/Vertex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Vertex
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Chapter3/Points.html">
+            
+                
+                    <a href="../Chapter3/Points.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Points
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Chapter3/Lines.html">
+            
+                
+                    <a href="../Chapter3/Lines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        Lines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Chapter3/Polygons.html">
+            
+                
+                    <a href="../Chapter3/Polygons.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        Polygons
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="Chapter3/Triangles.html">
+            
+                
+                    <a href="../Chapter3/Triangles.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        Triangles
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="Chapter3/Quads.html">
+            
+                
+                    <a href="../Chapter3/Quads.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        Quadrilaterals and Polygons
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="Chapter3/Attributes.html">
+            
+                
+                    <a href="../Chapter3/Attributes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        Attributes
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="Chapter4/Introduction.html">
+            
+                
+                    <a href="../Chapter4/Introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Transformations And Matrices
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="Chapter4/CoordinateTransforms.html">
+            
+                
+                    <a href="../Chapter4/CoordinateTransforms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Understanding Coordinate Transformations
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Chapter4/DeepDive.html">
+            
+                
+                    <a href="../Chapter4/DeepDive.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Transformation Deep Dive
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Chapter4/OpenGLMatrices.html">
+            
+                
+                    <a href="../Chapter4/OpenGLMatrices.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        OpenGL and Matrices
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Chapter4/ModelView.html">
+            
+                
+                    <a href="../Chapter4/ModelView.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        ModelView
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="Chapter4/Translation.html">
+            
+                
+                    <a href="../Chapter4/Translation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.1.</b>
+                        
+                        Translation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="Chapter4/Rotation.html">
+            
+                
+                    <a href="../Chapter4/Rotation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.2.</b>
+                        
+                        Rotation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="Chapter4/Scale.html">
+            
+                
+                    <a href="../Chapter4/Scale.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.3.</b>
+                        
+                        Scale
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="Chapter4/View.html">
+            
+                
+                    <a href="../Chapter4/View.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.4.</b>
+                        
+                        View
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="Chapter4/Order.html">
+            
+                
+                    <a href="../Chapter4/Order.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Function Order
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="Chapter4/solution.html">
+            
+                
+                    <a href="../Chapter4/solution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.1.</b>
+                        
+                        Solution
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="Chapter4/stacks.html">
+            
+                
+                    <a href="../Chapter4/stacks.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        Matrix Stacks
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="Chapter4/projections.html">
+            
+                
+                    <a href="../Chapter4/projections.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        Projections
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="Chapter4/Viewport.html">
+            
+                
+                    <a href="../Chapter4/Viewport.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        Viewport
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="Chapter4/roboto.html">
+            
+                
+                    <a href="../Chapter4/roboto.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        Mr.Roboto
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.9.1" data-path="Chapter4/nested.html">
+            
+                
+                    <a href="../Chapter4/nested.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.1.</b>
+                        
+                        Parent Child
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="Chapter4/cmat.html">
+            
+                
+                    <a href="../Chapter4/cmat.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        CustomMatrices
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.10.1" data-path="Chapter4/ProjectionAndLookAt.html">
+            
+                
+                    <a href="../Chapter4/ProjectionAndLookAt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.1.</b>
+                        
+                        Projection &amp; LookAt
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10.2" data-path="Chapter4/CustomStack.html">
+            
+                
+                    <a href="../Chapter4/CustomStack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.2.</b>
+                        
+                        Make your own stack
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="Chapter4/Solar.html">
+            
+                
+                    <a href="../Chapter4/Solar.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        Solar System
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="Chapter4/where.html">
+            
+                
+                    <a href="../Chapter4/where.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.12.</b>
+                        
+                        What goes where
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Chapter5/Intro.html">
+            
+                
+                    <a href="../Chapter5/Intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Colors and Lights
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Chapter5/using_colors.html">
+            
+                
+                    <a href="../Chapter5/using_colors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Using Colors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Chapter5/shading.html">
+            
+                
+                    <a href="../Chapter5/shading.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Shading
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="Chapter5/own_shading.html">
+            
+                
+                    <a href="../Chapter5/own_shading.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.1.</b>
+                        
+                        On Your Own
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Chapter5/lighting.html">
+            
+                
+                    <a href="../Chapter5/lighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Lighting
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Chapter5/lightsources.html">
+            
+                
+                    <a href="../Chapter5/lightsources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Light Sources
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.1" data-path="Chapter5/pad.html">
+            
+                
+                    <a href="../Chapter5/pad.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.1.</b>
+                        
+                        Position and direction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2" data-path="Chapter5/light_color.html">
+            
+                
+                    <a href="../Chapter5/light_color.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.2.</b>
+                        
+                        Light Color
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.3" data-path="Chapter5/light_atten.html">
+            
+                
+                    <a href="../Chapter5/light_atten.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.3.</b>
+                        
+                        Attenuation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.4" data-path="Chapter5/light_spotlight.html">
+            
+                
+                    <a href="../Chapter5/light_spotlight.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.4.</b>
+                        
+                        Spotlights
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.5" data-path="Chapter5/move_and_rotate.html">
+            
+                
+                    <a href="../Chapter5/move_and_rotate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.5.</b>
+                        
+                        Moving and Rotating
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Chapter5/base.html">
+            
+                
+                    <a href="../Chapter5/base.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Programming Exercises
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.5.1" data-path="Chapter5/direction.html">
+            
+                
+                    <a href="../Chapter5/direction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.1.</b>
+                        
+                        Directional Light
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5.2" data-path="Chapter5/point.html">
+            
+                
+                    <a href="../Chapter5/point.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.2.</b>
+                        
+                        Point Light
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5.3" data-path="Chapter5/spot.html">
+            
+                
+                    <a href="../Chapter5/spot.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.3.</b>
+                        
+                        Spot Light
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Chapter5/materials.html">
+            
+                
+                    <a href="../Chapter5/materials.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Materials
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Chapter5/defmat.html">
+            
+                
+                    <a href="../Chapter5/defmat.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Defining Materials
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.7.1" data-path="Chapter5/shade_test.html">
+            
+                
+                    <a href="../Chapter5/shade_test.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.</b>
+                        
+                        Test Scene
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7.2" data-path="Chapter5/color_mat.html">
+            
+                
+                    <a href="../Chapter5/color_mat.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.2.</b>
+                        
+                        Ambient and Diffuse
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7.3" data-path="Chapter5/mat_shine.html">
+            
+                
+                    <a href="../Chapter5/mat_shine.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.3.</b>
+                        
+                        Specular
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7.4" data-path="Chapter5/ctrack.html">
+            
+                
+                    <a href="../Chapter5/ctrack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.4.</b>
+                        
+                        Color Tracking
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="Chapter5/norms.html">
+            
+                
+                    <a href="../Chapter5/norms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Normals
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="Chapter5/the_lighting_model.html">
+            
+                
+                    <a href="../Chapter5/the_lighting_model.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        The Lighting Model
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="Chapter5/color.html">
+            
+                
+                    <a href="../Chapter5/color.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        Lighting Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="Chapter6/Introduction.html">
+            
+                
+                    <a href="../Chapter6/Introduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Blending and Fog
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="Chapter6/blending.html">
+            
+                
+                    <a href="../Chapter6/blending.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Blending
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="Chapter6/blend_practice.html">
+            
+                
+                    <a href="../Chapter6/blend_practice.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.1.</b>
+                        
+                        Challenge
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="Chapter6/blend_answer.html">
+            
+                
+                    <a href="../Chapter6/blend_answer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.2.</b>
+                        
+                        Solution
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="Chapter6/blending_problem.html">
+            
+                
+                    <a href="../Chapter6/blending_problem.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.3.</b>
+                        
+                        Issues
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="Chapter6/fog.html">
+            
+                
+                    <a href="../Chapter6/fog.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fog
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="Chapter7/index.html">
+            
+                
+                    <a href="../Chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Texture Mapping
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="Chapter7/Overview.html">
+            
+                
+                    <a href="../Chapter7/Overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="Chapter7/Enable.html">
+            
+                
+                    <a href="../Chapter7/Enable.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Enable Texturing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="Chapter7/TextureObj.html">
+            
+                
+                    <a href="../Chapter7/TextureObj.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Texture Objects
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="Chapter7/Binding.html">
+            
+                
+                    <a href="../Chapter7/Binding.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        Texture Binding
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="Chapter7/SpecTex.html">
+            
+                
+                    <a href="../Chapter7/SpecTex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        Specifying Textures
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="Chapter7/MinMag.html">
+            
+                
+                    <a href="../Chapter7/MinMag.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        Min &amp; Mag Filters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="Chapter7/DelTex.html">
+            
+                
+                    <a href="../Chapter7/DelTex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                        Deleting Textures
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="Chapter7/TexCoords.html">
+            
+                
+                    <a href="../Chapter7/TexCoords.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.8.</b>
+                        
+                        Texture Coordinates
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="Chapter7/Ex1.html">
+            
+                
+                    <a href="../Chapter7/Ex1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.9.</b>
+                        
+                        Putting it all together
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.9.1" data-path="Chapter7/help.html">
+            
+                
+                    <a href="../Chapter7/help.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.9.1.</b>
+                        
+                        Loading Help
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="Chapter7/Mip.html">
+            
+                
+                    <a href="../Chapter7/Mip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.10.</b>
+                        
+                        Mip Mapping
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="Chapter7/TexParams.html">
+            
+                
+                    <a href="../Chapter7/TexParams.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.11.</b>
+                        
+                        Texture Paramaters
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.12" data-path="Chapter7/ui.html">
+            
+                
+                    <a href="../Chapter7/ui.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.12.</b>
+                        
+                        Textures for UI
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.12.1" data-path="Chapter7/ui_practice.html">
+            
+                
+                    <a href="../Chapter7/ui_practice.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.12.1.</b>
+                        
+                        On your own
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13" data-path="Chapter7/sorting.html">
+            
+                
+                    <a href="../Chapter7/sorting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.13.</b>
+                        
+                        Sorting Objects
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="Chapter10/index.html">
+            
+                
+                    <a href="../Chapter10/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Particles
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="Chapter10/contepts.html">
+            
+                
+                    <a href="../Chapter10/contepts.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        Design
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="Chapter10/particles.html">
+            
+                
+                    <a href="../Chapter10/particles.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.1.</b>
+                        
+                        Particles
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="Chapter10/system.html">
+            
+                
+                    <a href="../Chapter10/system.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.2.</b>
+                        
+                        Particle Systems
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="Chapter10/impl.html">
+            
+                
+                    <a href="../Chapter10/impl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Implementation
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" data-path="Chapter10/im_particle.html">
+            
+                
+                    <a href="../Chapter10/im_particle.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.1.</b>
+                        
+                        Particle
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.2" data-path="Chapter10/impl_system.html">
+            
+                
+                    <a href="../Chapter10/impl_system.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.2.</b>
+                        
+                        Particle System
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.3" data-path="Chapter10/im_snow.html">
+            
+                
+                    <a href="../Chapter10/im_snow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.3.</b>
+                        
+                        Snow Example
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="9" data-path="Chapter8/index.html">
+            
+                
+                    <a href="../Chapter8/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Optimization
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="Chapter8/optimization.html">
+            
+                
+                    <a href="../Chapter8/optimization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Vertex Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="Chapter8/va_p1.html">
+            
+                
+                    <a href="../Chapter8/va_p1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.1.</b>
+                        
+                        Array Based Data
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="Chapter8/va_p2.html">
+            
+                
+                    <a href="../Chapter8/va_p2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.2.</b>
+                        
+                        Enabling Vertex Arrays
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="Chapter8/va_p3.html">
+            
+                
+                    <a href="../Chapter8/va_p3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.3.</b>
+                        
+                        Working With Arrays
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.4" data-path="Chapter8/va_p4.html">
+            
+                
+                    <a href="../Chapter8/va_p4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.4.</b>
+                        
+                        Pinning and Pointers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.5" data-path="Chapter8/va_p5.html">
+            
+                
+                    <a href="../Chapter8/va_p5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.5.</b>
+                        
+                        DrawArrays
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.6" data-path="Chapter8/va_p6.html">
+            
+                
+                    <a href="../Chapter8/va_p6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.6.</b>
+                        
+                        DrawElements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.7" data-path="Chapter8/va_p7.html">
+            
+                
+                    <a href="../Chapter8/va_p7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.7.</b>
+                        
+                        Example
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="Chapter8/vbo.html">
+            
+                
+                    <a href="../Chapter8/vbo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        Vertex Buffers
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="Chapter8/vb1.html">
+            
+                
+                    <a href="../Chapter8/vb1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.1.</b>
+                        
+                        Generate and Bind
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="Chapter8/vb2.html">
+            
+                
+                    <a href="../Chapter8/vb2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.2.</b>
+                        
+                        Fill data
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="Chapter8/vb3.html">
+            
+                
+                    <a href="../Chapter8/vb3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.3.</b>
+                        
+                        Render
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.4" data-path="Chapter8/vb4.html">
+            
+                
+                    <a href="../Chapter8/vb4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.4.</b>
+                        
+                        Cleanup
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.5" data-path="Chapter8/vb5.html">
+            
+                
+                    <a href="../Chapter8/vb5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.5.</b>
+                        
+                        Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.6" data-path="Chapter8/vb6.html">
+            
+                
+                    <a href="../Chapter8/vb6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.6.</b>
+                        
+                        On Your Own
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="Chapter8/loading.html">
+            
+                
+                    <a href="../Chapter8/loading.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        Loading Meshes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.3.1" data-path="Chapter8/lmesh.html">
+            
+                
+                    <a href="../Chapter8/lmesh.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.1.</b>
+                        
+                        Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.2" data-path="Chapter8/obj_test.html">
+            
+                
+                    <a href="../Chapter8/obj_test.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.2.</b>
+                        
+                        Test it
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="Chapter8/resource.html">
+            
+                
+                    <a href="../Chapter8/resource.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Resource Management
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.4.1" data-path="Chapter8/resource_impl.html">
+            
+                
+                    <a href="../Chapter8/resource_impl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.1.</b>
+                        
+                        Design
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4.2" data-path="Chapter8/resource_real_design.html">
+            
+                
+                    <a href="../Chapter8/resource_real_design.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.2.</b>
+                        
+                        Implementation
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.4.2.1" data-path="Chapter8/resource_help.html">
+            
+                
+                    <a href="../Chapter8/resource_help.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.2.1.</b>
+                        
+                        Helper Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4.2.2" data-path="Chapter8/resource_public.html">
+            
+                
+                    <a href="../Chapter8/resource_public.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.2.2.</b>
+                        
+                        Public API
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4.3" data-path="Chapter8/resource_on_your_own.html">
+            
+                
+                    <a href="../Chapter8/resource_on_your_own.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.3.</b>
+                        
+                        On Your Own
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4.4" data-path="Chapter8/resource_sample.html">
+            
+                
+                    <a href="../Chapter8/resource_sample.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.4.</b>
+                        
+                        Sample Usage
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="Chapter8/camera.html">
+            
+                
+                    <a href="../Chapter8/camera.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Implementing a camera
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.5.1" data-path="Chapter8/halfspace.html">
+            
+                
+                    <a href="../Chapter8/halfspace.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.1.</b>
+                        
+                        Halfspace Culling
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5.2" data-path="Chapter8/frustum.html">
+            
+                
+                    <a href="../Chapter8/frustum.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.2.</b>
+                        
+                        Frustum Culling
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="Chapter9/index.html">
+            
+                
+                    <a href="../Chapter9/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Advanced Topics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="Chapter9/multi.html">
+            
+                
+                    <a href="../Chapter9/multi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        Multi-Texturing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="Chapter9/subtex.html">
+            
+                
+                    <a href="../Chapter9/subtex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        Sub Textures
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="Chapter9/bill.html">
+            
+                
+                    <a href="../Chapter9/bill.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        Billboarding
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="Chapter9/normal.html">
+            
+                
+                    <a href="../Chapter9/normal.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        Normal Mapping
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="Chapter9/specular.html">
+            
+                
+                    <a href="../Chapter9/specular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        Specular Mapping
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="Chapter9/ambient.html">
+            
+                
+                    <a href="../Chapter9/ambient.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.6.</b>
+                        
+                        Ambient Occlusion
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="Chapter9/outlines.html">
+            
+                
+                    <a href="../Chapter9/outlines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.7.</b>
+                        
+                        Outlines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="Chapter9/proj_shadow.html">
+            
+                
+                    <a href="../Chapter9/proj_shadow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.8.</b>
+                        
+                        Planar Shadows
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="Chapter9/stencyl.html">
+            
+                
+                    <a href="../Chapter9/stencyl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.9.</b>
+                        
+                        Stencyl Shadows
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="Chapter9/shadowmap.html">
+            
+                
+                    <a href="../Chapter9/shadowmap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.10.</b>
+                        
+                        Shadow Mapping
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.11" data-path="Chapter9/reflect.html">
+            
+                
+                    <a href="../Chapter9/reflect.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.11.</b>
+                        
+                        Reflections
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.12" data-path="Chapter9/cube.html">
+            
+                
+                    <a href="../Chapter9/cube.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.12.</b>
+                        
+                        Cube Mapped Reflections
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.13" data-path="Chapter9/water.html">
+            
+                
+                    <a href="../Chapter9/water.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.13.</b>
+                        
+                        Particles
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.14" data-path="Chapter9/blur.html">
+            
+                
+                    <a href="../Chapter9/blur.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.14.</b>
+                        
+                        Motion Blur
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.15" data-path="Chapter9/terrains.html">
+            
+                
+                    <a href="../Chapter9/terrains.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.15.</b>
+                        
+                        Terrains
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="optimization-techniques">Optimization Techniques</h1>
+<p>At this point you should be fairly comfortable with OpenGL. We&apos;ve gone trough and done most of the things you would noramlly do on the job. But a lot of times we skipped best practices, especially in terms of performance. This made the code easier to read, but more costly to execute.</p>
+<p>This section will focus on two things. How to optimize your rendering code to render more things faster, and how to load and manage resources; so you can render more interesting things. </p>
+<p>We&apos;re going to learn how to manage textures, meshes and other objects so that they load and unload automatically, without us having to do much work to keep track of them. We&apos;re also going to learn how to parse 3D models from .obj files to load more interesting looking geometry.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter10/im_snow.html" class="navigation navigation-prev " aria-label="Previous page: Snow Example"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter8/optimization.html" class="navigation navigation-next " aria-label="Next page: Vertex Arrays"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
