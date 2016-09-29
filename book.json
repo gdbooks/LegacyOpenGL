@@ -1,1 +1,16 @@
-{}
+{
+	"title": "Legacy Open GL",
+	"links": {
+		"sharing": {
+			"google": null,
+			"facebook": null,
+			"twitter": null,
+			"weibo": null,
+			"all": null
+		}
+	},
+	"pdf": {
+		"pageNumbers": true,
+		"paperSize": "letter"
+	}
+}
