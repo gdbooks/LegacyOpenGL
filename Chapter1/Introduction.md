@@ -1,0 +1,2 @@
+#OpenGL
+OpenGL was originally developed by Silicon Graphics, Inc. (SGI) as a multi-purpose platform-independent graphics API. Since 1992, the developent of OpenGL has been overseen by the OpenGL Architecture Review Board (ARB), which is made up of graphics vendors and other industry leaders such as ATI, Dell, HP, IBM, Intel, Microsoft, NVIDIA, etc... The role of the ARB is to establish and maintain the OpenGL specification which dictate which features must be included when one is developing an OpenGL distribution.
